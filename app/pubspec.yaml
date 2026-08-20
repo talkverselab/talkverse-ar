@@ -1,0 +1,88 @@
+name: talkverse
+description: "Talkverse — Multi-language learning app (flavored per language)"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  go_router: ^13.0.0
+  shared_preferences: ^2.2.3
+  google_fonts: ^6.2.1
+  flutter_tts: ^4.2.0
+  supabase_flutter: ^2.8.0
+  # MN 사전 생성 mp3 (Azure TTS) 재생용. 다른 언어는 flutter_tts.
+  audioplayers: ^6.1.0
+  # mp3 다운로드 → 디바이스 캐시. 첫 재생 시만 다운, 이후 로컬 파일 재생.
+  http: ^1.2.0
+  drift: ^2.20.0
+  sqlite3_flutter_libs: ^0.5.24
+  path_provider: ^2.1.4
+  path: ^1.9.0
+  # Crash reporting — Sentry (개발 중 디바이스 크래시 자동 캡처).
+  # DSN은 lib/config/app_config.dart 의 sentryDsn 에 주입.
+  sentry_flutter: ^8.11.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  drift_dev: ^2.20.0
+  build_runner: ^2.4.13
+  # Used only by tools/csv_to_sql.dart — Excel CSV → seed SQL generator.
+  csv: ^8.0.0
+  # 소스 이미지 한 장에서 모든 해상도 아이콘·스플래시 PNG 자동 생성.
+  # 재실행: dart run flutter_launcher_icons
+  #         dart run flutter_native_splash:create
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/branding/
+    # 언어별 문법 커리큘럼 markdown (Day별 자동 분할).
+    - assets/
+    # TTS speaker gender 매핑 (옵션 2: dialogue id + speaker → gender).
+    - assets/tts/
+    # Local JSON 데이터 (USE_LOCAL_DATA=true 시 AssetSeedLoader 가 로드).
+    # 2026-05-12: Supabase sync 대신 번들 자산으로 콘텐츠 시드.
+    - assets/data/
+    - assets/data/_shared/
+    # slim 빌드 — 아랍어 데이터만 번들. (원본은 22개 언어 모두 선언)
+    - assets/data/ar/
+
+# ------------------------------------------------------------
+# 앱 아이콘 — assets/branding/icon.png 한 장이 소스. 변경 시 재실행.
+# ------------------------------------------------------------
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path: "assets/branding/icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#0D5C3F"
+  adaptive_icon_foreground: "assets/branding/icon_fg.png"
+  remove_alpha_ios: true
+  web:
+    generate: false
+  windows:
+    generate: false
+  macos:
+    generate: false
+
+# ------------------------------------------------------------
+# 로딩(스플래시) 화면 — assets/branding/splash.png 가 소스.
+# Android 12+ 는 원형 아이콘 슬롯만 있어서 icon.png 로 대체.
+# ------------------------------------------------------------
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/branding/splash.png
+  android_gravity: center
+  ios_content_mode: center
+  android_12:
+    color: "#FFFFFF"
+    image: assets/branding/icon.png
+    icon_background_color: "#FFFFFF"

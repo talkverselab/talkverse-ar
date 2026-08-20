@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Splash Screen theme (Android 12+ SplashScreen API).
+  Path: app/src/main/res/values/themes.xml (merge with existing)
+-->
+<resources>
+    <style name="Theme.Talkverse.Splash" parent="Theme.SplashScreen">
+        <!-- background behind icon -->
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+
+        <!-- centered icon (288x288dp recommended canvas, content at 192dp) -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_icon</item>
+
+        <!-- after splash, switch to app theme -->
+        <item name="postSplashScreenTheme">@style/Theme.Talkverse</item>
+
+        <!-- icon background (Android 12+ shows ring) -->
+        <item name="windowSplashScreenIconBackgroundColor">@color/brand_cream</item>
+    </style>
+</resources>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<title>Talkverse — Selected Screens (V2)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.7; }
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="mascot.jsx"></script>
+<script type="text/babel" src="atoms.jsx"></script>
+<script type="text/babel" src="screens-home.jsx"></script>
+<script type="text/babel" src="screens-lesson.jsx"></script>
+<script type="text/babel" src="screens-profile.jsx"></script>
+
+<script type="text/babel">
+const FW = 390, FH = 844;
+
+function Phone({children, screenLabel}) {
+  return (
+    <div data-screen-label={screenLabel} style={{width:FW, height:FH, position:'relative'}}>
+      <IOSDevice frameColor="#fff">
+        <div style={{height:'100%', width:'100%', position:'relative', background:'var(--bg)', overflow:'hidden'}}>
+          <IOSStatusBar dark={false} time="9:41"/>
+          <div style={{position:'absolute', top:47, left:0, right:0, bottom:0, display:'flex', flexDirection:'column'}}>
+            {children}
+          </div>
+        </div>
+      </IOSDevice>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <DesignCanvas title="Talkverse · Selected Screens (V2)"
+      subtitle="선택된 변형 + 새 라인 일러스트 마스코트">
+
+      <DCSection id="home" title="🏠 홈" subtitle="Variant B 채택 — 히어로 카드 + 주간 스트립">
+        <DCArtboard id="home-b" label="홈 · Hero + 주간 스트립" width={FW} height={FH}>
+          <Phone screenLabel="01 Home"><HomeB/></Phone>
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="lesson" title="📘 레슨" subtitle="Variant C, E 채택">
+        <DCArtboard id="les-c" label="레슨 · 따라 말하기" width={FW} height={FH}>
+          <Phone screenLabel="02 Lesson Speak"><LessonC/></Phone>
+        </DCArtboard>
+        <DCArtboard id="les-e" label="레슨 · 시네마틱 회화" width={FW} height={FH}>
+          <Phone screenLabel="03 Lesson Dialogue"><LessonE/></Phone>
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="profile" title="👤 프로필" subtitle="Variant A 채택 — 통계 우선">
+        <DCArtboard id="prof-a" label="프로필 · 통계" width={FW} height={FH}>
+          <Phone screenLabel="04 Profile"><ProfileA/></Phone>
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="onboarding" title="✨ 온보딩" subtitle="환영 화면 — 새 라인 캐릭터 적용">
+        <DCArtboard id="ob-a" label="온보딩 · 환영" width={FW} height={FH}>
+          <Phone screenLabel="05 Onboarding"><OnboardingA/></Phone>
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="ds" title="🎨 마스코트 — Talky" subtitle="민트 + 핑크 파스텔, 통통한 손, 큰 눈, 살짝 움직임">
+        <DCArtboard id="ds-mint" label="Talky · 민트 (5 moods)" width={FW} height={FH}>
+          <MascotSheet color="mint"/>
+        </DCArtboard>
+        <DCArtboard id="ds-pink" label="Talky · 핑크 (5 moods)" width={FW} height={FH}>
+          <MascotSheet color="pink"/>
+        </DCArtboard>
+      </DCSection>
+
+    </DesignCanvas>
+  );
+}
+
+function MascotSheet({color = 'mint'}) {
+  const moods = ['happy','wave','cheer','think','sleep'];
+  const labels = {happy:'기본', wave:'인사', cheer:'환호', think:'생각', sleep:'쿨쿨'};
+  const accent = color === 'mint' ? '#7FCBA4' : '#FF8FB1';
+  return (
+    <div style={{height:'100%', overflow:'auto', padding:24, background:'var(--bg)'}} className="scroll-hidden">
+      <div style={{fontSize:11, fontWeight:800, color:accent, letterSpacing:1.5}}>
+        TALKY · {color === 'mint' ? 'MINT' : 'BUBBLEGUM'}
+      </div>
+      <div style={{fontSize:22, fontWeight:900, marginTop:4}}>표정 5가지</div>
+      <div style={{fontSize:12, fontWeight:600, color:'var(--ink-soft)', marginTop:6, lineHeight:1.5}}>
+        통통한 손 · 큰 눈 · 살짝 흔들림 (idle bob)
+      </div>
+
+      {/* big hero */}
+      <div className="nm-card" style={{marginTop:16, padding:20, textAlign:'center', background:'#fff'}}>
+        <TalkyMascot size={200} mood="wave" color={color}/>
+        <div style={{fontSize:13, fontWeight:800, color:'var(--ink-soft)', marginTop:8}}>👋 안녕! 나는 Talky</div>
+      </div>
+
+      <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:10, marginTop:14}}>
+        {moods.map(m=>(
+          <div key={m} className="nm-card" style={{padding:8, textAlign:'center'}}>
+            <TalkyMascot size={110} mood={m} color={color}/>
+            <div style={{fontSize:11, fontWeight:800, color:'var(--ink-soft)', marginTop:2}}>{labels[m]}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

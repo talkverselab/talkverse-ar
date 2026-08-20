@@ -1,0 +1,103 @@
+{
+  "medials": [
+    {
+      "id": "ya_pin",
+      "sign": "ျ",
+      "name_my": "ya pin",
+      "name_ko": "야삔",
+      "function_ko": "/y/ 음 첨가 — 자음 뒤에 'ya' 가 결합되어 'kya/mya/pya' 등 형성",
+      "visual_position": "자음 오른쪽으로 휘감음",
+      "example_chain": [
+        {"base": "က", "with_medial": "ကျ", "ipa": "/tɕ/", "korean_sound": "쨔", "rom": "kya"},
+        {"base": "မ", "with_medial": "မျ", "ipa": "/mj/", "korean_sound": "먀", "rom": "mya"},
+        {"base": "ပ", "with_medial": "ပျ", "ipa": "/pj/", "korean_sound": "퍄", "rom": "pya"},
+        {"base": "ဖ", "with_medial": "ဖျ", "ipa": "/pʰj/", "korean_sound": "퍄(격음)", "rom": "hpya"}
+      ],
+      "common_words": [
+        {"word": "ကျောင်း", "ko": "학교", "rom": "kyaung"},
+        {"word": "မျက်နှာ", "ko": "얼굴", "rom": "myet-hna"},
+        {"word": "ပျော်", "ko": "즐겁다", "rom": "pyaw"}
+      ],
+      "korean_learner_note": "한국어 'ㅑ' 계열 (캬·먀·퍄) 와 비슷하다고 생각하세요. 단 က+ျ 는 'ㄲㅑ' 가 아닌 'ㅉ' 로 변음 (양곤 발음)."
+    },
+    {
+      "id": "ya_yit",
+      "sign": "ြ",
+      "name_my": "ya yit",
+      "name_ko": "야잇",
+      "function_ko": "/y/ 음 첨가 — ya pin 과 음가 같으나 시각적으로 자음 왼쪽부터 휘감음",
+      "visual_position": "자음 왼쪽에서 시작해 위·오른쪽으로 휘감음",
+      "example_chain": [
+        {"base": "က", "with_medial": "ကြ", "ipa": "/tɕ/", "korean_sound": "쨔", "rom": "kya"},
+        {"base": "မ", "with_medial": "မြ", "ipa": "/mj/", "korean_sound": "먀", "rom": "mya"},
+        {"base": "ပ", "with_medial": "ပြ", "ipa": "/pj/", "korean_sound": "퍄", "rom": "pya"},
+        {"base": "ဖ", "with_medial": "ဖြ", "ipa": "/pʰj/", "korean_sound": "퍄(격음)", "rom": "hpya"}
+      ],
+      "common_words": [
+        {"word": "မြန်မာ", "ko": "미얀마", "rom": "myanma"},
+        {"word": "ကြိုက်", "ko": "좋아하다", "rom": "kyaik"},
+        {"word": "ပြော", "ko": "말하다", "rom": "pyaw"}
+      ],
+      "korean_learner_note": "ya pin (ျ) 과 음가 동일하지만 글자에 따라 둘 중 하나만 사용. 외울 필요 없이 자연스럽게 익힘. 모양이 자음을 '감싸는' 형태가 핵심."
+    },
+    {
+      "id": "wa_hswe",
+      "sign": "ွ",
+      "name_my": "wa hswe",
+      "name_ko": "와스웨",
+      "function_ko": "/w/ 음 첨가 — 자음 뒤에 'wa' 가 결합되어 'kwa/mwa/twa' 등 형성",
+      "visual_position": "자음 아래쪽 삼각형/곡선 모양",
+      "example_chain": [
+        {"base": "က", "with_medial": "ကွ", "ipa": "/kw/", "korean_sound": "꽈", "rom": "kwa"},
+        {"base": "ထ", "with_medial": "ထွ", "ipa": "/tʰw/", "korean_sound": "퇘(격음)", "rom": "htwa"},
+        {"base": "မ", "with_medial": "မွ", "ipa": "/mw/", "korean_sound": "뫄", "rom": "mwa"},
+        {"base": "သ", "with_medial": "သွ", "ipa": "/θw/", "korean_sound": "th와", "rom": "thwa"}
+      ],
+      "common_words": [
+        {"word": "သွား", "ko": "가다", "rom": "thwa"},
+        {"word": "ထွက်", "ko": "나가다", "rom": "htwet"},
+        {"word": "ကွေး", "ko": "구부러지다", "rom": "kway"}
+      ],
+      "korean_learner_note": "한국어 '와/워/위' 의 'w' 음. 자음 아래에 작은 삼각형 — wa(ဝ) 자음의 변형."
+    },
+    {
+      "id": "ha_hto",
+      "sign": "ှ",
+      "name_my": "ha hto",
+      "name_ko": "하또",
+      "function_ko": "유기음화·비음 격화 — 'mha/nha/lha' 등 무성음 강조",
+      "visual_position": "자음 아래쪽 꺾쇠 모양",
+      "example_chain": [
+        {"base": "မ", "with_medial": "မှ", "ipa": "/m̥/", "korean_sound": "흐므", "rom": "hma"},
+        {"base": "န", "with_medial": "နှ", "ipa": "/n̥/", "korean_sound": "흐느", "rom": "hna"},
+        {"base": "လ", "with_medial": "လှ", "ipa": "/l̥/", "korean_sound": "흐르", "rom": "hla"},
+        {"base": "ည", "with_medial": "ညှ", "ipa": "/ɲ̥/", "korean_sound": "흐냐", "rom": "hnya"}
+      ],
+      "common_words": [
+        {"word": "မှာ", "ko": "에서·에 (처소격)", "rom": "hma"},
+        {"word": "နှစ်", "ko": "둘 / 년", "rom": "hnit"},
+        {"word": "လှ", "ko": "예쁘다·아름답다", "rom": "hla"}
+      ],
+      "korean_learner_note": "비음 (ㅁ·ㄴ·ㄹ) 앞에 'ㅎ' 를 살짝 더한 무성 비음. 한국어에 정확히 없는 음. 입김 먼저 내고 비음 — 'ㅎㅁ', 'ㅎㄴ' 식."
+    }
+  ],
+  "stacking_rules": {
+    "description_ko": "미얀마어는 자음 + virama (◌်) + 자음 결합 시 두 자음이 위·아래로 stacked 되어 한 묶음처럼 보입니다. Pali origin 차용어에 자주 등장.",
+    "examples": [
+      {"chain": "က + ် + က", "result": "က္က", "rom": "kk", "note": "Pali·외래어 차용 시 흔함"},
+      {"chain": "မ + ် + ဘ", "result": "မ္ဘ", "rom": "mb", "common_word": {"word": "ကမ္ဘာ", "ko": "세계·지구"}},
+      {"chain": "ပ + ် + ပ", "result": "ပ္ပ", "rom": "pp", "common_word": {"word": "ဥပ္ပါတ်", "ko": "사건 (Pali)"}},
+      {"chain": "စ + ် + စ", "result": "စ္စ", "rom": "ss", "common_word": {"word": "ကိစ္စ", "ko": "일·사정 (Pali)"}},
+      {"chain": "န + ် + တ", "result": "န္တ", "rom": "nt", "common_word": {"word": "မန္တလေး", "ko": "만달레이 (도시)"}}
+    ],
+    "korean_learner_note": "한국어 받침 'ㄱ + ㄱ → ㄲ' 같은 결합과 다릅니다. 미얀마는 두 자음 모양을 그대로 위·아래로 쌓아 표시. 첫 자음에 virama (◌်, athat) 가 붙어 '받침' 역할, 둘째 자음이 '초성' 역할."
+  },
+  "position_misconception": {
+    "title_ko": "오해 주의 — 위치별 글자 모양 변화 X",
+    "body_ko": "아랍어와 달리 미얀마어 자음은 단어의 어두·어중·어말 위치에 따라 모양이 변하지 않습니다. 시각적 변화는 medial sign (ျ ြ ွ ှ) 과 모음 부호 (ာ ိ ု ေ 등) 결합 시에만 발생합니다. AR 알파벳 학습 후 미얀마 학습 시 이 차이 명심.",
+    "comparison_with_arabic": {
+      "arabic_pattern": "한 글자 × 4 모양 (단독·어두·어중·어말)",
+      "myanmar_pattern": "한 글자 × 1 기본 모양 + medial/모음 결합 시 시각 확장"
+    }
+  }
+}

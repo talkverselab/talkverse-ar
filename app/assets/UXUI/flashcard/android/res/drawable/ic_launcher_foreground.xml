@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Talkverse Adaptive Icon — Foreground
+  Path: app/src/main/res/drawable/ic_launcher_foreground.xml
+  Size: 108×108dp (mascot occupies 72×72dp safe zone)
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Talky scaled into 72dp safe zone (translate 18, scale 0.3 of 240vp source) -->
+    <group
+        android:translateX="18"
+        android:translateY="18"
+        android:scaleX="0.3"
+        android:scaleY="0.3">
+
+        <!-- ground shadow -->
+        <path
+            android:pathData="M 58,222 a 62,5 0 1,0 124,0 a 62,5 0 1,0 -124,0 Z"
+            android:fillColor="#1F3A6E"
+            android:fillAlpha="0.12"/>
+
+        <!-- legs -->
+        <path
+            android:pathData="M 96,206 L 94,218"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="6"
+            android:strokeLineCap="round"/>
+        <path
+            android:pathData="M 144,206 L 146,218"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="6"
+            android:strokeLineCap="round"/>
+
+        <!-- feet -->
+        <path
+            android:pathData="M 79,220 a 13,6 0 1,0 26,0 a 13,6 0 1,0 -26,0 Z"
+            android:fillColor="#FFFFFF"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="5"/>
+        <path
+            android:pathData="M 135,220 a 13,6 0 1,0 26,0 a 13,6 0 1,0 -26,0 Z"
+            android:fillColor="#FFFFFF"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="5"/>
+
+        <!-- left arm -->
+        <path
+            android:pathData="M 60,130 Q 40,140 28,158"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="7"
+            android:strokeLineCap="round"/>
+
+        <!-- right arm (waving up) -->
+        <path
+            android:pathData="M 180,120 Q 202,80 200,42"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="7"
+            android:strokeLineCap="round"/>
+
+        <!-- left hand -->
+        <path
+            android:pathData="M 15,162 a 11,11 0 1,0 22,0 a 11,11 0 1,0 -22,0 Z"
+            android:fillColor="#D4F1DF"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="5"/>
+
+        <!-- right hand -->
+        <path
+            android:pathData="M 188,36 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0 Z"
+            android:fillColor="#D4F1DF"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="5"/>
+
+        <!-- Earth body -->
+        <path
+            android:pathData="M 42,120 a 78,78 0 1,0 156,0 a 78,78 0 1,0 -156,0 Z">
+            <aapt:attr xmlns:aapt="http://schemas.android.com/aapt" name="android:fillColor">
+                <gradient
+                    android:type="radial"
+                    android:centerX="91"
+                    android:centerY="95"
+                    android:gradientRadius="120">
+                    <item android:offset="0.0" android:color="#FFFFFFFF"/>
+                    <item android:offset="0.35" android:color="#FFD4F1DF"/>
+                    <item android:offset="1.0" android:color="#FFA8E0BD"/>
+                </gradient>
+            </aapt:attr>
+        </path>
+        <path
+            android:pathData="M 42,120 a 78,78 0 1,0 156,0 a 78,78 0 1,0 -156,0 Z"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="5"/>
+
+        <!-- Continents — recognizable hand-drawn world map -->
+        <path
+            android:pathData="M 50,78 Q 58,70 70,72 Q 80,66 92,70 Q 104,64 116,70 Q 128,68 138,76 Q 146,74 152,82 Q 158,86 156,94 Q 150,102 140,100 Q 134,110 124,106 Q 118,112 110,108 Q 100,116 92,110 Q 82,112 74,108 Q 66,112 60,106 Q 52,104 50,96 Q 46,88 50,78 Z"
+            android:fillColor="#7FCBA4"
+            android:fillAlpha="0.35"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="2"/>
+        <path
+            android:pathData="M 108,108 Q 112,118 110,124 Q 106,122 104,116 Q 104,110 108,108 Z"
+            android:fillColor="#7FCBA4"
+            android:fillAlpha="0.35"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="2"/>
+        <path
+            android:pathData="M 132,106 Q 138,116 134,124 Q 128,122 128,114 Q 128,108 132,106 Z"
+            android:fillColor="#7FCBA4"
+            android:fillAlpha="0.35"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="2"/>
+        <path
+            android:pathData="M 84,110 Q 96,108 100,122 Q 102,138 96,152 Q 90,162 84,156 Q 78,144 78,130 Q 78,118 84,110 Z"
+            android:fillColor="#7FCBA4"
+            android:fillAlpha="0.35"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="2"/>
+        <path
+            android:pathData="M 144,144 Q 158,140 166,148 Q 168,156 158,160 Q 148,162 142,156 Q 138,148 144,144 Z"
+            android:fillColor="#7FCBA4"
+            android:fillAlpha="0.35"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="2"/>
+
+        <!-- cheeks -->
+        <path
+            android:pathData="M 75,138 a 11,6 0 1,0 22,0 a 11,6 0 1,0 -22,0 Z"
+            android:fillColor="#FFB59C"
+            android:fillAlpha="0.65"/>
+        <path
+            android:pathData="M 143,138 a 11,6 0 1,0 22,0 a 11,6 0 1,0 -22,0 Z"
+            android:fillColor="#FFB59C"
+            android:fillAlpha="0.65"/>
+
+        <!-- eyes -->
+        <path
+            android:pathData="M 94,120 a 9,11 0 1,0 18,0 a 9,11 0 1,0 -18,0 Z"
+            android:fillColor="#1F3A6E"/>
+        <path
+            android:pathData="M 128,120 a 9,11 0 1,0 18,0 a 9,11 0 1,0 -18,0 Z"
+            android:fillColor="#1F3A6E"/>
+
+        <!-- eye sparkles -->
+        <path
+            android:pathData="M 102.8,115 a 3.2,3.2 0 1,0 6.4,0 a 3.2,3.2 0 1,0 -6.4,0 Z"
+            android:fillColor="#FFFFFF"/>
+        <path
+            android:pathData="M 136.8,115 a 3.2,3.2 0 1,0 6.4,0 a 3.2,3.2 0 1,0 -6.4,0 Z"
+            android:fillColor="#FFFFFF"/>
+
+        <!-- nose -->
+        <path
+            android:pathData="M 117,138 a 3,2 0 1,0 6,0 a 3,2 0 1,0 -6,0 Z"
+            android:fillColor="#1F3A6E"
+            android:fillAlpha="0.5"/>
+
+        <!-- smile -->
+        <path
+            android:pathData="M 104,146 Q 120,162 136,146"
+            android:strokeColor="#1F3A6E"
+            android:strokeWidth="6"
+            android:strokeLineCap="round"/>
+    </group>
+</vector>
