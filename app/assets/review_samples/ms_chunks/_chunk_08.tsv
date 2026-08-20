@@ -1,0 +1,151 @@
+row_id	course	dialogue_id	speaker	turn	id_target	id_ko	id_roman	id_note	ms_target	ms_ko	ms_roman	ms_note
+l5_d12_t03	5	대화12	A	3	Pemula. Hangeul belum lancar.	초급. 한글 아직.	쁘물라. 한글 블룸 란짜르.	pemula = 초보, lancar = 능숙한	Pemula. Hangeul belum lancar.	초급. 한글 아직.	쁘물라. 한글 블룸 란짜르.	pemula = 초보, lancar = 능숙한
+l5_d12_t04	5	대화12	B	4	Aku juga belajar! Bareng?	나도! 같이?	아꾸 주가 블라자르! 바릉?		Saya pun belajar! Sama-sama?	나도! 같이?	사야 뿐 블라자르! 사마 사마?	
+l5_d12_t05	5	대화12	A	5	Boleh! Schedule weekend.	좋아! 주말 schedule.	볼레! 스케줄 위켄드.	schedule = 영어	Boleh! Schedule weekend.	좋아! 주말.	볼레! 스케줄 위켄드.	schedule = 영어
+l5_d12_t06	5	대화12	B	6	Sabtu pagi. Lokasi mana?	토요일 아침. 어디?	삽뚜 빠기. 로까시 마나?	lokasi = 위치	Sabtu pagi. Lokasi mana?	토요일 아침. 어디?	삽뚜 빠기. 로까시 마나?	lokasi = 위치
+l5_d12_t07	5	대화12	A	7	Korea Foundation, Senayan.	Korea Foundation, Senayan.	꼬레아 파운데이션, 스나얀.		Korea Foundation, Mid Valley.	Korea Foundation, Mid Valley.	꼬레아 파운데이션, 미드 밸리.	Korea Foundation Mid Valley = KL 한국어 기관 (Senayan은 자카르타)
+l5_d12_t08	5	대화12	B	8	Free atau bayar?	무료? 유료?	프리 아따우 바야르?	free = 영어	Free atau bayar?	무료? 유료?	프리 아따우 바야르?	free = 영어
+l5_d12_t09	5	대화12	A	9	Bayar, tapi murah, 500K.	유료, 50만 루피아.	바야르, 따삐 무라, 리마 라뚜스 까.		Bayar, tapi murah, RM 250.	유료, RM 250.	바야르, 따삐 무라, 알엠 두아 라뚜스 리마 뿔루.	RM = ringgit (500K rupiah는 인니)
+l5_d12_t10	5	대화12	B	10	Worth it. Sekalian belajar K-drama.	worth it. K-drama 도.	워스 잇. 스깔리안 블라자르 케이드라마.		Berbaloi. Sekali gus belajar K-drama.	worth it. K-drama 도.	브르발로이. 스깔리 구스 블라자르 케이드라마.	berbaloi = 가치있다 (말레이, worth it은 영어)
+l5_d12_t11	5	대화12	A	11	Setelah kelas, makan kimbap?	수업 후 김밥?	스뜰라 끌라스, 마깐 김밥?		Selepas kelas, makan kimbap?	수업 후 김밥?	슬르빠스 끌라스, 마깐 김밥?	
+l5_d12_t12	5	대화12	B	12	Pasti! Sampai Sabtu.	꼭! 토요일.	빠스띠! 삼빠이 삽뚜.		Mestilah! Jumpa Sabtu.	꼭!	메스띨라! 줌빠 삽뚜.	
+l5_d13_t01	5	대화13	B	1	Aku join K-pop dance studio Jakarta.	K-pop 댄스 스튜디오 가입.	아꾸 조인 케이팝 댄스 스튜디오 자카르타.	join = 영어	Saya join K-pop dance studio KL.	KL K-pop 댄스 가입.	사야 조인 케이팝 댄스 스튜디오 께엘.	join = 영어
+l5_d13_t02	5	대화13	A	2	Wah, lagi belajar choreo apa?	어떤 안무 배워?	와, 라기 블라자르 안무 아빠?	choreo = 안무	Wah, tengah belajar choreo apa?	어떤 안무?	와, 뜨응아 블라자르 안무 아빠?	choreo = 안무
+l5_d13_t03	5	대화13	B	3	Standing Next to You by Jungkook.	Jungkook Standing Next to You.	스탠딩 넥스트 투 유 바이 정국.		Standing Next to You by Jungkook.	Jungkook.	스탠딩 넥스트 투 유 바이 정국.	
+l5_d13_t04	5	대화13	A	4	Susah banget kayaknya.	어려울 듯.	수사 방엣 까야꺄.		Susah gila nampaknya.	어려울 듯.	수사 길라 남빡냐.	nampaknya = ~듯하다 (말레이, kayaknya는 인니)
+l5_d13_t05	5	대화13	B	5	Iya, footwork cepat. Latihan tiap hari.	풋워크 빠름. 매일 연습.	이야, 풋워크 쯔빳. 라띠한 띠압 하리.	footwork = 영어, latihan = 연습	Ya, footwork cepat. Latihan setiap hari.	풋워크 빠름.	야, 풋워크 쯔빳. 라띠한 스띠압 하리.	
+l5_d13_t06	5	대화13	A	6	Berapa lama latihan?	얼마나 연습?	브라빠 라마 라띠한?		Berapa lama latihan?	얼마나?	브라빠 라마 라띠한?	
+l5_d13_t07	5	대화13	B	7	2 jam, plus stretching 30 menit.	2시간 + 스트레칭 30분.	두아 잠, 플러스 스트레칭 띠가 뿔루 므닛.		2 jam, plus stretching 30 minit.	2시간 + 스트레칭.	두아 잠, 플러스 스트레칭 띠가 뿔루 미닛.	
+l5_d13_t08	5	대화13	A	8	Akhirnya recital kapan?	발표회 언제?	아키르냐 리시탈 까빤?	recital = 영어	Akhirnya recital bila?	발표회?	아키르냐 리시탈 빌라?	
+l5_d13_t09	5	대화13	B	9	Bulan depan, di mall Senayan.	다음 달, Senayan 몰.	불란 드빤, 디 몰 스나얀.		Bulan depan, di Mid Valley.	다음 달, Mid Valley.	불란 드빤, 디 미드 밸리.	Mid Valley = KL 명소 (Senayan은 자카르타)
+l5_d13_t10	5	대화13	A	10	Aku datang nonton ya.	구경 갈게.	아꾸 다땅 논똔 야.		Saya datang tonton ya.	구경 갈게.	사야 다땅 똔똔 야.	
+l5_d13_t11	5	대화13	B	11	Wah, makasih support.	와, 응원 감사.	와, 마까시 서포트.	support = 영어	Wah, terima kasih support.	응원 감사.	와, 뜨리마 까시 서포트.	support = 영어
+l5_d13_t12	5	대화13	A	12	Aku rekam, share di IG.	녹화, IG 공유.	아꾸 르깜, 셰어 디 IG.	rekam = 녹화	Saya rakam, share di IG.	녹화, IG.	사야 라깜, 셰어 디 IG.	rakam = 녹화 (말레이 철자, rekam은 인니)
+l5_d14_t01	5	대화14	A	1	Mau ikut Korean cooking class?	한식 요리 클래스?	마우 이꿋 코리안 쿠킹 클래스?	cooking class = 영어	Nak ikut Korean cooking class?	한식 요리?	낙 이꿋 코리안 쿠킹 클래스?	cooking class = 영어
+l5_d14_t02	5	대화14	B	2	Boleh! Apa menu?	좋아! 메뉴?	볼레! 아빠 메누?		Boleh! Apa menu?	메뉴?	볼레! 아빠 메누?	
+l5_d14_t03	5	대화14	A	3	Kimchi, bibimbap, japchae.	김치, 비빔밥, 잡채.	김치, 비빔밥, 잡채.		Kimchi, bibimbap, japchae.	김치, 비빔밥, 잡채.	김치, 비빔밥, 잡채.	
+l5_d14_t04	5	대화14	B	4	Bahan-bahan susah dapat di sini?	여기서 재료 구하기 어려워?	바한 바한 수사 다빳 디 시니?	bahan = 재료 (reduplication)	Bahan-bahan susah dapat di sini?	재료 구하기?	바한 바한 수사 다빳 디 시니?	bahan = 재료
+l5_d14_t05	5	대화14	A	5	Lottemart, complete.	롯데마트, 다 있어.	롯데마트, 컴플리트.		Tower Records, lengkap.	Tower Records, 다 있어.	타워 레코즈, 릉깝.	Tower Records = KL 한국 식료품점 (Lottemart는 자카르타), lengkap = 완비
+l5_d14_t06	5	대화14	B	6	Wah, mantap. Kapan jadwalnya?	오, 좋다. 언제?	와, 만땁. 까빤 자드왈냐?	jadwal = 일정	Wah, best. Bila jadualnya?	와, 좋다. 언제?	와, 베스. 빌라 자드왈냐?	jadual = 일정 (말레이 철자, jadwal은 인니)
+l5_d14_t07	5	대화14	A	7	Sabtu jam 10 pagi.	토요일 10시.	삽뚜 잠 스뿔루 빠기.		Sabtu pukul 10 pagi.	토요일 10시.	삽뚜 뿌꿀 스뿔루 빠기.	
+l5_d14_t08	5	대화14	B	8	Aku siapin apron.	앞치마 준비.	아꾸 시아삔 에이프런.	apron = 영어	Saya sediakan apron.	앞치마.	사야 스디아깐 에이프런.	apron = 영어
+l5_d14_t09	5	대화14	A	9	Hahaha biar professional.	하하 프로페셔널.	하하하 비아르 프로페셔널.	professional = 영어	Hahaha biar professional.	하하 프로.	하하하 비아르 프로페셔널.	professional = 영어
+l5_d14_t10	5	대화14	B	10	Setelah masak, makan bareng?	요리 후, 같이?	스뜰라 마삭, 마깐 바릉?		Selepas masak, makan sama-sama?	요리 후 같이?	슬르빠스 마삭, 마깐 사마 사마?	
+l5_d14_t11	5	대화14	A	11	Pasti, plus drama Korea.	+ K-drama.	빠스띠, 플러스 드라마 꼬레아.		Mestilah, plus drama Korea.	+ K-drama.	메스띨라, 플러스 드라마 꼬레아.	
+l5_d14_t12	5	대화14	B	12	Best Saturday ever!	최고 토요일!	베스뜨 삽뚜 에버!	best/ever = 영어	Best Saturday ever!	최고!	베스뜨 삽뚜 에버!	
+l5_d15_t01	5	대화15	A	1	Hari ini cafe hopping IG-able?	오늘 IG 카페 호핑?	하리 이니 까페 호핑 IG 에이블?	IG-able = IG 잘 나오는 (구어)	Hari ni cafe hopping IG-able?	오늘 IG?	하리 니 까페 호핑 IG 에이블?	IG-able = IG 잘 나오는 (구어)
+l5_d15_t02	5	대화15	B	2	Boleh! Ada list 5 cafe.	좋아! 5개 카페 리스트.	볼레! 아다 리스뜨 리마 까페.	list = 영어	Boleh! Ada list 5 cafe.	5개 리스트.	볼레! 아다 리스뜨 리마 까페.	list = 영어
+l5_d15_t03	5	대화15	A	3	Mulai dari Senopati?	Senopati 부터?	물라이 다리 스노빠띠?		Mula dari Bangsar?	Bangsar 부터?	물라 다리 방사르?	Bangsar = KL 핫플 (Senopati는 자카르타)
+l5_d15_t04	5	대화15	B	4	Iya, terus Kemang dan PIK.	응, Kemang, PIK.	이야, 뜨루스 끄망 단 삐익.		Ya, kemudian TTDI dan Damansara.	TTDI, Damansara.	야, 끄무디안 띠띠디아이 단 다만사라.	TTDI = Taman Tun Dr Ismail, Damansara = KL 명소
+l5_d15_t05	5	대화15	A	5	Kafe pertama interior gimana?	첫 카페 인테리어?	까페 쁘르따마 인떼리오르 기마나?	interior = 영어	Cafe pertama interior macam mana?	첫 카페?	까페 쁘르따마 인떼리오르 마짬 마나?	interior = 영어
+l5_d15_t06	5	대화15	B	6	Pink, full of dried flowers.	핑크, 드라이 플라워.	핑크, 풀 오프 드라이드 플라워스.		Pink, full of dried flowers.	핑크.	핑크, 풀 오프 드라이드 플라워스.	
+l5_d15_t07	5	대화15	A	7	Outfit aku pakai apa ya?	뭐 입어?	아웃핏 아꾸 빠까이 아빠 야?	outfit = 영어	Outfit saya pakai apa ya?	뭐 입어?	아웃핏 사야 빠까이 아빠 야?	outfit = 영어
+l5_d15_t08	5	대화15	B	8	Pastel pink atau cream.	파스텔 핑크 또는 크림.	빠스뗄 핑크 아따우 크림.		Pastel pink atau krim.	파스텔.	빠스뗄 핑크 아따우 크림.	krim = 크림 (말레이 철자, cream은 영어)
+l5_d15_t09	5	대화15	A	9	Foto banyak, post 1 favorit.	사진 많이, 1개 best.	포또 바냑, 포스뜨 사뚜 파보릿.		Foto ramai, post 1 kegemaran.	사진 많이.	포또 라마이, 포스뜨 사뚜 끄그마란.	kegemaran = 좋아하는 것
+l5_d15_t10	5	대화15	B	10	Caption aesthetic vibes.	에스테틱 캡션.	캡션 에스테띡 바이브스.	aesthetic = 영어	Caption aesthetic vibes.	에스테틱.	캡션 에스테띡 바이브스.	aesthetic = 영어
+l5_d15_t11	5	대화15	A	11	Lunch dimana?	점심 어디?	런치 디마나?		Lunch di mana?	점심?	런치 디 마나?	
+l5_d15_t12	5	대화15	B	12	Korean BBQ Senopati.	Korean BBQ Senopati.	코리안 바비큐 스노빠띠.		Korean BBQ Bangsar.	Korean BBQ Bangsar.	코리안 바비큐 방사르.	
+l5_d16_t01	5	대화16	A	1	Aku join book club di Kemang.	Kemang 북클럽 가입.	아꾸 조인 북 클럽 디 끄망.		Saya join book club di Bangsar.	북클럽.	사야 조인 북 클럽 디 방사르.	
+l5_d16_t02	5	대화16	B	2	Buku apa lagi dibaca?	무슨 책 읽어?	부꾸 아빠 라기 디바짜?	buku = 책, dibaca = 읽히는	Buku apa tengah dibaca?	무슨 책?	부꾸 아빠 뜨응아 디바짜?	buku = 책, dibaca = 읽히는
+l5_d16_t03	5	대화16	A	3	Pachinko, Min Jin Lee.	Pachinko, Min Jin Lee.	파친코, 민진리.		Pachinko, Min Jin Lee.	Pachinko.	파친코, 민진리.	
+l5_d16_t04	5	대화16	B	4	Wah, drama Apple TV juga ada!	와, 애플TV 드라마도!	와, 드라마 애플 띠비 주가 아다!		Wah, drama Apple TV pun ada!	드라마도!	와, 드라마 애플 띠비 뿐 아다!	
+l5_d16_t05	5	대화16	A	5	Diskusi tema besar minggu depan.	큰 주제 토론 다음 주.	디스꾸시 떼마 브사르 밍구 드빤.	diskusi = 토론	Diskusi tema besar minggu depan.	큰 주제 토론.	디스꾸시 떼마 브사르 밍구 드빤.	diskusi = 토론
+l5_d16_t06	5	대화16	B	6	Tema apa?	주제는?	떼마 아빠?		Tema apa?	주제?	떼마 아빠?	
+l5_d16_t07	5	대화16	A	7	Identitas Korea diaspora di Jepang.	재일 한국인 정체성.	이덴띠따스 꼬레아 디아스포라 디 즈빵.	identitas = 정체성, diaspora = 영어	Identiti Korea diaspora di Jepun.	재일 한국인 정체성.	이덴띠띠 꼬레아 디아스포라 디 즈뿐.	identiti = 정체성 (말레이 철자, identitas는 인니), Jepun = 일본 (말레이, Jepang은 인니)
+l5_d16_t08	5	대화16	B	8	Heavy banget. Cocok kamu.	무겁네. 너 어울려.	헤비 방엣. 쪼쪽 까무.	heavy = 영어	Berat gila. Sesuai awak.	무겁네. 어울려.	브랏 길라. 스수아이 아왁.	sesuai = 어울리는 (말레이, cocok은 양쪽)
+l5_d16_t09	5	대화16	A	9	Mau ikut diskusi?	토론 참여?	마우 이꿋 디스꾸시?		Nak ikut diskusi?	참여?	낙 이꿋 디스꾸시?	
+l5_d16_t10	5	대화16	B	10	Boleh, aku baca dulu.	응, 읽고.	볼레, 아꾸 바짜 둘루.		Boleh, saya baca dulu.	읽고.	볼레, 사야 바짜 둘루.	
+l5_d16_t11	5	대화16	A	11	Mantap, member baru.	좋아, 신규 멤버.	만땁, 멤버 바루.		Best, ahli baru.	신규.	베스, 아흐리 바루.	ahli = 멤버 (말레이)
+l5_d16_t12	5	대화16	B	12	Aku siapin notes.	노트 준비.	아꾸 시아삔 노츠.	notes = 영어	Saya sediakan notes.	노트.	사야 스디아깐 노츠.	
+l4_d25_t01	4	대화16	A	1	Sunrise Borobudur dimulai jam 4 pagi.	Borobudur 일출 4시.	선라이즈 보로부두르 디물라이 잠 음빳 빠기.		Sunrise Mount Kinabalu mula pukul 4 pagi.	키나발루 일출 4시.	선라이즈 마운트 키나발루 물라 뿌꿀 음빳 빠기.	Mount Kinabalu = Sabah 최고봉 4095m (Borobudur는 자바)
+l4_d25_t02	4	대화16	B	2	Wow, harus bangun pagi sekali.	와, 일찍 일어나야.	와우, 하루스 방운 빠기 스깔리.		Wow, kena bangun pagi gila.	와, 일찍.	와우, 끄나 방운 빠기 길라.	
+l4_d25_t03	4	대화16	A	3	Worth it. View magic.	worth it. 뷰 magic.	워스 잇. 뷰 매직.		Berbaloi. View magic.	worth it.	브르발로이. 뷰 매직.	
+l4_d25_t04	4	대화16	B	4	Tiket berapa?	티켓?	띠껫 브라빠?		Tiket berapa?	티켓?	띠껫 브라빠?	
+l4_d25_t05	4	대화16	A	5	450K untuk asing.	외국인 45만.	음빳 라뚜스 리마 뿔루 까 운뚝 아싱.	asing = 외국인	RM 500 untuk asing.	RM 500.	알엠 리마 라뚜스 운뚝 아싱.	asing = 외국인
+l4_d25_t06	4	대화16	B	6	Mahal! Tapi sekali seumur hidup.	비싸! 평생 한 번.	마할! 따삐 스깔리 스우무르 히둡.		Mahal! Tapi sekali seumur hidup.	비싸! 평생.	마할! 따삐 스깔리 스우무르 히둡.	
+l4_d25_t07	4	대화16	A	7	Pakai sarung wajib.	sarong 필수.	빠까이 사룽 와집.	sarung = 사룽 (전통 천), wajib = 필수	Pakai jaket gunung wajib.	등산 자켓 필수.	빠까이 자껫 구눙 와집.	gunung = 산 (sarung은 인니 전통천)
+l4_d25_t08	4	대화16	B	8	Aku siap, banyak foto.	준비, 사진 많이.	아꾸 시압, 바냑 포또.		Saya sedia, banyak foto.	준비.	사야 스디아, 바냑 포또.	
+l4_d26_t01	4	대화17	A	1	Malam ini Malioboro.	오늘 밤 Malioboro.	말람 이니 말리오보로.		Malam ni Jonker Street.	오늘 밤 Jonker Street.	말람 니 종꺼르 스트릿.	Jonker Street = Melaka 차이나타운 야시장 (Malioboro는 Yogya)
+l4_d26_t02	4	대화17	B	2	Pasar malam terkenal kan?	유명 야시장?	빠사르 말람 뜨르끄날 깐?	pasar malam = 야시장	Pasar malam terkenal kan?	유명?	빠사르 말람 뜨르끄날 깐?	pasar malam = 야시장
+l4_d26_t03	4	대화17	A	3	Iya, batik, kaos, lukisan.	응, 바틱·티셔츠·그림.	이야, 바띡, 까오스, 루끼산.	batik = 인니 전통, lukisan = 그림	Ya, batik, songket, lukisan.	바틱·송켓·그림.	야, 바띡, 송켓, 루끼산.	songket = 말레이 전통 직물 (batik도 공통), lukisan = 그림
+l4_d26_t04	4	대화17	B	4	Tawar harga ya?	흥정?	따와르 하르가 야?	tawar = 흥정	Tawar harga ya?	흥정?	따와르 하르가 야?	tawar = 흥정
+l4_d26_t05	4	대화17	A	5	Pasti, mulai 50% off.	꼭, 50% 부터.	빠스띠, 물라이 리마 뿔루 퍼센 오프.		Mestilah, mula 50% off.	꼭, 50%.	메스띨라, 물라 리마 뿔루 퍼센 오프.	
+l4_d26_t06	4	대화17	B	6	Coba gudeg juga?	gudeg 도?	쪼바 구득 주가?	gudeg = Yogya 대표 음식	Cuba nasi kerabu juga?	nasi kerabu?	쭈바 나시 끄라부 주가?	nasi kerabu = 말레이 동부 향토 음식 (gudeg는 Yogya)
+l4_d26_t07	4	대화17	A	7	Yu Djum legendaris.	Yu Djum 전설.	유 줌 레전다리스.		Restoran Hoe Kee legenda.	Hoe Kee 전설.	레스또란 호 끼 레전다.	Hoe Kee = Melaka 유명 chicken rice ball (Yu Djum은 Yogya)
+l4_d26_t08	4	대화17	B	8	Pesan 2 porsi!	2인분!	쁘산 두아 뽀르시!	porsi = 1인분	Pesan 2 hidangan!	2인분!	쁘산 두아 히당안!	hidangan = 1인분 (말레이, porsi는 양쪽)
+l4_d27_t01	4	대화18	A	1	Besok Tangkuban Perahu, gunung berapi.	내일 Tangkuban Perahu 화산.	베속 땅꾸반 쁘라후, 구눙 브르아삐.	gunung berapi = 화산	Esok Mount Kinabalu summit trek.	내일 키나발루 등정.	에속 마운트 키나발루 서밋 트렉.	summit trek = 정상 등반
+l4_d27_t02	4	대화18	B	2	Wah, masih aktif?	와, 활화?	와, 마시 악띱?	aktif = 영어	Wah, ada gunung berapi tak?	활화산?	와, 아다 구눙 브르아삐 딱?	gunung berapi = 화산
+l4_d27_t03	4	대화18	A	3	Aktif, tapi aman dilihat.	활화, 안전 관람.	악띱, 따삐 아만 디리핫.		Bukan, tapi puncak granit.	아냐, 화강암.	부깐, 따삐 뿐짝 그라닛.	puncak = 정상, granit = 화강암
+l4_d27_t04	4	대화18	B	4	Bawa jaket?	잠바?	바와 자껫?		Bawa jaket?	잠바?	바와 자껫?	
+l4_d27_t05	4	대화18	A	5	Pasti, dingin di atas.	꼭, 위 추워.	빠스띠, 딩인 디 아따스.		Mestilah, sejuk di atas.	꼭, 위 추워.	메스띨라, 스죽 디 아따스.	
+l4_d27_t06	4	대화18	B	6	Kawah jelas terlihat?	분화구 잘 보여?	까와 즐라스 뜨르리핫?	kawah = 분화구	Pemandangan jelas?	경치?	쁘만당안 즐라스?	
+l4_d27_t07	4	대화18	A	7	Iya, ada uap belerang.	응, 유황 증기.	이야, 아다 우압 블르랑.	uap = 증기, belerang = 유황	Ya, low-Borneo seluruhnya.	응, 보르네오 전체.	야, 로우 보르네오 슬루루냐.	seluruhnya = 전체
+l4_d27_t08	4	대화18	B	8	Pakai masker?	마스크?	빠까이 마스꺼르?		Pakai topeng oksigen?	산소 마스크?	빠까이 또뼁 옥시겐?	topeng = 마스크 (말레이, masker는 양쪽)
+l4_d28_t01	4	대화19	A	1	Bandung kafe banyak banget.	Bandung 카페 많아.	반둥 까페 바냑 방엣.		Penang kafe ramai gila.	Penang 카페 많아.	뻬낭 까페 라마이 길라.	
+l4_d28_t02	4	대화19	B	2	Recommend?	추천?	레꼬멘드?		Cadangan?	추천?	짜당안?	
+l4_d28_t03	4	대화19	A	3	Lawangwangi, view bukit.	Lawangwangi, 언덕 뷰.	라왕왕이, 뷰 부낏.	bukit = 언덕	ChinaHouse, view bukit.	ChinaHouse.	차이나 하우스, 뷰 부낏.	ChinaHouse = Penang Georgetown 카페 (Lawangwangi는 Bandung), bukit = 언덕
+l4_d28_t04	4	대화19	B	4	IG-able banget.	IG 잘 나와.	IG 에이블 방엣.		IG-able gila.	IG.	IG 에이블 길라.	
+l4_d28_t05	4	대화19	A	5	Setelah kafe, factory outlet?	카페 후, factory outlet?	스뜰라 까페, 팩토리 아웃렛?		Selepas kafe, factory outlet?	outlet?	슬르빠스 까페, 팩토리 아웃렛?	
+l4_d28_t06	4	대화19	B	6	Iya! Belanja branded murah.	응! 브랜드 저렴.	이야! 블란자 브랜디드 무라.	belanja = 쇼핑	Ya! Beli branded murah.	브랜드 저렴.	야! 블리 브랜디드 무라.	
+l4_d28_t07	4	대화19	A	7	Cek RIIN dan Heritage.	RIIN, Heritage.	쩩 리인 단 헤리티지.		Cek Gurney Plaza dan Komtar.	Gurney, Komtar.	쩩 거니 플라자 단 콤따르.	Gurney Plaza, Komtar = Penang 쇼핑 명소
+l4_d28_t08	4	대화19	B	8	Bawa koper besar deh.	큰 캐리어.	바와 꼬뻐르 브사르 데.	koper = 캐리어	Bawa bagasi besar la.	큰 캐리어.	바와 바가시 브사르 라.	bagasi = 짐 (말레이, koper도 양쪽)
+l4_d29_t01	4	대화20	A	1	Gili Air, no motor!	Gili Air, 오토바이 X!	길리 아이르, 노 모토르!		Pulau Perhentian, no kereta!	Perhentian, 차 X!	뿔라우 쁘르흔띠안, 노 끄레따!	Pulau Perhentian = Terengganu 자동차 X (Gili Air는 Lombok), kereta = 차 (말레이, mobil은 인니)
+l4_d29_t02	4	대화20	B	2	Wah, transport apa?	교통은?	와, 트란스뽀르 아빠?		Wah, pengangkutan apa?	교통?	와, 쁭앙꾸딴 아빠?	pengangkutan = 교통 (말레이, transport은 양쪽)
+l4_d29_t03	4	대화20	A	3	Cidomo (kuda) atau sepeda.	cidomo (말) 또는 자전거.	찌도모 (꾸다) 아따우 스뻬다.	cidomo = Gili 마차, kuda = 말	Jalan kaki atau basikal.	걷기 또는 자전거.	잘란 까끼 아따우 바시깔.	basikal = 자전거 (말레이, sepeda는 인니)
+l4_d29_t04	4	대화20	B	4	Snorkeling juga ada?	스노클링도?	스노르끌링 주가 아다?	snorkeling = 영어	Snorkeling pun ada?	스노클링도?	스노르끌링 뿐 아다?	snorkeling = 영어
+l4_d29_t05	4	대화20	A	5	Iya, koral cantik + turtle.	산호 + 거북이.	이야, 꼬랄 짠띡 + 떠르틀.	koral = 산호, turtle = 영어	Ya, terumbu cantik + penyu.	산호 + 거북이.	야, 뜨룸부 짠띡 + 쁘뉴.	terumbu = 산호 (말레이, koral은 양쪽), penyu = 거북이 (말레이, turtle은 영어)
+l4_d29_t06	4	대화20	B	6	Wah, bisa renang dekat turtle?	거북이 가까이?	와, 비사 르낭 드깟 떠르틀?	renang = 수영	Wah, boleh berenang dekat penyu?	거북이 가까이?	와, 볼레 브르낭 드깟 쁘뉴?	berenang = 수영 (말레이, renang은 양쪽)
+l4_d29_t07	4	대화20	A	7	Iya, jangan sentuh.	응, 만지지 마.	이야, 장안 슨뚜.		Ya, jangan sentuh.	만지지 마.	야, 장안 슨뚜.	
+l4_d29_t08	4	대화20	B	8	Pasti, hormati alam.	꼭, 자연 존중.	빠스띠, 호르마띠 알람.	alam = 자연	Mestilah, hormati alam.	꼭, 자연 존중.	메스띨라, 호르마띠 알람.	alam = 자연
+l4_d30_t01	4	대화21	A	1	Bromo sunrise, jam 3 berangkat.	Bromo 일출, 3시 출발.	브로모 선라이즈, 잠 띠가 브랑깟.		Cameron sunrise, pukul 3 berangkat.	Cameron 일출, 3시.	카메론 선라이즈, 뿌꿀 띠가 브랑깟.	Cameron Highlands = 말레이 산악 (Bromo는 자바)
+l4_d30_t02	4	대화21	B	2	Naik jeep ya?	jeep 타?	나익 짚 야?	jeep = 영어	Naik 4WD ya?	4WD?	나익 포 더블유 디 야?	4WD = 4륜 구동 (jeep 대체)
+l4_d30_t03	4	대화21	A	3	Iya, ke viewpoint Penanjakan.	Penanjakan 뷰포인트.	이야, 끄 뷰포인트 쁘난자깐.		Ya, ke viewpoint Gunung Brinchang.	Gunung Brinchang viewpoint.	야, 끄 뷰포인트 구눙 브린짱.	Gunung Brinchang = Cameron 최고봉 (Penanjakan은 Bromo)
+l4_d30_t04	4	대화21	B	4	Dingin banget kayaknya.	엄청 추울 듯.	딩인 방엣 까야꺄.		Sejuk gila nampaknya.	추울 듯.	스죽 길라 남빡냐.	
+l4_d30_t05	4	대화21	A	5	Pakai jaket tebal + sarung tangan.	두꺼운 잠바 + 장갑.	빠까이 자껫 뜨발 + 사룽 땅안.	sarung tangan = 장갑	Pakai jaket tebal + sarung tangan.	두꺼운 자켓 + 장갑.	빠까이 자껫 뜨발 + 사룽 땅안.	sarung tangan = 장갑
+l4_d30_t06	4	대화21	B	6	Kawah Bromo deket aktif?	분화구 가까이 활화?	까와 브로모 드껫 악띱?		Kawasan kabus tebal?	안개?	까와산 까부스 뜨발?	kabus = 안개 (말레이)
+l4_d30_t07	4	대화21	A	7	Aktif tapi level 1, aman.	활화 레벨 1, 안전.	악띱 따삐 레블 사뚜, 아만.		Pagi cerah, petang kabus.	아침 맑음, 저녁 안개.	빠기 쯔라, 쁘땅 까부스.	cerah = 맑은
+l4_d30_t08	4	대화21	B	8	Lautan pasir scenery indah.	모래바다 경치.	라우딴 빠시르 시너리 인다.	lautan pasir = 모래바다, indah = 아름다운	Ladang teh scenery indah.	차밭 경치.	라당 떼 시너리 인다.	ladang teh = 차밭 (lautan pasir는 Bromo 모래바다), indah = 아름다운
+l4_d31_t01	4	대화22	A	1	Naik kereta executive ke Yogya.	executive 기차 Yogya.	나익 끄레따 익세꾸띠브 끄 욕야.	kereta = 기차	Naik ETS Platinum ke Penang.	ETS Platinum Penang.	나익 이떼에스 플라티넘 끄 뻬낭.	ETS = Electric Train Service (말레이 고속기차)
+l4_d31_t02	4	대화22	B	2	Berapa lama?	얼마나?	브라빠 라마?		Berapa lama?	얼마나?	브라빠 라마?	
+l4_d31_t03	4	대화22	A	3	8 jam, nyaman.	8시간, 편안.	들라빤 잠, 냐만.		4 jam dari KL Sentral, selesa.	KL Sentral 4시간.	음빳 잠 다리 께엘 슨트랄, 슬레사.	KL Sentral = KL 중앙역, selesa = 편안 (말레이, nyaman은 양쪽)
+l4_d31_t04	4	대화22	B	4	AC + reclining seat?	AC + 등받이?	아쩨 + 리클라이닝 싯?		AC + reclining seat?	AC?	아쩨 + 리클라이닝 싯?	
+l4_d31_t05	4	대화22	A	5	Iya, plus snack disediakan.	응, 스낵 제공.	이야, 플러스 스낵 디스디아깐.	disediakan = 제공되다	Ya, plus snek disediakan.	스낵.	야, 플러스 스넥 디스디아깐.	disediakan = 제공되다
+l4_d31_t06	4	대화22	B	6	Pemandangan?	경치?	쁘만당안?		Pemandangan?	경치?	쁘만당안?	
+l4_d31_t07	4	대화22	A	7	Sawah hijau + gunung.	녹색 논 + 산.	사와 히자우 + 구눙.	hijau = 녹색	Sawah padi hijau + gunung.	녹색 논 + 산.	사와 빠디 히자우 + 구눙.	sawah padi = 논 (말레이/인니 공통), hijau = 녹색
+l4_d31_t08	4	대화22	B	8	Tidur sambil nikmati view.	자면서 view.	띠두르 삼빌 닉마띠 뷰.	nikmati = 즐기다	Tidur sambil nikmati pemandangan.	자면서.	띠두르 삼빌 닉마띠 쁘만당안.	nikmati = 즐기다
+l4_d32_t01	4	대화23	A	1	Amed Bali, dive spot terkenal.	Amed Bali, 다이빙 명소.	아메드 발리, 다이브 스폿 뜨르끄날.	dive = 영어	Pulau Tioman, dive spot terkenal.	Tioman 다이빙.	뿔라우 띠오만, 다이브 스폿 뜨르끄날.	Pulau Tioman = Pahang 동부 다이빙 명소 (Amed는 발리)
+l4_d32_t02	4	대화23	B	2	Aku punya certified PADI.	PADI 자격증 있어.	아꾸 뿐야 서티파이드 빠디.	PADI = 다이빙 자격증	Saya ada certified PADI.	PADI.	사야 아다 서티파이드 빠디.	PADI = 다이빙 자격증
+l4_d32_t03	4	대화23	A	3	Mantap! Dive USS Liberty wreck.	좋다! Liberty 잔해.	만땁! 다이브 유에스에스 리버티 렉.	wreck = 잔해	Best! Dive Magicienne Rock.	Magicienne Rock.	베스! 다이브 매지시엔 록.	Magicienne Rock = Tioman 유명 다이브 사이트 (USS Liberty는 Amed)
+l4_d32_t04	4	대화23	B	4	Wreck dive! Aku nggak sabar.	wreck dive! 못 기다려.	렉 다이브! 아꾸 응각 사바르.		Wah! Saya tak sabar.	못 기다려.	와! 사야 딱 사바르.	
+l4_d32_t05	4	대화23	A	5	Visibility 20-30m, jernih.	시야 20-30m, 맑아.	비저빌리티 두아 뿔루 띠가 뿔루 메떠르, 즈르니.	jernih = 맑은	Visibility 20-30m, jernih.	시야 20-30m.	비저빌리티 두아 뿔루 띠가 뿔루 메떠르, 즈르니.	jernih = 맑은
+l4_d32_t06	4	대화23	B	6	Lihat ikan apa banyak?	어떤 물고기?	리핫 이깐 아빠 바냑?	ikan = 물고기	Tengok ikan apa ramai?	어떤 물고기?	뜽옥 이깐 아빠 라마이?	ikan = 물고기
+l4_d32_t07	4	대화23	A	7	Bumphead, napoleon, mola-mola kalau lucky.	범프헤드·나폴레옹·몰라몰라 운 좋으면.	범프헤드, 나폴레온, 몰라 몰라 깔라우 라키.	mola-mola = 개복치 (reduplication)	Bumphead, napoleon, hiu jika bertuah.	범프헤드·나폴레옹·상어 운 좋으면.	범프헤드, 나폴레온, 히우 지까 브르뚜아.	hiu = 상어 (말레이/인니), bertuah = 운 좋은 (말레이, lucky는 영어)
+l4_d32_t08	4	대화23	B	8	Dream dive!	꿈의 다이브!	드림 다이브!		Dream dive!	꿈!	드림 다이브!	
+l4_d33_t01	4	대화24	A	1	Surabaya transit ke Bromo?	Surabaya Bromo 환승?	수라바야 트란짓 끄 브로모?	transit = 영어	Penang transit ke Cameron?	Penang Cameron 환승?	뻬낭 트란짓 끄 카메론?	transit = 영어
+l4_d33_t02	4	대화24	B	2	Iya, semalam aja.	응, 1박만.	이야, 스말람 아자.		Ya, semalam je.	응, 1박.	야, 스말람 즈.	
+l4_d33_t03	4	대화24	A	3	House of Sampoerna museum.	Sampoerna 박물관.	하우스 오프 삼뽀에르나 뮤지엄.		Penang Peranakan Mansion muzium.	Peranakan Mansion 박물관.	뻬낭 뻐라나깐 맨션 무지움.	Peranakan Mansion = Penang 유명 박물관 (House of Sampoerna는 Surabaya), muzium = 박물관 (말레이 철자)
+l4_d33_t04	4	대화24	B	4	Free entry?	무료?	프리 엔트리?		Free entry?	무료?	프리 엔트리?	
+l4_d33_t05	4	대화24	A	5	Iya, plus rooftop view.	응, + 옥상 뷰.	이야, 플러스 루프똡 뷰.		RM 25, plus tour guide.	RM 25.	알엠 두아 뿔루 리마, 플러스 뚜르 가이드.	
+l4_d33_t06	4	대화24	B	6	Kuliner Surabaya?	음식?	꿀리네르 수라바야?		Makanan Penang?	Penang 음식?	마까난 뻬낭?	
+l4_d33_t07	4	대화24	A	7	Rawon, sate klopo, rujak cingur.	Rawon, sate klopo, rujak cingur.	라원, 사떼 끌로뽀, 루작 찡우르.		Asam laksa, char kway teow, cendol.	Asam laksa, char kway teow, cendol.	아삼 락사, 짜르 꽤이 띠우, 쩬돌.	Penang 향토 (Rawon/sate klopo/rujak cingur는 Surabaya)
+l4_d33_t08	4	대화24	B	8	Wah, exotic. Aku coba semua!	와! 다 먹어볼래!	와, 익소띡. 아꾸 쪼바 스무아!		Wah, exotic. Saya cuba semua!	와! 다 먹어볼래!	와, 익소띡. 사야 쭈바 스무아!	
+l5_d17_t01	5	대화17	A	1	Mau road bike Sentul minggu depan?	다음 주 Sentul 자전거?	마우 로드 바이크 슨뚤 밍구 드빤?	road bike = 영어	Nak road bike Genting minggu depan?	다음 주 Genting 자전거?	낙 로드 바이크 겐띵 밍구 드빤?	road bike = 영어, Genting Highlands = KL 근교 산악 (Sentul은 자카르타)
+l5_d17_t02	5	대화17	B	2	Boleh! Berapa km?	좋아! 몇 km?	볼레! 브라빠 끼로?		Boleh! Berapa km?	몇 km?	볼레! 브라빠 끼로?	
+l5_d17_t03	5	대화17	A	3	50K, hilly route.	50km, 언덕길.	리마 뿔루 까, 힐리 루트.	hilly = 영어	50K, hilly route.	50km.	리마 뿔루 까, 힐리 루트.	hilly = 영어
+l5_d17_t04	5	대화17	B	4	Wah berat. Aku siap fisik.	힘들겠다. 체력 준비.	와 브랏. 아꾸 시압 피식.	fisik = 체력	Wah berat. Saya sedia fizikal.	힘들겠다.	와 브랏. 사야 스디아 피지깔.	fizikal = 체력 (말레이 철자, fisik은 인니)
+l5_d17_t05	5	대화17	A	5	Helmet + sarung tangan wajib.	헬멧 + 장갑 필수.	헬멧 + 사룽 땅안 와집.	helmet = 영어	Helmet + sarung tangan wajib.	헬멧.	헬멧 + 사룽 땅안 와집.	helmet = 영어
+l5_d17_t06	5	대화17	B	6	Aku punya. Bawa juga energy gel.	있어. 에너지 젤도.	아꾸 뿐야. 바와 주가 에너지 젤.	energy gel = 영어	Saya ada. Bawa juga energy gel.	있어.	사야 아다. 바와 주가 에너지 젤.	energy gel = 영어
+l5_d17_t07	5	대화17	A	7	Jam 5 pagi mulai, biar nggak panas.	아침 5시, 안 더울 때.	잠 리마 빠기 물라이, 비아르 응각 빠나스.		Pukul 5 pagi mula, supaya tak panas.	아침 5시.	뿌꿀 리마 빠기 물라, 수빠야 딱 빠나스.	
+l5_d17_t08	5	대화17	B	8	Carpool atau sepeda di mobil masing?	carpool 또는 차에?	카르풀 아따우 스뻬다 디 모빌 마싱?	carpool = 영어	Carpool atau basikal di kereta sendiri?	carpool?	카르풀 아따우 바시깔 디 끄레따 슨디리?	carpool = 영어, basikal = 자전거
+l5_d17_t09	5	대화17	A	9	Carpool, hemat bensin.	carpool, 기름값 절약.	카르풀, 헤맛 벤신.	hemat = 절약, bensin = 휘발유	Carpool, jimat petrol.	carpool, 기름값.	카르풀, 지맛 페트롤.	jimat = 절약 (말레이, hemat은 양쪽), petrol = 휘발유 (말레이, bensin은 인니)
+l5_d17_t10	5	대화17	B	10	Mantap. Aku setir.	좋아. 내가 운전.	만땁. 아꾸 스띠르.	setir = 운전	Best. Saya pandu.	내가 운전.	베스. 사야 빤두.	pandu = 운전 (말레이, setir는 인니)
+l5_d17_t11	5	대화17	A	11	Setelah ride, sarapan bubur ayam.	라이드 후 닭죽.	스뜰라 라이드, 사라빤 부부르 아얌.	bubur ayam = 닭죽	Selepas ride, sarapan roti canai.	라이드 후 roti canai.	슬르빠스 라이드, 사라빤 로띠 짜나이.	roti canai = 말레이 대표 아침 (bubur ayam은 인니)
+l5_d17_t12	5	대화17	B	12	Best post-ride breakfast.	최고 라이드 후 식사.	베스뜨 포스트 라이드 브렉퍼스트.		Best post-ride breakfast.	최고.	베스뜨 포스트 라이드 브렉퍼스트.	
+l5_d18_t01	5	대화18	A	1	Aku ikut volunteer di orphanage Cipayung.	Cipayung 보육원 자원봉사.	아꾸 이꿋 발룬티어 디 오르페니지 찌빠융.	volunteer = 영어, orphanage = 영어	Saya ikut volunteer di rumah anak yatim Setapak.	Setapak 보육원.	사야 이꿋 발룬티어 디 루마 아낙 야띰 스따빡.	rumah anak yatim = 보육원 (말레이, orphanage는 영어), Setapak = KL 지역 (Cipayung은 자카르타)
+l5_d18_t02	5	대화18	B	2	Wah, mulia banget.	와, 훌륭.	와, 물리아 방엣.	mulia = 고귀한	Wah, mulia gila.	와, 훌륭.	와, 물리아 길라.	mulia = 고귀한
+l5_d18_t03	5	대화18	A	3	Setiap Sabtu, bantu PR anak-anak.	매주 토, 아이들 숙제.	스띠압 삽뚜, 반뚜 페에르 아낙 아낙.	PR = pekerjaan rumah 숙제, anak-anak = reduplication	Setiap Sabtu, bantu kerja rumah anak-anak.	매주 토.	스띠압 삽뚜, 반뚜 끄르자 루마 아낙 아낙.	kerja rumah = 숙제 (말레이), anak-anak = reduplication
+l5_d18_t04	5	대화18	B	4	Aku mau ikut. Apa syarat?	나도. 자격?	아꾸 마우 이꿋. 아빠 샤랏?	syarat = 자격	Saya nak ikut. Apa syarat?	자격?	사야 낙 이꿋. 아빠 샤랏?	syarat = 자격
+l5_d18_t05	5	대화18	A	5	Cuma niat tulus.	진심.	쭈마 니앗 뚤루스.	niat = 의도, tulus = 진심	Cuma niat ikhlas.	진심.	쭈마 니앗 이끌라스.	niat = 의도, ikhlas = 진심 (말레이, tulus는 양쪽)
+l5_d18_t06	5	대화18	B	6	Anak-anak suka apa?	아이들 좋아하는 거?	아낙 아낙 수까 아빠?		Anak-anak suka apa?	아이들?	아낙 아낙 수까 아빠?	
+l5_d18_t07	5	대화18	A	7	Cerita, lagu, gambar.	이야기·노래·그림.	쩨리따, 라구, 감바르.	lagu = 노래, gambar = 그림	Cerita, lagu, gambar.	이야기·노래·그림.	쩨리따, 라구, 감바르.	lagu = 노래, gambar = 그림
+l5_d18_t08	5	대화18	B	8	Aku bawa K-pop CD!	K-pop CD!	아꾸 바와 케이팝 시디!		Saya bawa K-pop CD!	K-pop CD!	사야 바와 케이팝 시디!	

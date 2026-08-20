@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<title>Talkverse — Android Icon & Splash</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet"/>
+<style>
+  :root {
+    --ink: #1F3A6E;
+    --bg: #F4EDE0;
+    --mint-a: #D4F1DF;
+    --mint-b: #A8E0BD;
+    --peach: #FFB59C;
+    --pink-a: #FFE0EB;
+    --pink-b: #FFB6CD;
+    --cheek: #FF8FB1;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Pretendard', sans-serif;
+    margin: 0; padding: 40px;
+    background: #ECECEC;
+    color: var(--ink);
+  }
+  h1 { font-size: 24px; font-weight: 900; margin: 0 0 6px; }
+  h2 { font-size: 14px; font-weight: 800; margin: 32px 0 12px; letter-spacing: 1px; color: #666; text-transform: uppercase; }
+  .sub { font-size: 13px; color: #666; margin-bottom: 24px; }
+  .row { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+  .card {
+    background: white; border-radius: 16px; padding: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .card-label { font-size: 11px; font-weight: 800; color: #888; margin-bottom: 8px; letter-spacing: 0.5px; }
+  .filename { font-family: ui-monospace, monospace; font-size: 11px; color: #1F3A6E; background: #F0F4FA; padding: 3px 8px; border-radius: 4px; display: inline-block; margin-top: 6px; }
+
+  /* Maskable safe area indicators */
+  .mask-circle {
+    -webkit-mask: radial-gradient(circle at center, black 50%, transparent 50%);
+            mask: radial-gradient(circle at center, black 50%, transparent 50%);
+  }
+  .mask-squircle {
+    -webkit-mask: url(#squircle-mask);
+            mask: url(#squircle-mask);
+  }
+  .mask-rounded {
+    border-radius: 22%;
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+
+<h1>🤖 Talkverse · Android 아이콘 & 스플래시</h1>
+<div class="sub">Adaptive Icon (108dp) + Splash Screen — 베트남어 버전. SVG 그대로 Android Studio Vector Asset으로 import 가능.</div>
+
+<!-- ─────────────────────────────────────────────────────────── -->
+<h2>1. Adaptive Icon — Foreground Layer (108×108dp)</h2>
+<div class="row">
+
+  <div class="card">
+    <div class="card-label">FULL CANVAS · 108×108dp</div>
+    <svg width="216" height="216" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+      <!-- safe zone guide (66dp circle, scaled to 108) — only for preview -->
+      <circle cx="54" cy="54" r="33" fill="none" stroke="#FF000020" stroke-dasharray="1,1"/>
+      <!-- mascot -->
+      <use href="#talky-icon"/>
+    </svg>
+    <div class="filename">ic_launcher_foreground.xml</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">CIRCLE MASK</div>
+    <svg width="216" height="216" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="circle-clip"><circle cx="54" cy="54" r="54"/></clipPath>
+      </defs>
+      <g clip-path="url(#circle-clip)">
+        <rect width="108" height="108" fill="#F4EDE0"/>
+        <use href="#talky-icon"/>
+      </g>
+    </svg>
+    <div class="filename">launcher (Pixel)</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">SQUIRCLE MASK</div>
+    <svg width="216" height="216" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="squircle-clip">
+          <path d="M 54 0 C 88 0 108 20 108 54 C 108 88 88 108 54 108 C 20 108 0 88 0 54 C 0 20 20 0 54 0 Z"/>
+        </clipPath>
+      </defs>
+      <g clip-path="url(#squircle-clip)">
+        <rect width="108" height="108" fill="#F4EDE0"/>
+        <use href="#talky-icon"/>
+      </g>
+    </svg>
+    <div class="filename">launcher (Samsung)</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">ROUNDED SQUARE</div>
+    <svg width="216" height="216" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="rounded-clip">
+          <rect width="108" height="108" rx="24" ry="24"/>
+        </clipPath>
+      </defs>
+      <g clip-path="url(#rounded-clip)">
+        <rect width="108" height="108" fill="#F4EDE0"/>
+        <use href="#talky-icon"/>
+      </g>
+    </svg>
+    <div class="filename">launcher (Stock)</div>
+  </div>
+
+</div>
+
+<!-- ─────────────────────────────────────────────────────────── -->
+<h2>2. Adaptive Icon — Background Layer</h2>
+<div class="row">
+
+  <div class="card">
+    <div class="card-label">CREAM SOLID (RECOMMENDED)</div>
+    <svg width="216" height="216" viewBox="0 0 108 108">
+      <rect width="108" height="108" fill="#F4EDE0"/>
+    </svg>
+    <div class="filename">@color/ic_launcher_background = #F4EDE0</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">MINT GRADIENT</div>
+    <svg width="216" height="216" viewBox="0 0 108 108">
+      <defs>
+        <radialGradient id="bg-mint" cx="35%" cy="30%" r="80%">
+          <stop offset="0%" stop-color="#EAF7EF"/>
+          <stop offset="100%" stop-color="#A8E0BD"/>
+        </radialGradient>
+      </defs>
+      <rect width="108" height="108" fill="url(#bg-mint)"/>
+    </svg>
+    <div class="filename">ic_launcher_background.xml</div>
+  </div>
+
+</div>
+
+<!-- ─────────────────────────────────────────────────────────── -->
+<h2>3. 합성된 최종 아이콘 (foreground + background)</h2>
+<div class="row">
+
+  <div class="card">
+    <div class="card-label">192×192 (xxxhdpi)</div>
+    <svg width="192" height="192" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="rc1"><rect width="108" height="108" rx="24"/></clipPath>
+        <radialGradient id="bg1" cx="35%" cy="30%" r="80%">
+          <stop offset="0%" stop-color="#FFF8EE"/>
+          <stop offset="100%" stop-color="#F4EDE0"/>
+        </radialGradient>
+      </defs>
+      <g clip-path="url(#rc1)">
+        <rect width="108" height="108" fill="url(#bg1)"/>
+        <use href="#talky-icon"/>
+      </g>
+    </svg>
+    <div class="filename">crispy preview</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">64×64 (mdpi)</div>
+    <svg width="64" height="64" viewBox="0 0 108 108">
+      <defs>
+        <clipPath id="rc2"><rect width="108" height="108" rx="24"/></clipPath>
+      </defs>
+      <g clip-path="url(#rc2)">
+        <rect width="108" height="108" fill="#F4EDE0"/>
+        <use href="#talky-icon"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="card" style="background:#1a1a1a;">
+    <div class="card-label" style="color:#ccc;">DARK MODE TEST</div>
+    <svg width="120" height="120" viewBox="0 0 108 108">
+      <defs>
+        <clipPath id="rc3"><rect width="108" height="108" rx="24"/></clipPath>
+      </defs>
+      <g clip-path="url(#rc3)">
+        <rect width="108" height="108" fill="#F4EDE0"/>
+        <use href="#talky-icon"/>
+      </g>
+    </svg>
+  </div>
+
+</div>
+
+<!-- ─────────────────────────────────────────────────────────── -->
+<h2>4. Splash Screen (Welcome) — 베트남어</h2>
+<div class="row">
+  <div class="card">
+    <div class="card-label">PORTRAIT · 1080×2400 (typical)</div>
+    <svg width="270" height="600" viewBox="0 0 1080 2400" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #ddd; border-radius: 12px;">
+      <!-- background -->
+      <rect width="1080" height="2400" fill="#F4EDE0"/>
+
+      <!-- ambient blobs -->
+      <circle cx="160" cy="380" r="180" fill="#FFE0EB" opacity="0.5"/>
+      <circle cx="920" cy="2040" r="220" fill="#D4F1DF" opacity="0.6"/>
+
+      <!-- speech bubble: Vietnamese "Tốt!" (Хорошо! 좋아!) -->
+      <g transform="translate(180 720)">
+        <path d="M 0 60 Q 0 0, 60 0 L 380 0 Q 440 0, 440 60 L 440 130 Q 440 190, 380 190 L 140 190 L 100 240 L 110 190 L 60 190 Q 0 190, 0 130 Z"
+          fill="none" stroke="#1F3A6E" stroke-width="9"/>
+        <text x="220" y="135" text-anchor="middle"
+          font-family="Be Vietnam Pro, sans-serif" font-weight="900" font-size="120" fill="#1F3A6E">
+          Tốt!
+        </text>
+      </g>
+
+      <!-- speech bubble: "Thử nhé?" (попробуем? 한번 해볼까?) -->
+      <g transform="translate(620 880)">
+        <path d="M 0 60 Q 0 0, 60 0 L 460 0 Q 520 0, 520 60 L 520 130 Q 520 190, 460 190 L 220 190 L 180 240 L 190 190 L 60 190 Q 0 190, 0 130 Z"
+          fill="none" stroke="#1F3A6E" stroke-width="9"/>
+        <text x="260" y="135" text-anchor="middle"
+          font-family="Be Vietnam Pro, sans-serif" font-weight="900" font-size="100" fill="#1F3A6E">
+          Thử nhé?
+        </text>
+      </g>
+
+      <!-- big mascot in center -->
+      <g transform="translate(280 1020) scale(2.4)">
+        <use href="#talky-full"/>
+      </g>
+
+      <!-- wordmark -->
+      <text x="540" y="1980" text-anchor="middle"
+        font-family="Be Vietnam Pro, sans-serif" font-weight="900" font-size="130" fill="#1F3A6E">
+        Talkverse
+      </text>
+      <text x="540" y="2070" text-anchor="middle"
+        font-family="Be Vietnam Pro, sans-serif" font-weight="500" font-size="46" fill="#1F3A6E" opacity="0.7">
+        Học tiếng Việt mỗi ngày
+      </text>
+
+      <!-- bottom indicator dot -->
+      <circle cx="540" cy="2240" r="14" fill="#1F3A6E" opacity="0.2"/>
+      <circle cx="540" cy="2240" r="14" fill="#7FCBA4">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+    <div class="filename">splash_screen.xml + drawable</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">SPLASH (Android 12+) · 192×192 icon only</div>
+    <svg width="270" height="600" viewBox="0 0 1080 2400" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #ddd; border-radius: 12px;">
+      <rect width="1080" height="2400" fill="#F4EDE0"/>
+      <!-- Android 12+ uses just centered icon at 192x192 + windowBackground -->
+      <g transform="translate(444 1100)">
+        <circle cx="96" cy="96" r="96" fill="#F4EDE0"/>
+        <g transform="translate(42 42) scale(0.5)">
+          <use href="#talky-icon"/>
+        </g>
+      </g>
+      <text x="540" y="1380" text-anchor="middle"
+        font-family="Be Vietnam Pro, sans-serif" font-weight="900" font-size="80" fill="#1F3A6E">
+        Talkverse
+      </text>
+    </svg>
+    <div class="filename">SplashScreen API (Android 12+)</div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────────────────── -->
+<!-- ───────────  REUSABLE TALKY SYMBOL DEFS  ─────────────── -->
+<svg width="0" height="0" style="position:absolute" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+
+    <!-- gradients -->
+    <radialGradient id="globe-grad" cx="38%" cy="32%" r="78%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="35%" stop-color="#D4F1DF"/>
+      <stop offset="100%" stop-color="#A8E0BD"/>
+    </radialGradient>
+    <radialGradient id="hand-grad" cx="40%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#D4F1DF"/>
+    </radialGradient>
+
+    <!-- icon-sized Talky (54×54 centered in 108 canvas, safe-zone respected) -->
+    <symbol id="talky-icon" viewBox="0 0 108 108">
+      <!-- Talky scaled to fit 72dp safe zone (54px center, 60px wide character) -->
+      <g transform="translate(18 18) scale(0.3)">
+        <!-- ground shadow -->
+        <ellipse cx="120" cy="222" rx="62" ry="5" fill="rgba(31,58,110,0.12)"/>
+
+        <!-- legs -->
+        <g stroke="#1F3A6E" stroke-width="6" stroke-linecap="round" fill="none">
+          <path d="M 96 206 L 94 218"/>
+          <path d="M 144 206 L 146 218"/>
+        </g>
+        <ellipse cx="92" cy="220" rx="13" ry="6" fill="#fff" stroke="#1F3A6E" stroke-width="5"/>
+        <ellipse cx="148" cy="220" rx="13" ry="6" fill="#fff" stroke="#1F3A6E" stroke-width="5"/>
+
+        <!-- arms -->
+        <path d="M 60 130 Q 40 140, 28 158" fill="none" stroke="#1F3A6E" stroke-width="7" stroke-linecap="round"/>
+        <path d="M 180 120 Q 202 80, 200 42" fill="none" stroke="#1F3A6E" stroke-width="7" stroke-linecap="round"/>
+
+        <!-- hands -->
+        <circle cx="26" cy="162" r="11" fill="url(#hand-grad)" stroke="#1F3A6E" stroke-width="5"/>
+        <circle cx="200" cy="36" r="12" fill="url(#hand-grad)" stroke="#1F3A6E" stroke-width="5"/>
+
+        <!-- Earth body -->
+        <circle cx="120" cy="120" r="78" fill="url(#globe-grad)" stroke="#1F3A6E" stroke-width="5"/>
+
+        <!-- cheeks -->
+        <ellipse cx="86" cy="138" rx="11" ry="6" fill="#FFB59C" opacity="0.65"/>
+        <ellipse cx="154" cy="138" rx="11" ry="6" fill="#FFB59C" opacity="0.65"/>
+
+        <!-- eyes -->
+        <ellipse cx="103" cy="120" rx="9" ry="11" fill="#1F3A6E"/>
+        <ellipse cx="137" cy="120" rx="9" ry="11" fill="#1F3A6E"/>
+        <circle cx="106" cy="115" r="3.2" fill="#fff"/>
+        <circle cx="140" cy="115" r="3.2" fill="#fff"/>
+
+        <!-- nose -->
+        <ellipse cx="120" cy="138" rx="3" ry="2" fill="#1F3A6E" opacity="0.5"/>
+
+        <!-- smile -->
+        <path d="M 104 146 Q 120 162, 136 146" fill="none" stroke="#1F3A6E" stroke-width="6" stroke-linecap="round"/>
+      </g>
+    </symbol>
+
+    <!-- full-size Talky for splash -->
+    <symbol id="talky-full" viewBox="0 0 240 240">
+      <ellipse cx="120" cy="222" rx="62" ry="5" fill="rgba(31,58,110,0.12)"/>
+      <path d="M 96 206 L 94 218" fill="none" stroke="#1F3A6E" stroke-width="6" stroke-linecap="round"/>
+      <path d="M 144 206 L 146 218" fill="none" stroke="#1F3A6E" stroke-width="6" stroke-linecap="round"/>
+      <ellipse cx="92" cy="220" rx="13" ry="6" fill="#fff" stroke="#1F3A6E" stroke-width="5"/>
+      <ellipse cx="148" cy="220" rx="13" ry="6" fill="#fff" stroke="#1F3A6E" stroke-width="5"/>
+      <path d="M 60 130 Q 40 140, 28 158" fill="none" stroke="#1F3A6E" stroke-width="7" stroke-linecap="round"/>
+      <path d="M 180 120 Q 202 80, 200 42" fill="none" stroke="#1F3A6E" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="26" cy="162" r="11" fill="url(#hand-grad)" stroke="#1F3A6E" stroke-width="5"/>
+      <circle cx="200" cy="36" r="12" fill="url(#hand-grad)" stroke="#1F3A6E" stroke-width="5"/>
+      <circle cx="120" cy="120" r="78" fill="url(#globe-grad)" stroke="#1F3A6E" stroke-width="5"/>
+      <ellipse cx="86" cy="138" rx="11" ry="6" fill="#FFB59C" opacity="0.65"/>
+      <ellipse cx="154" cy="138" rx="11" ry="6" fill="#FFB59C" opacity="0.65"/>
+      <ellipse cx="103" cy="120" rx="9" ry="11" fill="#1F3A6E"/>
+      <ellipse cx="137" cy="120" rx="9" ry="11" fill="#1F3A6E"/>
+      <circle cx="106" cy="115" r="3.2" fill="#fff"/>
+      <circle cx="140" cy="115" r="3.2" fill="#fff"/>
+      <ellipse cx="120" cy="138" rx="3" ry="2" fill="#1F3A6E" opacity="0.5"/>
+      <path d="M 104 146 Q 120 162, 136 146" fill="none" stroke="#1F3A6E" stroke-width="6" stroke-linecap="round"/>
+    </symbol>
+
+  </defs>
+</svg>
+
+</body>
+</html>

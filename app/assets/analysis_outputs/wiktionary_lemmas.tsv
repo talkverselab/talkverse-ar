@@ -1,0 +1,21 @@
+language	code	lemmas	vs_VI	vs_KO	비고
+English	en	860507	1958%	1580%	기준 영어
+Mandarin Chinese	zh	253205	576%	465%	한자권 — 한자 entry 별도 등재
+Japanese	ja	123562	281%	227%	한자+가나
+Spanish	es	114955	262%	211%	라틴권
+German	de	102875	234%	189%	게르만
+Polish	pl	99608	227%	183%	굴절어 (7격) — 측정 성공
+French	fr	97615	222%	179%	라틴권
+Russian	ru	60582	138%	111%	측정 성공 — 추정 150K+ 과대
+Korean	ko	54472	124%	100%	우리 화자 모국어
+Vietnamese	vi	43941	100%	81%	한자어 40% 비중
+Indonesian	id	31322	71%	58%	말레이 가까움
+Turkish	tr	26458	60%	49%	튀르크
+Arabic	ar	21947	50%	40%	측정 성공 — root 시스템·9 dialect 분산
+Thai	th	16922	39%	31%	산스크리트·팔리·한자
+Persian	fa	14999	34%	28%	페르시아 — fa.wiktionary 가 더 풍부
+Kazakh	kk	11277	26%	21%	튀르크·키릴 (사용자 데이터 10160→11277 갱신)
+Malay	ms	9977	23%	18%	id 와 80% 중복
+Burmese	my	8142	19%	15%	Pali 차용 미미
+Mongolian	mn	3873	9%	7%	키릴 (할하) — 사용자 데이터 3854→3873 갱신
+Lao	lo	2348	5%	4%	TH 와 ~80% 어휘

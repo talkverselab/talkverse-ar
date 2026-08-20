@@ -1,0 +1,162 @@
+/* Talkverse — Pastel Neumorphism Design System */
+
+:root {
+  /* Base — warm cream, never pure white */
+  --bg: #F4EDE0;
+  --bg-soft: #FBF6EE;
+  --bg-deep: #EDE2D0;
+  --surface: #F8F1E4;
+
+  /* Sage greens — primary brand */
+  --sage-50: #EDF7F1;
+  --sage-100: #D4EEDF;
+  --sage-200: #A8E6CF;
+  --sage-300: #7FCBA4;
+  --sage-400: #5BAE85;
+  --sage-500: #3F8E68;
+  --sage-700: #1F5840;
+
+  /* Peach — secondary warmth */
+  --peach-100: #FFE8D6;
+  --peach-200: #FFD3B6;
+  --peach-300: #FFB59C;
+  --peach-400: #F5946F;
+  --peach-600: #C9633A;
+
+  /* Lavender — accent */
+  --lav-100: #ECE3FF;
+  --lav-200: #D4C4FF;
+  --lav-300: #B8A1FF;
+  --lav-500: #8665E6;
+
+  /* Sunny — XP / streak */
+  --sun-100: #FFF4D2;
+  --sun-200: #FFE89A;
+  --sun-300: #FFD566;
+  --sun-500: #E0A82E;
+
+  /* Coral — heart / hint */
+  --coral-200: #FFB7B2;
+  --coral-300: #FF8E85;
+  --coral-500: #D9544A;
+
+  /* Sky — info */
+  --sky-200: #BEE3F8;
+  --sky-300: #8FCDF0;
+
+  /* Text */
+  --ink: #2A2418;
+  --ink-soft: #5A5040;
+  --ink-faint: #8B7E66;
+
+  /* Neumorphic shadows — keys: light from top-left */
+  --nm-out:
+    -8px -8px 16px rgba(255, 252, 244, 0.95),
+    8px 8px 20px rgba(167, 145, 110, 0.32);
+  --nm-out-sm:
+    -4px -4px 8px rgba(255, 252, 244, 0.9),
+    4px 4px 10px rgba(167, 145, 110, 0.28);
+  --nm-out-lg:
+    -14px -14px 28px rgba(255, 252, 244, 0.95),
+    14px 14px 32px rgba(167, 145, 110, 0.35);
+  --nm-in:
+    inset 5px 5px 10px rgba(167, 145, 110, 0.28),
+    inset -5px -5px 10px rgba(255, 252, 244, 0.9);
+  --nm-in-sm:
+    inset 3px 3px 6px rgba(167, 145, 110, 0.22),
+    inset -3px -3px 6px rgba(255, 252, 244, 0.85);
+  --nm-press:
+    inset 4px 4px 8px rgba(167, 145, 110, 0.32),
+    inset -4px -4px 8px rgba(255, 252, 244, 0.7);
+
+  /* Colored 3D-pop shadows */
+  --pop-sage:
+    0 6px 0 var(--sage-400),
+    0 10px 18px rgba(63, 142, 104, 0.35),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.06),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  --pop-peach:
+    0 6px 0 var(--peach-400),
+    0 10px 18px rgba(245, 148, 111, 0.35),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.06),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  --pop-lav:
+    0 6px 0 var(--lav-500),
+    0 10px 18px rgba(134, 101, 230, 0.32),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.06),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  --pop-sun:
+    0 6px 0 var(--sun-500),
+    0 10px 18px rgba(224, 168, 46, 0.32),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.06),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  --pop-coral:
+    0 6px 0 var(--coral-500),
+    0 10px 18px rgba(217, 84, 74, 0.32),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.06),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+
+  /* Radii */
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --r-pill: 9999px;
+
+  /* Type */
+  --font-kr: 'Pretendard', 'Apple SD Gothic Neo', -apple-system, system-ui, sans-serif;
+  --font-vn: 'Be Vietnam Pro', 'Pretendard', -apple-system, sans-serif;
+  --font-num: 'SF Pro Rounded', 'Pretendard', -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+body {
+  margin: 0;
+  font-family: var(--font-kr);
+  color: var(--ink);
+  background: var(--bg);
+}
+
+/* Component classes */
+.nm-card {
+  background: var(--bg);
+  border-radius: var(--r-lg);
+  box-shadow: var(--nm-out);
+}
+
+.nm-inset {
+  background: var(--bg);
+  border-radius: var(--r-lg);
+  box-shadow: var(--nm-in);
+}
+
+.btn-pop {
+  border: none;
+  border-radius: var(--r-md);
+  font-family: var(--font-kr);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.08s, box-shadow 0.08s;
+  position: relative;
+}
+.btn-pop:active {
+  transform: translateY(3px);
+  filter: brightness(0.97);
+}
+
+.btn-sage  { background: var(--sage-300); color: white; box-shadow: var(--pop-sage); }
+.btn-peach { background: var(--peach-300); color: white; box-shadow: var(--pop-peach); }
+.btn-lav   { background: var(--lav-300); color: white; box-shadow: var(--pop-lav); }
+.btn-sun   { background: var(--sun-300); color: var(--ink); box-shadow: var(--pop-sun); }
+.btn-coral { background: var(--coral-300); color: white; box-shadow: var(--pop-coral); }
+
+/* Dotted progress */
+.dots-bg {
+  background-image: radial-gradient(rgba(167,145,110,0.12) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+}
+
+/* Hide scrollbars inside artboards */
+.scroll-hidden { scrollbar-width: none; }
+.scroll-hidden::-webkit-scrollbar { display: none; }

@@ -1,0 +1,151 @@
+row_id	course	dialogue_id	speaker	turn	id_target	id_ko	id_roman	id_note	ms_target	ms_ko	ms_roman	ms_note
+l6_d32_t09	6	대화32	A	9	Pasti, sambil cerita seharian.	하루 얘기하며.	빠스띠, 삼빌 쩨리따 스하리안.	sambil = ~하면서	Mestilah, sambil bercerita seharian.	하루 얘기하며.	메스띨라, 삼빌 브르쩨리따 스하리안.	sambil = ~하면서, bercerita = 이야기하다
+l6_d32_t10	6	대화32	B	10	Aku cinta kamu, hati-hati di jalan.	사랑해, 조심.	아꾸 친따 까무, 하띠 하띠 디 잘란.		Saya cinta awak, hati-hati di jalan.	사랑해, 조심.	사야 친따 아왁, 하띠 하띠 디 잘란.	
+l6_d33_t01	6	대화33	A	1	Punggung aku sakit.	등 아파.	뿡궁 아꾸 사낏.	sakit = 아프다	Belakang saya sakit.	등 아파.	블라깡 사야 사낏.	belakang = 등, sakit = 아프다
+l6_d33_t02	6	대화33	B	2	Aku pijat ya.	마사지.	아꾸 삐잣 야.	pijat = 마사지	Saya urut ya.	마사지.	사야 우룻 야.	urut = 마사지하다 (말레이, pijat은 인니/공통)
+l6_d33_t03	6	대화33	A	3	Tekan lebih kuat.	더 세게.	뜨깐 르비 꾸앗.	tekan = 누르다, kuat = 세게	Tekan lebih kuat.	더 세게.	뜨깐 르비 꾸앗.	tekan = 누르다, kuat = 세게
+l6_d33_t04	6	대화33	B	4	Otot kamu kencang banget.	근육 빡셈.	오똣 까무 끈짱 방엣.	otot = 근육, kencang = 빡빡한	Otot awak ketat sangat.	근육 빡셈.	오똣 아왁 끄땃 상앗.	otot = 근육, ketat = 빡빡한 (말레이, kencang은 양쪽)
+l6_d33_t05	6	대화33	A	5	Karena stres kerja.	일 스트레스.	까르나 스트레스 끄르자.		Sebab stres kerja.	일 스트레스.	스밥 스트레스 끄르자.	
+l6_d33_t06	6	대화33	B	6	Pakai lotion?	로션?	빠까이 로숀?	lotion = 영어 차용	Pakai losyen?	로션?	빠까이 로숀?	losyen = 로션 (말레이 철자, lotion은 영어)
+l6_d33_t07	6	대화33	A	7	Iya, yang lavender.	라벤더.	이야, 양 라벤더.		Ya, yang lavender.	라벤더.	야, 양 라벤더.	
+l6_d33_t08	6	대화33	B	8	Sambil dengar musik tenang.	차분 음악.	삼빌 등아르 무식 뜨낭.		Sambil dengar muzik tenang.	차분 음악.	삼빌 등아르 무직 뜨낭.	
+l6_d33_t09	6	대화33	A	9	Aku tertidur kalau gini.	이러면 잠들어.	아꾸 뜨르띠두르 깔라우 기니.	tertidur = 잠들다	Saya tertidur kalau macam ni.	이러면 잠들어.	사야 뜨르띠두르 깔라우 마짬 니.	tertidur = 잠들다
+l6_d33_t10	6	대화33	B	10	Tidur saja, aku lanjut.	자, 나 계속.	띠두르 사자, 아꾸 란줏.	lanjut = 계속	Tidur je, saya teruskan.	자, 계속.	띠두르 즈, 사야 뜨루스깐.	teruskan = 계속하다 (말레이, lanjut도 양쪽)
+l6_d34_t01	6	대화34	A	1	Bintangnya banyak malam ini.	별 많아.	빈땅냐 바냑 말람 이니.	bintang = 별	Bintangnya banyak malam ini.	별 많아.	빈땅냐 바냑 말람 이니.	bintang = 별
+l6_d34_t02	6	대화34	B	2	Cantik banget.	예쁘다.	짠띡 방엣.		Cantik gila.	예쁘다.	짠띡 길라.	
+l6_d34_t03	6	대화34	A	3	Aku duduk lebih dekat.	가까이 앉아.	아꾸 두둑 르비 드깟.	duduk = 앉다	Saya duduk lebih dekat.	가까이.	사야 두둑 르비 드깟.	duduk = 앉다
+l6_d34_t04	6	대화34	B	4	Hangat seperti ini.	이렇게 따뜻.	항앗 스쁘르띠 이니.	seperti = ~처럼	Hangat macam ni.	이렇게 따뜻.	항앗 마짬 니.	macam ni = 이렇게 (말레이 구어)
+l6_d34_t05	6	대화34	A	5	Apa yang kamu pikirin?	뭐 생각?	아빠 양 까무 삐끼린?	pikirin = 생각하다	Apa yang awak fikir?	뭐 생각?	아빠 양 아왁 피끼르?	fikir = 생각하다 (말레이 철자)
+l6_d34_t06	6	대화34	B	6	Masa depan kita.	우리 미래.	마사 드빤 끼따.	masa depan = 미래	Masa depan kita.	우리 미래.	마사 드빤 끼따.	masa depan = 미래
+l6_d34_t07	6	대화34	A	7	Apa yang mau kamu?	원하는 건?	아빠 양 마우 까무?		Apa yang awak nak?	원하는 건?	아빠 양 아왁 낙?	
+l6_d34_t08	6	대화34	B	8	Hanya kamu.	너만.	하냐 까무.	hanya = 만	Hanya awak.	너만.	하냐 아왁.	hanya = 만
+l6_d34_t09	6	대화34	A	9	Aku sudah jadi punya kamu.	이미 네 것.	아꾸 수다 자디 뿐야 까무.	punya = 가지다	Saya dah jadi milik awak.	이미 네 것.	사야 다 자디 밀릭 아왁.	milik = 소유 (말레이, punya는 양쪽)
+l6_d34_t10	6	대화34	B	10	Selalu, sayang.	언제나, 자기.	슬랄루, 사양.	selalu = 언제나, sayang = 애칭	Selalu, sayang.	언제나, 자기.	슬랄루, 사양.	selalu = 언제나, sayang = 애칭
+l6_d35_t01	6	대화35	A	1	Hujan deras banget.	비 매우.	후잔 드라스 방엣.	deras = 거센 (비)	Hujan lebat sangat.	비 매우.	후잔 르밧 상앗.	lebat = 거센 (말레이, deras는 양쪽)
+l6_d35_t02	6	대화35	B	2	Nggak usah keluar.	안 나가도.	응각 우사 끌루아르.		Tak payah keluar.	안 나가도.	딱 빠야 끌루아르.	tak payah = 필요 없다 (말레이)
+l6_d35_t03	6	대화35	A	3	Kita di kasur seharian.	침대 하루.	끼따 디 까수르 스하리안.	kasur = 침대 매트, seharian = 하루 종일	Kita di katil seharian.	침대 하루.	끼따 디 까띨 스하리안.	katil = 침대 (말레이, kasur는 인니), seharian = 하루 종일
+l6_d35_t04	6	대화35	B	4	Mau order makanan?	음식 주문?	마우 오르더 마까난?	order = 영어 차용	Nak order makanan?	음식 주문?	낙 오르더 마까난?	order = 영어 차용
+l6_d35_t05	6	대화35	A	5	Iya, sambil nonton drama Korea.	드라마 보면서.	이야, 삼빌 논똔 드라마 꼬레아.	nonton = menonton 구어	Ya, sambil tonton drama Korea.	드라마 보면서.	야, 삼빌 똔똔 드라마 꼬레아.	tonton = 보다 (말레이, nonton은 인니 구어)
+l6_d35_t06	6	대화35	B	6	Pakai selimut sama-sama.	이불 같이.	빠까이 슬리뭇 사마 사마.	selimut = 이불, sama-sama = reduplication 같이	Pakai selimut sama-sama.	이불 같이.	빠까이 슬리뭇 사마 사마.	selimut = 이불, sama-sama = 같이
+l6_d35_t07	6	대화35	A	7	Pelukmu hangat banget.	안기 따뜻.	쁠룩무 항앗 방엣.		Pelukan awak hangat sangat.	안기 따뜻.	쁠루깐 아왁 항앗 상앗.	
+l6_d35_t08	6	대화35	B	8	Aku cinta hari seperti ini.	이런 날 사랑.	아꾸 친따 하리 스쁘르띠 이니.		Saya cinta hari macam ni.	이런 날 사랑.	사야 친따 하리 마짬 니.	
+l6_d35_t09	6	대화35	A	9	Tanpa rencana, hanya kita.	계획 없이, 우리만.	딴빠 른짜나, 하냐 끼따.		Tanpa rancangan, hanya kita.	계획 없이, 우리만.	딴빠 란짱안, 하냐 끼따.	
+l6_d35_t10	6	대화35	B	10	Surga.	천국.	수르가.	surga = 천국	Syurga.	천국.	슈르가.	syurga = 천국 (말레이 철자, surga는 인니)
+l6_d36_t01	6	대화36	B	1	Hari ini setahun, oppa.	오빠, 오늘 1년.	하리 이니 스따훈, 오빠.	oppa = 오빠 (한국어 차용)	Hari ini setahun, oppa.	오빠, 1년.	하리 이니 스따훈, 오빠.	oppa = 오빠 (한국어 차용)
+l6_d36_t02	6	대화36	A	2	Cepat banget.	빠르네.	쯔빳 방엣.		Cepat gila.	빠르네.	쯔빳 길라.	
+l6_d36_t03	6	대화36	B	3	Aku punya hadiah.	선물.	아꾸 뿐야 하디아.	hadiah = 선물	Saya ada hadiah.	선물.	사야 아다 하디아.	hadiah = 선물
+l6_d36_t04	6	대화36	A	4	Apa?	뭐?	아빠?		Apa?	뭐?	아빠?	
+l6_d36_t05	6	대화36	B	5	Album foto kita setahun ini.	1년 사진 앨범.	알붐 포또 끼따 스따훈 이니.		Album foto kita setahun ni.	1년 앨범.	알붐 포또 끼따 스따훈 니.	
+l6_d36_t06	6	대화36	A	6	Wah, romantis banget.	로맨틱.	와, 로맨띠스 방엣.		Wah, romantik gila.	로맨틱.	와, 로맨띠스 길라.	
+l6_d36_t07	6	대화36	B	7	Setiap halaman cerita.	각 페이지 이야기.	스띠압 할라만 쩨리따.	halaman = 페이지	Setiap muka surat cerita.	각 페이지 이야기.	스띠압 무까 수랏 쩨리따.	muka surat = 페이지 (말레이, halaman은 양쪽)
+l6_d36_t08	6	대화36	A	8	Aku juga punya untuk kamu.	나도 있어.	아꾸 주가 뿐야 운뚝 까무.		Saya pun ada untuk awak.	나도 있어.	사야 뿐 아다 운뚝 아왁.	
+l6_d36_t09	6	대화36	B	9	Apa?	뭐?	아빠?		Apa?	뭐?	아빠?	
+l6_d36_t10	6	대화36	A	10	Cincin kedua, simbol selamanya.	두 번째 반지, 영원.	찐찐 끄두아, 심볼 슬라마냐.	cincin = 반지, selamanya = 영원히	Cincin kedua, simbol selamanya.	두 번째 반지, 영원.	찐찐 끄두아, 심볼 슬라마냐.	cincin = 반지, selamanya = 영원히
+l6_d36_t11	6	대화36	B	11	Aku menangis.	울어.	아꾸 므낭이스.	menangis = 울다	Saya menangis.	울어.	사야 므낭이스.	menangis = 울다
+l6_d36_t12	6	대화36	A	12	Air mata bahagia.	행복 눈물.	아이르 마따 바하기아.	air mata = 눈물	Air mata bahagia.	행복 눈물.	아이르 마따 바하기아.	air mata = 눈물
+l6_d36_t13	6	대화36	B	13	Kita selalu seperti ini ya.	이렇게 늘.	끼따 슬랄루 스쁘르띠 이니 야.		Kita selalu macam ni ya.	이렇게 늘.	끼따 슬랄루 마짬 니 야.	
+l6_d36_t14	6	대화36	A	14	Aku janji.	약속.	아꾸 잔지.		Saya janji.	약속.	사야 잔지.	
+l5_d05_t01	5	대화05	B	1	BTS album baru Layover udah dengar?	BTS 새 앨범 Layover 들었어?	베떼에스 알붐 바루 레이오버 우다 등아르?	album = 영어 차용	BTS album baru Layover dah dengar?	Layover 들었어?	베떼에스 알붐 바루 레이오버 다 등아르?	album = 영어 차용
+l5_d05_t02	5	대화05	A	2	Layover? Belum dengar. Sama kamu senang ya.	Layover? 못 들었어. 너랑 있으니 좋네.	레이오버? 블룸 등아르. 사마 까무 스낭 야.		Layover? Belum dengar. Dengan awak best je.	Layover? 못 들었어. 너랑 좋아.	레이오버? 블룸 등아르. 등안 아왁 베스 즈.	
+l5_d05_t03	5	대화05	B	3	Lirik Stand by Me artinya apa?	Stand by Me 가사 의미?	리릭 스탠 바이 미 아르띠냐 아빠?	lirik = 가사	Lirik Stand by Me maksudnya apa?	Stand by Me 가사?	리릭 스탠 바이 미 막수드냐 아빠?	lirik = 가사
+l5_d05_t04	5	대화05	A	4	Lirik? Hmm, dengar langsung lebih jelas.	가사? 음, 직접 들으면 더 명확.	리릭? 흠, 등아르 랑숭 르비 즐라스.	langsung = 직접	Lirik? Hmm, dengar terus lebih jelas.	가사? 직접 들으면.	리릭? 흠, 등아르 뜨루스 르비 즐라스.	terus = 직접 (말레이, langsung은 양쪽)
+l5_d05_t05	5	대화05	B	5	Warna suara Jin lembut banget.	Jin 음색 진짜 부드러워.	와르나 수아라 진 름붓 방엣.	warna suara = 음색	Suara Jin lembut sangat.	Jin 음색 부드러워.	수아라 진 름붓 상앗.	suara = 음성/음색
+l5_d05_t06	5	대화05	A	6	Iya... suara kamu juga lembut.	응... 너 목소리도 부드러워.	이야... 수아라 까무 주가 름붓.		Ya... suara awak pun lembut.	응... 너 목소리도.	야... 수아라 아왁 뿐 름붓.	
+l5_d05_t07	5	대화05	B	7	BTS 7 member, paling kamu suka siapa?	BTS 7명 중 제일 좋아하는 사람?	베떼에스 음빳 멤버, 빨링 까무 수까 시아빠?	paling = 가장	BTS 7 ahli, paling awak suka siapa?	BTS 중 누구?	베떼에스 뚜주 아흐리, 빨링 아왁 수까 시아빠?	ahli = 멤버 (말레이, member는 양쪽), paling = 가장
+l5_d05_t08	5	대화05	A	8	Member? Aku lebih suka... kamu.	멤버? 나는 너가 더 좋아.	멤버? 아꾸 르비 수까... 까무.		Ahli? Saya lebih suka... awak.	멤버? 너가 더.	아흐리? 사야 르비 수까... 아왁.	
+l5_d05_t09	5	대화05	B	9	Eh? Apa?	어? 뭐?	에? 아빠?		Eh? Apa?	어? 뭐?	에? 아빠?	
+l5_d05_t10	5	대화05	A	10	Nggak apa. BTS bagus.	아무것도. BTS 좋아.	응각 아빠. 베떼에스 바구스.		Tak ada apa. BTS bagus.	아무것도. BTS 좋아.	딱 아다 아빠. 베떼에스 바구스.	
+l5_d05_t11	5	대화05	B	11	Minggu depan comeback live, nonton bareng?	다음 주 컴백 무대 같이 봐?	밍구 드빤 컴백 라이브, 논똔 바릉?		Minggu depan comeback live, tonton sama-sama?	컴백 무대 같이?	밍구 드빤 컴백 라이브, 똔똔 사마 사마?	
+l5_d05_t12	5	대화05	A	12	Boleh! Di rumah aku.	좋지! 우리 집에서.	볼레! 디 루마 아꾸.		Boleh! Di rumah saya.	좋지! 우리 집.	볼레! 디 루마 사야.	
+l5_d06_t01	5	대화06	B	1	Tiket NewJeans concert Jakarta open kemarin!	NewJeans 콘서트 자카르타 티켓 열렸어!	띠껫 뉴진스 콘세르 자카르타 오픈 끄마린!		Tiket NewJeans concert KL open semalam!	NewJeans KL 콘서트 표 열렸어!	띠껫 뉴진스 콘세르 께엘 오픈 스말람!	
+l5_d06_t02	5	대화06	A	2	Mau pergi sama aku?	나랑 같이 갈래?	마우 쁘르기 사마 아꾸?		Nak pergi sama saya?	같이 가?	낙 쁘르기 사마 사야?	
+l5_d06_t03	5	대화06	B	3	Boleh! Berarti 2 tiket ya.	좋지! 2장이네.	볼레! 브라르띠 두아 띠껫 야.		Boleh! Bermakna 2 tiket ya.	좋지! 2장.	볼레! 브르막나 두아 띠껫 야.	bermakna = 의미 (말레이, berarti는 양쪽)
+l5_d06_t04	5	대화06	A	4	Iya, kita berdua aja.	응, 우리 둘만.	이야, 끼따 브르두아 아자.		Ya, kita berdua je.	응, 둘만.	야, 끼따 브르두아 즈.	
+l5_d06_t05	5	대화06	B	5	Ajak Lala juga? Dia carat.	랄라도 같이? 캐럿이야.	아작 랄라 주가? 디아 캐럿.	carat = SEVENTEEN 팬덤	Ajak Lala juga? Dia carat.	랄라도?	아작 랄라 주가? 디아 캐럿.	carat = SEVENTEEN 팬덤
+l5_d06_t06	5	대화06	A	6	Lala? Mungkin lain kali aja.	랄라? 다음에.	랄라? 뭉낀 라인 깔리 아자.		Lala? Mungkin lain kali je.	랄라? 다음에.	랄라? 뭉낀 라인 깔리 즈.	
+l5_d06_t07	5	대화06	B	7	Kenapa? Lebih rame bertiga.	왜? 셋이 더 재밌어.	끄나빠? 르비 라메 브르띠가.	bertiga = 셋이	Kenapa? Lebih ramai bertiga.	왜? 셋이 더 재밌어.	끄나빠? 르비 라마이 브르띠가.	bertiga = 셋이
+l5_d06_t08	5	대화06	A	8	Iya... ya, bertiga juga oke.	응... 그래, 셋이 OK.	이야... 야, 브르띠가 주가 오께.		Ya... ya, bertiga pun okay.	응... OK.	야... 야, 브르띠가 뿐 오케이.	
+l5_d06_t09	5	대화06	B	9	Section apa target?	어느 섹션 목표?	섹션 아빠 따르겟?		Section apa target?	어느 섹션?	섹션 아빠 따르겟?	
+l5_d06_t10	5	대화06	A	10	VIP. Aku bayar buat kamu.	VIP. 내가 너 표 사줄게.	비아이피. 아꾸 바야르 부앗 까무.	bayar = 지불	VIP. Saya bayar untuk awak.	VIP. 너 표.	비아이피. 사야 바야르 운뚝 아왁.	bayar = 지불
+l5_d06_t11	5	대화06	B	11	Wah, kamu baik banget!	와, 진짜 착하다!	와, 까무 바익 방엣!		Wah, awak baik gila!	와, 진짜 착하다!	와, 아왁 바익 길라!	
+l5_d06_t12	5	대화06	A	12	Hahaha, kalau kamu senang.	하하, 너 기쁘면 됐어.	하하하, 깔라우 까무 스낭.		Hahaha, kalau awak gembira.	너 기쁘면.	하하하, 깔라우 아왁 금비라.	gembira = 기쁘다
+l5_d07_t01	5	대화07	B	1	Lihat foto Jungkook ini! Ganteng banget.	정국 사진 봐! 잘생겼어.	리핫 포또 정국 이니! 간뜽 방엣.	ganteng = 잘생긴	Tengok foto Jungkook ni! Kacak gila.	정국 사진! 잘생겼어.	뜽옥 포또 정국 니! 까짝 길라.	kacak = 잘생긴 (말레이, ganteng은 인니)
+l5_d07_t02	5	대화07	A	2	Hmm... aku gimana?	음... 나는?	흠... 아꾸 기마나?		Hmm... saya macam mana?	음... 나는?	흠... 사야 마짬 마나?	
+l5_d07_t03	5	대화07	B	3	Kamu apa? Lihat dulu deh!	너 뭐? 일단 봐!	까무 아빠? 리핫 둘루 데!	deh = 어기조사	Awak apa? Tengok dulu lah!	너 뭐? 봐!	아왁 아빠? 뜽옥 둘루 라!	
+l5_d07_t04	5	대화07	A	4	Aku juga laki Korea loh.	나도 한국 남자야.	아꾸 주가 라끼 꼬레아 로.	laki = 남자, loh = 어기조사	Saya pun lelaki Korea la.	나도 한국 남자.	사야 뿐 를라끼 꼬레아 라.	lelaki = 남자 (말레이, laki는 인니 구어)
+l5_d07_t05	5	대화07	B	5	Iya tapi nggak setinggi V atau Jin.	응 근데 V나 Jin 만큼 안 커.	이야 따삐 응각 스띵기 V 아따우 진.	tinggi = 키 큰	Ya tapi tak setinggi V atau Jin.	응 근데 V나 Jin 만큼.	야 따삐 딱 스띵기 V 아따우 진.	tinggi = 키 큰
+l5_d07_t06	5	대화07	A	6	Tinggi 178 cm, cukup kan?	178cm, 충분하지?	띵기 스라뚜스 뚜주 뿔루 들라빤 센, 쭈꿉 깐?	kan = 어기조사 (확인)	Tinggi 178 cm, cukup kan?	178cm.	띵기 스라뚜스 뚜주 뿔루 라빤 센, 쭈꿉 깐?	kan = 어기조사
+l5_d07_t07	5	대화07	B	7	Lumayan. Tapi kulit Jungkook glowing!	그럭저럭. 근데 정국 피부 빛나!	루마얀. 따삐 꿀릿 정국 글로윙!	kulit = 피부, glowing = 영어	Okay je. Tapi kulit Jungkook glowing!	근데 정국 피부 빛나!	오케이 즈. 따삐 꿀릿 정국 글로윙!	kulit = 피부
+l5_d07_t08	5	대화07	A	8	Itu makeup. Aku natural.	메이크업이야. 난 자연.	이뚜 메이크업. 아꾸 내추럴.	natural = 영어	Itu makeup. Saya natural.	메이크업. 자연.	이뚜 메이크업. 사야 내추럴.	
+l5_d07_t09	5	대화07	B	9	Hahaha cemburu ya?	하하 질투해?	하하하 쯤부루 야?	cemburu = 질투	Hahaha cemburu ke?	질투해?	하하하 쯤부루 끄?	cemburu = 질투
+l5_d07_t10	5	대화07	A	10	Cemburu? Aku? Nggak lah.	질투? 내가? 절대.	쯤부루? 아꾸? 응각 라.	lah = 어기조사	Cemburu? Saya? Tak la.	질투? 절대.	쯤부루? 사야? 딱 라.	la = 어조사
+l5_d07_t11	5	대화07	B	11	Tenang, kamu juga lucu kok.	걱정 마, 너도 귀여워.	뜨낭, 까무 주가 루쭈 꼭.	kok = 어기조사	Tenang, awak pun comel kok.	걱정 마, 귀여워.	뜨낭, 아왁 뿐 쪼멜 꼭.	comel = 귀엽다 (말레이, lucu는 양쪽)
+l5_d07_t12	5	대화07	A	12	Cuma lucu? Bukan ganteng?	귀엽기만? 잘생기지 않고?	쭈마 루쭈? 부깐 간뜽?		Cuma comel? Bukan kacak?	귀엽기만? 잘생기지 않고?	쭈마 쪼멜? 부깐 까짝?	
+l5_d08_t01	5	대화08	B	1	TikTok dance challenge ITZY baru viral!	ITZY TikTok 댄스 챌린지 viral!	틱톡 댄스 챌린지 잇지 바루 바이럴!	viral = 영어 차용	TikTok dance challenge ITZY baru viral!	ITZY 댄스 viral!	틱톡 댄스 챌린지 잇지 바루 바이럴!	viral = 영어 차용
+l5_d08_t02	5	대화08	A	2	Ajarin aku, pelan-pelan ya.	천천히 가르쳐줘.	아자린 아꾸, 쁠란 쁠란 야.		Ajar saya, perlahan-lahan ya.	천천히 가르쳐.	아자르 사야, 쁘를라한 라한 야.	
+l5_d08_t03	5	대화08	B	3	Step pertama, kaki kanan ke depan.	첫 스텝, 오른발 앞으로.	스뗍 쁘르따마, 까끼 까난 끄 드빤.	step = 영어, kaki = 발	Step pertama, kaki kanan ke depan.	첫 스텝, 오른발.	스뗍 쁘르따마, 까끼 까난 끄 드빤.	kaki = 발
+l5_d08_t04	5	대화08	A	4	Pegang tangan aku, biar bareng.	손 잡아줘, 같이 하게.	쁘강 땅안 아꾸, 비아르 바릉.	pegang = 잡다	Pegang tangan saya, supaya sama-sama.	손 잡아.	쁘강 땅안 사야, 수빠야 사마 사마.	pegang = 잡다
+l5_d08_t05	5	대화08	B	5	Hahaha, kamu noob banget!	하하, 완전 초보!	하하하, 까무 누브 방엣!	noob = 영어 (초보)	Hahaha, awak noob gila!	하하, 완전 초보!	하하하, 아왁 누브 길라!	noob = 영어 (초보)
+l5_d08_t06	5	대화08	A	6	Ajarin lebih dekat dong.	더 가까이 가르쳐.	아자린 르비 드깟 동.	dong = 어기조사	Ajar lebih dekat la.	더 가까이.	아자르 르비 드깟 라.	la = 어기조사
+l5_d08_t07	5	대화08	B	7	Kamu fokus dulu! Hitung 5,6,7,8.	집중! 5,6,7,8 카운트.	까무 포꾸스 둘루! 히뚱 리마 으남 뚜주 들라빤.	fokus = 영어, hitung = 카운트	Awak fokus dulu! Kira 5,6,7,8.	집중! 5,6,7,8.	아왁 포꾸스 둘루! 끼라 리마 으남 뚜주 라빤.	kira = 카운트 (말레이, hitung은 양쪽)
+l5_d08_t08	5	대화08	A	8	Susah konsentrasi kalau kamu dekat.	너 가까이면 집중 어려워.	수사 콘센트라시 깔라우 까무 드깟.	konsentrasi = 집중	Susah konsentrasi kalau awak dekat.	집중 어려워.	수사 콘센트라시 깔라우 아왁 드깟.	konsentrasi = 집중
+l5_d08_t09	5	대화08	B	9	Hush. Tarian dulu, ngegombal kemudian.	쉿. 댄스 먼저, 작업 나중에.	허시. 따리안 둘루, 응으곰발 끄무디안.	ngegombal = 작업 걸다 (구어), kemudian = 나중에	Diam. Tarian dulu, gatal kemudian.	쉿. 댄스 먼저.	디암. 따리안 둘루, 가딸 끄무디안.	gatal = 작업 걸다 (말레이 슬랭, ngegombal은 인니)
+l5_d08_t10	5	대화08	A	10	Ngegombal? Aku jujur kok.	작업? 솔직한 거야.	응으곰발? 아꾸 주주르 꼭.	jujur = 솔직한	Gatal? Saya jujur la.	작업? 솔직.	가딸? 사야 주주르 라.	jujur = 솔직한
+l5_d08_t11	5	대화08	B	11	Iya iya, kita coba lagi step 3.	응 응, 스텝 3 다시.	이야 이야, 끼따 쪼바 라기 스뗍 띠가.		Ya ya, kita cuba lagi step 3.	응 응, 스텝 3.	야 야, 끼따 쭈바 라기 스뗍 띠가.	
+l5_d08_t12	5	대화08	A	12	Kalau berhasil, hadiah ya?	성공하면 보상?	깔라우 브르하실, 하디아 야?	berhasil = 성공, hadiah = 보상	Kalau berjaya, hadiah ya?	성공하면 보상?	깔라우 브르자야, 하디아 야?	berjaya = 성공 (말레이, berhasil은 양쪽), hadiah = 보상
+l5_d09_t01	5	대화09	B	1	Aku gagal pahami lirik LE SSERAFIM.	LE SSERAFIM 가사 못 알아.	아꾸 가갈 빠하미 리릭 르 세라핌.	gagal = 실패	Saya gagal faham lirik LE SSERAFIM.	가사 못 알아.	사야 가갈 파함 리릭 르 세라핌.	gagal = 실패
+l5_d09_t02	5	대화09	A	2	Aku bisa bantu. Datang ke rumah aku?	내가 도와줄 수. 우리 집에 와?	아꾸 비사 반뚜. 다땅 끄 루마 아꾸?		Saya boleh bantu. Datang ke rumah saya?	내가 도와줄 수.	사야 볼레 반뚜. 다땅 끄 루마 사야?	
+l5_d09_t03	5	대화09	B	3	Ke rumah? Cafe juga bisa kan?	집? 카페도 되지?	끄 루마? 까페 주가 비사 깐?		Ke rumah? Cafe pun boleh kan?	집? 카페도?	끄 루마? 까페 뿐 볼레 깐?	
+l5_d09_t04	5	대화09	A	4	Cafe ribut. Rumah lebih tenang.	카페 시끄러. 집이 차분.	까페 리붓. 루마 르비 뜨낭.	ribut = 시끄러운	Cafe bising. Rumah lebih tenang.	카페 시끄러.	까페 비싱. 루마 르비 뜨낭.	bising = 시끄러운 (말레이, ribut은 양쪽)
+l5_d09_t05	5	대화09	B	5	Hmm... oke. Tapi pulang jam 8.	음... OK. 8시 귀가.	흠... 오께. 따삐 뿔랑 잠 들라빤.		Hmm... okay. Tapi balik pukul 8.	음... OK. 8시.	흠... 오케이. 따삐 발릭 뿌꿀 라빤.	
+l5_d09_t06	5	대화09	A	6	Atau makan malam dulu?	저녁 먼저?	아따우 마깐 말람 둘루?	makan malam = 저녁	Atau makan malam dulu?	저녁 먼저?	아따우 마깐 말람 둘루?	makan malam = 저녁
+l5_d09_t07	5	대화09	B	7	Kita kerja dulu, makan kemudian.	먼저 일, 그 다음 식사.	끼따 끄르자 둘루, 마깐 끄무디안.	kerja = 일	Kita kerja dulu, makan kemudian.	먼저 일.	끼따 끄르자 둘루, 마깐 끄무디안.	
+l5_d09_t08	5	대화09	A	8	Aku masakin Korean bbq.	한국 BBQ 해줄게.	아꾸 마사낀 코리안 바비큐.	masakin = memasakkan 구어	Saya masakkan Korean bbq.	BBQ 해줄게.	사야 마삭깐 코리안 바비큐.	masakkan = 요리해주다 (말레이, masakin은 인니 구어)
+l5_d09_t09	5	대화09	B	9	Wah Korean bbq! Aku belum pernah.	와! 못 먹어봤어.	와 코리안 바비큐! 아꾸 블룸 쁘르나.		Wah Korean bbq! Saya belum pernah.	와! 못 먹어봤어.	와 코리안 바비큐! 사야 블룸 쁘르나.	
+l5_d09_t10	5	대화09	A	10	Datang jam 6, makan + lirik.	6시 와, 식사 + 가사.	다땅 잠 으남, 마깐 + 리릭.		Datang pukul 6, makan + lirik.	6시.	다땅 뿌꿀 으남, 마깐 + 리릭.	
+l5_d09_t11	5	대화09	B	11	Deal! Bawa lyrics LE SSERAFIM.	OK! LE SSERAFIM 가사 가져갈게.	딜! 바와 리릭스 르 세라핌.		Deal! Bawa lyrics LE SSERAFIM.	OK!	딜! 바와 리릭스 르 세라핌.	
+l5_d09_t12	5	대화09	A	12	Pakai dress yang cantik ya.	예쁜 드레스 입어.	빠까이 드레스 양 짠띡 야.		Pakai dress yang cantik ya.	예쁜 드레스.	빠까이 드레스 양 짠띡 야.	
+l5_d10_t01	5	대화10	B	1	Drama Korea baru Lovely Runner bagus banget!	새 K-drama Lovely Runner 좋아!	드라마 꼬레아 바루 러블리 러너 바구스 방엣!		Drama Korea baru Lovely Runner bagus gila!	Lovely Runner 좋아!	드라마 꼬레아 바루 러블리 러너 바구스 길라!	
+l5_d10_t02	5	대화10	A	2	Karakter cowonya gimana?	남주는?	까락떼르 쪼오냐 기마나?	karakter = 영어, cowo = 남자 (구어)	Karakter heronya macam mana?	남주는?	까락떼르 헤로냐 마짬 마나?	hero = 영어, karakter = 영어
+l5_d10_t03	5	대화10	B	3	Byeon Wooseok! Tinggi, ganteng, romantis.	변우석! 키크고 잘생겼고 로맨틱.	변우석! 띵기, 간뜽, 로맨띠스.		Byeon Wooseok! Tinggi, kacak, romantik.	변우석! 키크고 잘생겼고.	변우석! 띵기, 까짝, 로맨띠스.	
+l5_d10_t04	5	대화10	A	4	Aku juga bisa romantis loh.	나도 로맨틱할 수 있어.	아꾸 주가 비사 로맨띠스 로.		Saya pun boleh romantik la.	나도 로맨틱.	사야 뿐 볼레 로맨띠스 라.	
+l5_d10_t05	5	대화10	B	5	Buktikan dong! Kasih bunga?	증명해! 꽃?	부띠깐 동! 까시 붕아?	buktikan = 증명, bunga = 꽃	Buktikan la! Bagi bunga?	증명! 꽃?	부띠깐 라! 바기 붕아?	buktikan = 증명, bunga = 꽃
+l5_d10_t06	5	대화10	A	6	Besok aku bawa.	내일 가져올게.	베속 아꾸 바와.		Esok saya bawa.	내일 가져올게.	에속 사야 바와.	
+l5_d10_t07	5	대화10	B	7	Tapi Byeon Wooseok juga nangis di scene 3.	근데 변우석 신3에서 울어.	따삐 변우석 주가 낭이스 디 신 띠가.		Tapi Byeon Wooseok pun menangis di scene 3.	변우석 신3 울어.	따삐 변우석 뿐 므낭이스 디 신 띠가.	
+l5_d10_t08	5	대화10	A	8	Aku juga bisa nangis kalau perlu.	필요하면 나도 울어.	아꾸 주가 비사 낭이스 깔라우 쁘를루.	perlu = 필요	Saya pun boleh menangis kalau perlu.	필요하면 울어.	사야 뿐 볼레 므낭이스 깔라우 쁘를루.	
+l5_d10_t09	5	대화10	B	9	Hahaha lebay banget kamu!	하하 너 너무 오바!	하하하 르베이 방엣 까무!	lebay = 오버 (구어, lebih)	Hahaha melebih-lebih gila awak!	오바!	하하하 믈르비 르비 길라 아왁!	melebih-lebih = 오버하다 (말레이, lebay는 인니 구어)
+l5_d10_t10	5	대화10	A	10	Jadi, mau ke aku jadi cowo kamu?	그래서, 나 너 남친 될까?	자디, 마우 아꾸 자디 쪼오 까무?		Jadi, nak saya jadi lelaki awak?	나 너 남친 될까?	자디, 낙 사야 자디 를라끼 아왁?	
+l5_d10_t11	5	대화10	B	11	Eh? Tunggu, kita lanjut nonton dulu.	어? 잠깐, 시청 먼저.	에? 뚱구, 끼따 란줏 논똔 둘루.		Eh? Tunggu, kita teruskan tonton dulu.	어? 시청 먼저.	에? 뚱구, 끼따 뜨루스깐 똔똔 둘루.	
+l5_d10_t12	5	대화10	A	12	Oke, tapi pikirin jawaban ya.	OK, 답 생각해놔.	오께, 따삐 삐끼린 자와반 야.	jawaban = 답	Okay, tapi fikir jawapan ya.	OK, 답.	오케이, 따삐 피끼르 자와빤 야.	jawapan = 답 (말레이 철자, jawaban은 인니)
+l4_d04_t01	4	대화04	A	1	Permisi, ini meja kosong?	저기, 빈 자리?	쁘르미시, 이니 메자 꼬송?	meja = 테이블, kosong = 빈	Maaf, ini meja kosong?	저기, 빈 자리?	마앞, 이니 메자 꼬송?	meja = 테이블, kosong = 빈
+l4_d04_t02	4	대화04	B	2	Kosong. Silakan duduk.	비었어. 앉으세요.	꼬송. 실라깐 두둑.	silakan = ~하세요	Kosong. Sila duduk.	비었어. 앉으세요.	꼬송. 실라 두둑.	sila = ~하세요
+l4_d04_t03	4	대화04	B	3	Annyeong haseyo? Hangugin?	안녕하세요? 한국인?	안녕하세요? 항우긴?	Annyeong haseyo = 한국어 차용	Annyeong haseyo? Hangugin?	안녕하세요? 한국인?	안녕하세요? 항우긴?	Annyeong haseyo = 한국어 차용
+l4_d04_t04	4	대화04	A	4	Wah, kamu bisa Korea?	와, 한국어 가능?	와, 까무 비사 꼬레아?		Wah, awak boleh Korea?	와, 한국어 가능?	와, 아왁 볼레 꼬레아?	
+l4_d04_t05	4	대화04	B	5	Sedikit. Belajar 2 tahun.	조금. 2년 공부.	스디낏. 블라자르 두아 따훈.		Sikit. Belajar 2 tahun.	조금. 2년 공부.	시낏. 블라자르 두아 따훈.	
+l4_d04_t06	4	대화04	A	6	Aku Jiyoung, liburan dari Seoul.	지영, 서울에서 휴가.	아꾸 지영, 리부란 다리 세울.	liburan = 휴가	Saya Jiyoung, cuti dari Seoul.	지영, 휴가.	사야 지영, 쭈띠 다리 세울.	cuti = 휴가 (말레이, liburan은 양쪽)
+l4_d04_t07	4	대화04	B	7	Aku Andi. Kerja di hotel Bali.	안디. 발리 호텔 근무.	아꾸 안디. 끄르자 디 호뗄 발리.		Saya Aiman. Kerja di hotel Langkawi.	아이만. 랑까위 호텔.	사야 아이만. 끄르자 디 호뗄 랑까위.	
+l4_d04_t08	4	대화04	A	8	Kebetulan banget! Aku ke Bali besok.	우연이네! 내일 발리 가.	끄브뚤란 방엣! 아꾸 끄 발리 베속.	kebetulan = 우연	Kebetulan gila! Saya ke Langkawi esok.	우연! 내일 랑까위.	끄브뚤란 길라! 사야 끄 랑까위 에속.	kebetulan = 우연
+l4_d05_t01	4	대화05	B	1	Hari ini di Jakarta apa rencana?	오늘 자카르타 계획?	하리 이니 디 자카르타 아빠 른짜나?		Hari ini di KL apa rancangan?	오늘 KL 계획?	하리 이니 디 께엘 아빠 란짱안?	
+l4_d05_t02	4	대화05	A	2	Belum ada. Rekomendasi?	아직. 추천?	블룸 아다. 레꼬멘다시?	rekomendasi = 추천	Belum ada. Cadangan?	아직. 추천?	블룸 아다. 짜당안?	cadangan = 추천 (말레이, rekomendasi는 양쪽)
+l4_d05_t03	4	대화05	B	3	Kota Tua. Sejarah Jakarta.	꼬따 뚜아. 자카르타 역사.	꼬따 뚜아. 스자라 자카르타.	Kota Tua = 옛 시가지, sejarah = 역사	Pasar Seni. Sejarah KL.	빠사르 스니. KL 역사.	빠사르 스니. 스자라 께엘.	Pasar Seni = KL 옛 시장 (말레이, Kota Tua는 자카르타), sejarah = 역사
+l4_d05_t04	4	대화05	A	4	Bisa antar?	안내해줄래?	비사 안따르?	antar = 안내하다	Boleh hantar?	안내해줄래?	볼레 한따르?	hantar = 안내하다 (말레이, antar는 양쪽)
+l4_d05_t05	4	대화05	B	5	Boleh. Aku libur hari ini.	좋아. 오늘 쉬는 날.	볼레. 아꾸 리부르 하리 이니.	libur = 쉬다	Boleh. Saya cuti hari ini.	좋아. 쉬는 날.	볼레. 사야 쭈띠 하리 이니.	cuti = 쉬다
+l4_d05_t06	4	대화05	A	6	Pakai Grab atau MRT?	Grab 아님 MRT?	빠까이 그랍 아따우 엠알띠?	Grab = 인니 라이드앱, MRT = 자카르타 지하철	Pakai Grab atau MRT?	Grab 아님 MRT?	빠까이 그랍 아따우 엠알띠?	Grab = 말레이/인니 라이드앱, MRT = KL 지하철
+l4_d05_t07	4	대화05	B	7	MRT lebih cepat. Macet jam sibuk.	MRT 빠름. 러시아워 막힘.	엠알띠 르비 쯔빳. 마쩻 잠 시북.	jam sibuk = 러시아워	MRT lebih cepat. Sesak waktu sibuk.	MRT 빠름. 러시아워.	엠알띠 르비 쯔빳. 스삭 왁뚜 시북.	sesak = 막힘 (말레이, macet는 인니)
+l4_d05_t08	4	대화05	A	8	Yuk berangkat sekarang.	지금 출발.	육 브랑깟 스까랑.	yuk = 권유 (구어)	Jom berangkat sekarang.	지금 출발.	좀 브랑깟 스까랑.	jom = 권유 (말레이, yuk은 인니)
+l4_d06_t01	4	대화06	B	1	Selamat datang di Hotel Sanur Beach.	사누르 비치 호텔 환영.	슬라맛 다땅 디 호뗄 사누르 비치.	selamat datang = 환영	Selamat datang di Hotel Cherating Beach.	Cherating Beach 호텔 환영.	슬라맛 다땅 디 호뗄 쩨라띵 비치.	selamat datang = 환영, Cherating = 말레이 동부 해변 (Sanur는 발리)
+l4_d06_t02	4	대화06	A	2	Wah, kamu kerja di sini?	와, 여기서 일해?	와, 까무 끄르자 디 시니?		Wah, awak kerja di sini?	와, 여기서 일해?	와, 아왁 끄르자 디 시니?	
+l4_d06_t03	4	대화06	B	3	Iya. Aku siapin kamar terbaik.	응. 최고 방 준비.	이야, 아꾸 시아삔 까마르 뜨르바익.	kamar = 방	Ya. Saya sediakan bilik terbaik.	응. 최고 방 준비.	야. 사야 스디아깐 빌릭 뜨르바익.	bilik = 방 (말레이, kamar는 인니)
+l4_d06_t04	4	대화06	A	4	Terima kasih, Andi!	고마워, 안디!	뜨리마 까시, 안디!		Terima kasih, Aiman!	고마워, 아이만!	뜨리마 까시, 아이만!	
+l4_d06_t05	4	대화06	B	5	Rooftop bar lantai 5. View bagus.	5층 옥상 바. 뷰 좋아.	루프똡 바 란따이 리마. 뷰 바구스.	lantai = 층, view = 영어	Rooftop bar tingkat 5. Pemandangan cantik.	5층 옥상.	루프똡 바 띵깟 리마. 쁘만당안 짠띡.	pemandangan = 뷰 (말레이, view는 영어)
+l4_d06_t06	4	대화06	A	6	Jam berapa shift kamu selesai?	근무 몇 시 끝?	잠 브라빠 시프트 까무 슬레사이?	shift = 영어, selesai = 끝	Pukul berapa shift awak habis?	근무 끝?	뿌꿀 브라빠 시프트 아왁 하비스?	habis = 끝 (말레이, selesai는 양쪽)
+l4_d06_t07	4	대화06	B	7	Jam 6 sore. Mau jalan-jalan bareng?	오후 6시. 같이 산책?	잠 으남 소레. 마우 잘란 잘란 바릉?		Pukul 6 petang. Nak jalan-jalan sama-sama?	6시. 같이?	뿌꿀 으남 쁘땅. 낙 잘란 잘란 사마 사마?	
+l4_d06_t08	4	대화06	A	8	Boleh! Aku siap di lobby.	좋아! 로비에서 대기.	볼레! 아꾸 시압 디 로비.	lobby = 영어 차용	Boleh! Saya tunggu di lobi.	좋아! 로비.	볼레! 사야 뚱구 디 로비.	lobi = 로비 (말레이 철자, lobby는 영어)
+l4_d07_t01	4	대화07	A	1	Sawah ini cantik sekali.	논 정말 예뻐.	사와 이니 짠띡 스깔리.	sawah = 논	Ladang teh ni cantik sangat.	차밭 예뻐.	라당 떼 니 짠띡 상앗.	ladang teh = 차 농장 (말레이, sawah는 논 — 인니)
+l4_d07_t02	4	대화07	B	2	Tegallalang, sawah berundak.	Tegallalang, 계단식 논.	뜨갈랄랑, 사와 브룬닥.	berundak = 계단식	BOH Tea, ladang teh terbesar Malaysia.	BOH, 말레이 최대.	보 떼, 라당 떼 뜨르브사르 말레이시아.	BOH = 말레이 대표 차 브랜드, terbesar = 최대
+l4_d07_t03	4	대화07	A	3	Foto dulu! Sini.	사진! 와봐.	포또 둘루! 시니.		Foto dulu! Sini.	사진!	포또 둘루! 시니.	
+l4_d07_t04	4	대화07	B	4	Aku ambilin pose bagus.	좋은 포즈 찍어줄게.	아꾸 암빌린 뽀세 바구스.	ambilin = 찍어주다 (구어)	Saya ambilkan pose bagus.	좋은 포즈.	사야 암빌깐 뽀세 바구스.	ambilkan = 찍어주다 (말레이)
+l4_d07_t05	4	대화07	A	5	Sama kamu juga foto.	너도 같이.	사마 까무 주가 포또.		Sama awak juga foto.	너도 같이.	사마 아왁 주가 포또.	
+l4_d07_t06	4	대화07	B	6	Pakai timer 10 detik.	타이머 10초.	빠까이 따이머르 스뿔루 데띡.	timer = 영어, detik = 초	Pakai timer 10 saat.	타이머 10초.	빠까이 따이머르 스뿔루 사앗.	saat = 초 (말레이, detik는 양쪽)
+l4_d07_t07	4	대화07	A	7	Bagus banget hasilnya!	결과 좋다!	바구스 방엣 하실냐!		Cantik gila hasilnya!	결과 좋다!	짠띡 길라 하실냐!	
+l4_d07_t08	4	대화07	B	8	Kirim ke aku ya, aku post IG.	나한테 보내, IG 올릴게.	끼림 끄 아꾸 야, 아꾸 포스뜨 IG.	kirim = 보내다, post = 영어	Hantar kepada saya, saya post IG.	나한테 보내, IG.	한따르 끄빠다 사야, 사야 포스뜨 IG.	hantar = 보내다 (말레이, kirim은 양쪽)

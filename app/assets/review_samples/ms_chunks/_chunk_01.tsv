@@ -1,0 +1,151 @@
+row_id	course	dialogue_id	speaker	turn	id_target	id_ko	id_roman	id_note	ms_target	ms_ko	ms_roman	ms_note
+l2_d16_t01	2	대화16	A	1	Lama nggak ketemu!	오랜만이야!	라마 응각 끄뜨무!	nggak = tidak 구어	Lama tak jumpa!	오랜만이야!	라마 딱 줌빠!	tak = tidak (말레이 구어)
+l2_d16_t02	2	대화16	B	2	Iya, kamu apa kabar?	응, 잘 지내?	이야, 까무 아빠 까바르?		Ya, awak apa khabar?	응, 잘 지내?	야, 아왁 아빠 카바르?	
+l2_d16_t03	2	대화16	A	3	Baik. Kerja gimana?	좋아. 일은?	바익. 끄르자 기마나?		Baik. Kerja macam mana?	좋아. 일은?	바익. 끄르자 마짬 마나?	
+l2_d16_t04	2	대화16	B	4	Sibuk banget. Macet pula.	엄청 바빠. 길도 막혀.	시북 방엣. 마쩻 뿔라.	macet = 막히다	Sibuk gila. Jam pula.	엄청 바빠. 길도 막혀.	시북 길라. 잠 뿔라.	jam = 막히다 (말레이 영어 차용), gila = 매우
+l2_d16_t05	2	대화16	A	5	Jakarta begitu.	자카르타가 그렇지.	자카르타 브기뚜.		KL macam tu.	KL이 그렇지.	께엘 마짬 뚜.	
+l2_d16_t06	2	대화16	B	6	Pengen pindah, sih.	이사 가고 싶어.	쁭엔 삔다, 시.	pengen = 원하다 (구어)	Nak pindah la.	이사 가고 싶어.	낙 삔다 라.	nak = 원하다 (말레이 구어, mahu), la = 어조사
+l2_d16_t07	2	대화16	A	7	Ke mana?	어디로?	끄 마나?		Ke mana?	어디로?	끄 마나?	
+l2_d16_t08	2	대화16	B	8	Bali, kerja remote.	발리, 재택근무.	발리, 끄르자 리못.		Penang, kerja remote.	페낭, 재택근무.	뻬낭, 끄르자 리못.	
+l2_d16_t09	2	대화16	A	9	Asyik banget itu.	대박이네.	아식 방엣 이뚜.	asyik = 멋진/즐거운	Best gila tu.	대박이네.	베스 길라 뚜.	best = 멋진 (말레이 구어, 영어 차용)
+l2_d16_t10	2	대화16	B	10	Doain ya.	응원해줘.	도아인 야.	doain = 기도해주다	Doakan saya ya.	응원해줘.	도아깐 사야 야.	doakan = 기도해주다 (말레이 표준)
+l2_d17_t01	2	대화17	A	1	Halo Ibu, apa kabar?	엄마, 잘 지내?	할로 이부, 아빠 까바르?	Ibu = 어머니/부인 (격식)	Helo Mak, apa khabar?	엄마, 잘 지내?	헬로 막, 아빠 카바르?	Mak = 엄마 (말레이 친근), Ibu/Emak = 격식
+l2_d17_t02	2	대화17	B	2	Alhamdulillah. Kamu udah makan?	알함둘릴라. 밥 먹었어?	알함둘릴라. 까무 우다 마깐?	Alhamdulillah = 신께 감사 (이슬람 일상어)	Alhamdulillah. Awak dah makan?	알함둘릴라. 밥 먹었어?	알함둘릴라. 아왁 다 마깐?	Alhamdulillah = 신께 감사 (말레이 무슬림 일상어)
+l2_d17_t03	2	대화17	A	3	Udah Bu. Bapak gimana?	네. 아빠는?	우다 부. 바빡 기마나?	Bapak = 아버지/씨	Dah Mak. Bapa macam mana?	네. 아빠는?	다 막. 바빠 마짬 마나?	Bapa = 아빠 (말레이 표준), Pak = 외인 호칭
+l2_d17_t04	2	대화17	B	4	Sehat. Mudik Lebaran kapan?	건강해. 라마단 귀향 언제?	셰핫. 무딕 르바란 까빤?	Lebaran = 라마단 끝 명절, mudik = 귀향	Sihat. Balik kampung Raya bila?	건강해. 명절 귀향 언제?	시핫. 발릭 깜뿡 라야 빌라?	Hari Raya = Aidilfitri, balik kampung = 귀향 (말레이 표준)
+l2_d17_t05	2	대화17	A	5	Seminggu sebelum.	1주일 전.	스밍구 스블룸.		Seminggu sebelum.	1주일 전.	스밍구 스블룸.	
+l2_d17_t06	2	대화17	B	6	Ibu masakin opor.	오뽀르 해놓을게.	이부 마사낀 오뽀르.	opor = 코코넛 닭요리 (Lebaran)	Mak masakkan rendang.	른당 해놓을게.	막 마삭깐 른당.	rendang = 코코넛 소고기 (말레이 Hari Raya 대표 음식)
+l2_d17_t07	2	대화17	A	7	Sama ketupat ya?	크뚜팟이랑?	사마 끄뚜빳 야?	ketupat = 코코넛잎 떡 (Lebaran)	Dengan ketupat ya?	크뚜팟이랑?	등안 끄뚜빳 야?	ketupat = 코코넛잎 떡 (말레이/인니 공통)
+l2_d17_t08	2	대화17	B	8	Pasti.	당연.	빠스띠.		Mestilah.	당연.	메스띨라.	mestilah = 당연 (말레이 구어)
+l2_d17_t09	2	대화17	A	9	Aku kangen masakan Ibu.	엄마 음식 그리워.	아꾸 깡엔 마사깐 이부.	kangen = 그립다	Saya rindu masakan Mak.	엄마 음식 그리워.	사야 린두 마사깐 막.	rindu = 그립다 (말레이 표준, kangen은 인니)
+l2_d17_t10	2	대화17	B	10	Jaga kesehatan.	건강 챙겨.	자가 끄셰하딴.		Jaga kesihatan.	건강 챙겨.	자가 끄시하딴.	
+l2_d18_t01	2	대화18	A	1	Mas, satu nasi goreng.	오빠, 나시고렝 1개.	마스, 사뚜 나시 고렝.	Mas = 오빠 (자바어), nasi goreng = 인니 볶음밥	Encik, satu nasi goreng.	아저씨, 나시고렝 1개.	응찍, 사뚜 나시 고렝.	Encik = 남성 호칭 (말레이 격식)
+l2_d18_t02	2	대화18	B	2	Pedas atau tidak?	맵게? 안 맵게?	쁘다스 아따우 띠닥?	pedas = 매운	Pedas atau tak?	맵게? 안 맵게?	쁘다스 아따우 딱?	pedas = 매운
+l2_d18_t03	2	대화18	A	3	Sedang aja.	중간으로.	스당 아자.		Sederhana je.	중간으로.	스드르하나 즈.	je = 그냥/만 (말레이 구어, sahaja)
+l2_d18_t04	2	대화18	B	4	Pakai telur?	계란?	빠까이 뜰루르?	telur = 계란	Dengan telur?	계란?	등안 뜰루르?	telur = 계란
+l2_d18_t05	2	대화18	A	5	Pakai. Sama es teh.	넣어. 아이스티도.	빠까이. 사마 에스 떼.	es teh = 아이스티	Ya. Dengan teh ais.	응. 아이스티도.	야. 등안 떼 아이스.	teh ais = 아이스티 (말레이 어순: 명사+형용사)
+l2_d18_t06	2	대화18	B	6	Tunggu 10 menit.	10분 기다려.	뚱구 스뿔루 므닛.		Tunggu 10 minit.	10분 기다려.	뚱구 스뿔루 미닛.	
+l2_d18_t07	2	대화18	A	7	Berapa total?	얼마?	브라빠 또딸?		Berapa semua?	얼마?	브라빠 스무아?	
+l2_d18_t08	2	대화18	B	8	25 ribu.	2만5천.	두아 뿔루 리마 리부.	ribu = 천	Lima belas ringgit.	15링깃.	리마 블라스 링깃.	ringgit = 말레이 통화 (RM, 1RM ≈ 320원)
+l2_d18_t09	2	대화18	A	9	Bisa pakai QRIS?	QRIS 돼?	비사 빠까이 끄리스?	QRIS = 인니 QR 결제	Boleh guna DuitNow QR?	DuitNow QR 돼?	볼레 구나 둣나우 큐알?	DuitNow QR = 말레이 QR 결제 (BNM 주관)
+l2_d18_t10	2	대화18	B	10	Bisa, ada di sana.	돼, 저기.	비사, 아다 디 사나.		Boleh, ada di sana.	돼, 저기.	볼레, 아다 디 사나.	
+l3_d16_t01	3	대화16	A	1	Maaf, ini kursinya kosong?	실례, 여기 자리 비었어요?	마아프, 이니 꾸르시냐 꼬송?		Maaf, kerusi ini kosong?	실례, 이 자리 비었어요?	마앞, 끄루시 이니 꼬송?	kerusi = 의자 (말레이 표준, kursi는 인니)
+l3_d16_t02	3	대화16	B	2	Kosong. Silakan.	비어있어요. 앉으세요.	꼬송. 실라깐.		Kosong. Sila duduk.	비어있어요. 앉으세요.	꼬송. 실라 두둑.	sila = 부디/하시지요 (말레이 격식)
+l3_d16_t03	3	대화16	A	3	Saya Andi. Kuliah di mana?	안디예요. 어느 대학?	사야 안디. 꿀리아 디 마나?	kuliah = 대학	Saya Aiman. Belajar di mana?	아이만이에요. 어디 공부?	사야 아이만. 블라자르 디 마나?	belajar = 공부하다 (말레이 표준, kuliah도 사용)
+l3_d16_t04	3	대화16	B	4	Sari, UI. Kamu?	사리, UI. 너는?	사리, 우이. 까무?	UI = Universitas Indonesia	Aina, UM. Awak?	아이나, UM. 너는?	아이나, 우엠. 아왁?	UM = Universiti Malaya (말레이 1위)
+l3_d16_t05	3	대화16	A	5	ITB Bandung.	ITB 반둥.	이떼베 반둥.		USM Penang.	USM 페낭.	우에스엠 뻬낭.	USM = Universiti Sains Malaysia (페낭 과학명문)
+l3_d16_t06	3	대화16	B	6	Mantap. Lagi liburan?	좋네. 방학이야?	만땁. 라기 리부란?	mantap = 좋다 (구어)	Best. Tengah cuti?	좋네. 방학이야?	베스. 뜨응아 쭈띠?	best = 좋다 (말레이 구어), cuti = 휴가/방학
+l3_d16_t07	3	대화16	A	7	Iya, mau ke Bali besok.	응, 내일 발리 가.	이야, 마우 끄 발리 베속.		Ya, nak ke Langkawi esok.	응, 내일 랑까위.	야, 낙 끄 랑까위 에속.	esok = 내일 (말레이 표준, besok은 인니)
+l3_d16_t08	3	대화16	B	8	Asyik. Sendirian?	좋겠다. 혼자?	아식. 슨디리안?		Best. Sorang?	좋겠다. 혼자?	베스. 소랑?	sorang = 혼자 (말레이 구어, seorang)
+l3_d16_t09	3	대화16	A	9	Iya. Mau ikut?	응. 같이 갈래?	이야. 마우 이꿋?		Ya. Nak ikut?	응. 같이 갈래?	야. 낙 이꿋?	
+l3_d16_t10	3	대화16	B	10	Berani amat. Kasih nomor dulu.	용감하네. 일단 번호 줘.	브라니 아맛. 까시 노모르 둘루.		Berani gila. Bagi nombor dulu.	용감하네. 일단 번호 줘.	브라니 길라. 바기 놈보르 둘루.	nombor = 번호 (말레이 철자, nomor는 인니)
+l3_d17_t01	3	대화17	A	1	Bapak nggak setuju kamu pacaran sama Andi.	아빠가 안디랑 만나는 거 반대.	바빡 응각 스뚜주 까무 빠짜란 사마 안디.	pacaran = 사귀다	Bapa tak setuju awak couple dengan Aiman.	아빠가 아이만이랑 만나는 거 반대.	바빠 딱 스뚜주 아왁 코우플 등안 아이만.	couple = 사귀다 (말레이 영어 차용), bercinta는 격식
+l3_d17_t02	3	대화17	B	2	Kenapa Pak?	왜 아빠?	끄나빠 빡?		Kenapa Bapa?	왜 아빠?	끄나빠 바빠?	
+l3_d17_t03	3	대화17	A	3	Beda agama.	종교가 달라.	베다 아가마.	agama = 종교	Berbeza agama.	종교가 달라.	브르베자 아가마.	berbeza = 다르다 (말레이 표준, beda는 인니)
+l3_d17_t04	3	대화17	B	4	Kami masih pacaran.	우린 아직 데이트야.	까미 마시 빠짜란.		Kami masih couple.	우린 아직 데이트야.	까미 마시 코우플.	
+l3_d17_t05	3	대화17	A	5	Pacaran ujungnya nikah.	데이트가 결혼으로 가지.	빠짜란 우중냐 니까.	nikah = 결혼	Couple akhirnya kahwin.	데이트가 결혼으로 가지.	코우플 아키르냐 까위.	kahwin = 결혼 (말레이 표준), nikah는 종교적
+l3_d17_t06	3	대화17	B	6	Kalau cinta gimana?	사랑하면?	깔라우 찐따 기마나?	cinta = 사랑	Kalau cinta macam mana?	사랑하면?	깔라우 찐따 마짬 마나?	cinta = 사랑
+l3_d17_t07	3	대화17	A	7	Cinta nggak cukup di sini.	사랑만으로 안 돼.	찐따 응각 쭈꿉 디 시니.		Cinta tak cukup di sini.	사랑만으로 안 돼.	찐따 딱 쭈꿉 디 시니.	
+l3_d17_t08	3	대화17	B	8	Aku berhak pilih sendiri.	내가 선택할 권리.	아꾸 브르학 삘리 슨디리.		Saya berhak pilih sendiri.	내가 선택할 권리.	사야 브르학 삘리 슨디리.	
+l3_d17_t09	3	대화17	A	9	Bapak cuma mau yang terbaik.	아빠는 너 잘되길 바라는 거.	바빡 쭈마 마우 양 뜨르바익.		Bapa cuma nak yang terbaik.	아빠는 너 잘되길 바라는 거.	바빠 쭈마 낙 양 뜨르바익.	
+l3_d17_t10	3	대화17	B	10	Beri kami kesempatan.	기회 주세요.	브리 까미 끄슴빠딴.		Beri kami peluang.	기회 주세요.	브리 까미 쁠루앙.	peluang = 기회 (말레이 표준, kesempatan은 인니)
+l4_d16_t01	4	대화16	A	1	Bu, ini berapa?	아주머니, 이거 얼마예요?	부, 이니 브라빠?		Cik, ini berapa?	아주머니, 이거 얼마?	찍, 이니 브라빠?	Cik = 아가씨/아주머니 (말레이)
+l4_d16_t02	4	대화16	B	2	300 ribu, Mister.	30만, Mister.	띠가 라뚜스 리부, 미스떠르.	Mister = 외국인 호칭	RM 150, Encik.	RM 150이에요.	알엠 스라뚜스 리마 뿔루, 응찍.	Encik = 남성 격식, RM = Ringgit Malaysia
+l4_d16_t03	4	대화16	A	3	Mahal! 100 ribu ya.	비싸! 10만으로.	마할! 스라뚜스 리부 야.	mahal = 비싼	Mahal! RM 50 lah.	비싸! RM 50으로.	마할! 알엠 리마 뿔루 라.	mahal = 비싼
+l4_d16_t04	4	대화16	B	4	Wah, rugi.	아이고, 손해.	와, 루기.	rugi = 손해	Wah, rugi.	아이고, 손해.	와, 루기.	rugi = 손해
+l4_d16_t05	4	대화16	A	5	150 ribu terakhir.	15만 최종.	스라뚜스 리마 뿔루 리부 뜨라키르.		RM 80 terakhir.	RM 80 최종.	알엠 라빤 뿔루 뜨라키르.	
+l4_d16_t06	4	대화16	B	6	Oke, ambil.	OK, 가져가.	오께, 암빌.		Okay, ambil.	오케, 가져가.	오케이, 암빌.	
+l4_d16_t07	4	대화16	A	7	Bayar tunai?	현금?	바야르 뚜나이?	tunai = 현금	Bayar tunai?	현금?	바야르 뚜나이?	tunai = 현금
+l4_d16_t08	4	대화16	B	8	Tunai aja, Mas.	현금만, 형.	뚜나이 아자, 마스.		Tunai je, Bang.	현금만, 형.	뚜나이 즈, 방.	Bang = abang 줄임 (오빠/형, 말레이 친근)
+l4_d16_t09	4	대화16	A	9	Terima kasih, Bu.	감사해요, 아주머니.	뜨리마 까시, 부.		Terima kasih, Cik.	감사합니다, 아주머니.	뜨리마 까시, 찍.	
+l4_d16_t10	4	대화16	B	10	Sama-sama. Hati-hati.	천만에. 조심.	사마 사마. 하띠 하띠.		Sama-sama. Hati-hati.	천만에. 조심.	사마 사마. 하띠 하띠.	
+l4_d17_t01	4	대화17	A	1	Pak, Pantai Kuta ya.	쿠타 비치요.	빡, 빤따이 꾸따 야.	pantai = 해변	Bang, Pantai Cenang ya.	형, 빤따이 쯔낭이요.	방, 빤따이 쯔낭 야.	pantai = 해변, Cenang = 랑까위 유명 비치
+l4_d17_t02	4	대화17	B	2	Naik aja, Mas.	타세요.	나익 아자, 마스.		Naik je, Bang.	타세요.	나익 즈, 방.	
+l4_d17_t03	4	대화17	A	3	Macet?	막혀요?	마쩻?		Jam?	막혀요?	잠?	
+l4_d17_t04	4	대화17	B	4	Sore selalu macet.	저녁엔 늘 막혀.	소레 슬랄루 마쩻.		Petang selalu jam.	저녁엔 늘 막혀.	쁘땅 슬랄루 잠.	petang = 오후/저녁 (말레이, sore는 인니)
+l4_d17_t05	4	대화17	A	5	Berapa lama?	얼마나?	브라빠 라마?		Berapa lama?	얼마나?	브라빠 라마?	
+l4_d17_t06	4	대화17	B	6	30 menit kalau lancar.	뚫리면 30분.	띠가 뿔루 므닛 깔라우 란짜르.	lancar = 매끄러운	30 minit kalau lancar.	뚫리면 30분.	띠가 뿔루 미닛 깔라우 란짜르.	lancar = 매끄러운
+l4_d17_t07	4	대화17	B	7	Pertama kali ke Bali?	발리 처음?	쁘르따마 깔리 끄 발리?		Pertama kali ke Langkawi?	랑까위 처음?	쁘르따마 깔리 끄 랑까위?	
+l4_d17_t08	4	대화17	A	8	Iya. Saya dari Korea.	응. 한국에서.	이야. 사야 다리 꼬레아.		Ya. Saya dari Korea.	응. 한국에서.	야. 사야 다리 꼬레아.	
+l4_d17_t09	4	대화17	B	9	Korea! K-pop ya.	한국! K-팝!	꼬레아! 께뽑 야.		Korea! K-pop ya.	한국! K-팝!	꼬레아! 께뽑 야.	
+l4_d17_t10	4	대화17	A	10	Iya, banyak fans di sini.	응, 여기 팬 많아.	이야, 바냑 팬스 디 시니.		Ya, ramai peminat di sini.	응, 여기 팬 많아.	야, 라마이 쁘미낫 디 시니.	ramai = (사람이) 많다, peminat = 팬 (말레이 표준)
+l4_d18_t01	4	대화18	A	1	Halo Sari, sudah balik Korea.	안녕 사리, 한국 돌아왔어.	할로 사리, 수다 발릭 꼬레아.		Helo Aina, dah balik Korea.	안녕 아이나, 한국 돌아왔어.	헬로 아이나, 다 발릭 꼬레아.	
+l4_d18_t02	4	대화18	B	2	Kupikir kamu nggak akan chat.	연락 안 할 줄.	꾸삐끼르 까무 응각 아깐 챗.		Saya ingat awak takkan chat.	연락 안 할 줄.	사야 잉앗 아왁 딱깐 챗.	ingat = 생각하다 (말레이), takkan = tidak akan
+l4_d18_t03	4	대화18	A	3	Aku juga pikir kamu begitu.	나도 너 그럴 줄.	아꾸 주가 삐끼르 까무 브기뚜.		Saya pun fikir awak macam tu.	나도 너 그럴 줄.	사야 뿐 피끼르 아왁 마짬 뚜.	fikir = 생각하다 (말레이 철자, pikir는 인니)
+l4_d18_t04	4	대화18	B	4	Tetap kontakan ya?	연락하고 지내?	뜨땁 꼰딱깐 야?		Tetap berhubung ya?	연락하고 지내?	뜨땁 브르후붕 야?	berhubung = 연락 (말레이 표준)
+l4_d18_t05	4	대화18	A	5	Pasti.	당연.	빠스띠.		Mestilah.	당연.	메스띨라.	
+l4_d18_t06	4	대화18	B	6	Bali kangen kamu.	발리가 그리워해.	발리 깡엔 까무.		Langkawi rindu awak.	랑까위가 그리워해.	랑까위 린두 아왁.	
+l4_d18_t07	4	대화18	A	7	Aku juga.	나도.	아꾸 주가.		Saya pun.	나도.	사야 뿐.	
+l4_d18_t08	4	대화18	B	8	Datang lagi ya.	또 와.	다땅 라기 야.		Datang lagi ya.	또 와.	다땅 라기 야.	
+l4_d18_t09	4	대화18	A	9	Atau kamu ke Korea.	아님 너 한국 와.	아따우 까무 끄 꼬레아.		Atau awak ke Korea.	아님 너 한국 와.	아따우 아왁 끄 꼬레아.	
+l4_d18_t10	4	대화18	B	10	Boleh juga.	가능.	볼레 주가.		Boleh juga.	가능.	볼레 주가.	
+l6_d16_t01	6	대화16	A	1	Kamu nginep?	잘 거야?	까무 응이넙?	nginep = 자다 (구어)	Awak nak tidur sini?	여기서 잘 거야?	아왁 낙 띠두르 시니?	tidur sini = 자다 (말레이 표준), nginep는 인니 구어
+l6_d16_t02	6	대화16	B	2	Kalau kamu mau.	원하면.	깔라우 까무 마우.		Kalau awak nak.	원하면.	깔라우 아왁 낙.	
+l6_d16_t03	6	대화16	A	3	Mau.	원해.	마우.		Nak.	원해.	낙.	
+l6_d16_t04	6	대화16	B	4	Kondom ada?	콘돔 있어?	꼰돔 아다?		Kondom ada?	콘돔 있어?	꼰돔 아다?	
+l6_d16_t05	6	대화16	A	5	Ada di laci.	서랍에.	아다 디 라찌.	laci = 서랍	Ada dalam laci.	서랍에.	아다 달람 라찌.	laci = 서랍
+l6_d16_t06	6	대화16	B	6	Pelan-pelan ya.	천천히.	쁠란 쁠란 야.		Perlahan-lahan ya.	천천히.	쁘를라한 라한 야.	perlahan-lahan = 천천히 (말레이 표준, pelan-pelan은 인니)
+l6_d16_t07	6	대화16	A	7	Sesuai kamu.	니 페이스.	스수아이 까무.		Ikut awak.	니 페이스.	이꿋 아왁.	
+l6_d16_t08	6	대화16	B	8	Makasih udah ngerti.	이해해줘 고마워.	마까시 우다 응으르띠.		Terima kasih dah faham.	이해해줘 고마워.	뜨리마 까시 다 파함.	faham = 이해하다 (말레이 표준, ngerti는 인니 구어)
+l6_d16_t09	6	대화16	A	9	Wajar.	당연.	와자르.		Patutnya.	당연.	빠뚯냐.	patutnya = 당연 (말레이)
+l6_d16_t10	6	대화16	B	10	Sini.	와.	시니.		Sini.	와.	시니.	
+l6_d17_t01	6	대화17	A	1	Aku nggak bisa menikah beda agama.	다른 종교 결혼 못 해.	아꾸 응각 비사 므니까 베다 아가마.		Saya tak boleh kahwin beza agama.	다른 종교 결혼 못 해.	사야 딱 볼레 까위 베자 아가마.	kahwin = 결혼, beza = 다르다
+l6_d17_t02	6	대화17	B	2	Aku bisa pindah agama.	내가 개종할게.	아꾸 비사 삔다 아가마.	pindah agama = 개종	Saya boleh masuk agama.	내가 개종할게.	사야 볼레 마숙 아가마.	masuk agama = 개종 (말레이는 보통 무슬림 개종 의미)
+l6_d17_t03	6	대화17	A	3	Itu pilihan kamu, bukan paksaan.	강요 아닌 선택이어야지.	이뚜 삘리한 까무, 부깐 빡사안.		Itu pilihan awak, bukan paksaan.	강요 아닌 선택이어야지.	이뚜 삘리한 아왁, 부깐 빡사안.	
+l6_d17_t04	6	대화17	B	4	Aku rela demi kamu.	너 위해 기꺼이.	아꾸 를라 드미 까무.	rela = 기꺼이	Saya sanggup demi awak.	너 위해 기꺼이.	사야 상굽 드미 아왁.	sanggup = 기꺼이 (말레이 표준, rela는 인니)
+l6_d17_t05	6	대화17	A	5	Itu berat, jangan terburu-buru.	쉽지 않아, 서두르지 마.	이뚜 브랏, 장안 뜨르부루 부루.		Itu berat, jangan tergesa-gesa.	쉽지 않아, 서두르지 마.	이뚜 브랏, 장안 뜨르그사 그사.	tergesa-gesa = 서두르다 (말레이 표준)
+l6_d17_t06	6	대화17	B	6	Aku sudah mikir matang.	충분히 생각했어.	아꾸 수다 미끼르 마땅.	matang = 성숙한	Saya dah fikir masak-masak.	충분히 생각했어.	사야 다 피끼르 마삭 마삭.	masak-masak = 충분히 (말레이 idiom, 익은-익은)
+l6_d17_t07	6	대화17	A	7	Keluargamu tahu?	가족은?	끌루아르가무 따후?		Keluarga awak tahu?	가족은?	끌루아르가 아왁 따후?	
+l6_d17_t08	6	대화17	B	8	Belum. Mereka pasti shock.	아직. 충격 받을 거야.	블룸. 므레까 빠스띠 쇽.		Belum. Mereka mesti terkejut.	아직. 충격 받을 거야.	블룸. 므레까 메스띠 뜨르끄줏.	terkejut = 놀라다/충격 (말레이 표준)
+l6_d17_t09	6	대화17	A	9	Bicara dulu sama mereka.	먼저 얘기해봐.	비짜라 둘루 사마 므레까.		Cakap dulu dengan mereka.	먼저 얘기해봐.	짜깝 둘루 등안 므레까.	cakap = 말하다 (말레이 표준, bicara는 인니)
+l6_d17_t10	6	대화17	B	10	Akhir minggu aku coba.	주말에 시도.	아키르 밍구 아꾸 쪼바.		Hujung minggu saya cuba.	주말에 시도.	후중 밍구 사야 쭈바.	hujung minggu = 주말 (말레이 표준, akhir minggu는 인니)
+l6_d18_t01	6	대화18	A	1	Sebelum nikah, kamu harus pindah agama.	결혼 전에 너 개종해야 해.	스블룸 니까, 까무 하루스 삔다 아가마.	pindah agama = 개종	Sebelum kahwin, awak kena masuk agama.	결혼 전에 너 개종해야 해.	스블룸 까위, 아왁 끄나 마숙 아가마.	kena = 해야 한다 (말레이 구어, harus)
+l6_d18_t02	6	대화18	B	2	Aku nggak bisa.	못 해.	아꾸 응각 비사.		Saya tak boleh.	못 해.	사야 딱 볼레.	
+l6_d18_t03	6	대화18	A	3	Kenapa? Demi kita.	왜? 우리를 위해.	끄나빠? 드미 끼따.		Kenapa? Demi kita.	왜? 우리를 위해.	끄나빠? 드미 끼따.	
+l6_d18_t04	6	대화18	B	4	Iman bukan barang tukar.	믿음은 거래 아니야.	이만 부깐 바랑 뚜까르.	iman = 신앙 (이슬람·기독교 공통)	Iman bukan barang tukar.	믿음은 거래 아니야.	이만 부깐 바랑 뚜까르.	iman = 신앙 (말레이 무슬림 정체성 핵심)
+l6_d18_t05	6	대화18	A	5	Keluargaku nggak akan terima.	우리 가족 안 받아들여.	끌루아르가꾸 응각 아깐 뜨리마.	terima = 받아들이다	Keluarga saya takkan terima.	우리 가족 안 받아들여.	끌루아르가 사야 딱깐 뜨리마.	terima = 받아들이다
+l6_d18_t06	6	대화18	B	6	Aku ngerti, tapi aku tetap aku.	이해해, 그래도 나는 나야.	아꾸 응으르띠, 따삐 아꾸 뜨땁 아꾸.	tetap = 여전히	Saya faham, tapi saya tetap saya.	이해해, 그래도 나는 나야.	사야 파함, 따삐 사야 뜨땁 사야.	faham = 이해하다 (말레이), tetap = 여전히
+l6_d18_t07	6	대화18	A	7	Jadi gimana?	그럼 어떡해?	자디 기마나?		Jadi macam mana?	그럼 어떡해?	자디 마짬 마나?	
+l6_d18_t08	6	대화18	B	8	Kita pikir cara lain.	다른 방법 생각해보자.	끼따 삐끼르 짜라 라인.	cara = 방법	Kita fikir cara lain.	다른 방법 생각해보자.	끼따 피끼르 짜라 라인.	cara = 방법
+l6_d18_t09	6	대화18	A	9	Mungkin pisah lebih baik.	헤어지는 게 나을지도.	뭉낀 삐사 르비 바익.	pisah = 헤어지다	Mungkin berpisah lebih baik.	헤어지는 게 나을지도.	뭉낀 브르삐사 르비 바익.	berpisah = 헤어지다 (말레이 표준)
+l6_d18_t10	6	대화18	B	10	Kalau itu pilihanmu, aku hormati.	그게 네 선택이면 존중해.	깔라우 이뚜 삘리한무, 아꾸 호르마띠.	hormati = 존중하다	Kalau itu pilihan awak, saya hormati.	그게 네 선택이면 존중해.	깔라우 이뚜 삘리한 아왁, 사야 호르마띠.	hormati = 존중하다
+l6_d19_t01	6	대화19	A	1	Match Tinder kemarin udah minta foto KTP.	어제 매치가 신분증 사진 요구해.	마쯔 띤더르 끄마린 우다 민따 포또 까떼뻬.	KTP = Kartu Tanda Penduduk (인니 신분증)	Match Tinder semalam dah minta foto MyKad.	어제 매치가 MyKad 사진 요구해.	마쯔 띤더르 스말람 다 민따 포또 마이깟.	MyKad = 말레이 신분증 (Kad Pengenalan)
+l6_d19_t02	6	대화19	B	2	Hapus aja. Itu scam.	지워. 그건 사기야.	하뿌스 아자. 이뚜 스깸.	hapus = 지우다	Padam je. Itu scam.	지워. 사기야.	빠담 즈. 이뚜 스깸.	padam = 지우다 (말레이 표준, hapus는 인니)
+l6_d19_t03	6	대화19	A	3	Tapi orangnya kayak baik.	근데 사람은 좋아 보였어.	따삐 오랑냐 까야 바익.	kayak = ~같이 (구어, seperti)	Tapi orangnya macam baik.	근데 사람은 좋아 보였어.	따삐 오랑냐 마짬 바익.	macam = ~같이 (말레이 표준, kayak/seperti)
+l6_d19_t04	6	대화19	B	4	Foto profil cuma satu?	프사 하나만이야?	포또 프로필 쭈마 사뚜?		Foto profil cuma satu?	프사 하나만이야?	포또 프로필 쭈마 사뚜?	
+l6_d19_t05	6	대화19	A	5	Iya, modelan.	응, 모델 같은.	이야, 모델란.	modelan = 모델 같은 (구어)	Ya, macam model.	응, 모델 같은.	야, 마짬 모델.	
+l6_d19_t06	6	대화19	B	6	Pasti palsu. Reverse image search dulu.	가짜 확실. 역검색 해봐.	빠스띠 빨수. 리버스 이미지 서치 둘루.	palsu = 가짜	Mesti palsu. Carian gambar songsang dulu.	가짜 확실. 역검색 해봐.	메스띠 빨수. 짜리안 감바르 송상 둘루.	palsu = 가짜, songsang = 거꾸로 (말레이 표준)
+l6_d19_t07	6	대화19	A	7	Cara gimana?	어떻게?	짜라 기마나?		Macam mana?	어떻게?	마짬 마나?	
+l6_d19_t08	6	대화19	B	8	Google Lens, drag fotonya.	구글 렌즈에 사진 드래그.	구글 렌즈, 드래그 포또냐.		Google Lens, drag fotonya.	구글 렌즈에 사진 드래그.	구글 렌즈, 드래그 포또냐.	
+l6_d19_t09	6	대화19	A	9	Eh, muncul akun lain pake foto sama.	어, 다른 계정도 같은 사진 써.	에, 문쭐 아꾼 라인 빠께 포또 사마.	muncul = 나타나다, pake = pakai 구어	Eh, muncul akaun lain guna foto sama.	어, 다른 계정도 같은 사진 써.	에, 문쭐 아까운 라인 구나 포또 사마.	akaun = 계정 (말레이 철자, akun은 인니), guna = 사용
+l6_d19_t10	6	대화19	B	10	Block. Lain kali video call dulu.	차단. 다음엔 영상통화 먼저.	블록. 라인 깔리 비디오 콜 둘루.		Block. Lain kali video call dulu.	차단. 다음엔 영상통화.	블록. 라인 깔리 비디오 콜 둘루.	
+l6_d20_t01	6	대화20	A	1	Cantik, sendirian?	예쁜데, 혼자야?	짠띡, 슨디리안?	cantik = 예쁘다, sendirian = 혼자	Cantik, sorang?	예쁜데, 혼자야?	짠띡, 소랑?	cantik = 예쁘다, sorang = 혼자 (말레이 구어)
+l6_d20_t02	6	대화20	B	2	Lagi nunggu temen.	친구 기다려.	라기 눙구 뜨믄.	nunggu = menunggu 구어	Tengah tunggu kawan.	친구 기다려.	뜨응아 뚱구 까완.	kawan = 친구 (말레이 표준, temen은 인니)
+l6_d20_t03	6	대화20	A	3	Aku temenin sebentar.	잠깐 같이 있어줄게.	아꾸 뜨므닌 스븐따르.	temenin = menemani 구어	Saya temani sekejap.	잠깐 같이.	사야 뜨마니 스끄잡.	temani = 함께 있다, sekejap = 잠깐 (말레이)
+l6_d20_t04	6	대화20	B	4	Makasih, tapi nggak usah.	고맙지만 됐어.	마까시, 따삐 응각 우사.	nggak usah = 필요 없다	Terima kasih, tapi tak payah.	고맙지만 됐어.	뜨리마 까시, 따삐 딱 빠야.	tak payah = 필요 없다 (말레이 구어)
+l6_d20_t05	6	대화20	A	5	Cuma ngobrol doang.	그냥 얘기만.	쭈마 응오브롤 도앙.	doang = 그냥 (구어)	Cuma berbual je.	그냥 얘기만.	쭈마 브르부알 즈.	berbual = 대화하다 (말레이), je = 그냥
+l6_d20_t06	6	대화20	B	6	Aku lagi nggak mood.	기분 아냐.	아꾸 라기 응각 무드.	mood = 영어 차용	Saya tengah tak mood.	기분 아냐.	사야 뜨응아 딱 무드.	tengah = ~중 (말레이), mood = 영어 차용
+l6_d20_t07	6	대화20	A	7	Boleh nomor?	번호 줄래?	볼레 노모르?		Boleh nombor?	번호 줄래?	볼레 놈보르?	
+l6_d20_t08	6	대화20	B	8	Maaf, nggak bagi.	미안, 안 줘.	마앞, 응각 바기.	bagi = 나눠주다	Maaf, tak bagi.	미안, 안 줘.	마앞, 딱 바기.	bagi = 나눠주다
+l6_d20_t09	6	대화20	A	9	Yaudah deh.	그럼 됐어.	야우다 데.	yaudah = 그럼 (구어)	Ya sudah la.	그럼 됐어.	야 수다 라.	ya sudah la = 그럼 (말레이 구어)
+l6_d20_t10	6	대화20	B	10	Selamat malam.	잘 가.	슬라맛 말람.		Selamat malam.	잘 가.	슬라맛 말람.	
+l6_d21_t01	6	대화21	B	1	Itu siapa di story kamu?	니 스토리 그 사람 누구야?	이뚜 시아빠 디 스또리 까무?	story = IG 스토리	Itu siapa dalam story awak?	니 스토리 그 사람 누구야?	이뚜 시아빠 달람 스또리 아왁?	story = IG 스토리
+l6_d21_t02	6	대화21	A	2	Mantan teman SMA.	고등학교 친구.	만딴 뜨만 에스엠아.	mantan = 전(前), SMA = 고등학교	Bekas kawan sekolah.	학교 친구.	브까스 까완 스꼴라.	bekas = 전(前) (말레이, mantan은 인니), sekolah = 학교
+l6_d21_t03	6	대화21	B	3	Kok cuma berdua?	왜 둘이만?	꼭 쭈마 브르두아?	kok = 왜 (구어)	Kenapa cuma berdua?	왜 둘이만?	끄나빠 쭈마 브르두아?	
+l6_d21_t04	6	대화21	A	4	Reuni kecil kemarin.	어제 작은 모임.	르우니 끄찔 끄마린.	reuni = 동창회	Reuni kecil semalam.	어제 작은 모임.	르우니 끄찔 스말람.	reuni = 동창회, semalam = 어제 (말레이)
+l6_d21_t05	6	대화21	B	5	Aku nggak diundang.	나 초대 안 했어.	아꾸 응각 디운당.	diundang = 초대받다	Saya tak dijemput.	나 초대 안 했어.	사야 딱 디즘붓.	dijemput = 초대받다 (말레이, diundang)
+l6_d21_t06	6	대화21	A	6	Bukan acara couple.	커플 자리 아니라.	부깐 아짜라 쪼우플.	acara = 행사	Bukan acara couple.	커플 자리 아니라.	부깐 아짜라 코우플.	acara = 행사
+l6_d21_t07	6	대화21	B	7	Tetap aja kasih tahu.	그래도 알려줬어야지.	뜨땁 아자 까시 따후.	kasih tahu = 알려주다	Tetap je beritahu.	그래도 알려줬어야지.	뜨땁 즈 브리따후.	beritahu = 알려주다 (말레이 한 단어)
+l6_d21_t08	6	대화21	A	8	Maaf, lupa.	미안, 깜빡.	마앞, 루빠.		Maaf, lupa.	미안, 깜빡.	마앞, 루빠.	
+l6_d21_t09	6	대화21	B	9	Lain kali tag aku.	다음엔 태그해.	라인 깔리 딱 아꾸.	tag = IG 태그	Lain kali tag saya.	다음엔 태그해.	라인 깔리 딱 사야.	tag = IG 태그
+l6_d21_t10	6	대화21	A	10	Oke, janji.	오케이, 약속.	오께, 잔지.	janji = 약속	Okay, janji.	오케이, 약속.	오케이, 잔지.	janji = 약속
+l6_d22_t01	6	대화22	A	1	Kamu mau?	원해?	까무 마우?	mau = 원하다 (consent 핵심 동사)	Awak nak?	원해?	아왁 낙?	nak = 원하다 (말레이 구어, consent 핵심)
+l6_d22_t02	6	대화22	B	2	Aku ragu.	망설여져.	아꾸 라구.	ragu = 망설이다	Saya ragu.	망설여져.	사야 라구.	ragu = 망설이다
+l6_d22_t03	6	대화22	A	3	Kita stop.	그만하자.	끼따 스똡.	stop = 영어 차용	Kita stop.	그만하자.	끼따 스똡.	stop = 영어 차용
+l6_d22_t04	6	대화22	B	4	Bukan soal kamu.	너 때문 아냐.	부깐 소알 까무.	soal = 문제	Bukan soal awak.	너 때문 아냐.	부깐 소알 아왁.	soal = 문제
+l6_d22_t05	6	대화22	A	5	Kapan kamu siap, kasih tahu.	준비되면 알려줘.	까빤 까무 시압, 까시 따후.	siap = 준비되다	Bila awak sedia, beritahu.	준비되면 알려줘.	빌라 아왁 스디아, 브리따후.	sedia = 준비되다 (말레이, siap도 사용)
+l6_d22_t06	6	대화22	B	6	Aku takut tergesa.	서두를까 무서워.	아꾸 따꿋 뜨르그사.	tergesa = 서두름	Saya takut tergesa-gesa.	서두를까 무서워.	사야 따꿋 뜨르그사 그사.	tergesa-gesa = 서두름 (말레이 표준 reduplication)
+l6_d22_t07	6	대화22	A	7	Nggak ada yang dipaksa.	강요 없어.	응각 아다 양 디빡사.	dipaksa = 강요받다	Tak ada yang dipaksa.	강요 없어.	딱 아다 양 디빡사.	dipaksa = 강요받다
+l6_d22_t08	6	대화22	B	8	Makasih sabar.	인내심 고마워.	마까시 사바르.	sabar = 인내	Terima kasih sabar.	인내심 고마워.	뜨리마 까시 사바르.	sabar = 인내
+l6_d22_t09	6	대화22	A	9	Tidur aja yuk.	그냥 자자.	띠두르 아자 육.	yuk = ~하자 (구어 권유)	Tidur je jom.	그냥 자자.	띠두르 즈 좀.	jom = ~하자 (말레이 구어, yuk은 인니)
+l6_d22_t10	6	대화22	B	10	Peluk doang.	안고만.	쁠룩 도앙.	peluk = 포옹	Peluk je.	안고만.	쁠룩 즈.	peluk = 포옹

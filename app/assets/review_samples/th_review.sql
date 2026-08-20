@@ -1,0 +1,153 @@
+-- ============================================================
+-- TH 검수 샘플 (Gemini 새 채팅방용)
+-- 각 레벨 1 dialogue + L6 8 테마 첫 dialogue 4턴씩
+-- 작성: 2026-04-25
+-- 사용: docs/_th_review_session_brief.md 다음 메시지로 붙여넣기
+-- ============================================================
+
+insert into public.items
+  (id, type, target_text, korean, romanization, category, course,
+   tags, notes, comment, language_code, speaker, turn_order, scenario, vocab_hints)
+values
+  -- ---- l1_d01 (from th_l1_part1) ----
+  ('th:sent:l1_d01_t01', 'sentence', 'สวัสดีครับ', '안녕하세요', 'sà-wàt-dii khráp / 사왓디 크랍', 'd01', 1, '{new,l1,greeting,particle:khrap}', 'ครับ — 남성 어기조사 (정중)', '', 'th', 'A', 1, 'L1 d01 — 처음 인사 (남↔여)', '[{"w":"สวัสดี","ko":"안녕"}]'::jsonb),
+  ('th:sent:l1_d01_t02', 'sentence', 'สวัสดีค่ะ', '안녕하세요', 'sà-wàt-dii khâ / 사왓디 카↓', 'd01', 1, '{new,l1,greeting,particle:kha}', 'ค่ะ — 여성 어기조사 (정중)', '', 'th', 'B', 2, '인사', '[]'::jsonb),
+  ('th:sent:l1_d01_t03', 'sentence', 'สบายดีไหม', '잘 지내?', 'sà-baai-dii mái / 사바이디 마이↑', 'd01', 1, '{new,l1,greeting,particle:mai}', 'ไหม — 의문 어기조사', '', 'th', 'A', 3, '안부', '[{"w":"สบายดี","ko":"잘지내다"}]'::jsonb),
+  ('th:sent:l1_d01_t04', 'sentence', 'สบายดีค่ะ ขอบคุณ', '잘 지내요, 감사', 'sà-baai-dii khâ, khɔ̀ɔp-khun / 사바이디 카↓, 컵쿤', 'd01', 1, '{new,l1,greeting}', '', '', 'th', 'B', 4, '안부', '[]'::jsonb),
+  ('th:sent:l1_d01_t05', 'sentence', 'ยินดีที่ได้รู้จัก', '만나서 반가워요', 'yin-dii thîi dâai rúu-càk / 인디 티 다이↘ 루↑짝', 'd01', 1, '{new,l1,greeting}', '', '', 'th', 'A', 5, '인사', '[{"w":"ยินดี","ko":"기쁨"}]'::jsonb),
+  ('th:sent:l1_d01_t06', 'sentence', 'เช่นกันค่ะ', '저도요', 'chên-kan khâ / 첸깐 카↓', 'd01', 1, '{new,l1,greeting}', '', '', 'th', 'B', 6, '인사', '[]'::jsonb),
+  -- ---- l2_d01 (from th_l2_part1) ----
+  ('th:sent:l2_d01_t01', 'sentence', 'เย็นนี้กลับกี่โมง?', '오늘 저녁 몇 시에 와?', 'yen-nii klap kii-moong / 옌↘니↗ 끌랍↓ 끼↘몽', 'd01', 2, '{new,l2,chat}', '룸메이트 카톡 시작 — 시간 확인. 친한 사이 무 ครับ', '', 'th', 'A', 1, '룸메이트 카톡 — Pim(여)과 Ton(남)이 콘도 룸메. 청소·전기세 일상 갈등', '[{"w":"เย็น","ko":"저녁"},{"w":"กลับ","ko":"돌아가다"},{"w":"กี่โมง","ko":"몇 시"}]'::jsonb),
+  ('th:sent:l2_d01_t02', 'sentence', 'ประมาณ 7 โมง ทำไมเหรอ', '한 7시쯤. 왜?', 'pramaan jet moong, thammai rə̌ə / 쁘라만 쩻 몽, 탐마이 르↗어', 'd01', 2, '{new,l2,chat}', 'เหรอ — 가벼운 의문조사 (왜·진짜?)', '', 'th', 'B', 2, '룸메이트 카톡', '[{"w":"ประมาณ","ko":"대략"},{"w":"ทำไม","ko":"왜"},{"w":"เหรอ","ko":"~인가? (가벼운 의문)"}]'::jsonb),
+  ('th:sent:l2_d01_t03', 'sentence', 'บ่นนิดนึง ห้องนายรกมาก', '잠깐 잔소리. 니 방 진짜 어지러워', 'bòn nít-nung, hông naai rók mâak / 본↓ 닛능, 헝↘나이 록↑막↘', 'd01', 2, '{new,l2,chat}', 'นาย — 친한 사이 남성 호칭 (너) / รก — 어지럽다', '', 'th', 'A', 3, '룸메이트 카톡', '[{"w":"บ่น","ko":"잔소리하다"},{"w":"นิดนึง","ko":"잠깐·조금"},{"w":"นาย","ko":"너 (친한 남성 호칭)"},{"w":"รก","ko":"어지러운"}]'::jsonb),
+  ('th:sent:l2_d01_t04', 'sentence', 'รู้ๆ ครับ เดี๋ยวจัดให้ ใจเย็นๆ', '알아알아요, 곧 정리할게. 진정해', 'rúu-rúu khráp, dǐao jàt hâi, jai-yen-yen / 루↑루↑ 크랍↑, 디↗아오 짣↓하이↘, 짜이옌옌', 'd01', 2, '{new,l2,chat}', 'ครับ 1회 — 가벼운 항복·deflection 유머 / ใจเย็นๆ — 진정해 관용', '', 'th', 'B', 4, '룸메이트 카톡', '[{"w":"รู้","ko":"알다"},{"w":"เดี๋ยว","ko":"잠시 후"},{"w":"จัด","ko":"정리하다"},{"w":"ใจเย็น","ko":"진정한"}]'::jsonb),
+  ('th:sent:l2_d01_t05', 'sentence', 'แล้ววันนี้ใครซักผ้า?', '그리고 오늘 누가 빨래?', 'lɛ́ɛw wan-níi khrai sák-phâa / 래↑우 완니↗ 크라이 싹↑파↘', 'd01', 2, '{new,l2,chat}', '주제 전환', '', 'th', 'A', 5, '룸메이트 카톡', '[{"w":"แล้ว","ko":"그리고·이미"},{"w":"วันนี้","ko":"오늘"},{"w":"ใคร","ko":"누구"},{"w":"ซักผ้า","ko":"빨래하다"}]'::jsonb),
+  ('th:sent:l2_d01_t06', 'sentence', 'ตาเราแล้ว วันก่อนเธอซัก', '내 차례. 지난번엔 니가 했고', 'taa rao lɛ́ɛw, wan-kɔ̀ɔn thəə sák / 따 라오 래↑우, 완꼰↓ 트↗어 싹↑', 'd01', 2, '{new,l2,chat}', 'เรา — 친한 사이 1인칭 (나·우리 캐주얼) / เธอ — 친한 호칭 (너)', '', 'th', 'B', 6, '룸메이트 카톡', '[{"w":"ตา","ko":"차례 (관용)"},{"w":"เรา","ko":"나·우리"},{"w":"วันก่อน","ko":"지난번"},{"w":"เธอ","ko":"너 (친한 호칭)"},{"w":"ซัก","ko":"빨다"}]'::jsonb),
+  ('th:sent:l2_d01_t07', 'sentence', 'ดี ค่าไฟเดือนนี้ 850 บาท', '좋아. 이번 달 전기세 850밧', 'dii, khâa-fai dʉan-níi pɛ̀ɛt-rɔ́ɔy-hâa-sìp bàat / 디, 카↘파이 드↘안니↗, 빳↓러이↑하↘십↓ 밧↓', 'd01', 2, '{new,l2,chat}', 'ค่าไฟ — 전기세 / บาท — 밧 (Thai 통화)', '', 'th', 'A', 7, '룸메이트 카톡', '[{"w":"ค่าไฟ","ko":"전기세"},{"w":"เดือน","ko":"달"},{"w":"บาท","ko":"밧"}]'::jsonb),
+  ('th:sent:l2_d01_t08', 'sentence', 'หา? เยอะจังเลย', '헐? 많기도 하네', 'hǎa? yə́ jang ləəi / 하↗? 여↑짱 르↘이', 'd01', 2, '{new,l2,chat}', 'หา — 놀람 / จังเลย — 강조 ("정말~")', '', 'th', 'B', 8, '룸메이트 카톡', '[{"w":"หา","ko":"헐 (놀람)"},{"w":"เยอะ","ko":"많은"},{"w":"จัง","ko":"매우"},{"w":"เลย","ko":"정말·완전"}]'::jsonb),
+  ('th:sent:l2_d01_t09', 'sentence', 'ก็เปิดแอร์ทุกคืนนี่นา', '매일 밤 에어컨 트니까 그렇지', 'kɔ̂ɔ pə̀ət ɛɛ thúk khʉʉn nîi-naa / 꺼↘ 빠↓ㄷ 에 툭↑큰 니↘나', 'd01', 2, '{new,l2,chat}', 'ก็ — 그러니까 / นี่นา — 그렇잖아 (부드러운 질책)', '', 'th', 'A', 9, '룸메이트 카톡', '[{"w":"ก็","ko":"그러니까·또한"},{"w":"เปิด","ko":"켜다"},{"w":"แอร์","ko":"에어컨"},{"w":"ทุก","ko":"모든"},{"w":"คืน","ko":"밤"}]'::jsonb),
+  ('th:sent:l2_d01_t10', 'sentence', 'ก็ร้อนอ่ะ ปิดยังไงล่ะ', '더우니까. 어떻게 꺼', 'kɔ̂ɔ rɔ́ɔn à, pìt yang-ngai lâ / 꺼↘ 런↑ 아↓, 삗↓ 양응↗아이 라↘', 'd01', 2, '{new,l2,chat}', 'อ่ะ — 캐주얼 변명·당위 / ล่ะ — 그럼 / 친한 사이 ครับ X', '', 'th', 'B', 10, '룸메이트 카톡', '[{"w":"ร้อน","ko":"덥다"},{"w":"อ่ะ","ko":"~잖아 (캐주얼)"},{"w":"ปิด","ko":"끄다·닫다"},{"w":"ยังไง","ko":"어떻게"},{"w":"ล่ะ","ko":"~그럼?"}]'::jsonb),
+  ('th:sent:l2_d01_t11', 'sentence', 'ปิดตอนนอนสิ', '잘 때 끄지 그래', 'pìt tɔɔn nɔɔn sì / 삗↓ 떤 넌 시↓', 'd01', 2, '{new,l2,chat}', 'สิ — 가벼운 권유·당위 조사', '', 'th', 'A', 11, '룸메이트 카톡', '[{"w":"ตอน","ko":"~할 때"},{"w":"นอน","ko":"자다"},{"w":"สิ","ko":"~해 (가벼운 권유)"}]'::jsonb),
+  ('th:sent:l2_d01_t12', 'sentence', 'เฮ้ย ตื่นมากลางคืนเลย', '헐, 한밤중에 깨', 'héi tʉ̀ʉn maa klaang-khʉʉn ləəi / 헤이↑ 뜬↓마 끌랑큰 르↘이', 'd01', 2, '{new,l2,chat}', 'เฮ้ย — 강한 놀람·부정', '', 'th', 'B', 12, '룸메이트 카톡', '[{"w":"เฮ้ย","ko":"헐·이봐"},{"w":"ตื่น","ko":"깨다"},{"w":"กลางคืน","ko":"한밤중"}]'::jsonb),
+  ('th:sent:l2_d01_t13', 'sentence', 'งั้นก็แชร์กันคนละครึ่งสิ', '그럼 반반씩 부담하지', 'ngán kɔ̂ɔ chɛɛ kan khon-lá khrʉ̂ng sì / 응안↑ 꺼↘ 채 깐 콘↑라↑ 크릉↘ 시↓', 'd01', 2, '{new,l2,chat}', 'งั้นก็ — 그러면 / แชร์ — share (영어 차용)', '', 'th', 'A', 13, '룸메이트 카톡', '[{"w":"งั้น","ko":"그럼"},{"w":"แชร์","ko":"공유하다"},{"w":"คนละ","ko":"각자"},{"w":"ครึ่ง","ko":"절반"}]'::jsonb),
+  -- ---- l3_d01 (from th_l3_part1) ----
+  ('th:sent:l3_d01_t01', 'sentence', 'ขอโทษค่ะ ขอนั่งด้วยได้ไหม', '죄송한데 같이 앉아도 돼요?', 'khɔ̌ɔ-thôot khâ, khɔ̌ɔ nâng dûai dâai-mái / 커↗톳↘ 카↘, 커↗ 낭↘ 두↘아이 다이↘마↑이', 'd01', 3, '{new,l3,romance,meet}', '정중 양해 — Nene 여 첫 발화', '', 'th', 'A', 1, 'L3 A-arc d01 — Ari 카페 비 오는 오후. Nene(여, 디자이너) 와 Tri(남, 음악가) 우연 합석 첫 만남', '[{"w":"ขอโทษ","ko":"죄송"},{"w":"นั่ง","ko":"앉다"},{"w":"ด้วย","ko":"~도·같이"}]'::jsonb),
+  ('th:sent:l3_d01_t02', 'sentence', 'เชิญครับ ที่ว่างอยู่', '그럼요. 자리 비었어요', 'chəən khráp, thîi wâang yùu / 천 크랍↑, 티↘ 왕↘ 유↓', 'd01', 3, '{new,l3,romance,meet}', 'เชิญ — 정중 권유 ("please") / Tri 정중 ครับ 1회', '', 'th', 'B', 2, 'Ari 카페 만남', '[{"w":"เชิญ","ko":"권하다 (정중)"},{"w":"ว่าง","ko":"비어있는·한가한"}]'::jsonb),
+  ('th:sent:l3_d01_t03', 'sentence', 'ฝนตกแรงจังเลย', '비 진짜 많이 오네', 'fǒn tòk rɛɛng jang ləəi / 폰↗ 똑↓ 랭 짱 르↘이', 'd01', 3, '{new,l3,romance,meet}', '아이스브레이커 — 날씨 small talk', '', 'th', 'A', 3, 'Ari 카페', '[{"w":"ฝน","ko":"비"},{"w":"ตก","ko":"내리다·떨어지다"},{"w":"แรง","ko":"강한"}]'::jsonb),
+  ('th:sent:l3_d01_t04', 'sentence', 'ใช่ ผมลืมร่ม', '응, 우산 깜박했어요', 'châi, phǒm lʉʉm rôm / 차이↘, 폼↗ 름 롬↘', 'd01', 3, '{new,l3,romance,meet}', 'ผม — 1인칭 남성 정중 (첫 만남)', '', 'th', 'B', 4, 'Ari 카페', '[{"w":"ใช่","ko":"맞다·응"},{"w":"ลืม","ko":"잊다·깜박"},{"w":"ร่ม","ko":"우산"}]'::jsonb),
+  ('th:sent:l3_d01_t05', 'sentence', 'เหมือนกันค่ะ ต้องรอที่นี่ก่อน', '저도요. 여기서 기다려야겠어요', 'mʉ̌an kan khâ, tɔ̂ng rɔɔ thîi-nîi kɔ̀ɔn / 므↗안 깐 카↘, 떵↘ 러 티↘니↘ 껀↓', 'd01', 3, '{new,l3,romance,meet}', '공감대 형성', '', 'th', 'A', 5, 'Ari 카페', '[{"w":"เหมือนกัน","ko":"마찬가지"},{"w":"ต้อง","ko":"~해야 한다"},{"w":"รอ","ko":"기다리다"},{"w":"ก่อน","ko":"우선·먼저"}]'::jsonb),
+  ('th:sent:l3_d01_t06', 'sentence', 'กาแฟแก้วนี้อร่อยมาก', '이 커피 진짜 맛있어요', 'kaa-fɛɛ kɛ̂ɛo níi à-rɔ̀i mâak / 까페 깨↘오 니↗ 아↓러↓이 막↘', 'd01', 3, '{new,l3,romance,meet}', 'แก้ว — 잔 (종별사 ลักษณนาม)', '', 'th', 'B', 6, 'Ari 카페', '[{"w":"กาแฟ","ko":"커피"},{"w":"แก้ว","ko":"잔 (종별사)"},{"w":"อร่อย","ko":"맛있는"}]'::jsonb),
+  ('th:sent:l3_d01_t07', 'sentence', 'มาที่นี่บ่อยมั้ย', '여기 자주 와?', 'maa thîi-nîi bɔ̀i mái / 마 티↘니↘ 버↓이 마↑이', 'd01', 3, '{new,l3,romance,meet}', '존댓말 → 캐주얼 transition (몇 분 대화 후)', '', 'th', 'A', 7, 'Ari 카페', '[{"w":"บ่อย","ko":"자주"}]'::jsonb),
+  ('th:sent:l3_d01_t08', 'sentence', 'สัปดาห์ละ 2-3 ครั้ง ผมเป็นนักดนตรี', '일주일에 2-3번. 음악가예요', 'sàp-daa lá sɔ̌ɔng-sǎam khráng, phǒm pen nák-don-trii / 삽↓다 라↑ 송↗삼↗ 크랑↑, 폼↗ 뺀 낙↑돈뜨리', 'd01', 3, '{new,l3,romance,meet}', 'นักดนตรี — 음악가 (นัก = ~人)', '', 'th', 'B', 8, 'Ari 카페', '[{"w":"สัปดาห์","ko":"주"},{"w":"ครั้ง","ko":"~번"},{"w":"นักดนตรี","ko":"음악가"}]'::jsonb),
+  ('th:sent:l3_d01_t09', 'sentence', 'จริงเหรอ เล่นอะไร', '진짜? 뭐 연주해?', 'jing rə̌ə, lên à-rai / 찡 르↗어, 렌↘ 아↓라이', 'd01', 3, '{new,l3,romance,meet}', '관심 표시', '', 'th', 'A', 9, 'Ari 카페', '[{"w":"เล่น","ko":"연주하다·놀다"}]'::jsonb),
+  ('th:sent:l3_d01_t10', 'sentence', 'กีตาร์ คุณล่ะ ทำงานอะไร', '기타. 너는 무슨 일?', 'kii-tâa, khun lâ, tham-ngaan à-rai / 끼↗따↘, 쿤 라↘, 탐응안 아↓라이', 'd01', 3, '{new,l3,romance,meet}', 'คุณ — 정중 호칭 (당신·그쪽)', '', 'th', 'B', 10, 'Ari 카페', '[{"w":"กีตาร์","ko":"기타"},{"w":"คุณ","ko":"당신·그쪽"}]'::jsonb),
+  ('th:sent:l3_d01_t11', 'sentence', 'เป็นกราฟิกดีไซเนอร์ค่ะ', '그래픽 디자이너예요', 'pen krá-fík dii-saai-nə̂ə khâ / 뺀 그라↑픽↑ 디싸이너↘ 카↘', 'd01', 3, '{new,l3,romance,meet}', '외래어 차용 — graphic designer', '', 'th', 'A', 11, 'Ari 카페', '[{"w":"กราฟิก","ko":"그래픽"},{"w":"ดีไซเนอร์","ko":"디자이너"}]'::jsonb),
+  ('th:sent:l3_d01_t12', 'sentence', 'เจ๋งเลย ดูงานได้มั้ย', '멋지다! 작품 볼 수 있어?', 'jěng ləəi, duu ngaan dâai mái / 쩽↗ 르↘이, 두 응안 다이↘ 마↑이', 'd01', 3, '{new,l3,romance,meet}', 'เจ๋ง — slang 멋진·쩐다', '', 'th', 'B', 12, 'Ari 카페', '[{"w":"เจ๋ง","ko":"멋진 (slang)"},{"w":"ดู","ko":"보다"},{"w":"งาน","ko":"일·작품"}]'::jsonb),
+  ('th:sent:l3_d01_t13', 'sentence', 'แน่นอนค่ะ ขอไอจีหน่อย', '물론이죠. IG 알려줘요', 'nɛ̂ɛ-nɔɔn khâ, khɔ̌ɔ ai-jii nɔ̀i / 내↘넌 카↘, 커↗ 아이지 너↓이', 'd01', 3, '{new,l3,romance,meet}', 'IG = Instagram (Thai 청년 표준)', '', 'th', 'A', 13, 'Ari 카페', '[{"w":"แน่นอน","ko":"물론"},{"w":"ไอจี","ko":"IG·인스타"}]'::jsonb),
+  ('th:sent:l3_d01_t14', 'sentence', '@tri_guitar นะ ฝนหยุดแล้ว ไปดีกว่า', '@tri_guitar. 비 그쳤네, 가야겠어', 'tri_guitar ná, fǒn yùt lɛ́ɛw, pai dii kwàa / @tri_guitar 나↑, 폰↗ 윳↓ 래↑우, 빠이 디 꽈↓', 'd01', 3, '{new,l3,romance,meet}', '펀치라인 — 자연스러운 마무리, 다음 contact 가능성 남김', '', 'th', 'B', 14, 'Ari 카페', '[{"w":"หยุด","ko":"멈추다"},{"w":"ดีกว่า","ko":"~하는 게 낫다"}]'::jsonb)
+on conflict (id) do update set
+  target_text = excluded.target_text, korean = excluded.korean, romanization = excluded.romanization,
+  category = excluded.category, course = excluded.course, tags = excluded.tags,
+  notes = excluded.notes, comment = excluded.comment, speaker = excluded.speaker,
+  turn_order = excluded.turn_order, scenario = excluded.scenario, vocab_hints = excluded.vocab_hints;
+
+-- A2 (d02): 1주일 후 IG DM 으로 약속, Thonglor 이탈리안 식당 첫 데이트
+insert into public.items
+  (id, type, target_text, korean, romanization, category, course,
+   tags, notes, comment, language_code, speaker, turn_order, scenario, vocab_hints)
+values
+  ('th:sent:l3_d02_t01', 'sentence', 'มาตรงเวลาเลย ตื่นเต้นเหรอ', '시간 딱 맞춰 왔네. 긴장돼?', 'maa trong wee-laa ləəi, tʉ̀ʉn-tên rə̌ə / 마 뜨롱 웰라 르↘이, 뜬↓뗀↘ 르↗어', 'd02', 3, '{new,l3,romance,date}', 'ตรงเวลา — 정시·정확한 시간 / 가벼운 놀림', '', 'th', 'B', 1, 'L3 A-arc d02 — 1주일 후 Thonglor 이탈리안 식당 첫 정식 데이트', '[{"w":"ตรงเวลา","ko":"정시"},{"w":"ตื่นเต้น","ko":"긴장한·설레는"}]'::jsonb),
+  -- ---- l4_d01 (from th_l4_part1) ----
+  ('th:sent:l4_d01_t01', 'sentence', 'ขอโทษครับ เติมเงินบัตร BTS ที่ไหน', '실례합니다. BTS 카드 충전 어디서?', 'khɔ̌ɔ-thôot khráp, təəm ngən bàt BTS thîi-nǎi / 커↗톳↘ 크랍↑, 틈 응은 밧↓ BTS 티↘나↗이', 'd01', 4, '{new,l4,travel,day,bts}', '외국인 첫 발화 — 정중 ครับ (남)', '', 'th', 'A', 1, 'L4 d01 — Sukhumvit BTS 역, 외국인 손님이 직원에게 카드 충전 문의', '[{"w":"เติม","ko":"채우다·충전"},{"w":"เงิน","ko":"돈"},{"w":"บัตร","ko":"카드"}]'::jsonb),
+  ('th:sent:l4_d01_t02', 'sentence', 'ที่ตู้ตรงนั้นค่ะ เครื่องสีฟ้า', '저기 기계요. 파란 기계', 'thîi tûu trong-nán khâ, khrʉ̂ang sǐi fáa / 티↘ 뚜 뜨롱난↑ 카↘, 크르↘앙 시↗ 파↑', 'd01', 4, '{new,l4,travel,day,bts}', 'ตู้ — 부스·기계 / Thai 색깔 (สี + 색명)', '', 'th', 'B', 2, 'BTS 충전', '[{"w":"ตู้","ko":"부스·기계"},{"w":"เครื่อง","ko":"기계"},{"w":"สี","ko":"색"},{"w":"ฟ้า","ko":"하늘색·파랑"}]'::jsonb),
+  ('th:sent:l4_d01_t03', 'sentence', 'รับบัตรเครดิตมั้ย', '신용카드 받아?', 'ráp bàt khree-dìt mái / 랍↑ 밧↓ 크레딧↓ 마↑이', 'd01', 4, '{new,l4,travel,day,bts}', '결제 수단 확인', '', 'th', 'A', 3, 'BTS 충전', '[{"w":"รับ","ko":"받다"},{"w":"บัตรเครดิต","ko":"신용카드"}]'::jsonb),
+  ('th:sent:l4_d01_t04', 'sentence', 'รับค่ะ แต่เครื่องนี้รับเงินสดอย่างเดียว', '받아요. 근데 이 기계는 현금만', 'ráp khâ, tɛ̀ɛ khrʉ̂ang níi ráp ngən-sòt yàang-diao / 랍↑ 카↘, 때↓ 크르↘앙 니↗ 랍↑ 응은쏫↓ 양↓디↘아오', 'd01', 4, '{new,l4,travel,day,bts}', 'อย่างเดียว — ~만·only', '', 'th', 'B', 4, 'BTS 충전', '[{"w":"เงินสด","ko":"현금"},{"w":"อย่างเดียว","ko":"~만"}]'::jsonb),
+  ('th:sent:l4_d01_t05', 'sentence', 'อ้อ มีตู้แลกเงินใกล้ๆ มั้ย', '아. 환전 기계 근처에 있어?', 'ɔ̂ɔ, mii tûu lɛ̂ɛk ngən klâi-klâi mái / 어↘, 미 뚜 랙↘ 응은 끌라이↘끌라이↘ 마↑이', 'd01', 4, '{new,l4,travel,day,bts}', 'แลกเงิน — 환전', '', 'th', 'A', 5, 'BTS 충전', '[{"w":"แลก","ko":"바꾸다·환전"}]'::jsonb),
+  ('th:sent:l4_d01_t06', 'sentence', 'ATM ทางขวาค่ะ ถอนได้ทุกธนาคาร', 'ATM 오른쪽이요. 모든 은행 가능', 'ATM thaang-khwǎa khâ, thɔ̌ɔn dâai thúk thá-naa-khaan / ATM 탕꽈↗ 카↘, 턴↗ 다이↘ 툭↑ 타↑나칸', 'd01', 4, '{new,l4,travel,day,bts}', 'ทางขวา — 오른쪽 / ถอน — 인출 / ธนาคาร — 은행', '', 'th', 'B', 6, 'BTS 충전', '[{"w":"ทางขวา","ko":"오른쪽"},{"w":"ถอน","ko":"인출"},{"w":"ธนาคาร","ko":"은행"}]'::jsonb),
+  ('th:sent:l4_d01_t07', 'sentence', 'เติมเท่าไหร่ดี ครั้งหนึ่ง', '한 번에 얼마 충전?', 'təəm thâo-rài dii, khráng-nʉ̀ng / 틈 타↘오라이↘ 디, 크랑↑능↓', 'd01', 4, '{new,l4,travel,day,bts}', '', '', 'th', 'A', 7, 'BTS 충전', '[]'::jsonb),
+  ('th:sent:l4_d01_t08', 'sentence', '500 บาทก็พอแล้วค่ะ ใช้ได้นาน', '500밧 충분해요. 오래 써요', 'hâa-rɔ́ɔy bàat kɔ̂ɔ phɔɔ lɛ́ɛw khâ, chái dâai naan / 하↘러이↑ 밧↓ 꺼↘ 퍼 래↑우 카↘, 차이↑ 다이↘ 난', 'd01', 4, '{new,l4,travel,day,bts}', 'ก็พอแล้ว — 그 정도면 충분', '', 'th', 'B', 8, 'BTS 충전', '[{"w":"พอ","ko":"충분"}]'::jsonb),
+  ('th:sent:l4_d01_t09', 'sentence', 'ขอบคุณครับ ไปสยามต้องลงสถานีไหน', '감사. Siam 가려면 어느 역?', 'khɔ̀ɔp-khun khráp, pai sà-yǎam tɔ̂ng long sà-thǎa-nii nǎi / 컵↓쿤 크랍↑, 빠이 싸↓얌↗ 떵↘ 롱 싸↓타↗니 나↗이', 'd01', 4, '{new,l4,travel,day,bts}', 'ลง — 내리다 / สถานี — 역', '', 'th', 'A', 9, 'BTS 충전', '[{"w":"ลง","ko":"내리다"},{"w":"สถานี","ko":"역"}]'::jsonb),
+  ('th:sent:l4_d01_t10', 'sentence', 'สยาม ลงสถานีสยามค่ะ ตรงเลย', 'Siam 역에서 내려요. 직진', 'sà-yǎam, long sà-thǎa-nii sà-yǎam khâ, trong ləəi / 싸↓얌↗, 롱 싸↓타↗니 싸↓얌↗ 카↘, 뜨롱 르↘이', 'd01', 4, '{new,l4,travel,day,bts}', 'ตรงเลย — 직진', '', 'th', 'B', 10, 'BTS 충전', '[{"w":"ตรง","ko":"직진·정확"}]'::jsonb),
+  ('th:sent:l4_d01_t11', 'sentence', 'กี่สถานีจากที่นี่', '여기서 몇 역?', 'kìi sà-thǎa-nii jàak thîi-nîi / 끼↓ 싸↓타↗니 짝↓ 티↘니↘', 'd01', 4, '{new,l4,travel,day,bts}', '', '', 'th', 'A', 11, 'BTS 충전', '[{"w":"จาก","ko":"~로부터"}]'::jsonb),
+  ('th:sent:l4_d01_t12', 'sentence', '4 สถานีค่ะ ไม่ไกล', '4역이요. 안 멀어요', 'sìi sà-thǎa-nii khâ, mâi klai / 시↓ 싸↓타↗니 카↘, 마이↘ 끌라이', 'd01', 4, '{new,l4,travel,day,bts}', '', '', 'th', 'B', 12, 'BTS 충전', '[]'::jsonb),
+  ('th:sent:l4_d01_t13', 'sentence', 'ขอบคุณมากครับ', '정말 감사합니다', 'khɔ̀ɔp-khun mâak khráp / 컵↓쿤 막↘ 크랍↑', 'd01', 4, '{new,l4,travel,day,bts}', '정중 감사 마무리', '', 'th', 'A', 13, 'BTS 충전', '[]'::jsonb),
+  ('th:sent:l4_d01_t14', 'sentence', 'ไม่เป็นไรค่ะ เที่ยวให้สนุก', '천만에요. 즐거운 여행', 'mâi-pen-rai khâ, thîao hâi sà-nùk / 마이↘뺀라이 카↘, 티↘아오 하이↘ 싸↓눅↓', 'd01', 4, '{new,l4,travel,day,bts}', '펀치라인 — Thai 인사 관용', '', 'th', 'B', 14, 'BTS 충전', '[{"w":"ไม่เป็นไร","ko":"천만에"},{"w":"เที่ยว","ko":"여행하다"}]'::jsonb)
+on conflict (id) do update set
+  target_text = excluded.target_text, korean = excluded.korean, romanization = excluded.romanization,
+  category = excluded.category, course = excluded.course, tags = excluded.tags,
+  notes = excluded.notes, comment = excluded.comment, speaker = excluded.speaker,
+  turn_order = excluded.turn_order, scenario = excluded.scenario, vocab_hints = excluded.vocab_hints;
+
+-- d02: Chatuchak 시장 흥정 (외국인 + Thai 노점상)
+insert into public.items
+  (id, type, target_text, korean, romanization, category, course,
+   tags, notes, comment, language_code, speaker, turn_order, scenario, vocab_hints)
+values
+  ('th:sent:l4_d02_t01', 'sentence', 'เสื้อตัวนี้ราคาเท่าไหร่', '이 옷 얼마?', 'sʉ̂a tua níi raa-khaa thâo-rài / 스↘아 뚜↘아 니↗ 라카 타↘오라이↘', 'd02', 4, '{new,l4,travel,day,market}', 'ตัว — 옷 종별사', '', 'th', 'A', 1, 'L4 d02 — Chatuchak 주말 시장 의류 노점, 외국인 + Thai 노점상 흥정', '[{"w":"เสื้อ","ko":"옷"},{"w":"ราคา","ko":"가격"}]'::jsonb),
+  -- ---- l5_d01 (from th_l5_part1) ----
+  ('th:sent:l5_d01_t01', 'sentence', '4EVE คอนเสิร์ตเปิดขายตั๋วพรุ่งนี้', '4EVE 콘서트 내일 티켓 오픈', '4EVE concert pə̀ət khǎai tǔa phrûng-níi / 4EVE concert 빠↓ㄷ 카↗이 뚜↗아 프룽니↗', 'd01', 5, '{new,l5,fandom,tpop,concert}', '4EVE — Thai 4인조 걸그룹 (T-pop 인기) / ตั๋ว — 티켓', '', 'th', 'A', 1, 'L5 d01 — Pim × Earn (4EVE 팬 친구). 콘서트 티켓팅 작전', '[{"w":"คอนเสิร์ต","ko":"콘서트"},{"w":"ตั๋ว","ko":"티켓"}]'::jsonb),
+  ('th:sent:l5_d01_t02', 'sentence', 'จริงเหรอ! ราคาเท่าไหร่', '진짜?! 가격 얼마?', 'jing rə̌ə! raa-khaa thâo-rài / 찡 르↗어! 라카 타↘오라이↘', 'd01', 5, '{new,l5,fandom,tpop,concert}', '', '', 'th', 'B', 2, '티켓팅', '[]'::jsonb),
+  ('th:sent:l5_d01_t03', 'sentence', 'VIP 4500 stand 2500 nosebleed 1500', 'VIP 4500, 스탠딩 2500, 외야 1500', 'VIP sìi-phan-hâa stand sɔ̌ɔng-phan-hâa nosebleed nʉ̀ng-phan-hâa / VIP 시↓판하↘ stand 송↗판하↘ nosebleed 능↓판하↘', 'd01', 5, '{new,l5,fandom,tpop,concert}', '외래어 + 큰 숫자', '', 'th', 'A', 3, '티켓팅', '[]'::jsonb),
+  ('th:sent:l5_d01_t04', 'sentence', 'VIP แพงไป stand ก็พอ', 'VIP 너무 비싸. 스탠딩 충분', 'VIP phɛɛng pai, stand kɔ̂ɔ phɔɔ / VIP 팽 빠이, stand 꺼↘ 퍼', 'd01', 5, '{new,l5,fandom,tpop,concert}', '', '', 'th', 'B', 4, '티켓팅', '[]'::jsonb),
+  ('th:sent:l5_d01_t05', 'sentence', 'ใช้ Thai Ticket Major หรือ Live Nation', 'Thai Ticket Major 아니면 Live Nation 이용?', 'chái Thai Ticket Major rʉ̌ʉ Live Nation / 차이↑ Thai Ticket Major 르↗으 Live Nation', 'd01', 5, '{new,l5,fandom,tpop,concert}', 'Thai 티켓 사이트', '', 'th', 'A', 5, '티켓팅', '[]'::jsonb),
+  ('th:sent:l5_d01_t06', 'sentence', 'Thai Ticket Major ดีกว่า เร็วกว่า', 'Thai Ticket Major. 더 빨라', 'Thai Ticket Major dii-kwàa, reo-kwàa / Thai Ticket Major 디꽈↓, 레오꽈↓', 'd01', 5, '{new,l5,fandom,tpop,concert}', '', '', 'th', 'B', 6, '티켓팅', '[]'::jsonb),
+  ('th:sent:l5_d01_t07', 'sentence', '10 โมงเช้า ตั้งนาฬิกาแล้ว', '오전 10시. 알람 맞춰놨어', 'sìp moong cháao, tâng naa-lí-kaa lɛ́ɛw / 십↓ 몽 차↗오, 땅↘ 나리↑까 래↑우', 'd01', 5, '{new,l5,fandom,tpop,concert}', '', '', 'th', 'A', 7, '티켓팅', '[]'::jsonb),
+  ('th:sent:l5_d01_t08', 'sentence', 'จะกดให้ทันมั้ย คนเยอะ', '제때 누를 수 있을까? 사람 많아', 'jà kòt hâi than mái, khon yə́ / 짜↓ 꼿↓ 하이↘ 탄 마↑이, 콘 여↑', 'd01', 5, '{new,l5,fandom,tpop,concert}', 'กด — 누르다 / ทัน — 제때', '', 'th', 'B', 8, '티켓팅', '[{"w":"กด","ko":"누르다"}]'::jsonb),
+  ('th:sent:l5_d01_t09', 'sentence', 'ลองทั้งคู่ ถ้าใครได้บอก', '둘 다 시도. 누가 되면 알리기', 'lɔɔng tháng-khûu, thâa khrai dâai bɔ̀ɔk / 렁 탕↑쿠↘, 타↘ 크라이 다이↘ 벅↓', 'd01', 5, '{new,l5,fandom,tpop,concert}', 'ทั้งคู่ — 둘 다', '', 'th', 'A', 9, '티켓팅', '[{"w":"ทั้งคู่","ko":"둘 다"}]'::jsonb),
+  ('th:sent:l5_d01_t10', 'sentence', 'ฉันเตรียม 2 บัตรเครดิต', '난 카드 2개 준비', 'chǎn triam sɔ̌ɔng bàt khree-dìt / 찬↗ 뜨리↘얌 송↗ 밧↓ 크레딧↓', 'd01', 5, '{new,l5,fandom,tpop,concert}', 'เตรียม — 준비하다', '', 'th', 'B', 10, '티켓팅', '[{"w":"เตรียม","ko":"준비"}]'::jsonb),
+  ('th:sent:l5_d01_t11', 'sentence', 'ฉลาด แต่ไม่อยากโดนตั๋วผี', '똑똑. 근데 암표 당하기 싫어', 'chà-làat, tɛ̀ɛ mâi yàak doon tǔa-phǐi / 차↓랏↓, 때↓ 마이↘ 약↓ 돈 뚜↗아피↗', 'd01', 5, '{new,l5,fandom,tpop,concert}', 'ตั๋วผี — 암표 (직역: 귀신 티켓)', '', 'th', 'A', 11, '티켓팅', '[{"w":"ตั๋วผี","ko":"암표"}]'::jsonb),
+  ('th:sent:l5_d01_t12', 'sentence', 'รอดูพรุ่งนี้ 10 โมง พร้อมรบ', '내일 10시 보자. 전투 준비', 'rɔɔ duu phrûng-níi sìp moong, phrɔ́ɔm róp / 러 두 프룽니 십↓ 몽, 프럼↑ 롭↑', 'd01', 5, '{new,l5,fandom,tpop,concert}', 'รบ — 전투 (관용 — 티켓팅 전쟁)', '', 'th', 'B', 12, '티켓팅', '[{"w":"รบ","ko":"전투"}]'::jsonb),
+  ('th:sent:l5_d01_t13', 'sentence', 'ถ้าได้ ไป fan meeting ด้วย', '되면 팬미팅도 가자', 'thâa dâai, pai fan meeting dûai / 타↘ 다이↘, 빠이 fan meeting 두↘아이', 'd01', 5, '{new,l5,fandom,tpop,concert}', '', '', 'th', 'A', 13, '티켓팅', '[]'::jsonb),
+  ('th:sent:l5_d01_t14', 'sentence', 'แน่นอน ขอให้ได้ทั้ง 2', '당연. 둘 다 되길', 'nɛ̂ɛ-nɔɔn, khɔ̌ɔ hâi dâai tháng-sɔ̌ɔng / 내↘넌, 커↗ 하이↘ 다이↘ 탕↑송↗', 'd01', 5, '{new,l5,fandom,tpop,concert}', '펀치라인 — 응원·기원', '', 'th', 'B', 14, '티켓팅', '[]'::jsonb)
+on conflict (id) do update set
+  target_text = excluded.target_text, korean = excluded.korean, romanization = excluded.romanization,
+  category = excluded.category, course = excluded.course, tags = excluded.tags,
+  notes = excluded.notes, comment = excluded.comment, speaker = excluded.speaker,
+  turn_order = excluded.turn_order, scenario = excluded.scenario, vocab_hints = excluded.vocab_hints;
+
+-- d02: Thai BL 드라마 vs K-drama 비교 (다른 페어)
+insert into public.items
+  (id, type, target_text, korean, romanization, category, course,
+   tags, notes, comment, language_code, speaker, turn_order, scenario, vocab_hints)
+values
+  ('th:sent:l5_d02_t01', 'sentence', 'ดูซีรีส์เกาหลีใหม่ยังไง', '새 한국 드라마 봤어?', 'duu sii-rîi kao-lǐi mài yang-ngai / 두 시↗리↘ 까오↗리↗ 마이↘ 양응↗아이', 'd02', 5, '{new,l5,fandom,drama,kdrama}', 'ซีรีส์ — 드라마 (외래어)', '', 'th', 'A', 1, 'L5 d02 — Thai 청년 둘이 K-drama 와 Thai 드라마 비교 토론', '[{"w":"ซีรีส์","ko":"드라마"}]'::jsonb),
+  -- ---- l6_d01 (from th_l6_part2) ----
+  ('th:sent:l6_d01_t01', 'sentence', 'มานี่สิ ใกล้กันหน่อย', '이리 와. 가까이', 'maa nîi sì, klâi kan nɔ̀i / 마 니↘ 시↓, 끌라이↘ 깐 너↓이', '연인 인티밋', 6, '{new,adult,intimate,midnight}', '부드러운 권유. consent before intimacy', '', 'th', 'A', 1, 'L6 d01 — 호텔 방 저녁, 사귄 지 3개월 커플. 친밀 첫 시도', '[{"w":"นี่","ko":"여기"},{"w":"ใกล้","ko":"가까이"}]'::jsonb),
+  ('th:sent:l6_d01_t02', 'sentence', 'รู้สึกประหม่า', '긴장돼', 'rúu-sʉ̀k prà-mà / 루↑쓱↓ 쁘라↓마↓', '연인 인티밋', 6, '{new,adult,intimate,midnight}', 'ประหม่า — 긴장한·떨리는', '', 'th', 'B', 2, '호텔 방', '[{"w":"ประหม่า","ko":"긴장한"}]'::jsonb),
+  ('th:sent:l6_d01_t03', 'sentence', 'ผมก็เหมือนกัน ไม่ต้องรีบ', '나도. 서두를 필요 없어', 'phǒm kɔ̂ɔ mʉ̌an-kan, mâi tɔ̂ng rîip / 폼↗ 꺼↘ 므↗안깐, 마이↘ 떵↘ 립↘', '연인 인티밋', 6, '{new,adult,intimate,midnight}', '공감·페이스 조절', '', 'th', 'A', 3, '호텔 방', '[]'::jsonb),
+  ('th:sent:l6_d01_t04', 'sentence', 'อยากให้ดู ดวงตาเธอ', '눈 보고 싶어', 'yàak hâi duu, duang-taa thəə / 약↓ 하이↘ 두, 두↘앙따 트↗어', '연인 인티밋', 6, '{new,adult,intimate,midnight}', 'ดวงตา — 눈 (poetic)', '', 'th', 'B', 4, '호텔 방', '[{"w":"ดวงตา","ko":"눈"}]'::jsonb),
+  -- ---- l6_d04 (from th_l6_part5) ----
+  ('th:sent:l6_d04_t01', 'sentence', 'มาสายอีกแล้ว เธอนัดฉันไว้กี่โมง', '또 늦어. 약속 몇 시였어', 'maa sǎai ìik lɛ́ɛw, thəə nát chǎn wái kìi moong / 마 싸↗이 익↓ 래↑우, 트↗어 낟↑ 찬↗ 와이↑ 끼↓ 몽', '격렬한 다툼', 6, '{new,adult,midnight,conflict}', '비난 시작', '', 'th', 'A', 1, 'L6 d04 — 약속 30분 늦은 후 격렬한 다툼·욕설·화해', '[{"w":"สาย","ko":"늦은"},{"w":"นัด","ko":"약속하다"}]'::jsonb),
+  ('th:sent:l6_d04_t02', 'sentence', 'รถติดมากจริงๆ', '진짜 차 막혀', 'rót-tìt mâak jing-jing / 롯↑띳↓ 막↘ 찡찡', '격렬한 다툼', 6, '{new,adult,midnight,conflict}', 'รถติด — 차 막힘', '', 'th', 'B', 2, '다툼', '[{"w":"รถติด","ko":"차 막힘"}]'::jsonb),
+  ('th:sent:l6_d04_t03', 'sentence', 'แก้ตัวทุกครั้ง เบื่อแล้ว', '매번 변명. 지겨워', 'kɛ̂ɛ-tua thúk khráng, bʉ̀a lɛ́ɛw / 깨↘뚜↘아 툭↑ 크랑↑, 부↓아 래↑우', '격렬한 다툼', 6, '{new,adult,midnight,conflict}', 'แก้ตัว — 변명·핑계', '', 'th', 'A', 3, '다툼', '[{"w":"แก้ตัว","ko":"변명"}]'::jsonb),
+  ('th:sent:l6_d04_t04', 'sentence', 'แล้วจะให้ทำไง บ้าเหรอ', '그럼 어쩌라고. 미쳤냐', 'lɛ́ɛw jà hâi tham-ngai, bâa rə̌ə / 래↑우 짜↓ 하이↘ 탐응아이, 바↘ 르↗어', '격렬한 다툼', 6, '{new,adult,midnight,conflict}', 'บ้า — 미친 (mild 욕설)', '', 'th', 'B', 4, '다툼', '[{"w":"บ้า","ko":"미친"}]'::jsonb),
+  -- ---- l6_d06 (from th_l6_part5) ----
+  ('th:sent:l6_d06_t01', 'sentence', 'ทำไมเรื่องเล็กกลายเป็นใหญ่', '왜 작은 일이 커져?', 'tham-mai rʉ̂ang lék klaai pen yài / 탐마이 르↘앙 렉↑ 끌라이 뺀 야이↘', '격렬한 다툼', 6, '{new,adult,midnight,deep}', 'กลาย — 변하다·되다', '', 'th', 'A', 1, 'L6 d06 — 다툼 후 심층 대화. 근본 원인 분석', '[{"w":"กลาย","ko":"변하다"}]'::jsonb),
+  ('th:sent:l6_d06_t02', 'sentence', 'เพราะสะสมจากเรื่องเก่า', '오래된 일 쌓여서', 'phrɔ́ sà-sǒm jàak rʉ̂ang kào / 프러↑ 싸↓솜↗ 짝↓ 르↘앙 까오↓', '격렬한 다툼', 6, '{new,adult,midnight,deep}', 'สะสม — 쌓이다·축적', '', 'th', 'B', 2, '심층 대화', '[{"w":"สะสม","ko":"쌓이다"}]'::jsonb),
+  ('th:sent:l6_d06_t03', 'sentence', 'เรื่องอะไรที่ยังเก็บไว้', '뭐가 아직 안 풀린 거?', 'rʉ̂ang à-rai thîi yang kèp wái / 르↘앙 아↓라이 티↘ 양 껩↓ 와이↑', '격렬한 다툼', 6, '{new,adult,midnight,deep}', '', '', 'th', 'A', 3, '심층', '[]'::jsonb),
+  ('th:sent:l6_d06_t04', 'sentence', 'เธอเอาเวลาให้งานมากกว่าฉัน', '너 일에 시간 너무 줘', 'thəə ao wee-laa hâi ngaan mâak-kwàa chǎn / 트↗어 아오 웰라 하이↘ 응안 막↘꽈↓ 찬↗', '격렬한 다툼', 6, '{new,adult,midnight,deep}', 'core 불만 표현', '', 'th', 'B', 4, '심층', '[]'::jsonb),
+  -- ---- l6_d10 (from th_l6_part3) ----
+  ('th:sent:l6_d10_t01', 'sentence', 'หวัดดี match แล้วทักเป็นคนแรก', '안녕, 매치 되자마자 첫 톡', 'wàt-dii, match lɛ́ɛw thák pen khon-rɛ̂ɛk / 왇↓디, match 래↑우 탁↑ 뺀 콘랙↘', '데이팅앱', 6, '{new,adult,midnight,datingapp}', 'match — 외래어 / 첫 메시지 패턴', '', 'th', 'A', 1, 'L6 d10 — Tinder 매칭 후 첫 DM. 정상적 톤·자기소개·신중', '[]'::jsonb),
+  ('th:sent:l6_d10_t02', 'sentence', 'หวัดดีค่ะ ขอบคุณที่ทักก่อน', '안녕요. 먼저 톡 줘서 감사', 'wàt-dii khâ, khɔ̀ɔp-khun thîi thák kɔ̀ɔn / 왇↓디 카↘, 컵↓쿤 티↘ 탁↑ 껀↓', '데이팅앱', 6, '{new,adult,midnight,datingapp}', '여 정중 ค่ะ', '', 'th', 'B', 2, 'Tinder 매칭', '[]'::jsonb),
+  ('th:sent:l6_d10_t03', 'sentence', 'รูปสุนัขในโพรไฟล์น่ารักมาก', '프로필 강아지 사진 너무 귀여워', 'rûup sù-nák nai phroo-fai nâa-rák mâak / 룹↘ 쑤↓낙↑ 나이 프로파이 나↘락↑ 막↘', '데이팅앱', 6, '{new,adult,midnight,datingapp}', '구체 detail — 진짜 봤다는 신호 (random opener X)', '', 'th', 'A', 3, '첫 메시지', '[{"w":"สุนัข","ko":"개"},{"w":"โพรไฟล์","ko":"프로필"}]'::jsonb),
+  ('th:sent:l6_d10_t04', 'sentence', 'ขอบคุณค่ะ น้องโกลเดน 3 ขวบ', '감사. 골든리트리버 3살이에요', 'khɔ̀ɔp-khun khâ, nɔ́ɔng goolden sǎam khùap / 컵↓쿤 카↘, 넝↑ 골덴 삼↗ 쿠↓압', '데이팅앱', 6, '{new,adult,midnight,datingapp}', 'น้อง — 어린 (강아지 호칭) / ขวบ — 살 (어린 동물·아이)', '', 'th', 'B', 4, '첫 메시지', '[{"w":"ขวบ","ko":"살 (어린이/동물)"}]'::jsonb),
+  -- ---- l6_d14 (from th_l6_part6) ----
+  ('th:sent:l6_d14_t01', 'sentence', 'อยากให้แน่ใจก่อน', '확실히 하고 싶어', 'yàak hâi nɛ̂ɛ-jai kɔ̀ɔn / 약↓ 하이↘ 내↘짜이 껀↓', '동의와 경계', 6, '{new,adult,midnight,consent}', '', '', 'th', 'A', 1, 'L6 d14 — 친밀 직전 명확 consent 대화', '[{"w":"แน่ใจ","ko":"확실"}]'::jsonb),
+  ('th:sent:l6_d14_t02', 'sentence', 'ดี ก็อยากเหมือนกัน', '좋아. 나도 그래', 'dii, kɔ̂ɔ yàak mʉ̌an-kan / 디, 꺼↘ 약↓ 므↗안깐', '동의와 경계', 6, '{new,adult,midnight,consent}', '', '', 'th', 'B', 2, 'consent', '[]'::jsonb),
+  ('th:sent:l6_d14_t03', 'sentence', 'ไม่อยากให้รู้สึกว่ารีบ', '서두른다고 안 느꼈으면', 'mâi yàak hâi rúu-sʉ̀k wâa rîip / 마이↘ 약↓ 하이↘ 루↑쓱↓ 와↘ 립↘', '동의와 경계', 6, '{new,adult,midnight,consent}', '', '', 'th', 'A', 3, 'consent', '[]'::jsonb),
+  ('th:sent:l6_d14_t04', 'sentence', 'ไม่ได้รีบ คุยกันต่อเรื่อยๆ ได้', '안 서둘러. 계속 얘기 OK', 'mâi dâai rîip, khui kan tɔ̀ɔ rʉ̂ai-rʉ̂ai dâai / 마이↘ 다이↘ 립↘, 쿠↘이 깐 떠↓ 르↘아이르↘아이 다이↘', '동의와 경계', 6, '{new,adult,midnight,consent}', '', '', 'th', 'B', 4, 'consent', '[]'::jsonb),
+  -- ---- l6_d17 (from th_l6_part6) ----
+  ('th:sent:l6_d17_t01', 'sentence', 'อยากคุยเรื่องเรา', '우리 얘기하고 싶어', 'yàak khui rʉ̂ang rao / 약↓ 쿠↘이 르↘앙 라오', '이별과 헤어짐', 6, '{new,adult,midnight,breakup}', '', '', 'th', 'A', 1, 'L6 d17 — 6개월 사귄 후 관계 정의 충돌·결렬', '[]'::jsonb),
+  ('th:sent:l6_d17_t02', 'sentence', 'อะไร น้ำเสียงไม่ดี', '뭔데. 말투 안 좋아', 'à-rai, náam-sǐang mâi dii / 아↓라이, 남↑시↗앙 마이↘ 디', '이별과 헤어짐', 6, '{new,adult,midnight,breakup}', 'น้ำเสียง — 말투', '', 'th', 'B', 2, '결렬', '[{"w":"น้ำเสียง","ko":"말투"}]'::jsonb),
+  ('th:sent:l6_d17_t03', 'sentence', 'รู้สึกว่าเธอไม่จริงจังกับเรา', '진지함 느껴 X', 'rúu-sʉ̀k wâa thəə mâi jing-jang kàp rao / 루↑쓱↓ 와↘ 트↗어 마이↘ 찡짱 깝↓ 라오', '이별과 헤어짐', 6, '{new,adult,midnight,breakup}', '', '', 'th', 'A', 3, '결렬', '[]'::jsonb),
+  ('th:sent:l6_d17_t04', 'sentence', 'จริงจังนะ ทำไมคิดอย่างนั้น', '진심이야. 왜 그래?', 'jing-jang ná, tham-mai khít yàang-nán / 찡짱 나↑, 탐마이 킷↑ 양↓난↑', '이별과 헤어짐', 6, '{new,adult,midnight,breakup}', '', '', 'th', 'B', 4, '결렬', '[]'::jsonb),
+  -- ---- l6_d19 (from th_l6_part1) ----
+  ('th:sent:l6_d19_t01', 'sentence', 'ขอโทษนะครับ ขอนั่งด้วยได้มั้ย', '실례합니다. 같이 앉아도 돼요?', 'khɔ̌ɔ-thôot ná khráp, khɔ̌ɔ nâng dûai dâai mái / 커↗톳↘ 나↑ 크랍↑, 커↗ 낭↘ 두↘아이 다이↘ 마↑이', '클럽·바·헌팅', 6, '{new,adult,midnight,clubbar,hunting}', '정중 첫 접근 — ครับ 1회. 자리 양해부터 (Thai 매너)', '', 'th', 'A', 1, 'L6 d19 — Soi 11 클럽 Insanity. 외국인 남이 Thai 여 그룹에게 합석 양해. 정중 접근', '[{"w":"นั่ง","ko":"앉다"},{"w":"ด้วย","ko":"~도·같이"}]'::jsonb),
+  ('th:sent:l6_d19_t02', 'sentence', 'ได้ค่ะ คุณมาคนเดียวเหรอ', '돼요. 혼자 오셨어요?', 'dâai khâ, khun maa khon-diao rə̌ə / 다이↘ 카↘, 쿤 마 콘디↘아오 르↗어', '클럽·바·헌팅', 6, '{new,adult,midnight,clubbar,hunting}', 'Thai 여 정중 응대 + 정보 캐기 (편안하게)', '', 'th', 'B', 2, 'Soi 11 클럽', '[{"w":"คนเดียว","ko":"혼자"}]'::jsonb),
+  ('th:sent:l6_d19_t03', 'sentence', 'ใช่ครับ เพื่อนยกเลิกนาทีสุดท้าย', '네. 친구 막판에 취소', 'châi khráp, phʉ̂an yók-lə̂ək naa-thii sùt-tháai / 차이↘ 크랍↑, 프↘안 욕↑륵↘ 나티 쑫↓타↑이', '클럽·바·헌팅', 6, '{new,adult,midnight,clubbar,hunting}', 'ยกเลิก — 취소 / 솔직 답 (위협 X)', '', 'th', 'A', 3, 'Soi 11 클럽', '[{"w":"ยกเลิก","ko":"취소하다"},{"w":"นาทีสุดท้าย","ko":"막판"}]'::jsonb),
+  ('th:sent:l6_d19_t04', 'sentence', 'แย่จัง รับเครื่องดื่มอะไรค่ะ', '아쉽네요. 음료 뭐 드시겠어요?', 'yɛ̂ɛ jang, ráp khrʉ̂ang-dʉ̀ʉm à-rai khâ / 얘↘ 짱, 랍↑ 크르↘앙듬↓ 아↓라이 카↘', '클럽·바·헌팅', 6, '{new,adult,midnight,clubbar,hunting}', '공감 + 자연 전환 (음료 권유)', '', 'th', 'B', 4, 'Soi 11 클럽', '[{"w":"แย่","ko":"아쉬운·나쁜"}]'::jsonb),
+  -- ---- l6_d23 (from th_l6_part4) ----
+  ('th:sent:l6_d23_t01', 'sentence', 'สวัสดีครับ คุณพ่อคุณแม่', '안녕하십니까, 어머님 아버님', 'sà-wàt-dii khráp, khun-phɔ̂ɔ khun-mɛ̂ɛ / 싸↓왓↓디 크랍↑, 쿤퍼↘ 쿤매↘', '가족·문화 갈등', 6, '{new,adult,midnight,family,crosscultural}', '정중 호칭 — คุณ + 호칭 (격식 최고). wai 인사 동반', '', 'th', 'B', 1, 'L6 d23 — Chiang Rai 시골집 Faai 부모님 첫 만남. 외국인 약혼자 + Thai 가족·풍습', '[{"w":"คุณพ่อ","ko":"아버님 (정중)"},{"w":"คุณแม่","ko":"어머님 (정중)"}]'::jsonb),
+  ('th:sent:l6_d23_t02', 'sentence', 'มาแล้วเหรอ เดินทางไกลเหนื่อยมั้ย', '왔구만. 먼 길 피곤했지?', 'maa lɛ́ɛw rə̌ə, dəən-thaang klai nʉ̀ai mái / 마 래↑우 르↗어, 던탕 끌라이 느↓아이 마↑이', '가족·문화 갈등', 6, '{new,adult,midnight,family,crosscultural}', 'เดินทาง — 여행하다·이동 / 친근한 환영', '', 'th', 'A', 2, '시골집 첫 만남', '[{"w":"เดินทาง","ko":"이동·여행"}]'::jsonb),
+  ('th:sent:l6_d23_t03', 'sentence', 'ไม่เหนื่อยครับ ดีใจที่ได้พบ', '괜찮아요. 뵙게 돼서 기뻐요', 'mâi nʉ̀ai khráp, dii-jai thîi dâai phóp / 마이↘ 느↓아이 크랍↑, 디짜이 티↘ 다이↘ 폽↑', '가족·문화 갈등', 6, '{new,adult,midnight,family,crosscultural}', 'ได้พบ — 뵙다 (격식)', '', 'th', 'B', 3, '시골집', '[]'::jsonb),
+  ('th:sent:l6_d23_t04', 'sentence', 'พูดไทยได้ดีจริงๆ ลูกบอกแล้ว', '태국어 진짜 잘하네. 딸이 그랬어', 'phûut thai dâai dii jing-jing, lûuk bɔ̀ɔk lɛ́ɛw / 풑↘ 타이 다이↘ 디 찡찡, 룩↘ 벅↓ 래↑우', '가족·문화 갈등', 6, '{new,adult,midnight,family,crosscultural}', '엄마 칭찬 — 호의 신호', '', 'th', 'A', 4, '시골집', '[]'::jsonb);
