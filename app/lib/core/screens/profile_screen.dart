@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../auth/auth_service.dart';
 import '../config/app_config.dart';
-import '../data/word_data.dart' as word_data;
 import '../services/adult_gate_service.dart';
 import '../services/adult_verification_service.dart';
 import '../services/asset_seed_loader.dart';
