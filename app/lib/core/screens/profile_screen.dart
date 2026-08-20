@@ -7,7 +7,6 @@ import '../data/word_data.dart' as word_data;
 import '../services/adult_gate_service.dart';
 import '../services/adult_verification_service.dart';
 import '../services/asset_seed_loader.dart';
-import '../services/language_service.dart';
 import '../services/learning_preferences.dart';
 import '../services/subscription_service.dart';
 import '../services/sync_service.dart';
@@ -50,54 +49,6 @@ class ProfileScreen extends StatelessWidget {
                         color: AppColors.textPrimary,
                         fontWeight: FontWeight.w500)),
               ],
-            ),
-          ),
-          const SizedBox(height: 24),
-
-          // ---- Language picker ----
-          _sectionLabel('학습 언어'),
-          _card(
-            child: ValueListenableBuilder<String>(
-              valueListenable: LanguageService.instance.code,
-              builder: (context, currentCode, _) {
-                final current = LanguageService.supported.firstWhere(
-                  (e) => e.code == currentCode,
-                  orElse: () => LanguageService.supported.first,
-                );
-                return InkWell(
-                  onTap: () => _pickLanguage(context, currentCode),
-                  borderRadius: BorderRadius.circular(8),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4),
-                    child: Row(
-                      children: [
-                        Text(current.flag,
-                            style: const TextStyle(fontSize: 28)),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(current.nameKo,
-                                  style: GoogleFonts.notoSans(
-                                      fontSize: 15,
-                                      color: AppColors.textPrimary,
-                                      fontWeight: FontWeight.w500)),
-                              const SizedBox(height: 2),
-                              Text('탭해서 다른 언어로 전환',
-                                  style: GoogleFonts.notoSans(
-                                      fontSize: 12,
-                                      color: AppColors.textSecondary)),
-                            ],
-                          ),
-                        ),
-                        const Icon(Icons.arrow_drop_down,
-                            color: AppColors.textSecondary),
-                      ],
-                    ),
-                  ),
-                );
-              },
             ),
           ),
           const SizedBox(height: 24),
@@ -325,48 +276,6 @@ class ProfileScreen extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Future<void> _pickLanguage(BuildContext context, String currentCode) async {
-    final picked = await showModalBottomSheet<String>(
-      context: context,
-      builder: (context) {
-        return SafeArea(
-          child: ListView(
-            shrinkWrap: true,
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
-                child: Text('학습할 언어 선택',
-                    style: GoogleFonts.notoSans(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textSecondary)),
-              ),
-              for (final lang in LanguageService.supported)
-                ListTile(
-                  leading: Text(lang.flag, style: const TextStyle(fontSize: 24)),
-                  title: Text(lang.nameKo,
-                      style: GoogleFonts.notoSans(fontSize: 15)),
-                  trailing: lang.code == currentCode
-                      ? Icon(Icons.check, color: AppConfig.brandColor)
-                      : null,
-                  onTap: () => Navigator.of(context).pop(lang.code),
-                ),
-            ],
-          ),
-        );
-      },
-    );
-    if (picked == null || picked == currentCode) return;
-
-    await LanguageService.instance.setLanguage(picked);
-    // Pull content for the new language and rebuild the in-memory
-    // word cache so the rest of the app sees it immediately.
-    await SyncService.instance.syncItems();
-    await SyncService.instance.syncHanziStudies();
-    await word_data.loadWords();
   }
 
   Future<void> _onResync(BuildContext context) async {
