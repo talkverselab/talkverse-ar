@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../../screens/update_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../auth/auth_service.dart';
@@ -32,6 +34,7 @@ class ProfileScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
+          const UpdateEntryTile(),
           // ---- Account ----
           _sectionLabel('계정'),
           _card(
