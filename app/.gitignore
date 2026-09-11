@@ -2,3 +2,7 @@
 # 서명 키 (로컬 전용)
 android/key.properties
 android/app/signing-key.jks
+
+# Kotlin 컴파일러 세션 파일
+.kotlin/
+android/.kotlin/
