@@ -46,14 +46,13 @@ jobs:
       - run: flutter pub get
 
       # 빌드 번호 = 워크플로 실행 번호 → 앱이 자기 빌드와 견주어 새 빌드를 판단한다
-      # 이 앱은 20개 언어 플레이버가 있다. 전부 빌드하면 30분 가까이 걸리므로 ar 플레이버만 만든다.
       - name: Build APK
-        run: flutter build apk --release --flavor ar --build-number=${{ github.run_number }}
+        run: flutter build apk --release --build-number=${{ github.run_number }}
 
       - name: Collect release files
         id: meta
         run: |
-          cp build/app/outputs/flutter-apk/app-ar-release.apk app-latest.apk
+          cp build/app/outputs/flutter-apk/app-release.apk app-latest.apk
           VER=$(grep '^version:' pubspec.yaml | sed 's/version: *//' | cut -d+ -f1)
           NOTES=$(git log -1 --pretty=%s)
           SIZE=$(stat -c%s app-latest.apk)
