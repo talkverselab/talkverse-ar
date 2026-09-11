@@ -83,29 +83,13 @@ adb -s R3CY20HDN2K install --user 0 -r <apk>
 - 저작권 있는 원문(자막 대본, 원서 전사)을 리포에 넣지 않는다. 단어·빈도 통계만 쓰고 문장은 자체 제작한다.
 - 새 파일을 추가할 때 위 두 가지를 먼저 확인할 것. 한 번 공개 커밋되면 히스토리에 남는다.
 
----
+## 2026-09-11 — es형 템플릿으로 재구축
 
-## ⚠ 이 리포만의 특이사항
+이 앱은 `talkverse/de`(es형 템플릿)를 바탕으로 **다시 지었다.** 화면·DB·기능은 de·es·fr 등 8개 앱과 같다
+(회화 · 문법 · 문장 카드 · 말하기 · 청크 검색 · 단어 · 표현 · 빈도 단어 · 단어 카드 · 앱 업데이트).
 
-### 20개 언어 플레이버
-`android/app/build.gradle.kts`에 `draft` + 20개 언어 플레이버(ar·de·en·es·fa·fr·id·ja·kk·ko·mn·ms·my·pl·pt·ru·th·tr·vi·zh)가 있다.
-
-- `flutter build apk --release` 는 **20개를 전부** 빌드해서 30분 가까이 걸린다.
-- 이 리포가 배포하는 앱은 `ar` 플레이버(`com.talkverse.ar`) 하나다. 반드시 플레이버를 지정할 것:
-  ```
-  flutter build apk --release --flavor ar
-  # 산출물: build/app/outputs/flutter-apk/app-ar-release.apk
-  ```
-- CI(`.github/workflows/release.yml`)도 `--flavor ar` 로 빌드하고 `app-ar-release.apk` 를 올린다.
-
-### 리포 루트가 상위 폴더
-git 리포 루트는 `ar/`, Flutter 앱은 `ar/app/` 이다.
-그래서 워크플로는 **리포 루트의 `.github/workflows/release.yml`** 에 있어야 하고
-(`app/.github/` 에 두면 GitHub이 인식하지 못한다), 잡에 `defaults.run.working-directory: app` 이 들어간다.
-
-### Kotlin languageVersion
-일부 플러그인이 `languageVersion 1.6` 을 지정하는데 Kotlin 2.x 컴파일러가 1.6을 지원하지 않는다.
-예전에는 `android/build.gradle.kts` 에서 **모든 서브프로젝트를 1.8로 강제**했는데,
-그러면 최신 플러그인(`package_info_plus` 등)이 클래스패스에서 빠져
-`GeneratedPluginRegistrant.java: cannot find symbol` 로 빌드가 깨진다.
-지금은 **명시적으로 1.9 미만을 지정한 모듈만 1.9로 올리는** 방식이다. 전부 강제하는 코드로 되돌리지 말 것.
+- **이전 코드·자산은 `talkverse/_legacy/ar/`** 에 그대로 있다(리포 밖). git 이력에도 남아 있다.
+- 옮긴 콘텐츠: 이집트 아랍어 회화 7편(77턴, 장면별) · 고빈도 단어 1,000(단어) + 5,000(빈도) · 회화 표현 포인트 1강. 플레이버 20개 구조는 걷어냈고 단일 앱(`com.talkverse.ar`)이다.
+- 콘텐츠 이전 스크립트: `_update_kit/migrate_content.py`, 재구축: `_update_kit/rebuild_app.py`.
+- 대상어 문장 칸 이름은 템플릿 그대로 `es` 다. 언어와 무관하게 "대상어"로 읽는다.
+- 화면 코드는 8개 앱 공용 키트(`_update_kit/port6/`)에서 왔다. 고칠 일이 있으면 키트를 고쳐 다시 배포한다.

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Path: app/src/main/res/values-vi/strings.xml (Vietnamese) -->
-<resources>
-    <string name="app_name">Talkverse</string>
-    <string name="splash_tagline">Học tiếng Việt mỗi ngày</string>
-    <string name="splash_greeting">Tốt!</string>
-    <string name="splash_question">Thử nhé?</string>
-</resources>

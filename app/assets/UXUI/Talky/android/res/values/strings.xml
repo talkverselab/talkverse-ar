@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Path: app/src/main/res/values/strings.xml (Default — Korean) -->
-<resources>
-    <string name="app_name">Talkverse</string>
-    <string name="splash_tagline">매일 베트남어를 배워요</string>
-    <string name="splash_greeting">좋아!</string>
-    <string name="splash_question">한번 해볼까?</string>
-</resources>
