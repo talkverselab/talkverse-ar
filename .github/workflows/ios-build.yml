@@ -5,7 +5,7 @@ name: iOS Build (unsigned)
 # 개발자 계정이 준비된 뒤 TestFlight 서명 단계의 입력으로 쓴다.
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - 'app/lib/**'
       - 'app/ios/**'
