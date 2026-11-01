@@ -19,4 +19,3 @@ flutter run -d <device> --flavor ar --target lib/main_ar.dart --dart-define=APP_
 
 ## 폴더
 - `app/` Flutter 앱
-- `/`  코퍼스(raw)

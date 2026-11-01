@@ -10,7 +10,7 @@ import '../services/tts_service.dart';
 import '../core/platform.dart';
 import '../core/l10n.dart';
 
-/// 여행 아랍어 — 주제별 단어·표현 (chinese-universe 포팅).
+/// 여행 아랍어 — 주제별 단어·표현.
 class VocabWord {
   final String ko;
   final String tx; // 아랍어
