@@ -125,3 +125,19 @@ adb -s R3CY20HDN2K install --user 0 -r <apk>
   절차: `docs/ios-build-and-testflight.md`.
 - `ios/Runner/Info.plist` 에 마이크·음성 인식 권한 문구가 있다(말하기 연습). 지우면 iOS 에서 크래시.
 - `release.yml`(Android) 은 `ios/**`·`docs/**`·`tools/**` 만 바뀐 푸시는 건너뛴다.
+
+## 8. Zealot 무선 설치 (apps.talkverse.uk) — 2026-10-11
+
+- **Zealot 앱이름: 아랍어유니버스** (앱 표시 이름 그대로. 2026-10-11 정함 — 그전에 Zealot 에 올린 적 없음. 바꾸면 Zealot 에 다른 앱이 새로 생긴다.)
+- 올리기: `bash tools/zealot_push.sh ["변경 내용 한 줄"]` — `build/app/outputs/flutter-apk/` 의 가장 최근 release APK 를
+  `~/bin/zealot-upload` 로 올린다(빌드는 하지 않음. 변경 내용을 안 주면 최근 커밋 제목). 서명 SHA-1 이 §1 값과 다르면 올리지 않는다.
+- **덮어 설치 상태(2026-10-11 확인)**: 서명 = `android/key.properties` + `android/app/signing-key.jks` 가 이미 있고 §1 과 같은 키(SHA-1 `9C:C4:…:47:6B`) — 단 **맥미니의 `~/.android/debug.keystore` 는 다른 키(SHA-1 `BE:B3:…:0B:81`)** 라서 §1 의 `cp ~/.android/debug.keystore …` 를 맥미니에서 다시 실행하면 안 된다. 버전 코드 = `pubspec.yaml` `0.1.0+1` 인데 폰에 깔린 CI 빌드는 5(`latest.json` 의 `build`)이므로, 맥에서 빌드할 때는 `--build-number=<6 이상, CI 실행 번호와 직전 Zealot 빌드보다 큰 값>` 을 줘야 덮어 설치된다.
+
+## 9. 회화 제작 원칙 — 2026-11-02
+
+- 공통 원칙(14건, 사용자 결정): https://talkverse.uk/talkverse/dialogue-rules/ — 회화를 만들거나 고칠 때 이 원칙을 따른다. 절벽 기준표: https://talkverse.uk/cliff/18/
+- 이 앱의 특이점:
+  - 기본 변이 = 이집트 구어(ar_EG). 표준아랍어 문장은 변이 파일로 따로.
+  - 표기 = 아랍어 원문(타슈킬 없음) · 한글 독음(rd) · 한국어 뜻(ko). 로마자 없음. RTL.
+  - 성별판: 2인칭·동사 활용이 상대 성별로 바뀐다 — 편마다 화자·청자 성별을 고정하고 상대 성별판은 변이 파일에.
+  - 지금 회화(L1.json 7편 77턴)는 옛 앱에서 옮긴 것이라 턴 수가 2~19로 고르지 않고 절벽 구간과 무관 — 이집트 구어 절벽(R1~R4) 재산출 뒤 공통 원칙대로 새로 만든다.
