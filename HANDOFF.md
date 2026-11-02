@@ -16,12 +16,14 @@ _2026-11-03 전체 다시 씀. 앱 규칙 SSOT 는 `app/CLAUDE.md`(서명·배�
 | 회화 | 옛 앱에서 옮긴 L1 7편 77턴(주제 「생활」로 표시) — **회화 작성 금지 상태**(사용자 지시 전까지) |
 | 저작권·이력 | 2026-11-02 외부 말뭉치·교재 추출 파일·옛 Supabase 시드 삭제 + 이력 재작성(강제 푸시). Supabase 사용 없음 |
 
-## 진행 중
-- **이집트 구어 절벽 재산출 → 단어 그림 리스트**(사용자 선택 "재산출 먼저", 2026-11-03): 아랍어 자막 원본(PC `D:\datasets\…`)을 M6 `~/corpus_work/ar_eg/`(리포 밖, 출처 메모 `SOURCE.md`)로 복사 중 → `eg_cliff.py`(이집트 구어 표지 비율로 문서 고르기, 기준 보정: 이집트 자막 9~16%·표준어 0%) → R1~R4(55/60/70/80%) → talkverse.uk 세션에 숫자 전달 → `talkversehanja` `talkverse_art/words/ar.csv`(+ 이미 만든 `~/corpus_work/ar_eg/out/ar_food.csv` 50개) 푸시, 커밋 "words/ar: 단어·음식 리스트".
-- 앱 `assets/data/freq/lang_es_top.csv` 의 freq·cum_pct·region 채우기도 같은 결과로(콘텐츠 생성 아님 — 통계).
+## 이집트 구어 절벽·단어 그림 리스트 (2026-11-03 끝)
+- 재산출: 이집트 영화·드라마 대사 108작품 · 43.9만 토큰(아랍어 자막 중 이집트 구어 표지 5% 이상만, 작품당 1개) · 표면형(모음 부호 제거·أإآ→ا·ى→ي). **R1 55% 635 · R2 60% 999 · R3 70% 2,491 · R4 80% 6,413**, 50% 404, 상위 2,500 = 70.0%. talkverse.uk /cliff/18/ 아랍어 행 ①단계·확정으로 반영됨.
+- 작업 파일(리포 밖): M6 `~/corpus_work/ar_eg/` — `eg_cliff.py`, `freq_eg.tsv`(전체 순위·누적%), `summary.txt`, 출처 메모 `SOURCE.md`(비공개). 원본 9GB 사본은 지움(원본은 PC).
+- 그림 리스트: `talkverselab/talkversehanja` 커밋 `538c212` — `talkverse_art/words/ar.csv`(상위 2,500, 카이로식 한글 독음·뜻·품사·그림 가능 Y 548) + `ar_food.csv`(이집트 음식 50). talkverse.uk 세션이 그림 대기열에 넣음(일본어 다음 도착 순).
+- **앱에는 아직 반영 안 함**: 앱 빈도 단어(`app/assets/data/freq/lang_es_top.csv`, 옛 표준어 섞인 5,000)를 이집트 구어 목록으로 바꾸는 것은 새 학습 콘텐츠라 콘텐츠 작성 금지가 풀린 뒤 사용자 결정.
 
 ## 다음 할 일(순서)
-1. 위 재산출·리스트 푸시 → talkverse.uk 세션에 R 값·캐릭터 시트 경로 한 줄.
+1. (사용자 결정) 앱 빈도 단어를 이집트 구어 목록(`~/corpus_work/ar_eg/out/ar.csv`)으로 바꿀지 — 콘텐츠 금지 해제 뒤.
 2. (사용자) App Store Connect 에서 TestFlight 2611030110 처리 확인·내부 그룹 설치, 포털 App ID 에 Sign in with Apple capability, 인앱 상품 `com.talkverse.arabicUniverse.lifetime`·Play `lang_ar` 등록, 무료/유료 구간·가격 결정.
 3. 장면 컷(편당 4장) — 회화가 새로 나온 뒤. 요청 때 **카이로 동네 배경**(시안 그림이 흙벽 마을로 나왔음)·말풍선 없음 명시, 시트 v2 첨부.
 4. 회화(사용자 지시 뒤): 공통 원칙 https://talkverse.uk/talkverse/dialogue-rules/ · 이집트 구어 · 성별판 · Grok 재작성 + **Gemini 검수(방언 판정 포함, 몇 편 해 보고 품질이 낮으면 중단·보고)**.
