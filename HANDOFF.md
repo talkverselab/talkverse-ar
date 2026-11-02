@@ -27,6 +27,7 @@ _2026-11-03 전체 다시 씀. 앱 규칙 SSOT 는 `app/CLAUDE.md`(서명·배�
 2. (사용자) App Store Connect 에서 TestFlight 2611030110 처리 확인·내부 그룹 설치, 포털 App ID 에 Sign in with Apple capability, 인앱 상품 `com.talkverse.arabicUniverse.lifetime`·Play `lang_ar` 등록, 무료/유료 구간·가격 결정.
 3. 장면 컷(편당 4장) — 회화가 새로 나온 뒤. 요청 때 **카이로 동네 배경**(시안 그림이 흙벽 마을로 나왔음)·말풍선 없음 명시, 시트 v2 첨부.
 4. 회화(사용자 지시 뒤): 공통 원칙 https://talkverse.uk/talkverse/dialogue-rules/ · 이집트 구어 · 성별판 · Grok 재작성 + **Gemini 검수(방언 판정 포함, 몇 편 해 보고 품질이 낮으면 중단·보고)**.
+   - 반전 기준(사용자 지시 2026-11-03, 한국어앱 세션 경유·모든 언어앱 공통): 카오스(일이 걷잡을 수 없이 커짐) **30% 이상**, 심쿵 많이(연애·플러팅 편은 편마다 한 줄, 여성이 먼저 다가가는 편 더 많이), 편마다 `twist_type` = chaos·slip·reveal·emotion·ignore, 묶음마다 비율 확인. 참고 `~/talkverse/ko/assets/data/dialogues/`, 커밋 a2e8eb9(한국어앱).
 5. 어근 가족 칸(시안 §4-B): 인도네시아어앱 `~/talkverse/id/docs/ROOTS.md` §4 방식 — 범위는 사용자 확인 뒤.
 
 ## 주의
