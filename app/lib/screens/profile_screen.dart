@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'account_screen.dart';
 import 'update_screen.dart';
 
 import '../core/theme.dart';
@@ -65,6 +66,11 @@ class ProfileScreen extends StatelessWidget {
           _SectionTitle(tr('설정')),
           const SizedBox(height: 8),
           _SettingsGroup(items: [
+            _SettingItem(
+                icon: Icons.account_circle_outlined,
+                title: tr('계정'),
+                subtitle: tr('Talkverse 로그인(선택) · 평생 이용권'),
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AccountScreen()))),
             _SettingItem(
                 icon: Icons.language,
                 title: tr('언어 / Language'),
