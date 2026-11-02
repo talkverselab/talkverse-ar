@@ -166,7 +166,7 @@ class _TappableArabicTextState extends State<TappableArabicText> {
     }
     _recognizers.clear();
     final spans = <InlineSpan>[];
-    final re = RegExp(r'[؀-ۿ‌]+');
+    final re = RegExp(r'[\u0621-\u0652\u0670-\u06D3\u200C]+');
     var last = 0;
     for (final m in re.allMatches(widget.text)) {
       if (m.start > last) spans.add(TextSpan(text: widget.text.substring(last, m.start)));

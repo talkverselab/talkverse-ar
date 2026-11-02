@@ -48,16 +48,17 @@ void main() {
     await wait(t, 2500);
     await shot(t, '02_dialogue_home_right');
 
-    await t.tap(find.text('사랑').first);
+    await t.tap(find.text('생활').first);
     await wait(t, 1200);
     await shot(t, '03_topic_list');
 
-    await t.tap(find.text('첫 인사').first);
+    await t.tap(find.text('카페').first);
     await wait(t, 1500);
     await shot(t, '04_reader');
 
     // 글자 시트(UX 시안 AR-01 ①): 캡션의 아랍어 줄 낱말 탭
-    await t.tap(find.byType(TappableArabicText).first, warnIfMissed: false);
+    // RTL 이라 첫 낱말은 오른쪽 끝 — 가운데를 누르면 낱말 사이 빈칸에 걸릴 수 있다
+    await t.tapAt(t.getTopRight(find.byType(TappableArabicText).first).translate(-14, 14));
     await wait(t, 1500);
     await shot(t, '04b_glyph_sheet');
     Navigator.of(t.element(find.byType(GlyphSheet))).pop();

@@ -408,7 +408,7 @@ class _ControlBar extends StatelessWidget {
     final subs = Row(mainAxisSize: MainAxisSize.min, children: [
       Text(tr('자막'), style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: AppColors.sumi)),
       const SizedBox(width: 4),
-      chip('فارسی', true, null, fixed: true),
+      chip('العربية', true, null, fixed: true),
       if (hasCol) chip('입말', showGloss, onGloss),
       if (hasRd) chip('독음', showRd, onRd),
       chip('한국어', showKo, onKo),

@@ -155,7 +155,7 @@ class HomeScreen extends StatelessWidget {
                           Row(
                             children: const [
                               Text(
-                                'سلام!',
+                                'أهلاً!',
                                 style: TextStyle(
                                   fontSize: 28,
                                   fontWeight: FontWeight.w700,
@@ -318,7 +318,7 @@ class _TodayMissionState extends State<_TodayMission> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              meta.level == 'L1' ? 'داستان ۱' : meta.level,
+              meta.level == 'L1' ? 'حكاية ١' : meta.level,
               style: const TextStyle(
                 color: AppColors.gualdaBright,
                 fontSize: 11,
@@ -352,7 +352,7 @@ class _TodayMissionState extends State<_TodayMission> {
             ),
             const SizedBox(height: 6),
             Text(
-              '$_learned / $_total turn',
+              '$_learned / $_total ${tr('턴')}',
               style: const TextStyle(color: AppColors.cal, fontSize: 11, fontWeight: FontWeight.w600),
             ),
           ],
