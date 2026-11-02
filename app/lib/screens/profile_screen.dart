@@ -7,6 +7,7 @@ import '../core/theme.dart';
 import '../widgets/spanish_decor.dart';
 import '../core/l10n.dart';
 import '../core/platform.dart';
+import '../services/learner_prefs.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -48,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 4),
                       Text(
-                        tr('Día 1 · 입문 (A1)'),
+                        tr('1일차 · 입문 (A1)'),
                         style: TextStyle(
                           color: AppColors.gualdaBright,
                           fontSize: 13,
@@ -62,6 +63,11 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(height: 18),
+          // 학습자 프로필(일본어앱 learner_prefs) — 이름 → 회화의 {name} 자리, 성별 → 학습자 목소리(새 회화 구조부터)
+          _SectionTitle(tr('학습자')),
+          const SizedBox(height: 8),
+          const _LearnerSection(),
           const SizedBox(height: 18),
           _SectionTitle(tr('설정')),
           const SizedBox(height: 8),
@@ -81,9 +87,9 @@ class ProfileScreen extends StatelessWidget {
                   icon: Icons.flight_takeoff,
                   title: tr('앱 업데이트'),
                   subtitle: tr('아이폰은 TestFlight 앱에서 새 빌드를 받습니다')),
-            _SettingItem(icon: Icons.volume_up, title: tr('TTS 음성'), subtitle: tr('de-DE (시스템 보이스)')),
+            _SettingItem(icon: Icons.volume_up, title: tr('TTS 음성'), subtitle: tr('ar-EG (시스템 보이스)')),
             _SettingItem(icon: Icons.public, title: tr('변종'), subtitle: tr('이집트 아랍어 (مصر) · العامية المصرية')),
-            _SettingItem(icon: Icons.palette, title: tr('테마'), subtitle: tr('낮 · Schwarz-Rot-Gold #DD0000')),
+            _SettingItem(icon: Icons.palette, title: tr('테마'), subtitle: tr('낮 · talkverse.uk 톤')),
           ]),
           const SizedBox(height: 16),
           _SectionTitle(tr('정보')),
@@ -100,7 +106,7 @@ class ProfileScreen extends StatelessWidget {
           const SizedBox(height: 6),
           Center(
             child: Text(
-              'Übung macht den Meister',
+              'العلم نور',
               style: TextStyle(
                 color: AppColors.tintaLight,
                 fontSize: 11,
@@ -145,7 +151,7 @@ class _SettingsGroup extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: AppColors.gualda.withValues(alpha: 0.5)),
       ),
-      child: Column(
+      child: Material(type: MaterialType.transparency, child: Column(
         children: [
           for (var i = 0; i < items.length; i++) ...[
             ListTile(
@@ -170,7 +176,7 @@ class _SettingsGroup extends StatelessWidget {
               Container(height: 0.5, color: AppColors.gualda.withValues(alpha: 0.3)),
           ],
         ],
-      ),
+      )),
     );
   }
 }
@@ -181,4 +187,57 @@ class _SettingItem {
   final String subtitle;
   final VoidCallback? onTap;
   _SettingItem({required this.icon, required this.title, required this.subtitle, this.onTap});
+}
+/// 학습자 이름·성별(일본어앱 profile_screen 학습자 프로필 이식, 2026-11-02).
+class _LearnerSection extends StatelessWidget {
+  const _LearnerSection();
+
+  @override
+  Widget build(BuildContext context) => ValueListenableBuilder<String>(
+        valueListenable: LearnerPrefs.name,
+        builder: (context, name, _) => ValueListenableBuilder<String>(
+          valueListenable: LearnerPrefs.gender,
+          builder: (context, gender, _) => Container(
+            decoration: BoxDecoration(
+              color: AppColors.cal,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: AppColors.gualda.withValues(alpha: 0.5)),
+            ),
+            child: Material(type: MaterialType.transparency, child: Column(children: [
+              ListTile(
+                leading: const Icon(Icons.badge_outlined, color: AppColors.rojo),
+                title: Text(tr('이름'), style: const TextStyle(fontWeight: FontWeight.w700, color: AppColors.tinta)),
+                subtitle: Text(name.isNotEmpty ? trf('{0} — 회화 속 「나」로 나와요', [name]) : tr('없음 — 회화에서 「○○」로 보여요'),
+                    style: const TextStyle(color: AppColors.tintaLight, fontSize: 11)),
+                trailing: const Icon(Icons.edit_outlined, color: AppColors.rojo, size: 18),
+                onTap: () => _editName(context),
+              ),
+              Container(height: 0.5, color: AppColors.gualda.withValues(alpha: 0.3)),
+              ListTile(
+                leading: Icon(gender == 'female' ? Icons.face_3 : Icons.face, color: AppColors.rojo),
+                title: Text(tr('성별'), style: const TextStyle(fontWeight: FontWeight.w700, color: AppColors.tinta)),
+                subtitle: Text(gender == 'female' ? tr('여성 — 탭하면 남성') : tr('남성 — 탭하면 여성'),
+                    style: const TextStyle(color: AppColors.tintaLight, fontSize: 11)),
+                onTap: () => LearnerPrefs.setGender(gender == 'female' ? 'male' : 'female'),
+              ),
+            ])),
+          ),
+        ),
+      );
+
+  Future<void> _editName(BuildContext context) async {
+    final c = TextEditingController(text: LearnerPrefs.name.value);
+    final v = await showDialog<String>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(tr('이름')),
+        content: TextField(controller: c, autofocus: true, decoration: InputDecoration(hintText: tr('회화에서 불릴 이름'))),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(tr('취소'))),
+          TextButton(onPressed: () => Navigator.pop(ctx, c.text), child: Text(tr('저장'))),
+        ],
+      ),
+    );
+    if (v != null) await LearnerPrefs.setName(v);
+  }
 }
