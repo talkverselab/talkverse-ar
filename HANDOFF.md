@@ -30,7 +30,7 @@ _2026-11-03 전체 다시 씀. 앱 규칙 SSOT 는 `app/CLAUDE.md`(서명·배�
 3. 장면 컷(편당 4장) — 회화가 새로 나온 뒤. 요청 때 **카이로 동네 배경**(시안 그림이 흙벽 마을로 나왔음)·말풍선 없음 명시, 시트 v2 첨부.
 4. 회화(사용자 지시 뒤): 공통 원칙 https://talkverse.uk/talkverse/dialogue-rules/ · 이집트 구어 · 성별판 · Grok 재작성 + **Gemini 검수(방언 판정 포함, 몇 편 해 보고 품질이 낮으면 중단·보고)**.
    - 반전 기준(사용자 지시 2026-11-03, 한국어앱 세션 경유·모든 언어앱 공통): 카오스(일이 걷잡을 수 없이 커짐) **30% 이상**, 심쿵 많이(연애·플러팅 편은 편마다 한 줄, 여성이 먼저 다가가는 편 더 많이), 편마다 `twist_type` = chaos·slip·reveal·emotion·ignore, 묶음마다 비율 확인. 참고 `~/talkverse/ko/assets/data/dialogues/`, 커밋 a2e8eb9(한국어앱). 새 편은 왕초보·초급 위주, 장면 그림 = A·B 쌍 1컷·말풍선·글자 없음·인물 기준 그림 첨부(공통 원칙 §9).
-   - Grok·Gemini 를 직접 쓸 때: 사용자 지시가 있을 때만 M4 Chrome 을 켜고(미리 켜 두지 말 것), 쿠키 복사는 M4 안에서, M6 에서는 ssh 터널 — `~/talkverse/GROK_M4_LOGIN.md`, 포트 배정 `GROK_CHROME_PORTS.md`. 한 번에 한 작업, 연 탭은 닫고 끝나면 Chrome 끄기. 그림 요청은 지금처럼 한자 세션 경유도 가능. 2026-11-03 Grok 계정이 바뀌어 예전 방(캐릭터·UX 시안을 받은 방) 링크는 안 열림 — 새 방에서 시트 v2·시안 파일을 다시 첨부. 새 작업은 샘플 1~2개 → 사용자 통과(알림) → 본작업 순서.
+   - Grok·Gemini 를 직접 쓸 때: 사용자 지시가 있을 때만 M4 Chrome 을 켜고(미리 켜 두지 말 것), 쿠키 복사는 M4 안에서, M6 에서는 ssh 터널 — `~/talkverse/GROK_M4_LOGIN.md`, 포트 배정 `GROK_CHROME_PORTS.md`. 한 번에 한 작업, 연 탭은 닫고 끝나면 Chrome 끄기. 그림 요청은 지금처럼 한자 세션 경유도 가능. 2026-11-03 Grok 계정이 바뀌어 예전 방(캐릭터·UX 시안을 받은 방) 링크는 안 열림 — 새 방에서 시트 v2·시안 파일을 다시 첨부. 새 작업은 샘플 1~2개 → 사용자 통과(알림) → 본작업 순서. Grok 회화 재작성·장면 컷 요청문 작성법 = `~/talkverse/GROK_PROMPT_GUIDE.md`(중국어앱 정리, 틀 파일 `~/talkverse/zh/tools/` 의 prompts/rewrite_grok.md·rewrite_request.py·scene_prompts.py·grok_*.py 를 복사해 언어 코드만 바꿈) — 편마다 새 방, 받은 재작성은 그대로 쓰지 말고 리뷰, 컷은 한 요청에 1장.
 5. 어근 가족 칸(시안 §4-B): 인도네시아어앱 `~/talkverse/id/docs/ROOTS.md` §4 방식 — 범위는 사용자 확인 뒤.
 
 ## 주의
