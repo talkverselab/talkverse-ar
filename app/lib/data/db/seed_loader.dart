@@ -11,32 +11,34 @@ class SeedLoader {
   final AppDatabase db;
   SeedLoader(this.db);
 
-  /// 번들 `assets/data/version.json` 의 `db`(업데이트 번호)와 저장된 번호가 다르면 DB 를 다시 채운다(사용자 지시 2026-11-04, 일본어앱과 같은 규칙).
-  /// 데이터를 바꿀 때는 version.json 의 번호만 올린다. ⚠ `_seedTurns` 는 학습 진행(userProgress)을 지우고 다시 넣는다.
+  /// 번들 `assets/data/version.json` 의 번호와 저장된 번호를 비교해 바뀐 것만 다시 채운다(사용자 지시 2026-11-04, 일본어앱과 같은 규칙).
+  /// - `db` = 단어·동사 표 번호: 다르면 단어·동사만 다시(순위가 기본키라 덮어쓰기, 학습 기록은 그대로).
+  /// - `turns` = 회화 턴 표 번호: 다르면 턴을 다시 넣는다 — ⚠ 이때 학습 진행(userProgress)이 지워지니 정말 회화가 바뀔 때만 올린다.
   static const _kDbVersion = 'db_version';
-  static const _kLegacySeeded = 'db_seeded_v2'; // 옛 키 — 이미 설치된 기기는 다시 채우지 않고 번호만 맞춘다(진행 기록 보존)
+  static const _kTurnsVersion = 'turns_version';
+  static const _kLegacySeeded = 'db_seeded_v2'; // 옛 키 — 이미 설치된 기기는 번호 1 로 본다(진행 기록 보존)
 
   Future<void> seedIfNeeded() async {
     final prefs = await SharedPreferences.getInstance();
-    final bundled = await bundledVersion();
-    final stored = prefs.getInt(_kDbVersion);
-    if (stored == bundled) return;
-    if (stored == null && prefs.getBool(_kLegacySeeded) == true && bundled == 1) {
-      await prefs.setInt(_kDbVersion, bundled);
-      return;
+    final v = await bundledVersions();
+    final legacy = prefs.getBool(_kLegacySeeded) == true;
+    final storedDb = prefs.getInt(_kDbVersion) ?? (legacy ? 1 : null);
+    final storedTurns = prefs.getInt(_kTurnsVersion) ?? (legacy ? 1 : null);
+    if (storedDb != v.db) {
+      await _seedWords();
+      await _seedVerbs();
     }
-    await _seedWords();
-    await _seedVerbs();
-    await _seedTurns();
-    await prefs.setInt(_kDbVersion, bundled);
+    if (storedTurns != v.turns) await _seedTurns();
+    await prefs.setInt(_kDbVersion, v.db);
+    await prefs.setInt(_kTurnsVersion, v.turns);
   }
 
-  static Future<int> bundledVersion() async {
+  static Future<({int db, int turns})> bundledVersions() async {
     try {
       final j = json.decode(await rootBundle.loadString('assets/data/version.json')) as Map<String, dynamic>;
-      return (j['db'] as num).toInt();
+      return (db: (j['db'] as num).toInt(), turns: (j['turns'] as num? ?? 1).toInt());
     } catch (_) {
-      return 0;
+      return (db: 0, turns: 0);
     }
   }
 
