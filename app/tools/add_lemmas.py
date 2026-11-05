@@ -16,10 +16,13 @@ WORD = re.compile(r'[ء-ْٰ-ۓ]+')
 KEEP = {'noun', 'noun_num', 'noun_quant', 'verb', 'adj', 'adj_comp', 'adj_num', 'adv', 'num', 'digit'}
 # 분석기가 틀리는 낱말(표면형 → 기본형, None = 내용어에서 뺌) — 2026-11-04 L1 135 내용어 전수 검토
 FIX = {
-    'فاطمة': None, 'ماشاء': None,  # 이름 · 굳은 표현(ما شاء الله)
+    'فاطمة': None, 'ماشاء': None, 'الحمد': None, 'بإذن': None, 'دهب': None,  # 이름·지명 · 굳은 표현(ما شاء الله·الحمد لله·بإذن الله)
+    # 단어장 뜻이 이 문장의 뜻과 다른 말(잘못된 뜻을 보여 주느니 뺀다): نفضل 계속~하다 · عامل 어떻게 지내 · يوفقك 잘되길 · الشبكة 약혼 예물
+    'نفضل': None, 'عامل': None, 'يوفقك': None, 'الشبكة': None, 'تصبح': None,
+    'أبوها': 'أبو', 'كلت': 'اكل', 'كلتش': 'اكل',
     'قهوة': 'قهوة', 'هندسة': 'هندسة', 'كشري': 'كشري', 'واتساب': 'واتساب', 'ميرسي': 'ميرسي',
     'وحشاك': 'وحش', 'إمتى': 'إمتى', 'يعني': 'يعني', 'عشانكم': 'عشان', 'شكرا': 'شكرا',
-    'كتير': 'كتير', 'أكتر': 'أكتر', 'الاتنين': 'اتنين', 'دهب': 'دهب',  # 구어 철자 그대로(분석기는 표준어 철자로 바꿈)
+    'كتير': 'كتير', 'أكتر': 'أكتر', 'الاتنين': 'اتنين',  # 구어 철자 그대로(분석기는 표준어 철자로 바꿈)
 }
 
 def _subseq(small, big):
@@ -54,7 +57,7 @@ for ep in data['episodes']:
                 if FIX[tok] is None: continue
                 base = FIX[tok]
                 out.append([tok, base, '']); tot += 1
-                if key(base) in vocab or key(tok) in vocab: hit += 1
+                if key(base) in vocab or key(tok) in vocab: hit += 1  # 앱(WordLookup)도 기본형 → 문장 속 꼴 순으로 찾는다
                 else: miss[base] += 1; ex.setdefault(base, t['es'])
                 continue
             a = pick(dw, tok) if dw.analyses else {}
@@ -62,7 +65,7 @@ for ep in data['episodes']:
             base = DIAC.sub('', a.get('lex') or tok)
             if not WORD.fullmatch(base): continue
             out.append([tok, base, '']); tot += 1
-            if key(base) in vocab or key(tok) in vocab: hit += 1
+            if key(base) in vocab or key(tok) in vocab: hit += 1  # 앱(WordLookup)도 기본형 → 문장 속 꼴 순으로 찾는다
             else: miss[base] += 1; ex.setdefault(base, t['es'])
         t['lemmas'] = out
 open(path, 'w', encoding='utf-8').write(json.dumps(data, ensure_ascii=False, indent=1) + '\n')

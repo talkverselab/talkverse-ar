@@ -21,7 +21,7 @@ class LemmaChips extends StatelessWidget {
     if (lemmas.isEmpty) return const SizedBox.shrink();
     return FutureBuilder<Map<String, WordEntry>>(
       key: ValueKey('${turn.num}:${turn.tl}'),
-      future: WordLookup.instance.byLemmas(lemmas.map((l) => l.base)),
+      future: WordLookup.instance.byLemmas(lemmas),
       builder: (context, snap) {
         final found = snap.data ?? const {};
         return Directionality(
