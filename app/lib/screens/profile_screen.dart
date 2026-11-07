@@ -1,68 +1,82 @@
 import 'package:flutter/material.dart';
 
 import 'account_screen.dart';
-import 'update_screen.dart';
+import 'about_screen.dart';
+import 'progress_screen.dart';
 
 import '../core/theme.dart';
 import '../widgets/spanish_decor.dart';
 import '../core/l10n.dart';
-import '../core/platform.dart';
+import '../core/pane.dart';
+import '../main.dart';
+import '../services/achievement_service.dart';
+import '../services/memorized_store.dart';
+import '../widgets/reading_toggle.dart';
 import '../services/learner_prefs.dart';
 
+/// 프로필 — 계정 · 성과 · 기록 · 학습자 · 설정 · 정보(사용자 지시 2026-11-07, 일본어앱과 같은 정리).
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
+
+  Future<void> _resetProgress(BuildContext context) async {
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(tr('학습 기록 초기화')),
+        content: Text(tr('회화 진행·동사·외운 단어·성과 기록을 모두 지웁니다.')),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(tr('취소'))),
+          TextButton(onPressed: () => Navigator.pop(ctx, true), child: Text(tr('초기화'), style: const TextStyle(color: AppColors.beni))),
+        ],
+      ),
+    );
+    if (ok != true) return;
+    await appDb.delete(appDb.userProgress).go();
+    await appDb.delete(appDb.verbProgress).go();
+    await MemorizedStore.clear();
+    await AchievementService.instance.clear();
+    if (context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(tr('학습 기록을 지웠습니다')), backgroundColor: AppColors.sumi));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.cal,
-      appBar: AppBar(title: Text(tr('프로필 · 설정'))),
+      appBar: AppBar(title: Text(tr('프로필'))),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          if (!isIOS) const UpdateEntryTile(),
-          Container(
-            padding: const EdgeInsets.all(18),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [AppColors.rojoDeep, AppColors.rojo],
-              ),
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: AppColors.gualda, width: 1.5),
-            ),
-            child: Row(
-              children: [
-                const TileBadge(text: 'AR', size: 60, color: AppColors.lusa),
-                SizedBox(width: 14),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        tr('학습자'),
-                        style: TextStyle(
-                          color: AppColors.cal,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        tr('1일차 · 입문 (A1)'),
-                        style: TextStyle(
-                          color: AppColors.gualdaBright,
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
+          _SectionTitle(tr('계정')),
+          const SizedBox(height: 8),
+          _SettingsGroup(items: [
+            _SettingItem(
+                icon: Icons.account_circle_outlined,
+                title: tr('계정'),
+                subtitle: tr('Talkverse 로그인(선택) · 평생 이용권'),
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AccountScreen()))),
+          ]),
+          const SizedBox(height: 18),
+          _SectionTitle(tr('성과')),
+          const SizedBox(height: 8),
+          _SettingsGroup(items: [
+            _SettingItem(
+                icon: Icons.bar_chart,
+                title: tr('진행'),
+                subtitle: tr('이번 주 · 글자 · 회화 성과'),
+                onTap: () => openPane(context, (_) => const ProgressScreen())),
+          ]),
+          const SizedBox(height: 18),
+          _SectionTitle(tr('기록')),
+          const SizedBox(height: 8),
+          _SettingsGroup(items: [
+            _SettingItem(
+                icon: Icons.restart_alt,
+                title: tr('학습 기록 초기화'),
+                subtitle: tr('회화·동사·단어·성과 기록 삭제'),
+                onTap: () => _resetProgress(context)),
+          ]),
           const SizedBox(height: 18),
           // 학습자 프로필(일본어앱 learner_prefs) — 이름 → 회화의 {name} 자리, 성별 → 학습자 목소리(새 회화 구조부터)
           _SectionTitle(tr('학습자')),
@@ -71,49 +85,35 @@ class ProfileScreen extends StatelessWidget {
           const SizedBox(height: 18),
           _SectionTitle(tr('설정')),
           const SizedBox(height: 8),
-          _SettingsGroup(items: [
-            _SettingItem(
-                icon: Icons.account_circle_outlined,
-                title: tr('계정'),
-                subtitle: tr('Talkverse 로그인(선택) · 평생 이용권'),
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AccountScreen()))),
-            _SettingItem(
-                icon: Icons.language,
-                title: tr('언어 / Language'),
-                subtitle: '${AppLangPrefs.lang.value.label}  →  ${AppLangPrefs.peekNext().label}',
-                onTap: AppLangPrefs.next),
-            if (isIOS)
+          ValueListenableBuilder<bool>(
+            valueListenable: LearnerPrefs.reading,
+            builder: (context, on, _) => _SettingsGroup(items: [
               _SettingItem(
-                  icon: Icons.flight_takeoff,
-                  title: tr('앱 업데이트'),
-                  subtitle: tr('아이폰은 TestFlight 앱에서 새 빌드를 받습니다')),
-            _SettingItem(icon: Icons.volume_up, title: tr('TTS 음성'), subtitle: tr('ar-EG (시스템 보이스)')),
-            _SettingItem(icon: Icons.public, title: tr('변종'), subtitle: tr('이집트 아랍어 (مصر) · العامية المصرية')),
-            _SettingItem(icon: Icons.palette, title: tr('테마'), subtitle: tr('낮 · talkverse.uk 톤')),
-          ]),
+                  icon: Icons.language,
+                  title: tr('언어 / Language'),
+                  subtitle: '${AppLangPrefs.lang.value.label}  →  ${AppLangPrefs.peekNext().label}',
+                  onTap: AppLangPrefs.next),
+              _SettingItem(
+                  icon: Icons.record_voice_over_outlined,
+                  title: tr('독음'),
+                  subtitle: on ? tr('표시 — 탭하면 숨김') : tr('숨김 — 탭하면 표시'),
+                  onTap: () => ReadingToggleAction.toggle(context)),
+            ]),
+          ),
           const SizedBox(height: 16),
           _SectionTitle(tr('정보')),
           const SizedBox(height: 8),
           _SettingsGroup(items: [
+            _SettingItem(
+                icon: Icons.menu_book_outlined,
+                title: tr('앱 소개'),
+                subtitle: tr('절벽구간 — 단어를 나누는 기준'),
+                onTap: () => openPane(context, (_) => const AboutScreen())),
             _SettingItem(icon: Icons.info_outline, title: tr('앱 버전'), subtitle: '0.1.0 · alpha'),
-            _SettingItem(icon: Icons.code, title: 'Stack', subtitle: 'Flutter 3.41 · Material 3 · Drift'),
             _SettingItem(icon: Icons.copyright, title: tr('저작권'), subtitle: tr('아랍어유니버스 · 2026')),
           ]),
           const SizedBox(height: 20),
           const BandDivider(),
-          const SizedBox(height: 12),
-          const Center(child: SolMark(size: 28)),
-          const SizedBox(height: 6),
-          Center(
-            child: Text(
-              'العلم نور',
-              style: TextStyle(
-                color: AppColors.tintaLight,
-                fontSize: 11,
-                letterSpacing: 3,
-              ),
-            ),
-          ),
           const SizedBox(height: 32),
         ],
       ),

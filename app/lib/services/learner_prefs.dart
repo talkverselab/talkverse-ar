@@ -7,14 +7,19 @@ class LearnerPrefs {
   LearnerPrefs._();
   static const _kName = 'learner_name';
   static const _kGender = 'learner_gender'; // male | female
+  static const _kReading = 'reading_aid_show';
 
   static final ValueNotifier<String> name = ValueNotifier('');
   static final ValueNotifier<String> gender = ValueNotifier('male');
+
+  /// 독음 표시 — 기본 미표시(사용자 지시 2026-11-07). 회화·그림 카드·절벽 단어가 함께 쓴다.
+  static final ValueNotifier<bool> reading = ValueNotifier(false);
 
   static Future<void> load() async {
     final p = await SharedPreferences.getInstance();
     name.value = p.getString(_kName) ?? '';
     gender.value = p.getString(_kGender) ?? 'male';
+    reading.value = p.getBool(_kReading) ?? false;
   }
 
   static Future<void> setName(String v) async {
@@ -25,6 +30,11 @@ class LearnerPrefs {
   static Future<void> setGender(String v) async {
     gender.value = v == 'female' ? 'female' : 'male';
     (await SharedPreferences.getInstance()).setString(_kGender, gender.value);
+  }
+
+  static Future<void> setReading(bool v) async {
+    reading.value = v;
+    (await SharedPreferences.getInstance()).setBool(_kReading, v);
   }
 
   static bool get isFemale => gender.value == 'female';

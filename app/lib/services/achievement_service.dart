@@ -41,6 +41,16 @@ class AchievementService {
     _loaded = true;
   }
 
+  /// 프로필 「학습 기록 초기화」.
+  Future<void> clear() async {
+    await load();
+    _episodes.clear();
+    _cards.clear();
+    _daily.clear();
+    _glyphs.clear();
+    await _save();
+  }
+
   Future<void> _save() async {
     changes.value++;
     final data = json.encode({'episodes': _episodes, 'cards': _cards, 'daily': _daily, 'glyphs': _glyphs.toList()});

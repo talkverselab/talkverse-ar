@@ -9,7 +9,9 @@ import '../services/content_sync.dart';
 import '../services/dialogue_service.dart';
 import '../services/learner_prefs.dart';
 import '../services/tts_service.dart';
+import '../widgets/glyph_sheet.dart';
 import '../widgets/lemma_chips.dart';
+import '../widgets/reading_toggle.dart';
 import '../widgets/spanish_decor.dart';
 
 /// 편의 문장 플래시카드 — 일본어앱에서 옮김(2026-11-02). 앞면은 **그림만**(글자 없음), 탭하면 아랍어·독음·한국어.
@@ -66,7 +68,10 @@ class _DialogueCardScreenState extends State<DialogueCardScreen> {
   Widget build(BuildContext context) {
     final wide = isWide(context);
     final art = _CardArt(key: ValueKey('${d.id}:${t.num}:art'), d: d, t: t);
-    final text = _CardText(d: d, t: t, flipped: _flipped);
+    final text = ValueListenableBuilder<bool>(
+      valueListenable: LearnerPrefs.reading,
+      builder: (_, _, _) => _CardText(d: d, t: t, flipped: _flipped),
+    );
     return Scaffold(
       backgroundColor: AppColors.washi,
       appBar: AppBar(
@@ -75,6 +80,7 @@ class _DialogueCardScreenState extends State<DialogueCardScreen> {
           const SizedBox(height: 2),
           Text('${_pos + 1} / ${_order.length}', style: const TextStyle(color: AppColors.muted, fontSize: 10, letterSpacing: 2)),
         ]),
+        actions: const [ReadingToggleAction()],
       ),
       body: Column(children: [
         Expanded(
@@ -156,9 +162,9 @@ class _CardText extends StatelessWidget {
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Text('$name · ${t.num}', style: const TextStyle(fontSize: 11, color: AppColors.muted)),
                 const SizedBox(height: 8),
-                Text(LearnerPrefs.fill(t.tl), textDirection: TextDirection.rtl, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: AppColors.beni, height: 1.3)),
+                TappableArabicText(LearnerPrefs.fill(t.tl), lemmas: t.lemmas, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: AppColors.beni, height: 1.3)),
                 if (t.gloss.isNotEmpty) ...[const SizedBox(height: 6), Text(t.gloss, style: const TextStyle(fontSize: 13, color: AppColors.ai, fontWeight: FontWeight.w600))],
-                if (t.rd.isNotEmpty) Text(LearnerPrefs.fill(t.rd, ko: true), style: const TextStyle(fontSize: 13, color: AppColors.muted)),
+                if (t.rd.isNotEmpty && LearnerPrefs.reading.value) Text(LearnerPrefs.fill(t.rd, ko: true), style: const TextStyle(fontSize: 13, color: AppColors.muted)),
                 const SizedBox(height: 12),
                 const BrushDivider(height: 2),
                 const SizedBox(height: 10),

@@ -60,8 +60,7 @@ adb -s R3CY20HDN2K install --user 0 -r <apk>
   앱은 자기 빌드 번호와 `latest.json`의 `build`를 견주어 새 빌드를 판단한다.
   로컬 `flutter build apk`로 만든 APK는 pubspec의 작은 번호를 써서 앱이 늘 "새 빌드 있음"으로 보인다 — 정상.
 - `**.md`만 고친 푸시는 빌드하지 않는다(`paths-ignore`). 헛된 업데이트 알림 방지.
-- **폰 업데이트**: 앱 → 설정(프로필) 화면 → **「앱 업데이트」** → 내려받아 설치. 케이블·adb 불필요.
-  첫 설치 때 「출처를 알 수 없는 앱 설치」 허용이 한 번 필요하다(안드로이드 강제).
+- **폰 업데이트**: Zealot(apps.talkverse.uk)·TestFlight 로 받는다. 프로필의 「앱 업데이트」 타일은 2026-11-07 사용자 지시로 뺐다(`update_screen.dart` 코드는 남아 있음).
 
 관련 파일: `lib/services/update_service.dart`, `lib/screens/update_screen.dart`,
 `android/app/src/main/kotlin/**/MainActivity.kt`(설치 메서드 채널),

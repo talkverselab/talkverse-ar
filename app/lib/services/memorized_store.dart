@@ -20,6 +20,13 @@ class MemorizedStore {
     version.value++;
   }
 
+  /// 프로필 「학습 기록 초기화」.
+  static Future<void> clear() async {
+    _set.clear();
+    version.value++;
+    (await SharedPreferences.getInstance()).remove(_key);
+  }
+
   static bool contains(String key) => _set.contains(key);
 
   static Future<void> toggle(String key) async {

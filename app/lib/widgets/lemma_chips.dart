@@ -35,7 +35,7 @@ class LemmaChips extends StatelessWidget {
                   label: l.base,
                   gloss: found[l.base]?.ko,
                   compact: compact,
-                  onTap: found[l.base] == null ? null : () => _showWord(context, found[l.base]!, l),
+                  onTap: found[l.base] == null ? null : () => showLemmaWord(context, found[l.base]!, l),
                 ),
               if (snap.connectionState == ConnectionState.done && found.isEmpty)
                 Padding(padding: const EdgeInsets.only(top: 2), child: Text(tr('단어장에 없는 말'), style: const TextStyle(fontSize: 10, color: AppColors.muted))),
@@ -47,7 +47,8 @@ class LemmaChips extends StatelessWidget {
   }
 }
 
-void _showWord(BuildContext context, WordEntry w, Lemma l) {
+void showLemmaWord(BuildContext context, WordEntry w, Lemma l) {
+  final rd = l.reading.isNotEmpty ? l.reading : w.rd;
   TtsService.instance.speak(w.word);
   showModalBottomSheet(
     context: context,
@@ -65,7 +66,7 @@ void _showWord(BuildContext context, WordEntry w, Lemma l) {
           ]),
           if (l.surface != l.base)
             Text(trf('문장 속 꼴: {0}', [l.surface]), textAlign: TextAlign.right, style: const TextStyle(fontSize: 12, color: AppColors.muted)),
-          if (l.reading.isNotEmpty) Text(l.reading, textAlign: TextAlign.right, style: const TextStyle(fontSize: 14, color: AppColors.sumiLight)),
+          if (rd.isNotEmpty) Text(rd, textAlign: TextAlign.right, style: const TextStyle(fontSize: 14, color: AppColors.sumiLight)),
           const SizedBox(height: 10),
           Text(w.ko, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.sumi)),
         ]),

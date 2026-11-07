@@ -319,7 +319,7 @@ class _Bubble extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(LearnerPrefs.fill(t.tl), textDirection: TextDirection.rtl, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: AppColors.sumi, height: 1.4)),
                 if (t.gloss.isNotEmpty) Text(t.gloss, style: const TextStyle(fontSize: 11.5, color: AppColors.ai, fontWeight: FontWeight.w600)),
-                if (t.rd.isNotEmpty) Text(LearnerPrefs.fill(t.rd, ko: true), style: const TextStyle(fontSize: 12, color: AppColors.muted)),
+                if (t.rd.isNotEmpty && LearnerPrefs.reading.value) Text(LearnerPrefs.fill(t.rd, ko: true), style: const TextStyle(fontSize: 12, color: AppColors.muted)),
                 const SizedBox(height: 3),
                 Text(LearnerPrefs.fill(t.ko, ko: true), style: const TextStyle(fontSize: 13, color: AppColors.sumiLight, height: 1.35)),
                 if (t.note.isNotEmpty) ...[

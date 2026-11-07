@@ -44,7 +44,9 @@ void main() {
     await wait(t, 1500);
     await shot(t, '01_home_wide');
 
-    await t.tap(find.text('회화').first);
+    await t.ensureVisible(find.text('주제별 회화').first);
+    await wait(t, 500);
+    await t.tap(find.text('주제별 회화').first);
     await wait(t, 2500);
     await shot(t, '02_dialogue_home_right');
 
@@ -58,10 +60,18 @@ void main() {
 
     // 글자 시트(UX 시안 AR-01 ①): 캡션의 아랍어 줄 낱말 탭
     // RTL 이라 첫 낱말은 오른쪽 끝 — 가운데를 누르면 낱말 사이 빈칸에 걸릴 수 있다
-    await t.tapAt(t.getTopRight(find.byType(TappableArabicText).first).translate(-14, 14));
+    final firstWord = t.getTopRight(find.byType(TappableArabicText).first).translate(-14, 14);
+    await t.longPressAt(firstWord);
     await wait(t, 1500);
     await shot(t, '04b_glyph_sheet');
     Navigator.of(t.element(find.byType(GlyphSheet))).pop();
+    await wait(t, 1000);
+
+    // 낱말 탭 = 단어창(단어장에 없으면 글자 시트)
+    await t.tapAt(firstWord);
+    await wait(t, 1500);
+    await shot(t, '04c_word_sheet');
+    Navigator.of(t.element(find.byType(BottomSheet))).pop();
     await wait(t, 1000);
 
     await t.tap(find.text('재생').first);
@@ -84,5 +94,28 @@ void main() {
     await t.tap(rail('프로필'));
     await wait(t, 1500);
     await shot(t, '09_profile');
+
+    await t.tap(rail('배우기'));
+    await wait(t, 1500);
+    await t.ensureVisible(find.text('절벽 단어 R1~R5').first);
+    await wait(t, 500);
+    await shot(t, '10_menu_sections');
+    await t.tap(find.text('절벽 단어 R1~R5').first);
+    await wait(t, 3000);
+    await shot(t, '11_cliff_words');
+    await t.tap(find.textContaining('회화 단어 포함').first);
+    await wait(t, 800);
+    await t.tap(find.text('회화').last);
+    await wait(t, 1200);
+    await shot(t, '12_conv_words');
+    await t.tap(find.byTooltip('독음 표시').first);
+    await wait(t, 800);
+    await shot(t, '13_reading_on');
+    await t.tap(find.byTooltip('독음 숨기기').first);
+    await wait(t, 500);
+
+    await t.tap(rail('앱 소개'));
+    await wait(t, 1500);
+    await shot(t, '14_about');
   });
 }

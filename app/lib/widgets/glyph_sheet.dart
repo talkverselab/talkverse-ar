@@ -6,7 +6,10 @@ import '../core/platform.dart';
 import '../core/theme.dart';
 import '../services/achievement_service.dart';
 import '../services/arabic_script.dart';
+import '../services/dialogue_service.dart' show Lemma;
 import '../services/tts_service.dart';
+import '../services/word_lookup.dart';
+import 'lemma_chips.dart';
 
 /// 글자 시트 — UX 시안 AR-01 ①(2026-11-03). 낱말을 글자로 풀어 오른쪽→왼쪽으로 놓고,
 /// 글자를 누르면 그 글자의 모양(홀로·앞·가운데·끝)과 지금 쓰인 모양을 보여 준다. 본 모양은 성과 「익힌 글자 모양」에 더한다.
@@ -137,18 +140,78 @@ class _GlyphSheetState extends State<GlyphSheet> {
       );
 }
 
-/// 아랍어 줄 — 낱말마다 눌러 글자 시트를 연다. 오른쪽→왼쪽.
-class TappableArabicText extends StatefulWidget {
+/// 아랍어 줄 — 오른쪽→왼쪽. [lemmas] 가 있으면 낱말 탭 = 단어창, 길게 누름 = 글자 시트(사용자 지시 2026-11-07).
+/// 단어장에 있는 낱말은 밑줄 색으로 표시. 없는 낱말·[lemmas] 없는 줄은 탭 = 글자 시트(이전과 같음).
+class TappableArabicText extends StatelessWidget {
   final String text;
   final TextStyle style;
   final int? maxLines;
-  const TappableArabicText(this.text, {super.key, required this.style, this.maxLines});
+  final List<Lemma> lemmas;
+  const TappableArabicText(this.text, {super.key, required this.style, this.maxLines, this.lemmas = const []});
+
+  static final _word = RegExp(r'[\u0621-\u0652\u0670-\u06D3\u200C]+');
+  static final _prefix = RegExp('^(و|ف)?(ب|ل|ك)?(ال)?');
+
+  /// 문장 속 낱말 → 레마. 꼴이 같으면 그대로, 아니면 앞의 و·ف·ب·ل·ك·ال 를 뗀 꼴로.
+  static Lemma? lemmaFor(String token, List<Lemma> lemmas) {
+    final k = WordLookup.key(token);
+    for (final l in lemmas) {
+      if (WordLookup.key(l.surface) == k) return l;
+    }
+    final bare = k.replaceFirst(_prefix, '');
+    for (final l in lemmas) {
+      if (WordLookup.key(l.surface) == bare) return l;
+    }
+    return null;
+  }
 
   @override
-  State<TappableArabicText> createState() => _TappableArabicTextState();
+  Widget build(BuildContext context) {
+    if (lemmas.isEmpty) return _RichArabic(text, style: style, maxLines: maxLines);
+    return FutureBuilder<Map<String, WordEntry>>(
+      key: ValueKey(text),
+      future: WordLookup.instance.byLemmas(lemmas),
+      builder: (context, snap) {
+        final found = snap.data ?? const <String, WordEntry>{};
+        final parts = text.split(RegExp(r'\s+')).where((p) => p.isNotEmpty);
+        return Directionality(
+          textDirection: TextDirection.rtl,
+          child: Wrap(
+            spacing: (style.fontSize ?? 16) * 0.28,
+            children: [
+              for (final p in parts) _word.hasMatch(p) ? _tile(context, p, found) : Text(p, style: style),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _tile(BuildContext context, String part, Map<String, WordEntry> found) {
+    final token = _word.firstMatch(part)!.group(0)!;
+    final l = lemmaFor(token, lemmas);
+    final e = l == null ? null : found[l.base];
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () => e != null ? showLemmaWord(context, e, l!) : GlyphSheet.show(context, token),
+      onLongPress: () => GlyphSheet.show(context, token),
+      child: Text(part,
+          style: e == null ? style : style.copyWith(decoration: TextDecoration.underline, decorationColor: AppColors.ai, decorationThickness: 1.4)),
+    );
+  }
 }
 
-class _TappableArabicTextState extends State<TappableArabicText> {
+class _RichArabic extends StatefulWidget {
+  final String text;
+  final TextStyle style;
+  final int? maxLines;
+  const _RichArabic(this.text, {required this.style, this.maxLines});
+
+  @override
+  State<_RichArabic> createState() => _RichArabicState();
+}
+
+class _RichArabicState extends State<_RichArabic> {
   final _recognizers = <TapGestureRecognizer>[];
 
   @override
