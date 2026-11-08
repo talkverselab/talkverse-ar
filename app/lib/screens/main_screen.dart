@@ -7,6 +7,7 @@ import '../main.dart';
 import '../widgets/spanish_decor.dart';
 import 'chunk_search_screen.dart';
 import 'about_screen.dart';
+import 'letter_chart_screen.dart';
 import 'dialogue_screen.dart';
 import 'episode_screen.dart';
 import 'grammar_lesson_screen.dart';
@@ -372,13 +373,17 @@ class _TodayMissionState extends State<_TodayMission> {
   }
 }
 
-/// 배우기 메뉴 — 문법 → 회화 → 단어 → 참고(사용자 지시 2026-11-07, 일본어앱 메뉴 순서).
+/// 배우기 메뉴 — 기초 → 문법 → 회화 → 단어 → 참고(사용자 지시 2026-11-07, 일본어앱 메뉴 순서).
 class _MenuSections extends StatelessWidget {
   const _MenuSections();
 
   @override
   Widget build(BuildContext context) {
     final sections = <(String, List<_MenuItem>)>[
+      (tr('기초'), [
+        _MenuItem(label: tr('글자와 발음'), sub: tr('28자 · 소리 · 입 모양'), badge: 'أ', color: AppColors.beniDeep,
+          builder: (_) => const LetterChartScreen()),
+      ]),
       (tr('문법'), [
         _MenuItem(label: tr('문법'), sub: 'قواعد', badge: 'G', color: AppColors.rojoDeep,
           builder: (_) => const GrammarHubScreen()),

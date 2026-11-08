@@ -1,4 +1,8 @@
 import 'package:arabic_universe/screens/about_screen.dart';
+import 'package:arabic_universe/screens/letter_chart_screen.dart';
+import 'package:arabic_universe/services/arabic_phonetics.dart';
+import 'package:arabic_universe/services/arabic_script.dart';
+import 'package:arabic_universe/widgets/letter_sound_sheet.dart';
 import 'package:arabic_universe/screens/profile_screen.dart';
 import 'package:arabic_universe/screens/word_freq_screen.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +31,12 @@ void main() {
     }
   }
 
+  test('글자 소리 표 = 글자 돋보기 글자 30개, 모음 부호 6개', () {
+    expect(letterSounds.map((l) => l.ch).toSet(), arabicLetters.map((l) => l.ch).toSet());
+    expect(markSounds.length, 6);
+    expect(letterSyllable(letterSounds[1]), 'بَ');
+  });
+
   for (final e in sizes.entries) {
     testWidgets('절벽 단어 · ${e.key}', (t) async {
       await show(t, e.value, const WordFreqScreen(), ready: find.text('1단원'));
@@ -47,6 +57,15 @@ void main() {
       await show(t, e.value, const ProfileScreen());
       expect(find.text('앱 업데이트'), findsNothing);
       expect(find.text('계정'), findsWidgets);
+    });
+
+    testWidgets('글자와 발음 · ${e.key}', (t) async {
+      await show(t, e.value, const LetterChartScreen());
+      expect(find.text('ب'), findsOneWidget);
+      await t.tap(find.text('ب'));
+      await t.pumpAndSettle();
+      expect(find.text('IPA [b]'), findsOneWidget);
+      await t.pump(const Duration(seconds: 2));
     });
   }
 }

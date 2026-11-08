@@ -117,5 +117,14 @@ void main() {
     await t.tap(rail('앱 소개'));
     await wait(t, 1500);
     await shot(t, '14_about');
+
+    await t.tap(rail('배우기'));
+    await wait(t, 1200);
+    await t.tap(find.text('글자와 발음').first);
+    await wait(t, 2000);
+    await shot(t, '15_letter_chart');
+    await t.tap(find.text('ع').first);
+    await wait(t, 2500);
+    await shot(t, '16_letter_sheet');
   });
 }
