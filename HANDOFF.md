@@ -1,46 +1,33 @@
 # HANDOFF — talkverse-ar (아랍어유니버스)
 
-_2026-11-03 전체 다시 씀, 2026-11-06 상태 갱신. 앱 규칙 SSOT 는 `app/CLAUDE.md`(서명·배포·Zealot·회화 원칙 링크), 인물은 `CHARACTERS.md`._
+_2026-11-08 전체 다시 씀(세션 종료 — 허브 지시 "굴절어 세션 작업 완료 후 종료"). 앱 규칙 SSOT 는 `app/CLAUDE.md`, 회화 규칙은 `app/docs/DIALOGUE_RULES_ar.md`, 인물은 `CHARACTERS.md`._
 
-## 지금 상태 (2026-11-06)
+## 지금 상태 (2026-11-08)
 
 | 항목 | 상태 |
 |---|---|
-| 리포 | `talkverselab/talkverse-ar`(공개) `main`, 마지막 앱 커밋 `38fcc57` |
-| Android | CI 빌드 **9**(`latest` 릴리스, `38fcc57`, 서명 키 확인), Zealot 「아랍어유니버스」 빌드 9 — https://apps.talkverse.uk/yCwOQ/276 . **PC 백업 안 됨**(아래 D: 참고) |
-| iOS | TestFlight 업로드 빌드 **2611052358**(`38fcc57`, 번들 `com.talkverse.arabicUniverse`, Apple 로그인 entitlements·iPad·새 데이터 포함 확인). **IPA PC 백업 안 됨** — M6 `app/build/ios/ipa_appstore/arabic_universe.ipa` 에 있음 |
-| PC 백업 | 2026-11-05 PC 에 D: 가 안 보임(C: 만, 볼륨 하나 "Warning / Full Repair Needed"). 읽기 확인만 함. D: 복구 뒤 `gh release download latest` 로 APK → `D:\OneDrive\app project\talkverse-ar\`, IPA → `D:\OneDrive\app project\arabic_universe\ios\` 복사 |
-| 일본어앱 8가지 이식 | 끝(2026-11-05): 그림 아래 대사 띠·카드 앞면 한국어·문장 레마 칩·그림 기기 내려받기·DB 업데이트 번호(`version.json` db/turns)·이름 묻기·여자 학습자 컷. 회화 레마 단어 48어를 빈도 단어 5001~5048 「Conv」 로 추가(사용자 승인), L1 칩 122개 중 121개 단어장 일치 |
-| 캐릭터 | 시트 v2 사용자 통과(유세프만 고친 판) — `data/review/art/chars_ar_v2.jpg`, `CHARACTERS.md` |
-| UX/UI | 시안 01 사용자 통과 — `data/review/uxui/sian_ar_01.md|.jpg`. **장면 그림엔 말풍선·글자 없음, 앱이 오버레이**(사용자 결정) |
-| 앱 구조 | 일본어앱 구조(페르시아어앱 이식판 바탕): 아이패드 두 화면·회화 리더·그림 카드·「나」 성과·학습자 프로필·글자 돋보기(낱말 → 글자 4형, 아랍어 28자 + ة·ى) |
-| 로그인·결제 | Talkverse ID(client `ar`, `talkverse.ar://auth`) + 평생 이용권(iOS `com.talkverse.arabicUniverse.lifetime` / Android `lang_ar`). **잠근 콘텐츠 없음**(무료/유료 구간은 사용자 결정) |
-| 회화 | 옛 앱에서 옮긴 L1 7편 77턴(주제 「생활」로 표시) — **회화 작성 금지 상태**(사용자 지시 전까지) |
-| 저작권·이력 | 2026-11-02 외부 말뭉치·교재 추출 파일·옛 Supabase 시드 삭제 + 이력 재작성(강제 푸시). Supabase 사용 없음 |
+| 리포 | `talkverselab/talkverse-ar`(공개) `main`, 마지막 앱 커밋 `f8fa668` |
+| Android | CI 빌드 **12**(`f8fa668`, 서명 확인) → Zealot 「아랍어유니버스」 https://apps.talkverse.uk/yCwOQ/378 , PC `D:\OneDrive\app project\talkverse-ar\talkverse-ar-latest.apk` |
+| iOS | TestFlight **2611081730**(`f8fa668`, Android 12 와 같은 변경). IPA 백업 PC `D:\OneDrive\app project\arabic_universe\ios\` |
+| 서명 | `android/app/signing-key.jks` SHA-1 `9C:C4:…:47:6B`(PC `D:\keys\talkverse-ar\`, Doppler `SIGNKEY_*`). 새로 만들지 말 것 |
+| 로그인·결제 | Talkverse ID(client `ar`) + 평생 이용권. **잠근 콘텐츠 없음**(무료/유료 구간은 사용자 결정) |
 
-## 이집트 구어 절벽·단어 그림 리스트 (2026-11-03 끝)
-- **레마 기준 재산정(2026-11-03, 사용자 지시 — 아래 표면형 값은 폐기)**: 이집트 구어 형태 분석기로 표제어로 합치고 관사·접속사·전치사·대명 접미·부정 ـش 는 각각 한 토큰 → **R1 68 · R2 101 · R3 216 · R4 512**, 상위 2,500 = 93.2%. talkverse.uk 세션에 전달. 어근 절벽은 도구 한계(구어 어근 정보 없음)로 값 없음. 방법·파일 `~/corpus_work/ar_eg/SOURCE.md`·`lemma_eg.tsv`.
-- (폐기) 표면형 재산출: 이집트 영화·드라마 대사 108작품 · 43.9만 토큰(아랍어 자막 중 이집트 구어 표지 5% 이상만, 작품당 1개) · 표면형(모음 부호 제거·أإآ→ا·ى→ي). **R1 55% 635 · R2 60% 999 · R3 70% 2,491 · R4 80% 6,413**, 50% 404, 상위 2,500 = 70.0%. talkverse.uk /cliff/18/ 아랍어 행 ①단계·확정으로 반영됨.
-- 작업 파일(리포 밖): M6 `~/corpus_work/ar_eg/` — `eg_cliff.py`, `freq_eg.tsv`(전체 순위·누적%), `summary.txt`, 출처 메모 `SOURCE.md`(비공개). 원본 9GB 사본은 지움(원본은 PC).
-- **그림 리스트(레마 순위, 2026-11-03)**: `talkverselab/talkversehanja` 커밋 `bdf45ca` — `words/ar.csv` 레마 상위 2,500(level R1~R4 + R5 = 90% 까지 · R6 = 그 뒤, 접어도 행으로 들어 있음, 그림 가능 787). talkverse.uk 가 D1 에 다시 적재, 새로 그릴 그림 = 단어 419 + 음식 50(일본어 그림과 겹치는 개념은 공유). 몇몇 표제어는 분석기 오분석(예 `لها`) — 앱 단어 목록으로 쓸 때 손볼 것.
-- (옛) 표면형 그림 리스트: `talkverselab/talkversehanja` 커밋 `538c212` — `talkverse_art/words/ar.csv`(상위 2,500, 카이로식 한글 독음·뜻·품사·그림 가능 Y 548) + `ar_food.csv`(이집트 음식 50). talkverse.uk 세션이 그림 대기열에 넣음(일본어 다음 도착 순).
-- **앱에는 아직 반영 안 함**: 앱 빈도 단어(`app/assets/data/freq/lang_es_top.csv`, 옛 표준어 섞인 5,000)를 이집트 구어 목록으로 바꾸는 것은 새 학습 콘텐츠라 콘텐츠 작성 금지가 풀린 뒤 사용자 결정.
+## 2026-11-07~08 한 일
+- **일본어앱 단어·메뉴 개편 이식**(`d1cfde2`): 절벽 단어 = 이집트 구어 레마 상위 2,000(`assets/data/freq/lang_ar_cliff.csv`, 검토로 225개 숨김 — 조각·인명·비속어·판정 불가, 순위 번호는 그대로) · 20어 단원 타일 · 「회화 단어 포함」(`conv_words_ar.json`) · 앱 소개(`about_screen.dart`, 값은 `lib/core/cliff.dart` 한 곳) · 메뉴 = 기초 → 문법 → 회화 → 단어 → 참고 · 탭 「배우기·회화·진행·프로필」 · 프로필 정리(앱 업데이트 타일 삭제, 학습 기록 초기화) · 문장 낱말 탭 = 단어창, 길게 = 글자 시트 · 독음 전역 토글(기본 미표시, 켤 때 「힘들어도 독음을 보지 않고 익혀보세요」).
+  - 만들기: `python3 tools/build_cliff_words.py ~/corpus_work/ar_eg/out/ar.csv ~/corpus_work/ar_eg/lemma_eg.tsv ~/corpus_work/ar_eg/review`(검토 JSON 은 리포 밖).
+- **기초 「글자와 발음」**(`b8e3567`, `f8fa668`): 28자+ة·ى 격자(RTL)·묶음 칩(쉬운 소리·닮았지만 다른 소리·목 소리·강조음·모음 부호·**접사 글자 10 = 사알투무니하**)·한글 소리 토글·소리 시트(1초 뒤 재생·IPA 카이로/표준어·소리 나는 곳·조음 그림·한국어 비교·글자 모양·예시). 데이터 `lib/services/arabic_phonetics.dart`. 조음 그림은 **임시**(출시 전 자체 그림으로 교체, 출처 표기 넣지 않음 — 사용자 지시). 옛 앱 사알투무니하 원본 = `~/talkverse/_legacy/ar/lib/core/screens/ar_alphabet_screen.dart`, 리포 이력 `2a3dcd4`.
+- **회화 Claude 초안**(사용자: 샘플 통과, Fable 로 작성): `data/review/write/samples_20261107/` — 레벨 0~5 한 편씩 7편 78턴(`sample.md` 에 세 줄 + 감정 + 여성판). chaos 3/7. 앱 에셋에는 아직 안 넣음. 성별판 칸 = `ar_f`·`rd_f`·`ko_f`·`segs_f`.
+- **회화 규칙 확정**(`app/docs/DIALOGUE_RULES_ar.md`): 굴절어 공통안 + 아랍어 대안 3개(사용자 동의) — 존댓말 활용 없음 → 가게 장면 R1 허용·حضرتك 만 그래머2 / 회화 어휘 상한 = 상위 512위, 밖 단어 턴당 R1 1·R2 2·R3 3 / 본문 타슈킬 없음. 시샤 소재 금지.
 
 ## 다음 할 일(순서)
-0. PC D: 복구 뒤 APK·IPA 백업(위 표).
-1. (사용자 결정) 앱 빈도 단어를 이집트 구어 목록(`~/corpus_work/ar_eg/out/ar.csv`)으로 바꿀지 — 콘텐츠 금지 해제 뒤.
-2. (사용자) App Store Connect 에서 TestFlight 2611052358 처리 확인·내부 그룹 설치, 포털 App ID 에 Sign in with Apple capability, 인앱 상품 `com.talkverse.arabicUniverse.lifetime`·Play `lang_ar` 등록, 무료/유료 구간·가격 결정.
-3. 장면 컷(편당 4장) — 회화가 새로 나온 뒤. 요청 때 **카이로 동네 배경**(시안 그림이 흙벽 마을로 나왔음)·말풍선 없음 명시, 시트 v2 첨부.
-4. 회화(사용자 지시 뒤): 공통 원칙 https://talkverse.uk/talkverse/dialogue-rules/ · 이집트 구어 · 성별판 · Grok 재작성 + **Gemini 검수(방언 판정 포함, 몇 편 해 보고 품질이 낮으면 중단·보고)**.
-   - 반전 기준(사용자 지시 2026-11-03, 한국어앱 세션 경유·모든 언어앱 공통): 카오스(일이 걷잡을 수 없이 커짐) **30% 이상**, 심쿵 많이(연애·플러팅 편은 편마다 한 줄, 여성이 먼저 다가가는 편 더 많이), 편마다 `twist_type` = chaos·slip·reveal·emotion·ignore, 묶음마다 비율 확인. 참고 `~/talkverse/ko/assets/data/dialogues/`, 커밋 a2e8eb9(한국어앱). 새 편은 왕초보·초급 위주, 장면 그림 = A·B 쌍 1컷·말풍선·글자 없음·인물 기준 그림 첨부(공통 원칙 §9).
-   - Grok·Gemini 를 직접 쓸 때: 사용자 지시가 있을 때만 M4 Chrome 을 켜고(미리 켜 두지 말 것), 쿠키 복사는 M4 안에서, M6 에서는 ssh 터널 — `~/talkverse/GROK_M4_LOGIN.md`, 포트 배정 `GROK_CHROME_PORTS.md`. 한 번에 한 작업, 연 탭은 닫고 끝나면 Chrome 끄기. 그림 요청은 지금처럼 한자 세션 경유도 가능. 2026-11-03 Grok 계정이 바뀌어 예전 방(캐릭터·UX 시안을 받은 방) 링크는 안 열림 — 새 방에서 시트 v2·시안 파일을 다시 첨부. 새 작업은 샘플 1~2개 → 사용자 통과(알림) → 본작업 순서. Grok 회화 재작성·장면 컷 요청문 작성법 = `~/talkverse/GROK_PROMPT_GUIDE.md`(중국어앱 정리, 틀 파일 `~/talkverse/zh/tools/` 의 prompts/rewrite_grok.md·rewrite_request.py·scene_prompts.py·grok_*.py 를 복사해 언어 코드만 바꿈) — 편마다 새 방, 받은 재작성은 그대로 쓰지 말고 리뷰, 컷은 한 요청에 1장.
-5. 어근 가족 칸(시안 §4-B): 인도네시아어앱 `~/talkverse/id/docs/ROOTS.md` §4 방식 — 범위는 사용자 확인 뒤.
+1. 미얀마어앱 사알투무니하 좌우 반전판 — 사용자 지시로 2026-11-08 빌드 12 뒤 미얀마어 세션(`my-f6`)에 요청 보냄(만드는 것은 그 세션 몫).
+2. **아이패드 스크린샷 확인**: `python3 app/tools/pane_shots.py F3FF452D-C5CF-4782-83DB-3DCF252451D9 <폴더>` — 11-08 실행이 앱 빌드 뒤 멈춰 중단함(원인 미확인, 재부팅 직후). 흐름 `integration_test/dialogue_pane_test.dart` 에 절벽 단어·앱 소개·글자와 발음 단계 추가돼 있음. 호스트 테스트(`test/menu_words_test.dart`, 폰·아이패드 칸·전체 크기)는 넘침 없이 통과.
+3. **회화**: Grok 재작성(11-09 13:30 재개, 편마다 새 방, 한자 세션 경유 가능) → 리뷰 → 사용자 통과 → 앱 에셋(`assets/data/dialogues/R<레벨>/<주제>/`, 로더가 `es` 칸을 읽으니 `ar`↔`es` 정리) → 음성(`~/talkverse/ja/docs/DIALOGUE_AUDIO.md`, 감정 열로 계획 자동 생성 스크립트를 이 앱용으로, uk 에 "시험 준비됨" → "지금 시작" 뒤 PC) → `data/review/REVIEW_ar.html` → uk "REVIEW_ar 갱신". 레벨별 한 편 뒤 추가 작성은 사용자 지시 뒤(B15).
+4. (사용자) TestFlight 설치 확인, App ID Sign in with Apple, 인앱 상품, 무료/유료 구간.
+5. 표현 풀 CSV(إزيك·ماشي·خلاص·طب·على حسابي·متشكر…)와 「Conv」 단어장 보강(شاي·زحمة 등) — 회화 밖 콘텐츠라 동결 해제 뒤.
 
 ## 주의
-- 서명 키 새로 만들지 말 것 — 리포의 `android/app/signing-key.jks`(SHA-1 `9C:C4:…:47:6B`, PC `D:\keys\talkverse-ar\` 백업, Doppler `SIGNKEY_*`). M6 `~/.android/debug.keystore` 는 다른 키.
-- 공개 저장소 — 말뭉치·교재·영상 이름 금지(이력 정리했음, 다시 넣지 말 것).
-- 아이콘 파일은 talkverse.uk 세션 담당 — 직접 고치지 말고 요청.
-- M6 자원: 시뮬레이터는 자기 것(`ar-shots iPad Air 11`, F3FF452D…)만, 끝나면 shutdown. 빌드는 M6 전체 2~3개까지(`ps -axo args= | grep -c '^[^ ]*dartvm .*flutter_tools'` 3 이상이면 대기 — `pgrep -f flutter_tools.snapshot` 은 다른 세션의 대기 명령까지 세어 서로 기다리게 되니 쓰지 말 것).
-- Android CI 의 "Update rolling latest release" 단계가 GitHub API 일시 오류로 한 번 실패했었다 — `gh run rerun <id> --failed` 로 해결.
-- 빌드 뒤 `ios/Podfile`·`Podfile.lock`·`**/swiftpm/`·pbxproj 의 CocoaPods 줄·xcconfig 는 도구 잡음 — 커밋하지 말 것. 작업 트리의 CRLF 수정 표시도 잡음.
-- 글자 돋보기·낱말 나누기는 ، ؛ ؟ 를 빼야 한다(같은 유니코드 블록) — 페르시아어앱 원본에도 같은 문제가 있을 수 있음.
+- 공개 저장소 — 말뭉치·작품·자막 이름 금지. 출처 이름은 `~/corpus_work/ar_eg/SOURCE.md` 에만.
+- M6 빌드 수: `ps -axo args= | grep -c '^[^ ]*dartvm .*flutter_tools.* build '`(`pgrep -f flutter_tools.snapshot` 은 대기 명령까지 세어 서로 기다리게 됨). 시뮬레이터는 `ar-shots iPad Air 11` 만, 끝나면 shutdown.
+- 빌드 뒤 `ios/Podfile*`·`swiftpm/`·pbxproj·xcconfig·xcscheme 변경과 CRLF 표시는 잡음 — 커밋하지 말 것. `git add` 는 경로 지정.
+- 아이콘은 talkverse.uk 세션 담당. 서명 키 새로 만들지 말 것.
