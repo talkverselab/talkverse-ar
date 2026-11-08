@@ -284,6 +284,9 @@ const Map<String, String> kDictEn = {
   '예: {0} · {1}': 'e.g. {0} · {1}',
   '라이선스': 'Licenses',
   '오픈소스 라이선스': 'Open-source licenses',
+  '접사 글자 10': '10 affix letters',
+  '이 10자는 낱말 앞뒤에 붙어 「나·너·그」, 시제, 「그리고」 같은 뜻을 더해요. 외우는 말: 사알투무니하': 'These 10 letters attach to the front or end of words to add meanings like "I/you/he", tense or "and". Mnemonic: sa\'altumuniha',
+  '※ 같은 글자가 낱말 뿌리(어근)에도 쓰여요 — 앞뒤에 있다고 늘 접사는 아니에요. 진행형 بـ(비)는 10자에 없지만 구어에서 가장 자주 붙어요.': '※ The same letters also appear in word roots — a letter at the edge is not always an affix. The progressive بـ (bi) is not among the 10 but is the most common prefix in speech.',
 };
 
 const Map<String, String> kDictJa = {
@@ -556,6 +559,9 @@ const Map<String, String> kDictJa = {
   '예: {0} · {1}': '例: {0} · {1}',
   '라이선스': 'ライセンス',
   '오픈소스 라이선스': 'オープンソースのライセンス',
+  '접사 글자 10': '接辞の文字10',
+  '이 10자는 낱말 앞뒤에 붙어 「나·너·그」, 시제, 「그리고」 같은 뜻을 더해요. 외우는 말: 사알투무니하': 'この10字は単語の前後に付いて「私・君・彼」、時制、「そして」などの意味を加えます。覚え方: サアルトゥムーニーハー',
+  '※ 같은 글자가 낱말 뿌리(어근)에도 쓰여요 — 앞뒤에 있다고 늘 접사는 아니에요. 진행형 بـ(비)는 10자에 없지만 구어에서 가장 자주 붙어요.': '※ 同じ文字は語根にも使われます — 前後にあっても接辞とは限りません。進行形 بـ(ビ)は10字にありませんが、口語で最もよく付きます。',
 };
 
 const Map<String, String> kDictZh = {
@@ -828,4 +834,7 @@ const Map<String, String> kDictZh = {
   '예: {0} · {1}': '例: {0} · {1}',
   '라이선스': '许可',
   '오픈소스 라이선스': '开源许可',
+  '접사 글자 10': '词缀字母10',
+  '이 10자는 낱말 앞뒤에 붙어 「나·너·그」, 시제, 「그리고」 같은 뜻을 더해요. 외우는 말: 사알투무니하': '这10个字母附在词的前后,添加“我/你/他”、时态、“和”等意义。口诀: 萨阿勒图穆尼哈',
+  '※ 같은 글자가 낱말 뿌리(어근)에도 쓰여요 — 앞뒤에 있다고 늘 접사는 아니에요. 진행형 بـ(비)는 10자에 없지만 구어에서 가장 자주 붙어요.': '※ 这些字母也出现在词根里 — 在词首词尾不一定是词缀。进行体 بـ(bi) 不在这10个里,但在口语中最常见。',
 };

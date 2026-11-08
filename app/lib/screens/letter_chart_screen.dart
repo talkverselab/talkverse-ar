@@ -4,6 +4,7 @@ import '../core/l10n.dart';
 import '../core/platform.dart';
 import '../core/theme.dart';
 import '../services/arabic_phonetics.dart';
+import '../services/arabic_script.dart';
 import '../services/tts_service.dart';
 import '../widgets/letter_sound_sheet.dart';
 
@@ -55,7 +56,7 @@ class _LetterChartScreenState extends State<LetterChartScreen> {
       ),
       body: Column(children: [
         _chips(),
-        Expanded(child: _set == 5 ? _marks() : _grid()),
+        Expanded(child: _set == 6 ? _affixes() : (_set == 5 ? _marks() : _grid())),
       ]),
     );
   }
@@ -121,6 +122,82 @@ class _LetterChartScreenState extends State<LetterChartScreen> {
           Text(l.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 10, color: AppColors.sumiLight)),
           if (_showKo)
             Text(l.korSim, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 11, color: color, fontWeight: FontWeight.w800)),
+        ]),
+      ),
+    );
+  }
+
+  /// 접사 글자 10 — 사알투무니하(옛 앱 메뉴를 이집트 구어로). 글자마다 모양 4가지 + 붙는 쓰임과 예.
+  Widget _affixes() => ListView(
+        padding: EdgeInsets.fromLTRB(12, 4, 12, 24 + bottomInset(context)),
+        children: [
+          InkWell(
+            onTap: () => TtsService.instance.speak(affixWord),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Row(children: [
+                const Icon(Icons.volume_up, color: AppColors.beni),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(tr('이 10자는 낱말 앞뒤에 붙어 「나·너·그」, 시제, 「그리고」 같은 뜻을 더해요. 외우는 말: 사알투무니하'),
+                      style: const TextStyle(fontSize: 12, color: AppColors.sumiLight, height: 1.5)),
+                ),
+                const SizedBox(width: 8),
+                const Text(affixWord, textDirection: TextDirection.rtl, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: AppColors.sumi)),
+              ]),
+            ),
+          ),
+          for (final a in affixLetters) _affixCard(a),
+          Padding(
+            padding: const EdgeInsets.only(top: 6),
+            child: Text(tr('※ 같은 글자가 낱말 뿌리(어근)에도 쓰여요 — 앞뒤에 있다고 늘 접사는 아니에요. 진행형 بـ(비)는 10자에 없지만 구어에서 가장 자주 붙어요.'),
+                style: const TextStyle(fontSize: 11, color: AppColors.muted, height: 1.5)),
+          ),
+        ],
+      );
+
+  Widget _affixCard(AffixLetter a) {
+    final letter = letterOf(a.ch);
+    return Card(
+      color: AppColors.washi,
+      elevation: 0,
+      margin: const EdgeInsets.only(bottom: 10),
+      shape: RoundedRectangleBorder(side: const BorderSide(color: AppColors.line), borderRadius: BorderRadius.circular(8)),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          Row(children: [
+            Text(a.name, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: AppColors.beni)),
+            const Spacer(),
+            if (letter != null)
+              Directionality(
+                textDirection: TextDirection.rtl,
+                child: Wrap(spacing: 6, children: [
+                  for (final f in letter.forms)
+                    Text(letter.shape(f), style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.sumiLight)),
+                ]),
+              ),
+            const SizedBox(width: 10),
+            Text(a.ch, style: const TextStyle(fontSize: 32, fontWeight: FontWeight.w800, color: AppColors.sumi)),
+          ]),
+          const SizedBox(height: 6),
+          for (final u in a.uses)
+            InkWell(
+              onTap: () => TtsService.instance.speak(u.ex),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4),
+                child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Expanded(
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                      Text(u.how, style: const TextStyle(fontSize: 12.5, color: AppColors.sumi, height: 1.4)),
+                      Text('${u.exRd} · ${u.exKo}', style: const TextStyle(fontSize: 11.5, color: AppColors.sumiLight)),
+                    ]),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(u.ex, textDirection: TextDirection.rtl, style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w700, color: AppColors.sumi)),
+                ]),
+              ),
+            ),
         ]),
       ),
     );

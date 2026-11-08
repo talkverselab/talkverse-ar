@@ -6,7 +6,7 @@ import 'package:arabic_universe/widgets/letter_sound_sheet.dart';
 import 'package:arabic_universe/screens/profile_screen.dart';
 import 'package:arabic_universe/screens/word_freq_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart' show MethodChannel, rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -15,6 +15,9 @@ void main() {
   const sizes = {'폰': Size(360, 740), '아이패드 오른쪽 칸': Size(560, 1000), '아이패드 전체': Size(1180, 820)};
 
   setUp(() {
+    // 발음 엔진은 테스트에 없다 — 호출만 받아 준다
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(const MethodChannel('flutter_tts'), (_) async => 1);
     SharedPreferences.setMockInitialValues({});
     rootBundle.clear(); // 앞 테스트의 영역에 묶인 캐시 Future 는 다음 테스트에서 끝나지 않는다
   });
@@ -34,6 +37,7 @@ void main() {
   test('글자 소리 표 = 글자 돋보기 글자 30개, 모음 부호 6개', () {
     expect(letterSounds.map((l) => l.ch).toSet(), arabicLetters.map((l) => l.ch).toSet());
     expect(markSounds.length, 6);
+    expect(affixLetters.map((a) => a.ch).join(), affixWord);
     expect(letterSyllable(letterSounds[1]), 'بَ');
   });
 
@@ -66,6 +70,13 @@ void main() {
       await t.pumpAndSettle();
       expect(find.text('IPA [b]'), findsOneWidget);
       await t.pump(const Duration(seconds: 2));
+      Navigator.of(t.element(find.text('IPA [b]'))).pop();
+      await t.pumpAndSettle();
+      await t.dragUntilVisible(find.text('접사 글자 10'), find.byType(ListView).first, const Offset(-200, 0));
+      await t.tap(find.text('접사 글자 10'));
+      await t.pumpAndSettle();
+      expect(find.text('사알투무니하'), findsNothing);
+      expect(find.text('하슈라브 · 마실 거야(구어)'), findsOneWidget);
     });
   }
 }

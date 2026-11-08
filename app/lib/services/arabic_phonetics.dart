@@ -19,7 +19,7 @@ class LetterSound {
       {this.msa, this.group = 1, this.vowelOnly = false});
 }
 
-const letterGroups = ['전체', '쉬운 소리', '닮았지만 다른 소리', '목 소리', '강조음', '모음 부호'];
+const letterGroups = ['전체', '쉬운 소리', '닮았지만 다른 소리', '목 소리', '강조음', '모음 부호', '접사 글자 10'];
 
 const letterSounds = <LetterSound>[
   LetterSound('ا', '알리프', 'aː · ʔ', '모음(입을 크게 벌림)', '아', '긴 「아—」. 낱말 처음에서는 성문 닫힘(ʔ)을 받쳐 주는 자리로도 쓴다.', 'انا', '아나', '나', vowelOnly: true),
@@ -70,4 +70,68 @@ const markSounds = <MarkSound>[
   MarkSound('بْ', '수쿤', '∅', '글자 위 작은 동그라미 — 모음 없이 자음만(받침).'),
   MarkSound('بّ', '샷다', 'bː', '글자 위 작은 w — 같은 자음 두 번(받침 + 첫소리, 「밥바」의 ㅂㅂ).'),
   MarkSound('بً', '탄윈', 'an', '빗금 두 개 — 끝에 「안」. 구어에서는 굳은 말(شكرا 슈크란)에만.'),
+];
+
+/// 접사 글자 10 — 사알투무니하(سألتمونيها, 「너희가 그걸 내게 물었다」). 접두·접미로 붙을 수 있는 글자 10자.
+/// 옛 앱(2026-08) 메뉴를 이집트 구어 기준으로 다시 씀(사용자 지시 2026-11-08). 같은 글자가 어근에도 쓰인다.
+class AffixUse {
+  final String how; // 쓰임
+  final String ex; // 예(타슈킬 없음)
+  final String exRd;
+  final String exKo;
+  const AffixUse(this.how, this.ex, this.exRd, this.exKo);
+}
+
+class AffixLetter {
+  final String ch;
+  final String name;
+  final List<AffixUse> uses;
+  const AffixLetter(this.ch, this.name, this.uses);
+}
+
+const affixWord = 'سألتمونيها';
+const affixWordRd = '사알투무니하';
+
+const affixLetters = <AffixLetter>[
+  AffixLetter('س', '신', [
+    AffixUse('표준어 미래 사ـ — 이집트 구어는 هـ 를 쓴다', 'هشرب', '하슈라브', '마실 거야(구어)'),
+    AffixUse('استـ 「~해 달라·~하게 되다」 동사 틀', 'استنى', '이스탄나', '기다려'),
+  ]),
+  AffixLetter('أ', '함자', [
+    AffixUse('「나」 현재형 앞 أـ — 구어는 بـ 와 합쳐 بـ 만 남는다', 'أنا بشرب', '아나 바슈랍', '나는 마신다'),
+    AffixUse('비교·최상 أفعل 「더 ~한」', 'أحسن', '아흐산', '더 좋은'),
+  ]),
+  AffixLetter('ل', '람', [
+    AffixUse('관사 الـ 「그」', 'الشاي', '잇샤이', '그 차'),
+    AffixUse('전치사 لـ 「~에게」 + 대명 접미', 'ليك', '릭', '너에게'),
+  ]),
+  AffixLetter('ت', '타', [
+    AffixUse('「너·그녀」 현재형 앞 تـ', 'بتشرب', '비티슈랍', '너 마시니'),
+    AffixUse('과거 「나·너」 끝 ـت', 'شربت', '시리브트', '나 마셨어'),
+    AffixUse('수동 اتـ 「~되다」', 'اتكلم', '잇칼림', '말하다'),
+  ]),
+  AffixLetter('م', '밈', [
+    AffixUse('분사·장소 مـ', 'مستني', '미스탄니', '기다리는 중인'),
+    AffixUse('부정 ما…ش 「~하지 않았다」', 'ماشربتش', '마슈립티쉬', '안 마셨어'),
+  ]),
+  AffixLetter('و', '와우', [
+    AffixUse('「그리고」 وـ', 'وانت', '위인타', '그리고 너는'),
+    AffixUse('「그들」 끝 ـوا · 「그의」 ـه 는 「오」로 소리', 'شربوا', '시리부', '그들이 마셨다'),
+  ]),
+  AffixLetter('ن', '눈', [
+    AffixUse('「우리」 현재형 앞 نـ', 'بنشرب', '비니슈랍', '우리는 마신다'),
+    AffixUse('「우리(의)·나를」 끝 ـنا · ـني', 'بيتنا', '베트나', '우리 집'),
+  ]),
+  AffixLetter('ي', '야', [
+    AffixUse('「그」 현재형 앞 يـ', 'بيشرب', '비유슈랍', '그는 마신다'),
+    AffixUse('「나의」 끝 ـي · 출신 ـي', 'مصري', '마스리', '이집트 사람'),
+  ]),
+  AffixLetter('ه', '하', [
+    AffixUse('카이로 미래 هـ 「~할 거야」', 'هاجي', '하기', '갈게'),
+    AffixUse('「그의·그녀의·그들의」 끝 ـه · ـها · ـهم', 'بيتها', '베트하', '그녀의 집'),
+  ]),
+  AffixLetter('ا', '알리프', [
+    AffixUse('관사 الـ 의 앞 글자', 'البيت', '일베트', '그 집'),
+    AffixUse('둘 ـين · 여러 ـات 끝의 긴 아', 'ساعات', '사아트', '시간들'),
+  ]),
 ];
