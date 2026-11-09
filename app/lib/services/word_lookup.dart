@@ -1,3 +1,4 @@
+import '../core/embed_env.dart';
 import 'package:csv/csv.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
@@ -23,14 +24,14 @@ class WordLookup {
   Future<void> _load() async {
     try {
       // 이집트 구어 절벽 단어가 먼저(뜻·독음이 구어 기준). 접미 표제(ـها 등)는 낱말이 아니라 찾기에서 뺀다.
-      final cliff = const CsvToListConverter(eol: '\n', shouldParseNumbers: false).convert(await rootBundle.loadString('assets/data/freq/lang_ar_cliff.csv'));
+      final cliff = const CsvToListConverter(eol: '\n', shouldParseNumbers: false).convert(await rootBundle.loadString(assetPath('assets/data/freq/lang_ar_cliff.csv')));
       for (final r in cliff.skip(1)) {
         if (r.length < 4) continue;
         final w = '${r[1]}'.trim();
         if (w.isEmpty || w.startsWith('ـ')) continue;
         _byKey.putIfAbsent(key(w), () => WordEntry(w, '${r[3]}'.trim(), '${r[2]}'.trim()));
       }
-      final rows = const CsvToListConverter(eol: '\n').convert(await rootBundle.loadString('assets/data/freq/lang_es_top.csv'));
+      final rows = const CsvToListConverter(eol: '\n').convert(await rootBundle.loadString(assetPath('assets/data/freq/lang_es_top.csv')));
       for (final r in rows.skip(1)) {
         if (r.length < 5) continue;
         final w = '${r[1]}'.trim();

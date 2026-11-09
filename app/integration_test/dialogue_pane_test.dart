@@ -40,7 +40,7 @@ void main() {
     await AppLangPrefs.load();
     await LearnerPrefs.load();
     await AchievementService.instance.load();
-    await t.pumpWidget(const GermanUniverseApp());
+    await t.pumpWidget(const ArabicUniverseApp());
     await wait(t, 1500);
     await shot(t, '01_home_wide');
 
