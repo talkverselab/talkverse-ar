@@ -54,7 +54,7 @@ class ProfileScreen extends StatelessWidget {
             _SettingItem(
                 icon: Icons.account_circle_outlined,
                 title: tr('계정'),
-                subtitle: tr('Talkverse 로그인(선택) · 평생 이용권'),
+                subtitle: tr('Talkverse 로그인(선택) · 이용권'),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AccountScreen()))),
           ]),
           const SizedBox(height: 18),

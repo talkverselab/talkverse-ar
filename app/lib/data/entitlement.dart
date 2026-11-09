@@ -9,12 +9,17 @@ import 'purchase.dart';
 class Entitlement {
   Entitlement._();
   static const lang = 'ar';
-  static const iosProduct = 'com.talkverse.arabicUniverse.lifetime';
-  static const androidProduct = 'lang_ar';
 
   static bool get premium => Account.has(lang) || Purchase.owns(lang);
 
-  static Future<void> configure() => Purchase.configure({lang: (iosProduct, androidProduct)});
+  static Future<void> configure() => Purchase.configure('ar', const [
+    Plan('lang_ar_1m', 1, 3900, listKrw: 5500),
+    Plan('lang_ar_3m', 3, 9000, listKrw: 12900),
+    Plan('lang_ar_1y', 12, 19900, listKrw: 28500),
+    Plan('lang_ar_life', 0, 49000, listKrw: 69900),
+    Plan('all_1y', 12, 79000, listKrw: 112900, bundle: true),
+    Plan('all_life', 0, 329000, listKrw: 469000, bundle: true),
+  ]);
 
   static Future<void> showPaywall(BuildContext context) => PaywallScreen.show(context);
 }
