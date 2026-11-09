@@ -6,9 +6,9 @@ _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 �
 
 | 항목 | 상태 |
 |---|---|
-| 리포 | `talkverselab/talkverse-ar`(공개) `main`, 마지막 커밋 `ee377dc` |
-| Android | CI 빌드 **15**(`ee377dc`, 서명 확인) → Zealot 「아랍어유니버스」 https://apps.talkverse.uk/yCwOQ/427 , PC `D:\OneDrive\app project\talkverse-ar\talkverse-ar-latest.apk` |
-| iOS | TestFlight **2611091223**(`ee377dc`, Android 15 와 같은 변경). IPA 백업 PC `D:\OneDrive\app project\arabic_universe\ios\` |
+| 리포 | `talkverselab/talkverse-ar`(공개) `main`, 마지막 커밋 `aa95f7f` |
+| Android | CI 빌드 **19**(`aa95f7f`, 서명 확인, 회화 7편 연결) → Zealot 「아랍어유니버스」 https://apps.talkverse.uk/yCwOQ/435 , PC `D:\OneDrive\app project\talkverse-ar\talkverse-ar-latest.apk` |
+| iOS | TestFlight **2611092320**(`aa95f7f`, Android 19 와 같은 변경). IPA 백업 PC `D:\OneDrive\app project\arabic_universe\ios\` |
 | 서명 | `android/app/signing-key.jks` SHA-1 `9C:C4:…:47:6B`(PC `D:\keys\talkverse-ar\`, Doppler `SIGNKEY_*`). 새로 만들지 말 것 |
 | 로그인·결제 | Talkverse ID(client `ar`, 통합 앱 안에서는 `talkverse`) · 상품 `lang_ar_1m·3m·1y·life`·`all_1y`·`all_life`(가격 `~/talkverse/PRICING.md`, 정가 취소선·30%), 옛 `lang_ar`·`com.talkverse.arabicUniverse.lifetime` 은 복원 때 `lang_ar_life`. **잠근 콘텐츠 없음**(무료/유료 구간은 사용자 결정). 스토어 등록은 사용자 — `app/docs/STORE_PRODUCTS.md` |
 | 통합 앱 | 패키지 `arabic_universe`(`lib/embed.dart` embedInit/embedApp, `core/embed_env.dart` 에셋 `packages/arabic_universe/`, `core/prefs.dart` 저장 이름 `ar_` 접두 — 단독 앱은 첫 실행 때 옛 키·DB(`arabic_universe.sqlite` → `ar_arabic_universe`)를 한 번 옮김), 콜백 `talkverse.ar://auth`. 통합 앱 쪽 연결은 uk 몫(2026-11-09 알림 보냄) |
