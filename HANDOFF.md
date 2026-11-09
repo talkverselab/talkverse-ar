@@ -29,6 +29,7 @@ _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 �
 5. 표현 풀 CSV(إزيك·ماشي·خلاص·طب·على حسابي·متشكر…)와 「Conv」 단어장 보강(شاي·زحمة 등) — 회화 밖 콘텐츠라 동결 해제 뒤.
 
 ## 주의
+- **Grok(2026-11-09 허브 공지 `~/logs/rc/RELAY_grok_20261109.md`)**: 한자 세션 대행 중단 — 이 세션이 직접. 자기 크롬을 켜고 M4 의 `/usr/bin/python3 ~/talkverse-uk/tools/grok_cookie_sync.py 9231 <자기 포트>`(M6 에서는 `ssh macmini4` 경유)로 쿠키 동기화, 요청 도구는 M6 `~/Hanja/tools/grok_req.py`·`grok_cdp.py` 를 복사. uk 의 방(포트 9231)은 건드리지 말 것.
 - 공개 저장소 — 말뭉치·작품·자막 이름 금지. 출처 이름은 `~/corpus_work/ar_eg/SOURCE.md` 에만.
 - M6 빌드 수: `ps -axo args= | grep -c '^[^ ]*dartvm .*flutter_tools.* build '`(`pgrep -f flutter_tools.snapshot` 은 대기 명령까지 세어 서로 기다리게 됨). 시뮬레이터는 `ar-shots iPad Air 11` 만, 끝나면 shutdown.
 - 빌드 뒤 `ios/Podfile*`·`swiftpm/`·pbxproj·xcconfig·xcscheme 변경과 CRLF 표시는 잡음 — 커밋하지 말 것. `git add` 는 경로 지정.
