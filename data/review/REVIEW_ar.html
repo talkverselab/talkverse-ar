@@ -1,18 +1,21 @@
-<!doctype html><html lang=ko><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>아랍어 회화 리뷰</title><style>body{font-family:-apple-system,'Noto Sans KR','Noto Naskh Arabic','Geeza Pro',sans-serif;max-width:860px;margin:0 auto;padding:16px;background:#fff;color:#0a2540;line-height:1.5}
-h1{font-size:20px}h2{font-size:17px;margin:28px 0 4px;color:#b77548}.meta{font-size:12px;color:#6b7c93;margin-bottom:12px}
-.t{margin:10px 0;padding:10px 12px;border-radius:12px;background:#f6f8fb;border:1px solid #e6ebf1}.t.A{background:#fff7f0}
-.sp{font-size:11px;color:#6b7c93}.ar{font-size:22px;font-weight:600;text-align:right;font-family:'Noto Naskh Arabic','Geeza Pro','Al Bayan',serif;line-height:1.7}.rd{font-size:13px;color:#635bff}.ko{font-size:14px}
-.ok{display:inline-block;font-size:11px;padding:1px 6px;border-radius:8px;background:#e6f4ea;color:#1b7f3b}.dr{display:inline-block;font-size:11px;padding:1px 6px;border-radius:8px;background:#fff1e0;color:#b77548}
-.mk{display:inline-block;font-size:10.5px;padding:0 6px;border-radius:8px;background:#ece9ff;color:#635bff;margin-left:2px}
-.nav a{display:inline-block;margin:2px 6px 2px 0;font-size:12px;color:#635bff}
-.rv{display:flex;gap:6px;margin-top:8px}.rv textarea{flex:1;min-height:38px;border:1px solid #cfd8e3;border-radius:8px;padding:6px 8px;font:inherit;font-size:14px;background:#fff;color:#0a2540;resize:vertical}
-.rv button{border:0;border-radius:8px;padding:0 12px;background:#635bff;color:#fff;font-size:13px;cursor:pointer}.rv button.ok{background:#1b7f3b}.rv button.err{background:#b42318}
-.rs{font-size:11px;color:#6b7c93;margin-top:2px}.ep{margin:0 0 6px}.ep textarea{min-height:46px}
-.em{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;font-size:12px}.sg{display:inline-flex;gap:6px;align-items:baseline;padding:2px 8px;border-radius:10px;background:#fff;border:1px solid #e6ebf1;color:#0a2540}.sg b{color:#b77548;font-weight:600}.sg span{font-family:'Noto Naskh Arabic','Geeza Pro',serif;font-size:14px}
-.fv{margin-top:8px;padding:8px 10px;border-radius:10px;background:#fdf2f8;border:1px dashed #e9a7c9}.fv .ar{font-size:19px}
-.expr{font-size:12.5px;color:#0a2540;margin:4px 0 8px}.expr span{display:inline-block;margin:2px 4px 2px 0;padding:1px 8px;border-radius:10px;background:#f0f3f7;font-family:'Noto Naskh Arabic','Geeza Pro',serif}
-.box{margin:10px 0;padding:10px 12px;border:1px solid #e6ebf1;border-radius:12px;font-size:13px;background:#fafbfd}</style></head><body>
-<h1>아랍어유니버스 회화 리뷰 시트</h1><div class=meta>갱신 2026-11-09 16:51 · 카이로 이집트 구어 · 턴마다 아랍어(오른쪽에서 왼쪽) / 카이로식 한글 독음 / 한국어 · 분홍 칸 = 학습자가 여성일 때 바뀌는 말 · 감정 라벨은 음성 생성용 · 고칠 곳은 편 id·턴 번호로</div><div class=box>독음 규칙: ج=ㄱ, ق 는 초성 없이 끊김(قهوة 아흐와), ع 는 모음으로(نعناع 니으나아). 학습자 A 의 이름 자리는 {name} 그대로.</div><div class=nav>
+<!doctype html><html lang=ko><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>아랍어 회화 리뷰</title><style>:root{--bg:#fbfaf8;--fg:#14233a;--mut:#667386;--card:#f3f1ed;--cardA:#fbf1e6;--line:#e3ded6;--acc:#5b52e0;--warm:#a8653a;--ok:#1b7f3b;--okbg:#e4f3e8;--err:#b42318;--fem:#fbeef5;--femline:#dca3c3;--chip:#ece9ff;--field:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161b;--fg:#e7e9ee;--mut:#9aa3b2;--card:#1d2027;--cardA:#272019;--line:#30343d;--acc:#9d97ff;--warm:#e0a273;--ok:#6fd08f;--okbg:#1c3324;--err:#ff8a7a;--fem:#2a1d25;--femline:#7d4f68;--chip:#2a2850;--field:#181a20;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14161b;--fg:#e7e9ee;--mut:#9aa3b2;--card:#1d2027;--cardA:#272019;--line:#30343d;--acc:#9d97ff;--warm:#e0a273;--ok:#6fd08f;--okbg:#1c3324;--err:#ff8a7a;--fem:#2a1d25;--femline:#7d4f68;--chip:#2a2850;--field:#181a20;color-scheme:dark}
+body{font-family:-apple-system,'Noto Sans KR','Noto Naskh Arabic','Geeza Pro',sans-serif;max-width:860px;margin:0 auto;padding-block:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:var(--bg);color:var(--fg);line-height:1.5}
+h1{font-size:20px;text-wrap:balance}h2{font-size:17px;margin:28px 0 4px;color:var(--warm);text-wrap:balance}.meta{font-size:12px;color:var(--mut);margin-bottom:12px}
+.t{margin:10px 0;padding:10px 12px;border-radius:12px;background:var(--card);border:1px solid var(--line)}.t.A{background:var(--cardA)}
+.sp{font-size:11px;color:var(--mut)}.ar{font-size:22px;font-weight:600;text-align:right;font-family:'Noto Naskh Arabic','Geeza Pro','Al Bayan',serif;line-height:1.7}.rd{font-size:13px;color:var(--acc)}.ko{font-size:14px}
+.ok{display:inline-block;font-size:11px;padding:1px 6px;border-radius:8px;background:var(--okbg);color:var(--ok)}.dr{display:inline-block;font-size:11px;padding:1px 6px;border-radius:8px;background:var(--cardA);color:var(--warm)}
+.mk{display:inline-block;font-size:10.5px;padding:0 6px;border-radius:8px;background:var(--chip);color:var(--acc);margin-left:2px}
+.nav a{display:inline-block;margin:2px 6px 2px 0;font-size:12px;color:var(--acc)}
+.rv{display:flex;gap:6px;margin-top:8px}.rv textarea{flex:1;min-width:0;min-height:38px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font:inherit;font-size:14px;background:var(--field);color:var(--fg);resize:vertical}
+.rv button{border:0;border-radius:8px;padding:0 12px;background:var(--acc);color:var(--bg);font-size:13px;cursor:pointer}.rv button.ok{background:var(--ok)}.rv button.err{background:var(--err)}.rv button:focus-visible,.rv textarea:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.rs{font-size:11px;color:var(--mut);margin-top:2px}.ep{margin:0 0 6px}.ep textarea{min-height:46px}
+.em{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;font-size:12px}.sg{display:inline-flex;gap:6px;align-items:baseline;padding:2px 8px;border-radius:10px;background:var(--bg);border:1px solid var(--line);color:var(--fg)}.sg b{color:var(--warm);font-weight:600}.sg span{font-family:'Noto Naskh Arabic','Geeza Pro',serif;font-size:14px}
+.fv{margin-top:8px;padding:8px 10px;border-radius:10px;background:var(--fem);border:1px dashed var(--femline)}.fv .ar{font-size:19px}
+.expr{font-size:12.5px;margin:4px 0 8px}.expr span{display:inline-block;margin:2px 4px 2px 0;padding:1px 8px;border-radius:10px;background:var(--card);font-family:'Noto Naskh Arabic','Geeza Pro',serif}
+.box{margin:10px 0;padding:10px 12px;border:1px solid var(--line);border-radius:12px;font-size:13px;background:var(--card)}</style></head><body>
+<h1>아랍어유니버스 회화 리뷰 시트</h1><div class=meta>갱신 2026-11-09 22:51 · 카이로 이집트 구어 · 턴마다 아랍어(오른쪽에서 왼쪽) / 카이로식 한글 독음 / 한국어 · 분홍 칸 = 학습자가 여성일 때 바뀌는 말 · 감정 라벨은 음성 생성용 · 고칠 곳은 편 id·턴 번호로</div><div class=box>독음 규칙: ج=ㄱ, ق 는 초성 없이 끊김(قهوة 아흐와), ع 는 모음으로(نعناع 니으나아). 학습자 A 의 이름 자리는 {name} 그대로.</div><div class=nav>
 <a href='#r0_friends_a1'>✍️ 점 하나 때문에</a>
 <a href='#r1_life_a1'>☕ 마쉬라고 했을 뿐인데</a>
 <a href='#r1_love_a1'>📐 다시 한 번</a>

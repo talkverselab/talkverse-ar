@@ -8,7 +8,9 @@
 import json, sys, html, datetime
 from pathlib import Path
 
-out = Path(sys.argv[1]); eps = [json.load(open(p, encoding='utf-8')) for p in sys.argv[2:]]
+ART = '--artifact' in sys.argv  # Artifact(claude.ai) 판: 문서 껍데기 없이, 저장은 페이지 db
+argv = [a for a in sys.argv[1:] if a != '--artifact']
+out = Path(argv[0]); eps = [json.load(open(p, encoding='utf-8')) for p in argv[1:]]
 EMO = {'stiff': '긴장·딱딱', 'flustered': '당황', 'excited': '흥분', 'amused': '유쾌', 'teasing': '놀림', 'shout': '버럭', 'cheerful': '밝음', 'tsukkomi': '츳코미', 'gentle': '다정',
        'neutral': '담담', 'polite': '공손', 'sad': '슬픔', 'annoyed': '짜증', 'surprised': '놀람', 'shy': '수줍음', 'worried': '걱정'}
 LEVEL = {0: '글자·소리', 1: '활용 골격', 2: '챗 실전', 3: '그래머2', 4: '어려운 문법', 5: '어휘 완주'}
@@ -51,21 +53,27 @@ def turn(e, t):
             f"<div class=rv><textarea data-k='{key}' placeholder='이 턴 리뷰…'></textarea><button onclick=\"sv(this)\">저장</button></div><div class=rs data-s='{key}'></div></div>")
 
 
-css = """body{font-family:-apple-system,'Noto Sans KR','Noto Naskh Arabic','Geeza Pro',sans-serif;max-width:860px;margin:0 auto;padding:16px;background:#fff;color:#0a2540;line-height:1.5}
-h1{font-size:20px}h2{font-size:17px;margin:28px 0 4px;color:#b77548}.meta{font-size:12px;color:#6b7c93;margin-bottom:12px}
-.t{margin:10px 0;padding:10px 12px;border-radius:12px;background:#f6f8fb;border:1px solid #e6ebf1}.t.A{background:#fff7f0}
-.sp{font-size:11px;color:#6b7c93}.ar{font-size:22px;font-weight:600;text-align:right;font-family:'Noto Naskh Arabic','Geeza Pro','Al Bayan',serif;line-height:1.7}.rd{font-size:13px;color:#635bff}.ko{font-size:14px}
-.ok{display:inline-block;font-size:11px;padding:1px 6px;border-radius:8px;background:#e6f4ea;color:#1b7f3b}.dr{display:inline-block;font-size:11px;padding:1px 6px;border-radius:8px;background:#fff1e0;color:#b77548}
-.mk{display:inline-block;font-size:10.5px;padding:0 6px;border-radius:8px;background:#ece9ff;color:#635bff;margin-left:2px}
-.nav a{display:inline-block;margin:2px 6px 2px 0;font-size:12px;color:#635bff}
-.rv{display:flex;gap:6px;margin-top:8px}.rv textarea{flex:1;min-height:38px;border:1px solid #cfd8e3;border-radius:8px;padding:6px 8px;font:inherit;font-size:14px;background:#fff;color:#0a2540;resize:vertical}
-.rv button{border:0;border-radius:8px;padding:0 12px;background:#635bff;color:#fff;font-size:13px;cursor:pointer}.rv button.ok{background:#1b7f3b}.rv button.err{background:#b42318}
-.rs{font-size:11px;color:#6b7c93;margin-top:2px}.ep{margin:0 0 6px}.ep textarea{min-height:46px}
-.em{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;font-size:12px}.sg{display:inline-flex;gap:6px;align-items:baseline;padding:2px 8px;border-radius:10px;background:#fff;border:1px solid #e6ebf1;color:#0a2540}.sg b{color:#b77548;font-weight:600}.sg span{font-family:'Noto Naskh Arabic','Geeza Pro',serif;font-size:14px}
-.fv{margin-top:8px;padding:8px 10px;border-radius:10px;background:#fdf2f8;border:1px dashed #e9a7c9}.fv .ar{font-size:19px}
-.expr{font-size:12.5px;color:#0a2540;margin:4px 0 8px}.expr span{display:inline-block;margin:2px 4px 2px 0;padding:1px 8px;border-radius:10px;background:#f0f3f7;font-family:'Noto Naskh Arabic','Geeza Pro',serif}
-.box{margin:10px 0;padding:10px 12px;border:1px solid #e6ebf1;border-radius:12px;font-size:13px;background:#fafbfd}"""
-parts = [f"<!doctype html><html lang=ko><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>아랍어 회화 리뷰</title><style>{css}</style></head><body>",
+TOK = """:root{--bg:#fbfaf8;--fg:#14233a;--mut:#667386;--card:#f3f1ed;--cardA:#fbf1e6;--line:#e3ded6;--acc:#5b52e0;--warm:#a8653a;--ok:#1b7f3b;--okbg:#e4f3e8;--err:#b42318;--fem:#fbeef5;--femline:#dca3c3;--chip:#ece9ff;--field:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161b;--fg:#e7e9ee;--mut:#9aa3b2;--card:#1d2027;--cardA:#272019;--line:#30343d;--acc:#9d97ff;--warm:#e0a273;--ok:#6fd08f;--okbg:#1c3324;--err:#ff8a7a;--fem:#2a1d25;--femline:#7d4f68;--chip:#2a2850;--field:#181a20;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14161b;--fg:#e7e9ee;--mut:#9aa3b2;--card:#1d2027;--cardA:#272019;--line:#30343d;--acc:#9d97ff;--warm:#e0a273;--ok:#6fd08f;--okbg:#1c3324;--err:#ff8a7a;--fem:#2a1d25;--femline:#7d4f68;--chip:#2a2850;--field:#181a20;color-scheme:dark}
+"""
+css = TOK + """body{font-family:-apple-system,'Noto Sans KR','Noto Naskh Arabic','Geeza Pro',sans-serif;max-width:860px;margin:0 auto;padding-block:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:var(--bg);color:var(--fg);line-height:1.5}
+h1{font-size:20px;text-wrap:balance}h2{font-size:17px;margin:28px 0 4px;color:var(--warm);text-wrap:balance}.meta{font-size:12px;color:var(--mut);margin-bottom:12px}
+.t{margin:10px 0;padding:10px 12px;border-radius:12px;background:var(--card);border:1px solid var(--line)}.t.A{background:var(--cardA)}
+.sp{font-size:11px;color:var(--mut)}.ar{font-size:22px;font-weight:600;text-align:right;font-family:'Noto Naskh Arabic','Geeza Pro','Al Bayan',serif;line-height:1.7}.rd{font-size:13px;color:var(--acc)}.ko{font-size:14px}
+.ok{display:inline-block;font-size:11px;padding:1px 6px;border-radius:8px;background:var(--okbg);color:var(--ok)}.dr{display:inline-block;font-size:11px;padding:1px 6px;border-radius:8px;background:var(--cardA);color:var(--warm)}
+.mk{display:inline-block;font-size:10.5px;padding:0 6px;border-radius:8px;background:var(--chip);color:var(--acc);margin-left:2px}
+.nav a{display:inline-block;margin:2px 6px 2px 0;font-size:12px;color:var(--acc)}
+.rv{display:flex;gap:6px;margin-top:8px}.rv textarea{flex:1;min-width:0;min-height:38px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font:inherit;font-size:14px;background:var(--field);color:var(--fg);resize:vertical}
+.rv button{border:0;border-radius:8px;padding:0 12px;background:var(--acc);color:var(--bg);font-size:13px;cursor:pointer}.rv button.ok{background:var(--ok)}.rv button.err{background:var(--err)}.rv button:focus-visible,.rv textarea:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.rs{font-size:11px;color:var(--mut);margin-top:2px}.ep{margin:0 0 6px}.ep textarea{min-height:46px}
+.em{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;font-size:12px}.sg{display:inline-flex;gap:6px;align-items:baseline;padding:2px 8px;border-radius:10px;background:var(--bg);border:1px solid var(--line);color:var(--fg)}.sg b{color:var(--warm);font-weight:600}.sg span{font-family:'Noto Naskh Arabic','Geeza Pro',serif;font-size:14px}
+.fv{margin-top:8px;padding:8px 10px;border-radius:10px;background:var(--fem);border:1px dashed var(--femline)}.fv .ar{font-size:19px}
+.expr{font-size:12.5px;margin:4px 0 8px}.expr span{display:inline-block;margin:2px 4px 2px 0;padding:1px 8px;border-radius:10px;background:var(--card);font-family:'Noto Naskh Arabic','Geeza Pro',serif}
+.box{margin:10px 0;padding:10px 12px;border:1px solid var(--line);border-radius:12px;font-size:13px;background:var(--card)}"""
+HEAD = (f"<title>아랍어 회화 리뷰</title><meta name=\"claude:viewport-fit-sides\" content=\"cover\"><style>{css}</style>" if ART else
+        f"<!doctype html><html lang=ko><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>아랍어 회화 리뷰</title><style>{css}</style></head><body>")
+parts = [HEAD,
          f"<h1>아랍어유니버스 회화 리뷰 시트</h1><div class=meta>갱신 {datetime.datetime.now():%Y-%m-%d %H:%M} · 카이로 이집트 구어 · 턴마다 아랍어(오른쪽에서 왼쪽) / 카이로식 한글 독음 / 한국어 · 분홍 칸 = 학습자가 여성일 때 바뀌는 말 · 감정 라벨은 음성 생성용 · 고칠 곳은 편 id·턴 번호로</div>"
          f"<div class=box>독음 규칙: ج=ㄱ, ق 는 초성 없이 끊김(قهوة 아흐와), ع 는 모음으로(نعناع 니으나아). 학습자 A 의 이름 자리는 {{name}} 그대로.</div><div class=nav>"]
 parts += [f"<a href='#{e['id']}'>{H(e.get('emoji', ''))} {H(e['title'])}</a>" for e in eps] + ['</div>']
@@ -84,7 +92,27 @@ for e in eps:
         parts.append(turn(e, t))
     if e.get('review', {}).get('final'):
         parts.append(f"<div class=meta>최종: {H(e['review']['final'])}</div>")
-parts.append("""<script>
+ART_JS = """<script>
+const LS='review_ar_v1';let DB=null;
+const did=k=>k.replace(/[^A-Za-z0-9_-]/g,'_');
+function ld(){try{return JSON.parse(localStorage.getItem(LS)||'{}')}catch(e){return {}}}
+function st(k,m,c){const el=document.querySelector(`[data-s="${k}"]`);if(el)el.textContent=m;const b=document.querySelector(`[data-k="${k}"]`).nextElementSibling;b.className=c||'';}
+function fill(d,force){for(const k in d){const t=document.querySelector(`[data-k="${k}"]`);if(t&&(force||!t.value)&&document.activeElement!==t){t.value=d[k].text||'';const s=document.querySelector(`[data-s="${k}"]`);if(s)s.textContent='저장됨 '+(d[k].at||'');}}}
+async function sv(btn){const ta=btn.previousElementSibling,k=ta.dataset.k,text=ta.value.trim(),at=new Date().toLocaleString('ko-KR',{hour12:false});
+ const d=ld();d[k]={text,at};try{localStorage.setItem(LS,JSON.stringify(d))}catch(e){}
+ if(!DB){st(k,'이 기기에만 저장됨 '+at+' (로그인하면 공유 저장)','err');return;}
+ st(k,'저장 중…','');
+ try{await DB.collection('reviews').doc(did(k)).set({key:k,text,at});st(k,'저장됨 '+at,'ok');}
+ catch(e){st(k,'저장 실패 — 이 기기에만 남음 ('+(e&&e.code||'오류')+')','err');}}
+fill(ld());
+(async()=>{try{DB=await window.claude?.use?.('db');}catch(e){DB=null}
+ if(!DB)return;
+ DB.collection('reviews').onSnapshot(s=>{const d={};s.docs.forEach(x=>{const v=x.data();if(v&&v.key)d[v.key]={text:v.text,at:v.at};});fill(d,true);},()=>{});})();
+</script>"""
+if ART:
+    parts.append(ART_JS)
+else:
+    parts.append("""<script>
 const API='https://talkverse.uk/api/review/ar';  // uk 세션이 여는 저장 API(POST {key,text,at} / GET → {key:{text,at}})
 const LS='review_ar_v1';
 function ld(){try{return JSON.parse(localStorage.getItem(LS)||'{}')}catch(e){return {}}}
