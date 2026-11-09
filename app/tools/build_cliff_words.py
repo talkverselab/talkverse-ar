@@ -2,6 +2,7 @@
   python3 tools/build_cliff_words.py <레마 목록 ar.csv> <순위표 lemma_eg.tsv> <검토 JSON 폴더>
 검토 JSON: [{rank, action: hide|fix|doubt, word?, reading?, ko?, pos?}]. hide 는 표에서 빼되 순위 번호는 그대로 둔다(절벽 값과 맞춤).
 앱에서 쓰는 절벽 값은 lib/core/cliff.dart — 여기 CLIFFS 와 같아야 한다."""
+from pathlib import Path
 import csv, glob, json, re, sys
 CLIFFS = [68, 101, 216, 512]; CAP = 2000
 SRC, RANKS, REV = sys.argv[1:4]
@@ -68,7 +69,10 @@ def walk(o):
             walk(v)
 
 
-walk(json.load(open('assets/data/dialogues/L1.json', encoding='utf-8')))
+# 앱이 읽는 회화와 같게: 편 파일(R<레벨>/<주제>/*.json)이 있으면 그것, 없으면 옛 L1.json (2026-11-09)
+_eps = sorted(Path('assets/data/dialogues').glob('R[0-9]/*/*.json')) or [Path('assets/data/dialogues/L1.json')]
+for _p in _eps:
+    walk(json.load(open(_p, encoding='utf-8')))
 words = sorted(cnt.values(), key=lambda x: -x['n'])
 json.dump({'_meta': '회화 레마 중 절벽 단어표(2,000위) 밖이면서 단어장에 있는 것 · tools/build_cliff_words.py', 'words': words},
           open('assets/data/freq/conv_words_ar.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=0)

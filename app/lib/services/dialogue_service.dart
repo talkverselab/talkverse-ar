@@ -1,15 +1,15 @@
 import '../core/embed_env.dart';
 import 'dart:convert';
 
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart' show AssetManifest, rootBundle;
 import '../core/prefs.dart';
 
 import 'learner_prefs.dart';
 
 /// 회화 리더(일본어앱 시안 02 「만화책 읽기형」)용 회화 모델 — 2026-11-02, 일본어앱 `dialogue_service.dart` 를 옮김.
 ///
-/// 지금 데이터는 옛 `assets/data/dialogues/L1.json`(초안 5편 × 8턴) 하나뿐이라 그것을 그대로 읽어 이 모양으로 바꾼다.
-/// 회화 콘텐츠는 바꾸지 않는다(사용자 지시 2026-11-02 "회화는 아직 하지마") — 새 구조(R0~R4·주제별 편 파일)는 회화 작성이 풀리면.
+/// 데이터(2026-11-09~): 편 파일 `assets/data/dialogues/R<레벨 0~5>/<주제>/<id>.json`(칸 `ar`, 여성 학습자판 `ar_f`·`rd_f`·`ko_f`,
+/// `tools/sync_dialogues.py` 가 통과한 편만 옮김). 편 파일이 하나도 없을 때만 옛 `L1.json`(칸 `es`)을 읽는다.
 /// 칸: tl = 아랍어(옛 파일의 칸 이름은 템플릿 그대로 `es`), gloss = 표준어 대조 줄(`tl_col`, 아직 없음), rd = 한글 독음, ko = 한국어, note = 「표현 = 뜻」.
 /// 문장 내용어 한 개: 표면형(문장 속 꼴)·기본형(사전 표제어)·읽기(한글 독음, 없으면 빈 값) — 단어장 연결(2026-11-04, 일본어앱과 같은 구조).
 class Lemma {
@@ -19,11 +19,14 @@ class Lemma {
 
 class DialogueTurn {
   final int num;
-  final String speaker; // A·B
-  final String tl;
+  final String speaker; // A·B…
+  final String _tl, _rd, _ko;
+  final String? tlF, rdF, koF; // 학습자가 여성일 때 바뀌는 말(없으면 남성판 그대로)
   final String gloss;
-  final String rd;
-  final String ko;
+  bool get _f => LearnerPrefs.isFemale && (tlF ?? '').isNotEmpty;
+  String get tl => _f ? tlF! : _tl;
+  String get rd => _f && (rdF ?? '').isNotEmpty ? rdF! : _rd;
+  String get ko => _f && (koF ?? '').isNotEmpty ? koF! : _ko;
   final String note;
   final List<String> tags;
   final String? art; // 장면 그림 URL(나중에 채움)
@@ -31,15 +34,40 @@ class DialogueTurn {
   const DialogueTurn({
     required this.num,
     required this.speaker,
-    required this.tl,
+    required String tl,
     required this.gloss,
-    required this.rd,
-    required this.ko,
+    required String rd,
+    required String ko,
+    this.tlF,
+    this.rdF,
+    this.koF,
     required this.note,
     required this.tags,
     this.art,
     this.lemmas = const [],
-  });
+  })  : _tl = tl,
+        _rd = rd,
+        _ko = ko;
+
+  static List<Lemma> _lemmas(Map<String, dynamic> j) =>
+      [for (final l in (j['lemmas'] as List? ?? const [])) if (l is List && l.length >= 2) Lemma('${l[0]}', '${l[1]}', l.length > 2 ? '${l[2]}' : '')];
+
+  /// 새 편 파일의 턴(칸 `ar`).
+  factory DialogueTurn.fromJson(Map<String, dynamic> j) => DialogueTurn(
+        num: j['num'] as int? ?? 0,
+        speaker: j['speaker'] as String? ?? 'A',
+        tl: j['ar'] as String? ?? '',
+        gloss: j['tl_col'] as String? ?? '',
+        rd: j['rd'] as String? ?? '',
+        ko: j['ko'] as String? ?? '',
+        tlF: j['ar_f'] as String?,
+        rdF: j['rd_f'] as String?,
+        koF: j['ko_f'] as String?,
+        note: j['note'] as String? ?? '',
+        tags: (j['tags'] as List?)?.cast<String>() ?? const [],
+        art: j['art'] as String?,
+        lemmas: _lemmas(j),
+      );
 
   factory DialogueTurn.fromL1(Map<String, dynamic> j) => DialogueTurn(
         num: j['num'] as int? ?? 0,
@@ -51,7 +79,7 @@ class DialogueTurn {
         note: j['note'] as String? ?? '',
         tags: (j['tags'] as List?)?.cast<String>() ?? const [],
         art: j['art'] as String?,
-        lemmas: [for (final l in (j['lemmas'] as List? ?? const [])) if (l is List && l.length >= 2) Lemma('${l[0]}', '${l[1]}', l.length > 2 ? '${l[2]}' : '')],
+        lemmas: _lemmas(j),
       );
 
   /// 그림 조회용 핵심 단어 후보: note 「표현 = 뜻」의 왼쪽 아랍어 낱말.
@@ -95,8 +123,13 @@ class Dialogue {
     return raw.replaceAll(RegExp(r'[{}]'), '');
   }
 
-  /// 목소리 성별 — 지금 회화는 화자 이름·성별이 정해진 이야기(지금 데이터는 A 아흐마드 남 · B 파티마 여)라 데이터의 성별을 따른다.
-  String voiceGender(String sp) => genders[sp] ?? LearnerPrefs.voiceGender(sp);
+  /// 목소리 성별 — A(학습자)는 프로필 성별, 그 밖은 편 데이터의 성별(m/f 또는 male/female).
+  String voiceGender(String sp) {
+    if (sp == 'A' && (speakers['A'] ?? '').contains('{name}')) return LearnerPrefs.gender.value;
+    final g = genders[sp];
+    if (g == null) return LearnerPrefs.voiceGender(sp);
+    return (g == 'f' || g == 'female') ? 'female' : 'male';
+  }
 }
 
 class DialogueService {
@@ -124,7 +157,8 @@ class DialogueService {
     'work': '💼',
     'study': '🎓',
   };
-  static const levelKo = {'L1': '이야기', 'R0': '왕초보', 'R1': '초보', 'R2': '중급', 'R3': '고급', 'R4': '최상급'};
+  /// 회화 레벨 = 문법 단계(`app/docs/DIALOGUE_RULES_ar.md` A1) — 단어 메뉴의 절벽 R1~R5 와 번호가 다르다.
+  static const levelKo = {'L1': '이야기', 'R0': '글자·소리', 'R1': '활용 골격', 'R2': '챗 실전', 'R3': '그래머2', 'R4': '어려운 문법', 'R5': '어휘 완주'};
   static const _prefLast = 'dialogue_last';
 
   final List<Dialogue> _all = [];
@@ -141,6 +175,29 @@ class DialogueService {
 
   Future<void> _load() async {
     _lastOpened = (await Prefs.getInstance()).getString(_prefLast);
+    try {
+      final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
+      final re = RegExp(r'assets/data/dialogues/R[0-9]/[^/]+/[^/]+\.json$');
+      final paths = manifest.listAssets().where(re.hasMatch).toList()..sort();
+      for (final p in paths) {
+        final m = json.decode(await rootBundle.loadString(p)) as Map<String, dynamic>;
+        final turns = ((m['turns'] as List?) ?? const []).map((t) => DialogueTurn.fromJson(t as Map<String, dynamic>)).toList();
+        if (turns.isEmpty) continue;
+        _all.add(Dialogue(
+          id: m['id'] as String,
+          region: m['region'] as String? ?? 'R${m['level'] ?? 1}',
+          island: m['island'] as String? ?? 'life',
+          title: m['title'] as String? ?? m['id'] as String,
+          emoji: m['emoji'] as String? ?? '💬',
+          scene: m['scene'] as String? ?? '',
+          speakers: (m['speakers'] as Map? ?? const {}).map((k, v) => MapEntry('$k', '$v')),
+          genders: (m['gender'] as Map? ?? const {}).map((k, v) => MapEntry('$k', '$v')),
+          expressions: ((m['expressions'] as List?) ?? const []).map((e) => '$e').toList(),
+          turns: turns,
+        ));
+      }
+    } catch (_) {}
+    if (_all.isNotEmpty) return;
     try {
       final j = json.decode(await rootBundle.loadString(assetPath('assets/data/dialogues/L1.json'))) as Map<String, dynamic>;
       final chars = (j['characters'] as Map<String, dynamic>? ?? const {});

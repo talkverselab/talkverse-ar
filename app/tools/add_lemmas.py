@@ -22,6 +22,7 @@ FIX = {
     'أبوها': 'أبو', 'كلت': 'اكل', 'كلتش': 'اكل',
     'قهوة': 'قهوة', 'هندسة': 'هندسة', 'كشري': 'كشري', 'واتساب': 'واتساب', 'ميرسي': 'ميرسي',
     'وحشاك': 'وحش', 'إمتى': 'إمتى', 'يعني': 'يعني', 'عشانكم': 'عشان', 'شكرا': 'شكرا',
+    'نون': None, 'واو': None, 'زين': None, 'نوز': None, 'را': None, 'نور': None,  # 글자 이름·이름 놀이(레벨 0 「점 하나 때문에」, 2026-11-09)
     'كتير': 'كتير', 'أكتر': 'أكتر', 'الاتنين': 'اتنين',  # 구어 철자 그대로(분석기는 표준어 철자로 바꿈)
 }
 
@@ -45,12 +46,15 @@ with open(ROOT / 'assets/data/freq/lang_es_top.csv', encoding='utf-8') as f:
     for r in csv.DictReader(f): vocab.add(key(r['word']))
 
 d = MLEDisambiguator.pretrained('calima-egy-r13')
-path = ROOT / 'assets/data/dialogues/L1.json'
-data = json.load(open(path, encoding='utf-8'))
 miss = Counter(); ex = {}; tot = hit = 0
-for ep in data['episodes']:
+# 옛 L1.json(칸 `es`, episodes 묶음) + 새 편 파일 R<레벨>/<주제>/<id>.json(칸 `ar`, 2026-11-09)
+files = [(ROOT / 'assets/data/dialogues/L1.json', 'es')] + [(q, 'ar') for q in sorted((ROOT / 'assets/data/dialogues').glob('R[0-9]/*/*.json'))]
+for path, col in files:
+  data = json.load(open(path, encoding='utf-8'))
+  for ep in (data['episodes'] if 'episodes' in data else [data]):
     for t in ep['turns']:
-        toks = WORD.findall(re.sub(r'\{[a-z_]+\}', ' ', t.get('es') or ''))
+        t['es_'] = t.get(col) or ''
+        toks = WORD.findall(re.sub(r'\{[a-z_]+\}', ' ', t['es_']))
         out = []
         for tok, dw in zip(toks, d.disambiguate(toks) if toks else []):
             if tok in FIX:
@@ -58,7 +62,7 @@ for ep in data['episodes']:
                 base = FIX[tok]
                 out.append([tok, base, '']); tot += 1
                 if key(base) in vocab or key(tok) in vocab: hit += 1  # 앱(WordLookup)도 기본형 → 문장 속 꼴 순으로 찾는다
-                else: miss[base] += 1; ex.setdefault(base, t['es'])
+                else: miss[base] += 1; ex.setdefault(base, t['es_'])
                 continue
             a = pick(dw, tok) if dw.analyses else {}
             if a.get('pos') not in KEEP: continue
@@ -66,9 +70,10 @@ for ep in data['episodes']:
             if not WORD.fullmatch(base): continue
             out.append([tok, base, '']); tot += 1
             if key(base) in vocab or key(tok) in vocab: hit += 1  # 앱(WordLookup)도 기본형 → 문장 속 꼴 순으로 찾는다
-            else: miss[base] += 1; ex.setdefault(base, t['es'])
+            else: miss[base] += 1; ex.setdefault(base, t['es_'])
         t['lemmas'] = out
-open(path, 'w', encoding='utf-8').write(json.dumps(data, ensure_ascii=False, indent=1) + '\n')
+        del t['es_']
+  open(path, 'w', encoding='utf-8').write(json.dumps(data, ensure_ascii=False, indent=1) + '\n')
 outp = ROOT.parent / 'data/review/write/missing_lemmas.csv'
 outp.parent.mkdir(parents=True, exist_ok=True)
 with open(outp, 'w', encoding='utf-8', newline='') as fo:
