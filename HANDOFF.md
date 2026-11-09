@@ -21,7 +21,7 @@ _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 �
 - **회화 규칙 확정**(`app/docs/DIALOGUE_RULES_ar.md`): 굴절어 공통안 + 아랍어 대안 3개(사용자 동의) — 존댓말 활용 없음 → 가게 장면 R1 허용·حضرتك 만 그래머2 / 회화 어휘 상한 = 상위 512위, 밖 단어 턴당 R1 1·R2 2·R3 3 / 본문 타슈킬 없음. 시샤 소재 금지.
 
 ## 다음 할 일(순서)
-- **(먼저) 회화 초안 7편 점검(사용자 지시 2026-11-09)**: 반전·러브·플러팅은 그대로(chaos 30% 등 비율 유지) 넣되, 실제 일상 장면(가게·식당·길·집·학교·직장·약속·전화)과 그 자리의 실제 표현 흐름 속에서 터지게 — 일상과 동떨어진 비현실적 설정만 고친다("반전을 줄이라"는 사용자가 취소). 원칙 §9 https://talkverse.uk/talkverse/dialogue-rules/
+- **회화 7편: 점검(일상 속 반전) → PC Grok 재작성(2026-11-09, 방 https://grok.com/c/769dc9a0-1910-412e-a217-41c1f4682579, 답 `data/review/grok/out/`) → 검토 반영(78줄 중 채택 12) 끝. 리뷰 페이지 `data/review/REVIEW_ar.html`(생성 `python3 tools/review_html.py data/review/REVIEW_ar.html data/review/write/samples_20261107/r*.json`) → uk 에 「REVIEW_ar 갱신」 보냄 → 사용자 통과 대기.** 통과 뒤: 앱 에셋 연결 → 음성(새벽 01~07시만) → 장면 컷. PC Grok = 크롬 9248(`Grok-Chrome-ar-9248`, 터널 `ssh -fN -L 9248:127.0.0.1:9248 pc`), 회차 `zsh tools/grok_rewrite_run.sh <편id>...`, 원고 `python3 tools/grok_src.py <json>...`.
 0. **빌드 15 확인**: 저장 이름 `ar_` 이전 첫 판 — 폰·아이패드에서 덮어 설치 뒤 학습 기록·이름·성과가 남는지 확인.
 1. 미얀마어앱 사알투무니하 좌우 반전판 — 사용자 지시로 2026-11-08 빌드 12 뒤 미얀마어 세션(`my-f6`)에 요청 보냄(만드는 것은 그 세션 몫).
 2. **아이패드 스크린샷 확인**: `python3 app/tools/pane_shots.py F3FF452D-C5CF-4782-83DB-3DCF252451D9 <폴더>` — 11-08 실행이 앱 빌드 뒤 멈춰 중단함(원인 미확인, 재부팅 직후). 흐름 `integration_test/dialogue_pane_test.dart` 에 절벽 단어·앱 소개·글자와 발음 단계 추가돼 있음. 호스트 테스트(`test/menu_words_test.dart`, 폰·아이패드 칸·전체 크기)는 넘침 없이 통과.

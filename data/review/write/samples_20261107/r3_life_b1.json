@@ -6,8 +6,10 @@
  "kind": "long",
  "draft": true,
  "review": {
-  "stage": "claude_draft",
-  "date": "2026-11-08"
+  "stage": "grok",
+  "date": "2026-11-09",
+  "grok_chat": "https://grok.com/c/769dc9a0-1910-412e-a217-41c1f4682579",
+  "note": "채택 0/14 — Grok 이 대사를 한 줄도 바꾸지 않고 note 만 줄여 보냄. 원고 그대로"
  },
  "variety": "ar_EG",
  "title": "차 두 잔이었는데",
