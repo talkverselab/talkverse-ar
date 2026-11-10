@@ -13,6 +13,13 @@ _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 �
 | 로그인·결제 | Talkverse ID(client `ar`, 통합 앱 안에서는 `talkverse`) · 상품 `lang_ar_1m·3m·1y·life`·`all_1y`·`all_life`(가격 `~/talkverse/PRICING.md`, 정가 취소선·30%), 옛 `lang_ar`·`com.talkverse.arabicUniverse.lifetime` 은 복원 때 `lang_ar_life`. **잠근 콘텐츠 없음**(무료/유료 구간은 사용자 결정). 스토어 등록은 사용자 — `app/docs/STORE_PRODUCTS.md` |
 | 통합 앱 | 패키지 `arabic_universe`(`lib/embed.dart` embedInit/embedApp, `core/embed_env.dart` 에셋 `packages/arabic_universe/`, `core/prefs.dart` 저장 이름 `ar_` 접두 — 단독 앱은 첫 실행 때 옛 키·DB(`arabic_universe.sqlite` → `ar_arabic_universe`)를 한 번 옮김), 콜백 `talkverse.ar://auth`. 통합 앱 쪽 연결은 uk 몫(2026-11-09 알림 보냄) |
 
+## 2026-11-10 세션 종료(허브 정리 지시 — M6 디스크 꽉 참)
+- 마지막 커밋 `9c45e02`(Grok 3분 상한). 진행 중 작업·루프·예약 작업 없음, PC 크롬 9248 Grok 탭 닫음(크롬도 같이 꺼짐 — 다시 쓸 때 PC 예약 작업 `Grok-Chrome-ar-9248`).
+- DB 업로드 확인(uk 전달 사용자 지시): ar 은 새로 올릴 것 0 — `art_words` ar 2,554 는 이미 있음, 음성·장면 컷은 아직 안 만듦, 회화 JSON 은 앱 에셋+저장소가 정본(uk 확인).
+- 정리: `app/build`·`.dart_tool`·`android/.gradle`·`ios/Pods`·`.wrangler`·`__pycache__`·`run_device.log` 삭제(약 3.9GB). **다음 빌드 전 `flutter pub get`(iOS 는 `pod install` 자동)** — 첫 빌드가 오래 걸림.
+- uk 전언: 「음성 새벽 원칙은 사용자가 폐기(11/10)」 — 사용자 직접 확인 전이라 전역 CLAUDE.md 원칙(01~07시)대로 둠.
+- 다음: 아래 「다음 할 일」 그대로(음성 → 장면 컷 → `seed_loader.dart` 새 편 이전).
+
 ## 2026-11-07~08 한 일
 - **일본어앱 단어·메뉴 개편 이식**(`d1cfde2`): 절벽 단어 = 이집트 구어 레마 상위 2,000(`assets/data/freq/lang_ar_cliff.csv`, 검토로 225개 숨김 — 조각·인명·비속어·판정 불가, 순위 번호는 그대로) · 20어 단원 타일 · 「회화 단어 포함」(`conv_words_ar.json`) · 앱 소개(`about_screen.dart`, 값은 `lib/core/cliff.dart` 한 곳) · 메뉴 = 기초 → 문법 → 회화 → 단어 → 참고 · 탭 「배우기·회화·진행·프로필」 · 프로필 정리(앱 업데이트 타일 삭제, 학습 기록 초기화) · 문장 낱말 탭 = 단어창, 길게 = 글자 시트 · 독음 전역 토글(기본 미표시, 켤 때 「힘들어도 독음을 보지 않고 익혀보세요」).
   - 만들기: `python3 tools/build_cliff_words.py ~/corpus_work/ar_eg/out/ar.csv ~/corpus_work/ar_eg/lemma_eg.tsv ~/corpus_work/ar_eg/review`(검토 JSON 은 리포 밖).
