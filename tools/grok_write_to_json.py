@@ -17,7 +17,7 @@ ISL = {'서바이벌': 'survival', '친구': 'friends', '사랑': 'love', '생�
 
 
 VOW = {0: '아', 1: '애', 4: '어', 5: '에', 8: '오', 13: '우', 18: '으', 20: '이'}
-EMO_FIX = {'confused': 'flustered', 'curious': 'surprised', 'happy': 'cheerful', 'angry': 'annoyed', 'shocked': 'surprised', 'nervous': 'worried', 'embarrassed': 'flustered', 'playful': 'teasing', 'warm': 'gentle', 'relieved': 'gentle', 'resigned': 'sad', 'sheepish': 'shy', 'proud': 'cheerful', 'confident': 'cheerful'}
+EMO_FIX = {'confused': 'flustered', 'curious': 'surprised', 'happy': 'cheerful', 'angry': 'annoyed', 'shocked': 'surprised', 'nervous': 'worried', 'embarrassed': 'flustered', 'playful': 'teasing', 'warm': 'gentle', 'relieved': 'gentle', 'resigned': 'sad', 'hopeful': 'gentle', 'grateful': 'polite', 'calm': 'neutral', 'determined': 'stiff', 'serious': 'stiff', 'interested': 'surprised', 'amazed': 'excited', 'apologetic': 'flustered', 'sheepish': 'shy', 'proud': 'cheerful', 'confident': 'cheerful'}
 
 
 def fix_rd(rd):

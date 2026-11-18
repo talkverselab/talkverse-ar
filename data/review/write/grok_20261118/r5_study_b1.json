@@ -66,7 +66,7 @@
    "tags": [],
    "new": [],
    "lemmas": [],
-   "emotion": "neutral"
+   "emotion": "stiff"
   },
   {
    "num": 4,
@@ -150,7 +150,7 @@
    "tags": [],
    "new": [],
    "lemmas": [],
-   "emotion": "neutral"
+   "emotion": "gentle"
   },
   {
    "num": 11,
@@ -186,7 +186,7 @@
    "tags": [],
    "new": [],
    "lemmas": [],
-   "emotion": "neutral"
+   "emotion": "stiff"
   },
   {
    "num": 14,
@@ -205,10 +205,6 @@
   "stage": "grok-write",
   "date": "2026-11-18",
   "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
-  "warn": [
-   "턴 3: 감정 ['serious'] → neutral",
-   "턴 10: 감정 ['hopeful'] → neutral",
-   "턴 13: 감정 ['determined'] → neutral"
-  ]
+  "warn": []
  }
 }

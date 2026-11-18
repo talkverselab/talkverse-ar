@@ -89,7 +89,7 @@
    "tags": [],
    "new": [],
    "lemmas": [],
-   "emotion": "neutral"
+   "emotion": "gentle"
   },
   {
    "num": 6,
@@ -137,7 +137,7 @@
    "tags": [],
    "new": [],
    "lemmas": [],
-   "emotion": "neutral"
+   "emotion": "polite"
   },
   {
    "num": 10,
@@ -158,9 +158,6 @@
   "stage": "grok-write",
   "date": "2026-11-18",
   "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
-  "warn": [
-   "턴 5: 감정 ['hopeful'] → neutral",
-   "턴 9: 감정 ['grateful'] → neutral"
-  ]
+  "warn": []
  }
 }
