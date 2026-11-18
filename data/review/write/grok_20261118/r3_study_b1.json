@@ -1,0 +1,167 @@
+{
+ "id": "r3_study_b1",
+ "region": "R3",
+ "level": 3,
+ "island": "study",
+ "kind": "long",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "교수님이 엄마",
+ "emoji": "📚",
+ "scene": "{name}이 대학 도서관에서 교수님께 질문하는데 그 교수님이 마리암 어머니라는 걸 알게 된다.",
+ "where": "대학 도서관",
+ "speakers": {
+  "A": "{name}",
+  "B": "الدكتورة",
+  "C": "مريم"
+ },
+ "gender": {
+  "A": "m",
+  "B": "f",
+  "C": "f"
+ },
+ "twist": 6,
+ "line": "بنتي!",
+ "expressions": [
+  "يا دكتورة",
+  "الكتب",
+  "الطلبة",
+  "بنتي"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "ar": "يا دكتورة، حضرتك فاضية؟",
+   "rd": "야 독토라, 하드레타크 파디아?",
+   "ko": "교수님, 시간 있으세요?",
+   "note": "يا دكتورة = 교수님",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 2,
+   "speaker": "B",
+   "ar": "أيوة، اتفضل يا أستاذ",
+   "rd": "아이와, 잇파달 야 우스타즈",
+   "ko": "네, 말씀하세요 선생님",
+   "note": "emotion=gentle",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "gentle",
+   "ar_f": "أيوة، اتفضلي يا أستاذة",
+   "rd_f": "아이와, 잇파달리 야 우스타자"
+  },
+  {
+   "num": 3,
+   "speaker": "A",
+   "ar": "الكتب دي بتاعة الطلبة؟",
+   "rd": "엘쿠툽 디 비타아트 엣탈라바?",
+   "ko": "이 책들 학생들 거예요?",
+   "note": "الكتب = 책들",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 4,
+   "speaker": "B",
+   "ar": "أيوة، كل الطلبة يقدروا يستعيروها",
+   "rd": "아이와, 쿨 엣탈라바 이크다루 이스타이루하",
+   "ko": "네, 모든 학생들이 빌릴 수 있어요",
+   "note": "الطلبة = 학생들",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 5,
+   "speaker": "C",
+   "ar": "ماما، انتي هنا في المكتبة؟",
+   "rd": "마마, 엔티 헤나 피 엘마크타바?",
+   "ko": "엄마, 도서관에 계셔?",
+   "note": "emotion=surprised",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 6,
+   "speaker": "B",
+   "ar": "مريم! بنتي، إزيك؟",
+   "rd": "마리암! 빈티, 이자이크?",
+   "ko": "마리암! 내 딸, 잘 지내?",
+   "note": "بنتي = 내 딸",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 7,
+   "speaker": "A",
+   "ar": "يا دكتورة، دي بنتك؟",
+   "rd": "야 독토라, 디 빈타크?",
+   "ko": "교수님, 따님이세요?",
+   "note": "emotion=surprised",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 8,
+   "speaker": "B",
+   "ar": "أيوة، وانت طالب عندي؟",
+   "rd": "아이와, 웬타 탈렙 안디?",
+   "ko": "네, 너는 내 학생이니?",
+   "note": "وانت = 너는",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "amused",
+   "ar_f": "أيوة، وانتي طالبة عندي؟",
+   "rd_f": "아이와, 완티 탈레바 안디?"
+  },
+  {
+   "num": 9,
+   "speaker": "C",
+   "ar": "أيوة يا ماما، ده صاحبي {name}",
+   "rd": "아이와 야 마마, 다 사흐비 {name}",
+   "ko": "응 엄마, 내 친구 {name}이야",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful",
+   "ar_f": "أيوة يا ماما، دي صاحبتي {name}",
+   "rd_f": "아이와 야 마마, 디 사흐브티 {name}"
+  },
+  {
+   "num": 10,
+   "speaker": "A",
+   "ar": "معلش يا دكتورة، ما كنتش عارف",
+   "rd": "마알리시 야 독토라, 마 쿤티시 아레프",
+   "ko": "미안해요 교수님, 몰랐어요",
+   "note": "emotion=flustered",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "flustered",
+   "ar_f": "معلش يا دكتورة، ما كنتش عارفة",
+   "rd_f": "마알리시 야 독토라, 마 쿤티시 아르파"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": []
+ }
+}

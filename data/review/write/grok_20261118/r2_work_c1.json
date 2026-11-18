@@ -1,0 +1,163 @@
+{
+ "id": "r2_work_c1",
+ "region": "R2",
+ "level": 2,
+ "island": "work",
+ "kind": "chat",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "상사랑 같은 교통체증",
+ "emoji": "🚗",
+ "scene": "{name}이 상사에게 늦는다고 알린다. 상사도 같은 차 막힘에 갇혀 있다.",
+ "where": "채팅",
+ "speakers": {
+  "A": "{name}",
+  "B": "مدام سارة"
+ },
+ "gender": {
+  "A": "m",
+  "B": "f"
+ },
+ "twist": 6,
+ "line": "متأخر. الزحمة وحشة",
+ "expressions": [
+  "متأخر",
+  "زحمة",
+  "معلش",
+  "أنا كمان"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "ar": "متأخر شوية",
+   "rd": "무타아키르 슈웨이야",
+   "ko": "좀 늦을 것 같아요",
+   "note": "متأخر = 늦어",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "08:47",
+   "emotion": "worried"
+  },
+  {
+   "num": 2,
+   "speaker": "B",
+   "ar": "ليه؟",
+   "rd": "레이?",
+   "ko": "왜?",
+   "note": "emotion=neutral",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "08:48",
+   "emotion": "neutral"
+  },
+  {
+   "num": 3,
+   "speaker": "A",
+   "ar": "الزحمة وحشة أوي",
+   "rd": "엘자흐마 와흐샤 아위",
+   "ko": "길이 완전 막혀요",
+   "note": "زحمة = 교통체증",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "08:49",
+   "emotion": "annoyed"
+  },
+  {
+   "num": 4,
+   "speaker": "B",
+   "ar": "معلش. أنا كمان",
+   "rd": "마알리시. 아나 카만",
+   "ko": "괜찮아. 나도",
+   "note": "معلش = 미안",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "08:50",
+   "emotion": "amused"
+  },
+  {
+   "num": 5,
+   "speaker": "A",
+   "ar": "أنتِ كمان في الزحمة؟",
+   "rd": "엔티 카만 피 엘자흐마?",
+   "ko": "상사님도 교통체증이에요?",
+   "note": "emotion=surprised",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "08:51",
+   "emotion": "surprised"
+  },
+  {
+   "num": 6,
+   "speaker": "B",
+   "ar": "أيوة. نفس الشارع",
+   "rd": "아이와. 나프스 엘샤리아",
+   "ko": "응. 같은 길",
+   "note": "emotion=amused",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "08:52",
+   "emotion": "amused"
+  },
+  {
+   "num": 7,
+   "speaker": "A",
+   "ar": "طب هنوصل امتى؟",
+   "rd": "탑 하누살 엠타?",
+   "ko": "그럼 언제 도착해요?",
+   "note": "emotion=worried",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "08:53",
+   "emotion": "worried"
+  },
+  {
+   "num": 8,
+   "speaker": "B",
+   "ar": "ربنا يستر. استنى",
+   "rd": "랍베나 예스토르. 이스탄나",
+   "ko": "잘 되길. 기다려",
+   "note": "emotion=neutral",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "08:54",
+   "emotion": "neutral"
+  },
+  {
+   "num": 9,
+   "speaker": "A",
+   "ar": "ماشي. معلش تاني",
+   "rd": "마시. 마알리시 타니",
+   "ko": "알겠어요. 또 미안해요",
+   "note": "emotion=shy",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "08:55",
+   "emotion": "shy"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": []
+ }
+}

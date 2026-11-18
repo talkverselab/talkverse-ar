@@ -1,0 +1,99 @@
+{
+ "id": "r0_travel_a1",
+ "region": "R0",
+ "level": 0,
+ "island": "travel",
+ "kind": "short",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "학생이라고 했다가 학생증 없는 매표소",
+ "emoji": "🎫",
+ "scene": "피라미드 매표소에서 표를 사는 {name}. 「한 장」 했더니 직원이 「학생?」이라고 묻는다.",
+ "where": "피라미드 매표소",
+ "speakers": {
+  "A": "{name}",
+  "B": "سامي"
+ },
+ "gender": {
+  "A": "m",
+  "B": "m"
+ },
+ "twist": 5,
+ "line": "تذكرة واحدة.",
+ "expressions": [
+  "تذكرة",
+  "واحدة",
+  "طالب",
+  "لا"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "ar": "تذكرة واحدة.",
+   "rd": "타즈키라 와흐다.",
+   "ko": "표 한 장.",
+   "note": "تذكرة = 표",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 2,
+   "speaker": "B",
+   "ar": "واحدة؟ طالب؟",
+   "rd": "와흐다? 탈렙?",
+   "ko": "한 장이요? 학생이요?",
+   "note": "واحدة = 한 장",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral",
+   "ar_f": "واحدة؟ طالبة؟",
+   "rd_f": "와흐다? 탈리바?"
+  },
+  {
+   "num": 3,
+   "speaker": "A",
+   "ar": "أيوة!",
+   "rd": "아이와!",
+   "ko": "네!",
+   "note": "أيوة = 네",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "excited"
+  },
+  {
+   "num": 4,
+   "speaker": "B",
+   "ar": "البطاقة؟",
+   "rd": "엘비타카?",
+   "ko": "학생증요?",
+   "note": "البطاقة = 카드",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 5,
+   "speaker": "A",
+   "ar": "لا.",
+   "rd": "라.",
+   "ko": "없어요.",
+   "note": "لا = 아니요",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "flustered"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": []
+ }
+}

@@ -27,10 +27,10 @@ expressions: <대사에 나온 핵심 표현; 로 구분>
 <화자> | <아랍어> | <한글 독음> | <한국어> | <핵심 하나: "X = 뜻"> | emotion=<감정>[+<감정>]
 f | <여자판 아랍어> | <여자판 한글 독음> | <여자판 한국어>
 ```
-- 한글 독음 = 카이로 발음(ج=ㄱ, ق 는 끊김 소리, ث→ㅆ/ㅌ, ذ→ㅈ/ㄷ).
+- 한글 독음 = 카이로 발음(ج=ㄱ, ق 는 끊김 소리, ث→ㅆ/ㅌ, ذ→ㅈ/ㄷ). 독음에 숫자(3·7·2 같은 프랑코 표기)는 쓰지 말고 한글로만(بعد=바아드, ساعة=사아).
 - 한국어 = 자연스러운 말투(반말·존댓말을 관계에 맞게).
-- emotion = neutral polite stiff cheerful amused teasing excited surprised shout tsukkomi annoyed sad worried flustered shy gentle 중. 줄 안에서 감정이 바뀌면 문장 수만큼 `+` 로 순서대로(한 문장에 하나). 밋밋하게 neutral 만 쓰지 말 것.
-- 채팅 편(kind=chat)은 화자 칸을 `A@21:02` 처럼 보낸 시각과 함께. 이모지는 자연스럽게만.
+- emotion = neutral polite stiff cheerful amused teasing excited surprised shout tsukkomi annoyed sad worried flustered shy gentle 중. 줄 안에서 감정이 바뀌면 문장 수만큼 `+` 로 순서대로(한 문장에 하나). 밋밋하게 neutral 만 쓰지 말 것. 목록에 없는 말(confused·curious 등)은 쓰지 말 것. `+` 의 개수는 그 줄의 문장 수와 같게.
+- 채팅 편(kind=chat)은 화자 칸을 이름이 아니라 기호로 `A@21:02`·`B@21:03` 처럼 보낸 시각과 함께. 이모지는 자연스럽게만.
 
 ## 급 조건
 - R0 글자·소리: 4~6턴, 한 줄 1~4낱말, 인사·이름·네/아니요·고마워·이거 뭐야 같은 아주 기본.

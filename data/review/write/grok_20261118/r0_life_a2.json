@@ -1,0 +1,111 @@
+{
+ "id": "r0_life_a2",
+ "region": "R0",
+ "level": 0,
+ "island": "life",
+ "kind": "short",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "문 열었더니 음식 접시",
+ "emoji": "🍲",
+ "scene": "집주인 아주머니가 문을 두드린다. 학습자는 {name}. 문을 열었더니 음식 접시를 내민다.",
+ "where": "집 문 앞",
+ "speakers": {
+  "A": "{name}",
+  "B": "فاطمة"
+ },
+ "gender": {
+  "A": "m",
+  "B": "f"
+ },
+ "twist": 4,
+ "line": "اتفضل. أكل.",
+ "expressions": [
+  "مين",
+  "اتفضل",
+  "أكل",
+  "شكرا"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "ar": "مين؟",
+   "rd": "민?",
+   "ko": "누구요?",
+   "note": "مين = 누구",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 2,
+   "speaker": "B",
+   "ar": "أنا صاحبة البيت.",
+   "rd": "아나 사히베트 엘베이트.",
+   "ko": "나 집주인이요.",
+   "note": "أنا = 나",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 3,
+   "speaker": "A",
+   "ar": "أهلا.",
+   "rd": "아흘라.",
+   "ko": "안녕하세요.",
+   "note": "أهلا = 안녕",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 4,
+   "speaker": "B",
+   "ar": "اتفضل. أكل.",
+   "rd": "이트파달. 아클.",
+   "ko": "들어오세요. 먹어요.",
+   "note": "اتفضل = 들어오세요",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "gentle",
+   "ar_f": "اتفضلي. أكل.",
+   "rd_f": "이트파달리. 아클."
+  },
+  {
+   "num": 5,
+   "speaker": "A",
+   "ar": "شكرا!",
+   "rd": "슈크란!",
+   "ko": "고마워요!",
+   "note": "شكرا = 고마워",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 6,
+   "speaker": "B",
+   "ar": "يلا. كل.",
+   "rd": "얄라. 쿨.",
+   "ko": "자. 먹어.",
+   "note": "كل = 먹어",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": []
+ }
+}

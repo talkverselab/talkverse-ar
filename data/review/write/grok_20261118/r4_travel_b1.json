@@ -1,0 +1,188 @@
+{
+ "id": "r4_travel_b1",
+ "region": "R4",
+ "level": 4,
+ "island": "travel",
+ "kind": "long",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "오아시스에서 길 잃음",
+ "emoji": "🏜️",
+ "scene": "시와 오아시스 여행 중 {name}과 누르가 길을 잃었는데 마을 노인이 아까 누가 찾고 있었다고 한다.",
+ "where": "시와 오아시스",
+ "speakers": {
+  "A": "{name}",
+  "B": "العجوز",
+  "C": "نور"
+ },
+ "gender": {
+  "A": "m",
+  "B": "m",
+  "C": "f"
+ },
+ "twist": 7,
+ "line": "كانوا بيدوروا عليكم",
+ "expressions": [
+  "اللي",
+  "كانوا بيدوروا",
+  "لو",
+  "قال إن"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "ar": "يا عم، احنا تايهين، اللي حصل إيه؟",
+   "rd": "야 암, 이흐나 타이힌, 엘리 하살 에이?",
+   "ko": "아저씨, 우리 길 잃었어요, 무슨 일이에요?",
+   "note": "اللي = ~한",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "worried"
+  },
+  {
+   "num": 2,
+   "speaker": "B",
+   "ar": "شفت واحد كان بيدور عليكم من شوية",
+   "rd": "슈프트 와히드 칸 비두르 알레이쿰 민 슈와야",
+   "ko": "아까 누가 너희를 찾고 있었어",
+   "note": "كان بيدور = 찾고 있었어",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 3,
+   "speaker": "C",
+   "ar": "مين اللي كان بيدور علينا؟",
+   "rd": "민 엘리 칸 비두르 알레이나?",
+   "ko": "누가 우리를 찾고 있었어요?",
+   "note": "emotion=surprised",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 4,
+   "speaker": "B",
+   "ar": "قال إنكم لو رحتوا الناحية دي هتتايهوا",
+   "rd": "알 인쿰 로 로흐투 엔나흐야 디 하타이유",
+   "ko": "이쪽으로 가면 길 잃을 거라고 했어",
+   "note": "قال إن = ~라고 했어",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 5,
+   "speaker": "A",
+   "ar": "كانوا بيدوروا علينا ليه؟",
+   "rd": "카누 비두루 알레이나 레이?",
+   "ko": "왜 우리를 찾고 있었어요?",
+   "note": "كانوا بيدوروا = 찾고 있었어",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "worried"
+  },
+  {
+   "num": 6,
+   "speaker": "B",
+   "ar": "الراجل قال إن فيه بنت مستنياكم",
+   "rd": "엘라갈 알 인 피이 빈트 미스탄야쿰",
+   "ko": "그 사람이 어떤 여자가 너희를 기다린대",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 7,
+   "speaker": "C",
+   "ar": "ده ابن عمي! هو اللي كان بيدور",
+   "rd": "다 이븐 아미! 후와 엘리 칸 비두르",
+   "ko": "내 사촌이야! 그 사람이 찾고 있었구나",
+   "note": "emotion=excited",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "excited"
+  },
+  {
+   "num": 8,
+   "speaker": "A",
+   "ar": "لو كنا عرفنا كان لقيناه",
+   "rd": "로 쿤나 아라프나 칸 라케이나",
+   "ko": "알았으면 만났을 텐데",
+   "note": "لو = 만약",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "amused",
+   "ar_f": "لو كنا عرفنا كان لقيناه",
+   "rd_f": "로 쿤나 아라프나 칸 라케이나"
+  },
+  {
+   "num": 9,
+   "speaker": "B",
+   "ar": "هو قال إنكم هترجعوا من هنا",
+   "rd": "후와 알 인쿰 하테르가우 민 헤나",
+   "ko": "그가 너희가 이쪽으로 돌아올 거래",
+   "note": "emotion=polite",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 10,
+   "speaker": "C",
+   "ar": "يلا نروح نلقاه قبل ما يمشي",
+   "rd": "얄라 네루흐 닐카 아블 마 임시",
+   "ko": "자 가서 그가 떠나기 전에 찾자",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 11,
+   "speaker": "A",
+   "ar": "شكرا يا عم، اللي حصل ده غريب",
+   "rd": "슈크란 야 암, 엘리 하살 다 가리브",
+   "ko": "고마워요 아저씨, 이 일이 신기하네요",
+   "note": "emotion=grateful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 12,
+   "speaker": "B",
+   "ar": "لو تايهتوا تاني اسألوا أي حد",
+   "rd": "로 타이흐투 타니 이사알루 아이 하드",
+   "ko": "또 길 잃으면 아무한테나 물어봐",
+   "note": "emotion=gentle",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "gentle"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": [
+   "턴 2: 감정 ['calm'] → neutral",
+   "턴 11: 감정 ['grateful'] → neutral"
+  ]
+ }
+}

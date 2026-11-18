@@ -2,6 +2,13 @@
 
 _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 반영(세션 종료). 앱 규칙 SSOT 는 `app/CLAUDE.md`, 회화 규칙은 `app/docs/DIALOGUE_RULES_ar.md`, 인물은 `CHARACTERS.md`._
 
+
+## 2026-11-19 새벽 Grok 회화 65편 받음(리뷰 대기)
+- uk 「ar 시작」(11-19 02:3x) → PC 9248 빠른 모드, 방 4개(R0 12 · R1 18 · R2 14 · R3~R5 21), TIMEOUT·한도 0. 사용자 결정 「Grok으로 다시 써」로 나간 7편도 새로 씀(초안 끝 「다시 쓰기 7편」). uk 에 「Grok 끝」 알림.
+- 원문 `data/review/grok/write/<id>.md` → `data/review/write/grok_20261118/<id>.json`(65편 602턴). 변환기가 고치는 것: 독음 프랑코 3(ع)→모음, 목록 밖 감정 → 가까운 것(confused→flustered 등), 채팅 화자 이름(نور@)→기호, segs 를 이으면 ar 와 똑같게. 검사(화자·라틴·금지낱말·숫자·rd_f·segs·감정) 0건.
+- 남은 경고: 감정 수 ≠ 문장 수인 줄은 첫 감정만(review.warn). 다시 쓴 편 턴 수: r1_life_a1 10(전 8)·r1_love_a1 9(8)·r4_love_b1 15(14)·r5_friends_b1 15(14) — 늘어난 번호는 새 번호라 잠금 규칙 안. r2_love_c1 턴 11 에서 남성 학습자에게 قولي(여성 명령형) — 리뷰 때 사용자 판단.
+- 리뷰 Artifact(이번 판) https://claude.ai/artifact/6YctG1ZYGj1YGT4DrAXYuX (db `reviews`). 통과하면 편 JSON 에 approved → `cd app && python3 tools/sync_dialogues.py ../data/review/write/grok_20261118/*.json` → add_lemmas·build_cliff_words → `python3 tools/script_publish.py --publish` → script_rev.json 커밋 → uk 에 rev·커밋 알림.
+
 ## 지금 상태 (2026-11-09)
 
 | 항목 | 상태 |

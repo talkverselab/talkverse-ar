@@ -1,0 +1,219 @@
+{
+ "id": "r3_life_b1",
+ "region": "R3",
+ "level": 3,
+ "island": "life",
+ "kind": "long",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "오늘은 다 내 손님",
+ "emoji": "☕",
+ "scene": "카림의 아흐와에서 {name}이 누르를 기다리며 차 두 잔을 시켰는데 사람들이 몰려와 주문이 계속 바뀌고 카림 아버지가 오늘 모두 자기 손님이라고 한다.",
+ "where": "카림의 아흐와",
+ "speakers": {
+  "A": "{name}",
+  "B": "كريم",
+  "C": "عم سيد",
+  "D": "نور",
+  "E": "يوسف"
+ },
+ "gender": {
+  "A": "m",
+  "B": "m",
+  "C": "m",
+  "D": "f",
+  "E": "m"
+ },
+ "twist": 12,
+ "line": "النهاردة كله على حسابي",
+ "expressions": [
+  "مساء الخير",
+  "حضرتك",
+  "اتفضل",
+  "لو سمحت",
+  "لوحدك",
+  "على حساب"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "ar": "مساء الخير يا عم سيد",
+   "rd": "마사 엘헤이르 야 암 세이드",
+   "ko": "안녕하세요 세이드 아저씨",
+   "note": "مساء الخير = 안녕하세요",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 2,
+   "speaker": "C",
+   "ar": "مساء النور، اتفضل يا أستاذ",
+   "rd": "마사 엔누르, 잇파달 야 우스타즈",
+   "ko": "안녕하세요, 앉으세요 선생님",
+   "note": "اتفضل = 앉으세요",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "gentle",
+   "ar_f": "مساء النور، اتفضلي يا أستاذة",
+   "rd_f": "마사 엔누르, 잇파달리 야 우스타자"
+  },
+  {
+   "num": 3,
+   "speaker": "A",
+   "ar": "لو سمحت، اتنين شاي",
+   "rd": "로 사마흐트, 잇네인 샤이",
+   "ko": "부탁해요, 차 두 잔이요",
+   "note": "لو سمحت = 부탁해요",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 4,
+   "speaker": "C",
+   "ar": "اتنين؟ حضرتك لوحدك؟",
+   "rd": "잇네인? 하드레타크 리와흐다크?",
+   "ko": "두 잔? 혼자세요?",
+   "note": "حضرتك = 당신",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised",
+   "ar_f": "اتنين؟ حضرتك لوحدكِ؟",
+   "rd_f": "잇네인? 하드레타크 리와흐디키?"
+  },
+  {
+   "num": 5,
+   "speaker": "A",
+   "ar": "لأ، مستني نور",
+   "rd": "라아, 미스타니 누르",
+   "ko": "아니에요, 누르 기다리고 있어요",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 6,
+   "speaker": "B",
+   "ar": "أنا كمان هنا، هات تالت",
+   "rd": "아나 카만 헤나, 하트 탈리트",
+   "ko": "나도 여기 있어, 세 번째 가져와",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 7,
+   "speaker": "E",
+   "ar": "وأنا وصلت، أربعة بقوا",
+   "rd": "와아나 와살트, 아르바아 바우",
+   "ko": "나도 도착했어, 네 잔 됐어",
+   "note": "emotion=excited",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "excited"
+  },
+  {
+   "num": 8,
+   "speaker": "D",
+   "ar": "آسفة اتأخرت، أنا كمان عايزة",
+   "rd": "아스파 이타하르트, 아나 카만 아에이자",
+   "ko": "늦어서 미안, 나도 마실래",
+   "note": "emotion=apologetic",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 9,
+   "speaker": "A",
+   "ar": "خلاص خمسة؟ لأ ستة؟",
+   "rd": "할라스 함사? 라아 싯타?",
+   "ko": "다섯? 아니 여섯?",
+   "note": "emotion=flustered",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "flustered"
+  },
+  {
+   "num": 10,
+   "speaker": "C",
+   "ar": "استنوا شوية، الطلب بيتغير",
+   "rd": "이스탄누 슈와야, 엣탈라브 비타가이아르",
+   "ko": "잠깐만, 주문이 계속 바뀌네",
+   "note": "emotion=amused",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "amused"
+  },
+  {
+   "num": 11,
+   "speaker": "B",
+   "ar": "بابا، احسب لنا كل ده",
+   "rd": "바바, 이흐십 리나 쿨 다",
+   "ko": "아빠, 이거 다 계산해 줘",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 12,
+   "speaker": "C",
+   "ar": "لأ، النهاردة كله على حسابي",
+   "rd": "라아, 엔나하르다 쿨루 알라 히사비",
+   "ko": "아니, 오늘은 전부 내가 낼게",
+   "note": "على حساب = 내가 낼게",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "gentle"
+  },
+  {
+   "num": 13,
+   "speaker": "A",
+   "ar": "بجد يا عم؟ شكرا",
+   "rd": "베게드 야 암? 슈크란",
+   "ko": "진짜요 아저씨? 고마워요",
+   "note": "emotion=surprised",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 14,
+   "speaker": "E",
+   "ar": "يلا نشرب، كله ضيوف عم سيد",
+   "rd": "얄라 니슈라브, 쿨루 듀프 암 세이드",
+   "ko": "자 마시자, 다 세이드 아저씨 손님이야",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": [
+   "턴 8: 감정 ['apologetic'] → neutral"
+  ]
+ }
+}

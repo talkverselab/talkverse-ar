@@ -1,0 +1,163 @@
+{
+ "id": "r2_work_c2",
+ "region": "R2",
+ "level": 2,
+ "island": "work",
+ "kind": "chat",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "결국 또 쿠샤리",
+ "emoji": "🍛",
+ "scene": "동료가 점심 메뉴를 투표하자고 한다. 투표했는데 결국 늘 먹던 쿠샤리가 된다.",
+ "where": "채팅",
+ "speakers": {
+  "A": "{name}",
+  "B": "أحمد"
+ },
+ "gender": {
+  "A": "m",
+  "B": "m"
+ },
+ "twist": 8,
+ "line": "نتغدى إيه؟ كشري تاني؟",
+ "expressions": [
+  "نتغدى",
+  "إيه",
+  "كشري",
+  "تاني"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "B",
+   "ar": "نتغدى إيه النهارده؟",
+   "rd": "네트가다 에이 엔나하르다?",
+   "ko": "오늘 점심 뭐 먹어?",
+   "note": "نتغدى = 점심 먹다",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "12:05",
+   "emotion": "cheerful"
+  },
+  {
+   "num": 2,
+   "speaker": "A",
+   "ar": "إيه رأيك؟",
+   "rd": "에이 라야크?",
+   "ko": "뭐가 좋을까?",
+   "note": "إيه = 뭐",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "12:06",
+   "emotion": "neutral"
+  },
+  {
+   "num": 3,
+   "speaker": "B",
+   "ar": "نصوت. فول ولا كشري؟",
+   "rd": "네사우웨트. 풀 윌라 코샤리?",
+   "ko": "투표하자. 풀이냐 쿠샤리냐?",
+   "note": "emotion=excited",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "12:07",
+   "emotion": "excited"
+  },
+  {
+   "num": 4,
+   "speaker": "A",
+   "ar": "كشري",
+   "rd": "코샤리",
+   "ko": "쿠샤리",
+   "note": "كشري = 쿠샤리",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "12:08",
+   "emotion": "neutral"
+  },
+  {
+   "num": 5,
+   "speaker": "B",
+   "ar": "الأغلبية كشري",
+   "rd": "엘아글라비야 코샤리",
+   "ko": "다수결 쿠샤리",
+   "note": "emotion=amused",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "12:10",
+   "emotion": "amused"
+  },
+  {
+   "num": 6,
+   "speaker": "A",
+   "ar": "تاني؟ كل يوم كشري",
+   "rd": "타니? 쿨 욤 코샤리",
+   "ko": "또? 맨날 쿠샤리",
+   "note": "تاني = 또",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "12:11",
+   "emotion": "tsukkomi"
+  },
+  {
+   "num": 7,
+   "speaker": "B",
+   "ar": "أيوة. هو ده الأكل",
+   "rd": "아이와. 호와 다 엘아클",
+   "ko": "응. 이게 그 음식이야",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "12:12",
+   "emotion": "cheerful"
+  },
+  {
+   "num": 8,
+   "speaker": "A",
+   "ar": "ماشي. يلا",
+   "rd": "마시. 얄라",
+   "ko": "알겠어. 가자",
+   "note": "emotion=neutral",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "12:13",
+   "emotion": "neutral"
+  },
+  {
+   "num": 9,
+   "speaker": "B",
+   "ar": "خلاص. نطلب",
+   "rd": "할라스. 네틀롭",
+   "ko": "됐어. 주문하자",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "12:14",
+   "emotion": "cheerful"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": []
+ }
+}

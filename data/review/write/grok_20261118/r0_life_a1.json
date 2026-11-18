@@ -1,0 +1,97 @@
+{
+ "id": "r0_life_a1",
+ "region": "R0",
+ "level": 0,
+ "island": "life",
+ "kind": "short",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "하나 시켰는데 둘 받은 빵",
+ "emoji": "🍞",
+ "scene": "빵집에서 에이쉬를 사는 {name}. 「하나」라고 했는데 청년이 덤으로 하나 더 준다.",
+ "where": "빵집",
+ "speakers": {
+  "A": "{name}",
+  "B": "علي"
+ },
+ "gender": {
+  "A": "m",
+  "B": "m"
+ },
+ "twist": 4,
+ "line": "اتنين. ببلاش.",
+ "expressions": [
+  "عيش",
+  "واحد",
+  "اتنين",
+  "ببلاش"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "ar": "عيش واحد.",
+   "rd": "에이시 와히드.",
+   "ko": "빵 하나.",
+   "note": "عيش = 빵",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 2,
+   "speaker": "B",
+   "ar": "واحد؟",
+   "rd": "와히드?",
+   "ko": "하나요?",
+   "note": "واحد = 하나",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 3,
+   "speaker": "A",
+   "ar": "أيوة.",
+   "rd": "아이와.",
+   "ko": "네.",
+   "note": "أيوة = 네",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 4,
+   "speaker": "B",
+   "ar": "اتنين. ببلاش.",
+   "rd": "이트네인. 비블라시.",
+   "ko": "둘. 공짜.",
+   "note": "اتنين = 둘",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 5,
+   "speaker": "A",
+   "ar": "شكرا!",
+   "rd": "슈크란!",
+   "ko": "고마워!",
+   "note": "شكرا = 고마워",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": []
+ }
+}

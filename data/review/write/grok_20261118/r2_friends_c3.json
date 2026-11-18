@@ -1,0 +1,188 @@
+{
+ "id": "r2_friends_c3",
+ "region": "R2",
+ "level": 2,
+ "island": "friends",
+ "kind": "chat",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "새 메뉴 첫 시식자",
+ "emoji": "☕",
+ "scene": "카림이 아흐와 새 메뉴 시식을 초대한다. {name}이 첫 시식자가 되는데 메뉴가 완전히 망한 맛이다.",
+ "where": "채팅",
+ "speakers": {
+  "A": "{name}",
+  "B": "كريم"
+ },
+ "gender": {
+  "A": "m",
+  "B": "m"
+ },
+ "twist": 7,
+ "line": "دوق الجديد. وحش أوي",
+ "expressions": [
+  "تعالى",
+  "جديد",
+  "دوق",
+  "وحش"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "B",
+   "ar": "تعالى الأهوة. فيه جديد",
+   "rd": "타알라 엘아흐와. 피 게디드",
+   "ko": "아흐와로 와. 새 거 있어",
+   "note": "تعالى = 와",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "19:12",
+   "emotion": "cheerful"
+  },
+  {
+   "num": 2,
+   "speaker": "A",
+   "ar": "جديد إيه؟",
+   "rd": "게디드 에이?",
+   "ko": "새 거 뭐야?",
+   "note": "جديد = 새",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "19:13",
+   "emotion": "neutral"
+  },
+  {
+   "num": 3,
+   "speaker": "B",
+   "ar": "مشروب. تعالى دلوقتي",
+   "rd": "마슈룹. 타알라 델와티",
+   "ko": "음료. 지금 와",
+   "note": "emotion=excited",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "19:13",
+   "emotion": "excited"
+  },
+  {
+   "num": 4,
+   "speaker": "A",
+   "ar": "ماشي. جاي",
+   "rd": "마시. 가이",
+   "ko": "알겠어. 가는 중",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "19:14",
+   "emotion": "cheerful"
+  },
+  {
+   "num": 5,
+   "speaker": "B",
+   "ar": "وصلت؟ دوق",
+   "rd": "위실트? 두우",
+   "ko": "도착했어? 맛봐",
+   "note": "دوق = 맛봐",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "19:28",
+   "emotion": "cheerful",
+   "ar_f": "وصلتي؟ دوقي",
+   "rd_f": "위실티? 두우이"
+  },
+  {
+   "num": 6,
+   "speaker": "A",
+   "ar": "دوقت. وحش أوي",
+   "rd": "두우트. 와흐시 아위",
+   "ko": "맛봤어. 완전 최악",
+   "note": "وحش = 최악",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "19:29",
+   "segs": [
+    [
+     "surprised",
+     "دوقت. "
+    ],
+    [
+     "annoyed",
+     "وحش أوي"
+    ]
+   ]
+  },
+  {
+   "num": 7,
+   "speaker": "B",
+   "ar": "بجد؟ أول واحد يدوقه",
+   "rd": "베갸드? 아왈 와히드 예두우",
+   "ko": "진짜? 첫 시식자야",
+   "note": "emotion=amused",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "19:29",
+   "emotion": "amused"
+  },
+  {
+   "num": 8,
+   "speaker": "A",
+   "ar": "ليه أنا؟",
+   "rd": "레이 아나?",
+   "ko": "왜 나야?",
+   "note": "emotion=tsukkomi",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "19:30",
+   "emotion": "tsukkomi"
+  },
+  {
+   "num": 9,
+   "speaker": "B",
+   "ar": "هههه. معلش. هعمل تاني",
+   "rd": "헤헤헤. 마알리시. 하아멜 타니",
+   "ko": "ㅎㅎㅎ. 미안. 다시 만들게",
+   "note": "emotion=amused",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "19:30",
+   "emotion": "amused"
+  },
+  {
+   "num": 10,
+   "speaker": "A",
+   "ar": "خلاص. استنى",
+   "rd": "할라스. 이스탄나",
+   "ko": "됐어. 기다려",
+   "note": "emotion=teasing",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "ui": "bubble",
+   "at": "19:31",
+   "emotion": "teasing"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": []
+ }
+}

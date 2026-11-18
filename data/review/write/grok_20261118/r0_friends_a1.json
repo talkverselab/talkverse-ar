@@ -1,0 +1,144 @@
+{
+ "id": "r0_friends_a1",
+ "region": "R0",
+ "level": 0,
+ "island": "friends",
+ "kind": "short",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "점 하나 때문에 누즈가 된 누르",
+ "emoji": "✏️",
+ "scene": "카림의 아흐와에서 처음 만난 누르와 이름을 주고받는다. 누르가 냅킨에 이름을 한 자씩 써 준다. 학습자는 {name}.",
+ "where": "카림의 아흐와",
+ "speakers": {
+  "A": "{name}",
+  "B": "نور"
+ },
+ "gender": {
+  "A": "m",
+  "B": "f"
+ },
+ "twist": 8,
+ "line": "حلو. اسمك ولا أنا؟",
+ "expressions": [
+  "أهلا",
+  "اسمك إيه؟",
+  "بص",
+  "من غير",
+  "ولا",
+  "حلو"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "ar": "أهلا",
+   "rd": "아흘라",
+   "ko": "안녕",
+   "note": "أهلا = 안녕",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 2,
+   "speaker": "B",
+   "ar": "أهلا! اسمك إيه؟",
+   "rd": "아흘라! 이스먹 에?",
+   "ko": "안녕! 이름이 뭐야?",
+   "note": "اسمك إيه = 이름이 뭐야",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 3,
+   "speaker": "A",
+   "ar": "{name}. وانتِ؟",
+   "rd": "{name}. 와인티?",
+   "ko": "{name}. 너는?",
+   "note": "وانتِ = 너는",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 4,
+   "speaker": "B",
+   "ar": "نور. بص.",
+   "rd": "누르. 바스.",
+   "ko": "누르야. 봐.",
+   "note": "بص = 봐",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 5,
+   "speaker": "A",
+   "ar": "نوز؟",
+   "rd": "누즈?",
+   "ko": "누즈?",
+   "note": "نوز = 누즈",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 6,
+   "speaker": "B",
+   "ar": "لأ، نور. من غير.",
+   "rd": "라, 누르. 민 게이르.",
+   "ko": "아니, 누르야. 점 없이.",
+   "note": "من غير = 없이",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "amused"
+  },
+  {
+   "num": 7,
+   "speaker": "A",
+   "ar": "آه، نور.",
+   "rd": "아, 누르.",
+   "ko": "아, 누르.",
+   "note": "نور = 누르",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 8,
+   "speaker": "B",
+   "ar": "حلو. اسمك ولا أنا؟",
+   "rd": "헬루. 이스먹 왈라 아나?",
+   "ko": "좋네. 이름이야 아니면 나야?",
+   "note": "ولا = 아니면",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "segs": [
+    [
+     "teasing",
+     "حلو. "
+    ],
+    [
+     "shy",
+     "اسمك ولا أنا؟"
+    ]
+   ]
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": []
+ }
+}

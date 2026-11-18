@@ -16,9 +16,29 @@ SPEC = {l.split(' | ')[0]: [x.strip() for x in l.split(' | ')] for l in DOC.spli
 ISL = {'서바이벌': 'survival', '친구': 'friends', '사랑': 'love', '생활': 'life', '여행': 'travel', '문화': 'culture', '일': 'work', '학업': 'study'}
 
 
+VOW = {0: '아', 1: '애', 4: '어', 5: '에', 8: '오', 13: '우', 18: '으', 20: '이'}
+EMO_FIX = {'confused': 'flustered', 'curious': 'surprised', 'happy': 'cheerful', 'angry': 'annoyed', 'shocked': 'surprised', 'nervous': 'worried', 'embarrassed': 'flustered', 'playful': 'teasing', 'warm': 'gentle', 'relieved': 'gentle', 'sheepish': 'shy', 'proud': 'cheerful', 'confident': 'cheerful'}
+
+
+def fix_rd(rd):
+    """독음의 프랑코 숫자(ع=3) 정리 — 앞 글자가 받침 없는 모음이면 같은 모음을 한 번 더(바3드→바아드), 아니면 지운다."""
+    out = []
+    for i, ch in enumerate(rd):
+        if ch == '3' and out and '가' <= out[-1] <= '힣':
+            nxt = rd[i + 1] if i + 1 < len(rd) else ''
+            c = ord(out[-1]) - 0xAC00
+            if c % 28 == 0 and not ('아' <= nxt <= '잏' and (ord(nxt) - 0xAC00) // 588 == 11):
+                out.append(VOW.get((c // 28) % 21, ''))
+            continue
+        if ch == '3' and i + 1 < len(rd) and '가' <= rd[i + 1] <= '힣':
+            continue
+        out.append(ch)
+    return ''.join(out)
+
+
 def sentences(t):
-    parts = [p for p in re.findall(r'[^.!?؟…]+[.!?؟…]*\s*', t) if p.strip()]
-    return [p.strip() for p in parts]
+    parts = [p for p in re.findall(r'[^.!?؟…]+[.!?؟…]*\s*', t.strip()) if p.strip()]
+    return [p.rstrip() + ' ' if i < len(parts) - 1 else p.rstrip() for i, p in enumerate(parts)]  # 이으면 ar 와 똑같게
 
 
 def segs_for(ar, emos, warns, num):
@@ -36,6 +56,8 @@ def convert(eid):
     spec = SPEC[eid]
     lv = int(spec[1][1])
     head, turns, warns = {}, [], []
+    cm = re.search(r'^cast:\s*(.*)$', text, re.M)
+    rev = {v.strip(): k.strip() for k, v in (x.split('=', 1) for x in (cm.group(1).split(';') if cm else []) if '=' in x)}
     for ln in text.splitlines():
         ln = ln.strip()
         if not ln or ln.startswith('===') or ln.startswith('```'):
@@ -47,7 +69,7 @@ def convert(eid):
         cols = [c.strip() for c in ln.split('|')]
         if cols[0] == 'f' and turns:
             t = turns[-1]
-            t['ar_f'], t['rd_f'] = cols[1], cols[2] if len(cols) > 2 else ''
+            t['ar_f'], t['rd_f'] = cols[1], fix_rd(cols[2]) if len(cols) > 2 else ''
             if len(cols) > 3 and cols[3] != t['ko']:
                 t['ko_f'] = cols[3]
             if 'segs' in t:
@@ -55,16 +77,18 @@ def convert(eid):
                 if s:
                     t['segs_f'] = s
             continue
+        if len(cols) >= 4 and '@' in cols[0] and cols[0].split('@')[0] in rev:  # 채팅 화자를 이름으로 쓴 줄(نور@21:02) → 기호
+            cols[0] = rev[cols[0].split('@')[0]] + '@' + cols[0].split('@', 1)[1]
         if len(cols) < 4 or not re.match(r'^[A-E](@[\d:]+)?$', cols[0]):
             continue
         sp, at = (cols[0].split('@') + [None])[:2]
         num = len(turns) + 1
-        t = {'num': num, 'speaker': sp, 'ar': cols[1], 'rd': cols[2], 'ko': cols[3],
+        t = {'num': num, 'speaker': sp, 'ar': cols[1], 'rd': fix_rd(cols[2]), 'ko': cols[3],
              'note': cols[4].strip('"“”') if len(cols) > 4 else '', 'tags': [], 'new': [], 'lemmas': []}
         if at:
             t['ui'], t['at'] = 'bubble', at
         em = re.search(r'emotion=([\w+]+)', ln)
-        emos = [e for e in (em.group(1).split('+') if em else []) if e]
+        emos = [EMO_FIX.get(e, e) for e in (em.group(1).split('+') if em else []) if e]
         bad = [e for e in emos if e not in EMO]
         if bad or not emos:
             warns.append(f'턴 {num}: 감정 {bad or "없음"} → neutral')

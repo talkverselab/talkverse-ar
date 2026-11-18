@@ -1,0 +1,173 @@
+{
+ "id": "r3_work_b1",
+ "region": "R3",
+ "level": 3,
+ "island": "work",
+ "kind": "long",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "손님한테 반말",
+ "emoji": "☕",
+ "scene": "{name}이 회의실에서 손님을 맞이하는데 동료로 착각하고 반말을 한다.",
+ "where": "회사 회의실",
+ "speakers": {
+  "A": "{name}",
+  "B": "المدير",
+  "C": "الضيف"
+ },
+ "gender": {
+  "A": "m",
+  "B": "m",
+  "C": "m"
+ },
+ "twist": 5,
+ "line": "انتوا بتشتغلوا في إيه؟",
+ "expressions": [
+  "حضرتك",
+  "اتفضلوا",
+  "الضيوف",
+  "القهوة"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "B",
+   "ar": "يا {name}، الضيوف وصلوا اتفضلوا",
+   "rd": "야 {name}, 엣듀프 와살루 잇파달루",
+   "ko": "{name}, 손님들 도착했어 어서 들어와",
+   "note": "الضيوف = 손님들",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 2,
+   "speaker": "A",
+   "ar": "أهلا يا جماعة، القهوة جاهزة",
+   "rd": "아흘란 야 가마아, 엘아흐와 자흐자",
+   "ko": "안녕 얘들아, 커피 준비됐어",
+   "note": "القهوة = 커피",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 3,
+   "speaker": "C",
+   "ar": "شكرا، اتفضلوا انتوا كمان",
+   "rd": "슈크란, 잇파달루 엔투 카만",
+   "ko": "고마워요, 당신들도 앉으세요",
+   "note": "emotion=polite",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 4,
+   "speaker": "A",
+   "ar": "انتوا بتشتغلوا في إيه هنا؟",
+   "rd": "엔투 비티슈타글루 피 에이 헤나?",
+   "ko": "너희 여기서 무슨 일 해?",
+   "note": "انتوا = 너희",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 5,
+   "speaker": "B",
+   "ar": "{name}، دول الضيوف مش زملاء",
+   "rd": "{name}, 돌 엣듀프 미시 주말라아",
+   "ko": "{name}, 손님들이야 동료 아니야",
+   "note": "emotion=annoyed",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "annoyed",
+   "ar_f": "{name}، دول الضيوف مش زملاء",
+   "rd_f": "{name}, 돌 엣듀프 미시 주말라아"
+  },
+  {
+   "num": 6,
+   "speaker": "A",
+   "ar": "معلش يا أستاذ، حضرتكم عايزين قهوة؟",
+   "rd": "마알리시 야 우스타즈, 하드레트쿰 아에이진 아흐와?",
+   "ko": "미안해요 선생님, 커피 드시겠어요?",
+   "note": "حضرتكم = 당신들",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "flustered"
+  },
+  {
+   "num": 7,
+   "speaker": "C",
+   "ar": "أيوة لو سمحتوا",
+   "rd": "아이와 로 사마흐투",
+   "ko": "네 부탁드려요",
+   "note": "emotion=polite",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 8,
+   "speaker": "A",
+   "ar": "اتفضلوا، أنا هجيب القهوة",
+   "rd": "잇파달루, 아나 하지브 엘아흐와",
+   "ko": "앉으세요, 제가 커피 가져올게요",
+   "note": "اتفضلوا = 앉으세요",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  },
+  {
+   "num": 9,
+   "speaker": "B",
+   "ar": "كويس، الضيوف مهمين",
+   "rd": "콰이이스, 엣듀프 무힘민",
+   "ko": "잘했어, 손님들 중요해",
+   "note": "emotion=gentle",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "gentle"
+  },
+  {
+   "num": 10,
+   "speaker": "C",
+   "ar": "القهوة حلوة، شكرا",
+   "rd": "엘아흐와 헬와, 슈크란",
+   "ko": "커피 맛있네요, 고마워요",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 11,
+   "speaker": "A",
+   "ar": "العفو، اتفضلوا براحتكم",
+   "rd": "엘아프우, 잇파달루 비라흐트쿰",
+   "ko": "천만에요, 편하게 계세요",
+   "note": "emotion=polite",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": []
+ }
+}

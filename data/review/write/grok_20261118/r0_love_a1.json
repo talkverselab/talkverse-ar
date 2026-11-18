@@ -1,0 +1,111 @@
+{
+ "id": "r0_love_a1",
+ "region": "R0",
+ "level": 0,
+ "island": "love",
+ "kind": "short",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "지하철에서 떨어진 건 내 거 아니야",
+ "emoji": "📱",
+ "scene": "지하철에서 옆 사람 마리암이 「이거 당신 거예요?」라고 묻는다. 학습자는 {name}. 떨어진 건 A의 휴대폰이 아니라 마리암 것.",
+ "where": "지하철",
+ "speakers": {
+  "A": "{name}",
+  "B": "مريم"
+ },
+ "gender": {
+  "A": "m",
+  "B": "f"
+ },
+ "twist": 5,
+ "line": "ده بتاعك؟",
+ "expressions": [
+  "ده",
+  "بتاعك",
+  "لا",
+  "اسمك"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "B",
+   "ar": "ده بتاعك؟",
+   "rd": "다 비타악?",
+   "ko": "이거 당신 거예요?",
+   "note": "ده = 이거",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "polite",
+   "ar_f": "ده بتاعكِ؟",
+   "rd_f": "다 비타아키?"
+  },
+  {
+   "num": 2,
+   "speaker": "A",
+   "ar": "لا.",
+   "rd": "라.",
+   "ko": "아니요.",
+   "note": "لا = 아니요",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 3,
+   "speaker": "B",
+   "ar": "مش بتاعك؟",
+   "rd": "미시 비타악?",
+   "ko": "당신 거 아니에요?",
+   "note": "بتاعك = 당신 거",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 4,
+   "speaker": "A",
+   "ar": "لا.",
+   "rd": "라.",
+   "ko": "아니요.",
+   "note": "لا = 아니요",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 5,
+   "speaker": "B",
+   "ar": "بتاعي. اسمك إيه؟",
+   "rd": "비타아이. 이스먹 에?",
+   "ko": "내 거예요. 이름이 뭐예요?",
+   "note": "اسمك = 이름",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "amused"
+  },
+  {
+   "num": 6,
+   "speaker": "A",
+   "ar": "{name}. وانتِ؟",
+   "rd": "{name}. 와인티?",
+   "ko": "{name}. 너는?",
+   "note": "وانتِ = 너는",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": []
+ }
+}

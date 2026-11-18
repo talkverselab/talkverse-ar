@@ -1,0 +1,226 @@
+{
+ "id": "r4_love_b1",
+ "region": "R4",
+ "level": 4,
+ "island": "love",
+ "kind": "long",
+ "draft": true,
+ "variety": "ar_EG",
+ "title": "오늘은 몇 시예요?",
+ "emoji": "⏰",
+ "scene": "다음 날 저녁 카림의 아흐와에서 {name}이 어제 마리암을 두 시간 기다렸던 일을 이야기하는데 시간이 안 맞았던 이유가 밝혀진다.",
+ "where": "카림의 아흐와",
+ "speakers": {
+  "A": "{name}",
+  "B": "مريم"
+ },
+ "gender": {
+  "A": "m",
+  "B": "f"
+ },
+ "twist": 10,
+ "line": "النهاردة الساعة كام؟",
+ "expressions": [
+  "ازاي",
+  "طب",
+  "يمكن",
+  "ماله؟",
+  "و؟",
+  "الساعة كام؟",
+  "لو",
+  "اللي",
+  "قال إن"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "ar": "امبارح استنيك ساعتين",
+   "rd": "임바레흐 이스탄네이트 사아테인",
+   "ko": "어제 두 시간이나 기다렸어",
+   "note": "emotion=annoyed",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "annoyed"
+  },
+  {
+   "num": 2,
+   "speaker": "B",
+   "ar": "ازاي؟ أنا جيت",
+   "rd": "이자이? 아나 게이트",
+   "ko": "어떻게? 나 왔었는데",
+   "note": "ازاي = 어떻게",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 3,
+   "speaker": "A",
+   "ar": "طب كريم قال إنك ما جتيش",
+   "rd": "탑 카림 알 인닉 마 게티시",
+   "ko": "근데 카림이 네가 안 왔대",
+   "note": "قال إن = ~라고 했어",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "worried"
+  },
+  {
+   "num": 4,
+   "speaker": "B",
+   "ar": "قال إن إيه؟ أنا وصلت",
+   "rd": "알 인 에이? 아나 와살트",
+   "ko": "뭐라고 했는데? 나 도착했어",
+   "note": "emotion=confused",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "flustered"
+  },
+  {
+   "num": 5,
+   "speaker": "A",
+   "ar": "يمكن اتأخرتي",
+   "rd": "임킨 이타하르티",
+   "ko": "아마 늦었던 거 아냐",
+   "note": "يمكن = 아마",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 6,
+   "speaker": "B",
+   "ar": "لأ، وانت ماله؟ رحت امتى؟",
+   "rd": "라아, 웬타 말루? 로흐트 임타?",
+   "ko": "아니, 너는 왜? 몇 시에 갔어?",
+   "note": "ماله؟ = 왜 그래?",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 7,
+   "speaker": "A",
+   "ar": "أنا رحت الساعة تمانية",
+   "rd": "아나 로흐트 엣사아 타마냐",
+   "ko": "나 8시에 갔어",
+   "note": "emotion=neutral",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 8,
+   "speaker": "B",
+   "ar": "وأنا جيت الساعة تمانية وعشرة",
+   "rd": "와아나 게이트 엣사아 타마냐 와아샤라",
+   "ko": "나는 8시 10분에 왔어",
+   "note": "emotion=surprised",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 9,
+   "speaker": "A",
+   "ar": "يعني اللي حصل إننا اتفرقنا بعشر دقايق",
+   "rd": "야아니 엘리 하살 인나 이타파르크나 비아쉬르 다카이크",
+   "ko": "그러니까 우리가 10분 차이로 错过한 거야",
+   "note": "اللي = ~한 것",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "amused"
+  },
+  {
+   "num": 10,
+   "speaker": "B",
+   "ar": "لو كنت استنيت شوية كنت لقيتني",
+   "rd": "로 쿤트 이스탄네이트 슈와야 쿤트 라케이트니",
+   "ko": "조금만 더 기다렸으면 나를 만났을 텐데",
+   "note": "لو = 만약",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "teasing",
+   "ar_f": "لو كنتي استنتي شوية كنتي لقيتيني",
+   "rd_f": "로 쿤티 이스탄네티 슈와야 쿤티 라케이티니"
+  },
+  {
+   "num": 11,
+   "speaker": "A",
+   "ar": "و؟ النهاردة هنعمل إيه؟",
+   "rd": "와? 엔나하르다 하나말 에이?",
+   "ko": "그래서? 오늘은 어떻게 할 거야?",
+   "note": "و؟ = 그래서?",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "neutral"
+  },
+  {
+   "num": 12,
+   "speaker": "B",
+   "ar": "النهاردة الساعة كام؟",
+   "rd": "엔나하르다 엣사아 캄?",
+   "ko": "오늘은 몇 시야?",
+   "note": "الساعة كام؟ = 몇 시야?",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "teasing"
+  },
+  {
+   "num": 13,
+   "speaker": "A",
+   "ar": "قوليلي الوقت المرة دي",
+   "rd": "울릴리 엘와크트 엘마르라 디",
+   "ko": "이번엔 시간을 말해 줘",
+   "note": "emotion=amused",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "amused"
+  },
+  {
+   "num": 14,
+   "speaker": "B",
+   "ar": "الساعة تسعة، ولو اتأخرت استنى",
+   "rd": "엣사아 티사아, 와로 이타하르트 이스탄나",
+   "ko": "9시, 그리고 늦으면 기다려",
+   "note": "emotion=gentle",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "gentle"
+  },
+  {
+   "num": 15,
+   "speaker": "A",
+   "ar": "ماشي، المرة دي مش هروح بدري",
+   "rd": "마시, 엘마르라 디 미시 하루흐 바드리",
+   "ko": "알겠어, 이번엔 일찍 안 갈게",
+   "note": "emotion=cheerful",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  }
+ ],
+ "review": {
+  "stage": "grok-write",
+  "date": "2026-11-18",
+  "by": "Grok 빠른(대사 전부) · Claude 초안(상황·인물·반전·낱말)만",
+  "warn": [
+   "턴 11: 감정 ['hopeful'] → neutral"
+  ]
+ }
+}
