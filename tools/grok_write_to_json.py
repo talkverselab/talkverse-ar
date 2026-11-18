@@ -55,7 +55,7 @@ def convert(eid):
                 if s:
                     t['segs_f'] = s
             continue
-        if len(cols) < 4 or not re.match(r'^[A-D](@[\d:]+)?$', cols[0]):
+        if len(cols) < 4 or not re.match(r'^[A-E](@[\d:]+)?$', cols[0]):
             continue
         sp, at = (cols[0].split('@') + [None])[:2]
         num = len(turns) + 1
