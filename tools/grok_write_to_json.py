@@ -83,8 +83,9 @@ def convert(eid):
             continue
         sp, at = (cols[0].split('@') + [None])[:2]
         num = len(turns) + 1
+        # 메모를 빼먹어 emotion 이 메모 칸으로 밀려 온 줄은 메모 없음(uk 11-19)
         t = {'num': num, 'speaker': sp, 'ar': cols[1], 'rd': fix_rd(cols[2]), 'ko': cols[3],
-             'note': cols[4].strip('"“”') if len(cols) > 4 else '', 'tags': [], 'new': [], 'lemmas': []}
+             'note': cols[4].strip('"“”') if len(cols) > 4 and not cols[4].startswith('emotion=') else '', 'tags': [], 'new': [], 'lemmas': []}
         if at:
             t['ui'], t['at'] = 'bubble', at
         em = re.search(r'emotion=([\w+]+)', ln)
