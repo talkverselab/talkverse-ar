@@ -1,5 +1,5 @@
 #!/bin/zsh
-# 회화 Grok 재작성 회차(PC 크롬 9248, 전문가 모드). 방 하나에 N편 — 첫 메시지만 규칙 첨부, 이후 파일 이름 한 줄.
+# 회화 Grok 재작성 회차(PC 크롬 9248, 빠른 모드). 방 하나에 N편 — 첫 메시지만 규칙 첨부, 이후 파일 이름 한 줄.
 #   zsh tools/grok_rewrite_run.sh <편id>...      결과 data/review/grok/out/<id>.md, 로그 data/review/grok/run.log
 cd "$(dirname "$0")/.."
 export GROK_CDP_PORT=9248
