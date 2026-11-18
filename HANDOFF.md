@@ -13,6 +13,17 @@ _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 �
 | 로그인·결제 | Talkverse ID(client `ar`, 통합 앱 안에서는 `talkverse`) · 상품 `lang_ar_1m·3m·1y·life`·`all_1y`·`all_life`(가격 `~/talkverse/PRICING.md`, 정가 취소선·30%), 옛 `lang_ar`·`com.talkverse.arabicUniverse.lifetime` 은 복원 때 `lang_ar_life`. **잠근 콘텐츠 없음**(무료/유료 구간은 사용자 결정). 스토어 등록은 사용자 — `app/docs/STORE_PRODUCTS.md` |
 | 통합 앱 | 패키지 `arabic_universe`(`lib/embed.dart` embedInit/embedApp, `core/embed_env.dart` 에셋 `packages/arabic_universe/`, `core/prefs.dart` 저장 이름 `ar_` 접두 — 단독 앱은 첫 실행 때 옛 키·DB(`arabic_universe.sqlite` → `ar_arabic_universe`)를 한 번 옮김), 콜백 `talkverse.ar://auth`. 통합 앱 쪽 연결은 uk 몫(2026-11-09 알림 보냄) |
 
+## 2026-11-18 iOS 심사 준비(통합 앱) — 일본어앱 수준 맞추기
+- 지시(일본어앱 전달 `~/talkverse/ja/docs/RELAY_2026-11-18_ja_parity.md`): 회화 원고 서버 받기 + 회화 30%(급마다) + 단어 그림은 공용 DB + 장면 컷 10장이면 심사 준비 끝.
+- **원고 서버 받기 완료**(`cfc5bf6`): `lib/services/script_sync.dart`(켤 때마다 `embedInit` 에서 15초까지), 회화 읽기 = `ScriptSync.load`, 기준표 `assets/data/script_rev.json`. 서버 R2 `script/ar/` rev 1(index + 7편, `https://auth.talkverse.uk/art/script/ar/index.json`). 원고를 고치면 `cd app && python3 tools/script_publish.py --publish` 후 `script_rev.json` 커밋. 편 id·턴 번호 잠금 `app/data/review/turn_lock_ar.json`(`tools/turn_lock.py`).
+- 장면 설명의 A/{name} → 이름(`Dialogue.sceneShown`, 일본어앱 111).
+- CI: 새 Flutter stable 이 Gradle 9.3 을 요구 → `release.yml` Flutter 3.47.7 고정(`ccdb8c0`). Android 빌드 **23** https://apps.talkverse.uk/yCwOQ/504 (빌드 20 은 옛 코드였음 — 무시).
+- **회화 58편 = 대사는 전부 Grok**(사용자 「무조건 그록으로 쓴걸로 해야해 클로드가 쓴건 지문이 남아」, uk 원칙 「Claude 는 초안까지」). 사용자 선택: 65편(R0 12·R1 18·R2 14·R3 10·R4 6·R5 5) · Grok 빠른 · 장면 컷 10장은 이 세션이 Grok 으로.
+  - 초안+규칙 `tools/prompts/write_grok_ar.md`(편 58줄 = 상황·인물·반전·낱말), 돌리기 `zsh tools/grok_write_run.sh <id>...`(→ `data/review/grok/write/<id>.md`), 변환 `python3 tools/grok_write_to_json.py`(→ `data/review/write/grok_20261118/`, 대사 손대지 않음). 그 뒤 리뷰 페이지 → 사용자 통과 → `sync_dialogues.py` → `script_publish.py --publish`(새 빌드 불필요).
+  - **Grok 은 uk 순서 11번 — uk 가 「ar 시작」을 보낼 때까지 멈춤.** PC 크롬 9248 은 켜 둠(로그인 쿠키 동기화·빠른 모드 확인 완료).
+  - 이미 나간 7편은 대부분 Claude 문장 — uk 에 신고, 다시 쓸지는 사용자 결정 대기.
+- 남은 일(일본어앱 §2): 언어감각 과정(영상 → 외울 대화+참고) · 외국어 단어 3단계·퀴즈(아랍어엔 외래어 표기 체계가 없어 단어 복습 퀴즈로만) — 회화 다음.
+
 ## 2026-11-10 세션 종료(허브 정리 지시 — M6 디스크 꽉 참)
 - 마지막 커밋 `9c45e02`(Grok 3분 상한). 진행 중 작업·루프·예약 작업 없음, PC 크롬 9248 Grok 탭 닫음(크롬도 같이 꺼짐 — 다시 쓸 때 PC 예약 작업 `Grok-Chrome-ar-9248`).
 - DB 업로드 확인(uk 전달 사용자 지시): ar 은 새로 올릴 것 0 — `art_words` ar 2,554 는 이미 있음, 음성·장면 컷은 아직 안 만듦, 회화 JSON 은 앱 에셋+저장소가 정본(uk 확인).
