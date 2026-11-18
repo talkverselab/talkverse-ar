@@ -118,6 +118,10 @@ class Dialogue {
     this.art,
   });
 
+  /// 화면에 보일 장면 설명 — 원고의 「A」(학습자)와 `{name}` 을 이름(없으면 「나」)으로(일본어앱 빌드 111).
+  String get sceneShown => scene
+      .replaceAll('{name}', speakerName('A'))
+      .replaceAllMapped(RegExp(r'(?<![A-Za-z])A(?![A-Za-z]) ?(?=[가-힣])'), (_) => speakerName('A'));
   /// 화자 표시 이름. `{name}` 자리는 학습자 이름(없으면 「나」).
   String speakerName(String sp) {
     final raw = speakers[sp] ?? sp;
