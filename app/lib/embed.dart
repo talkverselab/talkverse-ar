@@ -1,3 +1,4 @@
+import 'services/script_sync.dart';
 import 'package:flutter/material.dart';
 
 import 'core/embed_env.dart';
@@ -45,6 +46,11 @@ Future<void> embedInit({bool standalone = false}) async {
   Purchase.ownStream = standalone;
   // 이용권 가격표(lang_ar_1m·3m·1y·life·all_1y·all_life, 2026-11-09 확정) = data/entitlement.dart(기다리지 않음)
   Entitlement.configure();
+  // 회화 원고는 켤 때마다 무조건 서버 판을 확인해 받는다 — 그림·음성 내려받기와 따로(일본어앱 빌드 113·114 와 같음).
+  // 느린 망에서는 startupWait 까지만 기다리고 앱을 연다(받기는 뒤에서 이어지고, 끝나면 회화 목록을 다시 읽는다).
+  try {
+    await ScriptSync.instance.refresh().timeout(ScriptSync.startupWait);
+  } catch (_) {}
   // 그림(장면 컷·단어 그림) 기기 내려받기: 버전이 다르면 로딩 화면에서 받고 시작(사용자 지시 2026-11-04)
   final v = WidgetsBinding.instance.platformDispatcher.views.first;
   final wide = v.physicalSize.shortestSide / v.devicePixelRatio >= 600;

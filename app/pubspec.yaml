@@ -60,6 +60,7 @@ flutter:
   assets:
     - assets/data/audio_manifest.json
     - assets/data/version.json
+    - assets/data/script_rev.json
     - assets/data/dialogues/
     - assets/data/dialogues/R0/friends/
     - assets/data/dialogues/R1/life/

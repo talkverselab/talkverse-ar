@@ -1,7 +1,9 @@
 import '../core/embed_env.dart';
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart' show ValueNotifier;
 import 'package:flutter/services.dart' show AssetManifest, rootBundle;
+import 'script_sync.dart';
 import '../core/prefs.dart';
 
 import 'learner_prefs.dart';
@@ -173,30 +175,56 @@ class DialogueService {
   /// 여러 화면이 동시에 불러도 한 번만 읽는다(넓은 화면에서 탭이 함께 떠 목록이 두 번 차는 문제).
   Future<void> ensureLoaded() => _loading ??= _load();
 
+  /// 원고가 서버 판으로 바뀌어 다시 읽힐 때마다 오른다.
+  final ValueNotifier<int> revision = ValueNotifier(0);
+
   Future<void> _load() async {
     _lastOpened = (await Prefs.getInstance()).getString(_prefLast);
+    await _readAll();
+    // 서버에 더 새 원고가 있으면 뒤에서 받아 다시 읽는다(없거나 실패하면 그대로) — ~/talkverse/ja/docs/CONTENT_SYNC.md §6
+    ScriptSync.instance.refresh().then((changed) async {
+      if (!changed) return;
+      await _readAll();
+      revision.value++;
+    });
+  }
+
+  /// 앱 안 편 + 서버에서 받은 새 편. 각 파일은 덮어쓴 판이 있으면 그것([ScriptSync]). 서버 목록에서 빠진 편은 숨긴다.
+  Future<void> _readAll() async {
+    final next = <Dialogue>[];
     try {
+      final sync = ScriptSync.instance;
+      await sync.init();
       final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
-      final re = RegExp(r'assets/data/dialogues/R[0-9]/[^/]+/[^/]+\.json$');
-      final paths = manifest.listAssets().where(re.hasMatch).toList()..sort();
-      for (final p in paths) {
-        final m = json.decode(await rootBundle.loadString(p)) as Map<String, dynamic>;
-        final turns = ((m['turns'] as List?) ?? const []).map((t) => DialogueTurn.fromJson(t as Map<String, dynamic>)).toList();
-        if (turns.isEmpty) continue;
-        _all.add(Dialogue(
-          id: m['id'] as String,
-          region: m['region'] as String? ?? 'R${m['level'] ?? 1}',
-          island: m['island'] as String? ?? 'life',
-          title: m['title'] as String? ?? m['id'] as String,
-          emoji: m['emoji'] as String? ?? '💬',
-          scene: m['scene'] as String? ?? '',
-          speakers: (m['speakers'] as Map? ?? const {}).map((k, v) => MapEntry('$k', '$v')),
-          genders: (m['gender'] as Map? ?? const {}).map((k, v) => MapEntry('$k', '$v')),
-          expressions: ((m['expressions'] as List?) ?? const []).map((e) => '$e').toList(),
-          turns: turns,
-        ));
+      final pat = RegExp(r'^assets/data/dialogues/R[0-9]/[^/]+/[^/]+\.json$');
+      // 통합 앱이면 매니페스트 키에 packages/arabic_universe/ 가 붙어 있다 — 접두를 떼고 견준다
+      final rels = <String>{
+        for (final p in manifest.listAssets().map(stripAssetPrefix).where(pat.hasMatch)) p.substring('assets/data/'.length),
+        ...sync.added.where((p) => pat.hasMatch('assets/data/$p')),
+      }..removeAll(sync.removed);
+      for (final rel in rels.toList()..sort()) {
+        try {
+          final m = json.decode(await sync.load(rel)) as Map<String, dynamic>;
+          final turns = ((m['turns'] as List?) ?? const []).map((t) => DialogueTurn.fromJson(t as Map<String, dynamic>)).toList();
+          if (turns.isEmpty) continue;
+          next.add(Dialogue(
+            id: m['id'] as String,
+            region: m['region'] as String? ?? 'R${m['level'] ?? 1}',
+            island: m['island'] as String? ?? 'life',
+            title: m['title'] as String? ?? m['id'] as String,
+            emoji: m['emoji'] as String? ?? '💬',
+            scene: m['scene'] as String? ?? '',
+            speakers: (m['speakers'] as Map? ?? const {}).map((k, v) => MapEntry('$k', '$v')),
+            genders: (m['gender'] as Map? ?? const {}).map((k, v) => MapEntry('$k', '$v')),
+            expressions: ((m['expressions'] as List?) ?? const []).map((e) => '$e').toList(),
+            turns: turns,
+          ));
+        } catch (_) {}
       }
     } catch (_) {}
+    _all
+      ..clear()
+      ..addAll(next);
     if (_all.isNotEmpty) return;
     try {
       final j = json.decode(await rootBundle.loadString(assetPath('assets/data/dialogues/L1.json'))) as Map<String, dynamic>;
