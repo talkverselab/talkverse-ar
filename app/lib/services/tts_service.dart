@@ -54,7 +54,7 @@ class TtsService {
         if (v is! Map) continue;
         final name = (v['name'] ?? '').toString();
         final vLocale = (v['locale'] ?? '').toString();
-        if (!vLocale.toLowerCase().startsWith('de')) continue;
+        if (!vLocale.toLowerCase().startsWith('ar')) continue; // 2026-11-22: 템플릿(de) 잔재 — 아랍어 남/여 음성을 찾게
         final lower = name.toLowerCase();
         final voice = {'name': name, 'locale': vLocale};
         // 안드로이드는 이름에 male/female 이 들어 있고, iOS 는 gender 필드로 준다.
