@@ -1,0 +1,124 @@
+{
+ "id": "r0_friends_a3",
+ "region": "R0",
+ "level": 0,
+ "island": "friends",
+ "kind": "short",
+ "variety": "ar_EG",
+ "title": "헬멧 때문에 못 알아본 유세프",
+ "emoji": "🏍️",
+ "scene": "오토바이 헬멧을 쓰고 온 유세프가 인사한다. 학습자는 {name}. 헬멧 때문에 못 알아본다.",
+ "where": "거리",
+ "speakers": {
+  "A": "{name}",
+  "B": "يوسف"
+ },
+ "gender": {
+  "A": "m",
+  "B": "m"
+ },
+ "twist": 2,
+ "line": "مين؟",
+ "expressions": [
+  "مين",
+  "أنا",
+  "يا عم",
+  "أهلا"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "B",
+   "ar": "أهلا!",
+   "rd": "아흘라!",
+   "ko": "안녕!",
+   "note": "أهلا = 안녕",
+   "tags": [],
+   "new": [],
+   "lemmas": [
+    [
+     "أهلا",
+     "اهلا",
+     ""
+    ]
+   ],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 2,
+   "speaker": "A",
+   "ar": "مين؟",
+   "rd": "민?",
+   "ko": "누구?",
+   "note": "مين = 누구",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 3,
+   "speaker": "B",
+   "ar": "أنا يوسف.",
+   "rd": "아나 유세프.",
+   "ko": "나 유세프야.",
+   "note": "أنا = 나",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "amused"
+  },
+  {
+   "num": 4,
+   "speaker": "A",
+   "ar": "يا عم؟",
+   "rd": "야 암?",
+   "ko": "아저씨?",
+   "note": "يا عم = 아저씨",
+   "tags": [],
+   "new": [],
+   "lemmas": [
+    [
+     "عم",
+     "عم",
+     ""
+    ]
+   ],
+   "emotion": "neutral"
+  },
+  {
+   "num": 5,
+   "speaker": "B",
+   "ar": "لأ، يوسف.",
+   "rd": "라, 유세프.",
+   "ko": "아니, 유세프.",
+   "note": "يوسف = 유세프",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "teasing"
+  },
+  {
+   "num": 6,
+   "speaker": "A",
+   "ar": "أهلا!",
+   "rd": "아흘라!",
+   "ko": "안녕!",
+   "note": "أهلا = 안녕",
+   "tags": [],
+   "new": [],
+   "lemmas": [
+    [
+     "أهلا",
+     "اهلا",
+     ""
+    ]
+   ],
+   "emotion": "cheerful"
+  }
+ ],
+ "approved": {
+  "date": "2026-11-22",
+  "by": "user(uk 전달: 사용자 리뷰 - 그냥 진행)"
+ }
+}

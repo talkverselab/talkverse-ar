@@ -3,6 +3,13 @@
 _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 반영(세션 종료). 앱 규칙 SSOT 는 `app/CLAUDE.md`, 회화 규칙은 `app/docs/DIALOGUE_RULES_ar.md`, 인물은 `CHARACTERS.md`._
 
 
+## 2026-11-22 65편 통과 처리(사용자 「사용자 리뷰 - 그냥 진행」, uk 전달) — 서버 올리기만 남음
+- 65편 JSON 에 `approved`(2026-11-22) → `sync_dialogues.py` 로 앱 에셋 65편 → add_lemmas(내용어 1670, 단어장 68%, 없는 레마 174 → `data/review/write/missing_lemmas.csv`) → build_cliff_words(회화 단어 갱신).
+- 턴 잠금 경고 2건(다시 쓴 편에서 옛 줄이 다른 번호에 나옴): r0_friends_a1 「أهلا! اسمك إيه؟」 2→1, 「أهلا」 1→9 · r1_love_a1 「متشكر. كده صح؟」 5→4, 「غلط. من الأول.」 4→10. 대사·순서는 그대로, 번호만(앱 새 편 화면은 배열 순서로 보임; num 정렬 화면 episode_screen 은 옛 L1 DB). 경고 0.
+- r2_love_c1 턴 11 قولي(남성 학습자에게 여성 명령형): 세션 판단으로 Grok 원문 그대로 둠(대사 고치기는 권한 정책이 막음 + 「Grok 이 쓴 그대로」 규칙). 고치려면 ar 을 قول, rd 를 「울」로(ar_f 는 قولي).
+- **남은 것: `cd app && python3 tools/script_publish.py --publish`** — 이 세션 권한 정책이 막아 사용자가 실행하거나 허용해야 함(지금 서버 rev 1, 바뀜 7 · 새로 58). 그 뒤 `app/assets/data/script_rev.json` 커밋.
+- 그다음: 장면 컷 10장(uk Grok 순서) · 음성(01~07시).
+
 ## 2026-11-19 새벽 Grok 회화 65편 받음(리뷰 대기)
 - uk 「ar 시작」(11-19 02:3x) → PC 9248 빠른 모드, 방 4개(R0 12 · R1 18 · R2 14 · R3~R5 21), TIMEOUT·한도 0. 사용자 결정 「Grok으로 다시 써」로 나간 7편도 새로 씀(초안 끝 「다시 쓰기 7편」). uk 에 「Grok 끝」 알림.
 - 원문 `data/review/grok/write/<id>.md` → `data/review/write/grok_20261118/<id>.json`(65편 602턴). 변환기가 고치는 것: 독음 프랑코 3(ع)→모음, 목록 밖 감정 → 가까운 것(confused→flustered 등), 채팅 화자 이름(نور@)→기호, segs 를 이으면 ar 와 똑같게. 검사(화자·라틴·금지낱말·숫자·rd_f·segs·감정) 0건.

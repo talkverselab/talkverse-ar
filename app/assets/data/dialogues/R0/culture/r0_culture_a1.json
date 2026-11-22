@@ -1,0 +1,113 @@
+{
+ "id": "r0_culture_a1",
+ "region": "R0",
+ "level": 0,
+ "island": "culture",
+ "kind": "short",
+ "variety": "ar_EG",
+ "title": "축하 한마디 했다가 춤판에 끌려간 골목",
+ "emoji": "💃",
+ "scene": "결혼식 골목 잔치에 우연히 지나가는 {name}. 「축하해요」 한마디 했다가 춤추는 자리로 끌려간다.",
+ "where": "골목",
+ "speakers": {
+  "A": "{name}",
+  "B": "أحمد"
+ },
+ "gender": {
+  "A": "m",
+  "B": "m"
+ },
+ "twist": 2,
+ "line": "مبروك!",
+ "expressions": [
+  "مبروك",
+  "تعالى",
+  "يلا",
+  "لا لا"
+ ],
+ "turns": [
+  {
+   "num": 1,
+   "speaker": "A",
+   "ar": "مبروك!",
+   "rd": "마브룩!",
+   "ko": "축하해요!",
+   "note": "مبروك = 축하",
+   "tags": [],
+   "new": [],
+   "lemmas": [
+    [
+     "مبروك",
+     "مبروك",
+     ""
+    ]
+   ],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 2,
+   "speaker": "B",
+   "ar": "شكرا. تعالى.",
+   "rd": "슈크란. 타알라.",
+   "ko": "고마워요. 와.",
+   "note": "تعالى = 와",
+   "tags": [],
+   "new": [],
+   "lemmas": [
+    [
+     "شكرا",
+     "شكرا",
+     ""
+    ],
+    [
+     "تعالى",
+     "تعالى",
+     ""
+    ]
+   ],
+   "emotion": "excited",
+   "ar_f": "شكرا. تعالي.",
+   "rd_f": "슈크란. 타알리."
+  },
+  {
+   "num": 3,
+   "speaker": "A",
+   "ar": "لا.",
+   "rd": "라.",
+   "ko": "아니요.",
+   "note": "لا = 아니요",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "surprised"
+  },
+  {
+   "num": 4,
+   "speaker": "B",
+   "ar": "يلا!",
+   "rd": "얄라!",
+   "ko": "자!",
+   "note": "يلا = 자",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "cheerful"
+  },
+  {
+   "num": 5,
+   "speaker": "A",
+   "ar": "لا لا!",
+   "rd": "라 라!",
+   "ko": "아니 아니!",
+   "note": "لا لا = 아니 아니",
+   "tags": [],
+   "new": [],
+   "lemmas": [],
+   "emotion": "flustered"
+  }
+ ],
+ "approved": {
+  "date": "2026-11-22",
+  "by": "user(uk 전달: 사용자 리뷰 - 그냥 진행)"
+ }
+}
