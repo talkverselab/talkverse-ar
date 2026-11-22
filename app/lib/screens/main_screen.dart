@@ -7,6 +7,7 @@ import '../embed.dart';
 import '../widgets/spanish_decor.dart';
 import 'chunk_search_screen.dart';
 import 'curriculum_screen.dart';
+import 'sense_course_screen.dart';
 import 'custom_script_screen.dart';
 import 'about_screen.dart';
 import 'letter_chart_screen.dart';
@@ -384,6 +385,10 @@ class _MenuSections extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sections = <(String, List<_MenuItem>)>[
+      (tr('정규과정'), [
+        _MenuItem(label: tr('언어감각 익히기'), sub: 'حس اللغة', badge: 'L', color: AppColors.ai, // 일본어앱 정규과정 꼴(2026-11-22, Claude 원고)
+          builder: (_) => const SenseCourseScreen()),
+      ]),
       (tr('기초'), [
         _MenuItem(label: tr('글자와 발음'), sub: tr('28자 · 소리 · 입 모양'), badge: 'أ', color: AppColors.beniDeep,
           builder: (_) => const LetterChartScreen()),

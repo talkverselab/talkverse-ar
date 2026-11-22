@@ -4,6 +4,15 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 const Map<String, String> kDictEn = {
+  // 언어감각 익히기(2026-11-22)
+  '언어감각 익히기': 'Language feel',
+  '정규과정': 'Core course',
+  '마침 · 다음 회': 'Done · next lesson',
+  '한국어와 다른 곳만 잠깐': 'Only where it differs from Korean',
+  '{0}/{1}회 마침': '{0}/{1} lessons done',
+  '{0}회': 'Lesson {0}',
+  '마침': 'Done',
+  '대화를 통째로 외워요. 규칙은 참고에만 있어요.': 'Memorise the whole dialogue. Rules are only in the reference.',
   '다른 언어 배우기': 'Learn another language',
   'Talkverse 의 다른 언어로 이동': 'Switch to another Talkverse language',
   // 이용권·결제(2026-11-09 가격 확정)
@@ -375,6 +384,15 @@ const Map<String, String> kDictEn = {
 };
 
 const Map<String, String> kDictJa = {
+  // 언어감각 익히기(2026-11-22)
+  '언어감각 익히기': '言語感覚を身につける',
+  '정규과정': '正規コース',
+  '마침 · 다음 회': '完了 · 次の回',
+  '한국어와 다른 곳만 잠깐': '韓国語と違うところだけ',
+  '{0}/{1}회 마침': '{0}/{1}回 完了',
+  '{0}회': '第{0}回',
+  '마침': '完了',
+  '대화를 통째로 외워요. 규칙은 참고에만 있어요.': '会話を丸ごと覚えます。規則は参考にだけあります。',
   '다른 언어 배우기': '他の言語を学ぶ',
   'Talkverse 의 다른 언어로 이동': 'Talkverse の他の言語へ',
   // 이용권·결제(2026-11-09 가격 확정)
@@ -735,6 +753,15 @@ const Map<String, String> kDictJa = {
 };
 
 const Map<String, String> kDictZh = {
+  // 언어감각 익히기(2026-11-22)
+  '언어감각 익히기': '培养语感',
+  '정규과정': '正式课程',
+  '마침 · 다음 회': '完成 · 下一课',
+  '한국어와 다른 곳만 잠깐': '只讲和韩语不同的地方',
+  '{0}/{1}회 마침': '已完成 {0}/{1} 课',
+  '{0}회': '第{0}课',
+  '마침': '完成',
+  '대화를 통째로 외워요. 규칙은 참고에만 있어요.': '整段背下会话。规则只在参考里。',
   '다른 언어 배우기': '学习其他语言',
   'Talkverse 의 다른 언어로 이동': '切换到 Talkverse 的其他语言',
   // 이용권·결제(2026-11-09 가격 확정)
