@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """원고를 서버에 올려 깔린 앱이 심사·새 빌드 없이 받게 한다(사용자 지시 2026-11-17). 규격 = ~/talkverse/ja/docs/CONTENT_SYNC.md §6.
 
-대상: 회화 편 `assets/data/dialogues/R0~R5/**.json`.
+대상: 회화 편 `assets/data/dialogues/R0~R5/**.json` + 문법 `assets/data/grammar/lesson*.json`·`sense_course.json`(2026-11-23 사용자 「문법도 DB 업데이트로」).
+문법 스텝 개수는 정해 두지 않음 — `grammar/lessonN.json` 을 더해 올리면 앱에 나타나고, 지우고 올리면(목록에서 빠짐) 숨는다. 언어감각 급은 sense_course.json 의 levels 그대로.
 앱 안 기준표 `assets/data/script_rev.json`(rev·파일별 sha1 앞 12자리)과 지금 파일을 견주어 바뀐 것만 올린다.
 
   python3 tools/script_publish.py             # 무엇이 바뀌었는지만 본다(아무것도 안 올림)
@@ -28,7 +29,8 @@ PREFIX = 'script/ar'
 
 
 def current():
-    paths = sorted(glob.glob(str(DATA / 'dialogues/R[0-5]/*/*.json')))
+    paths = sorted(glob.glob(str(DATA / 'dialogues/R[0-5]/*/*.json')) + glob.glob(str(DATA / 'grammar/lesson*.json'))
+                   + glob.glob(str(DATA / 'grammar/sense_course.json')))
     out = {}
     for p in paths:
         b = Path(p).read_bytes()

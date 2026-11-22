@@ -20,10 +20,26 @@ const _kDoneKey = 'sense_course_done';
 const _kAsset = 'assets/data/grammar/sense_course.json';
 
 class SenseCourse {
-  static Map<String, dynamic>? _cache;
-  static Future<Map<String, dynamic>> load() async =>
-      // loadString 은 큰 파일을 다른 isolate 에서 풀어 위젯 테스트가 멈춘다 — 바이트로 읽어 여기서 푼다.
-      _cache ??= json.decode(await ScriptSync.instance.load(_kAsset.substring('assets/data/'.length))) as Map<String, dynamic>;
+  /// 스텝(급) 개수·제목·순서·문장은 전부 데이터 — 서버 원고가 있으면 그것(사용자 지시 2026-11-23 「늘어날 수도 줄어들 수도」). 코드에 개수를 박지 않는다.
+
+  static Future<Map<String, dynamic>> load({ScriptSync? sync}) async {
+    final raw = await (sync ?? ScriptSync.instance).tryLoad(_kAsset.substring('assets/data/'.length));
+    final d = raw == null ? <String, dynamic>{'levels': []} : json.decode(raw) as Map<String, dynamic>;
+    return {...d, 'levels': visibleLevels(d)};
+  }
+
+  /// 내용이 있는 회차만 남기고, 외울 대화·설명 회차가 하나도 없는 스텝은 뺀다(「준비 중」 칸 없음).
+  static List<Map<String, dynamic>> visibleLevels(Map<String, dynamic> d) {
+    bool filled(Map<String, dynamic> l) =>
+        l['open'] != null || ((l['sentences'] as List?)?.isNotEmpty ?? false) || ((l['points'] as List?)?.isNotEmpty ?? false);
+    final out = <Map<String, dynamic>>[];
+    for (final lv in ((d['levels'] as List?) ?? const []).whereType<Map>()) {
+      final ls = [for (final l in ((lv['lessons'] as List?) ?? const []).whereType<Map>()) Map<String, dynamic>.from(l)].where(filled).toList();
+      if (!ls.any((l) => l['kind'] != 'ref' && l['open'] == null)) continue;
+      out.add({...Map<String, dynamic>.from(lv), 'lessons': ls});
+    }
+    return out;
+  }
 
   static Future<Set<String>> done() async => ((await Prefs.getInstance()).getStringList(_kDoneKey) ?? const []).toSet();
 

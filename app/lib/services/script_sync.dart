@@ -100,6 +100,18 @@ class ScriptSync {
     return utf8.decode((await rootBundle.load(assetPath('assets/data/$rel'))).buffer.asUint8List());
   }
 
+  /// 있으면 읽고 없으면 null — 문법 스텝처럼 앱에 없을 수도 있는 파일(서버에만 새로 올린 스텝)과
+  /// 서버 목록에서 뺀 파일(스텝 숨김)을 위해. 순서: 서버에서 뺀 것 → null, 덮어쓴 것 → 그것, 앱 안 것 → 그것, 둘 다 없으면 null.
+  Future<String?> tryLoad(String rel) async {
+    await init();
+    if (_removed.contains(rel)) return null;
+    try {
+      return await load(rel);
+    } catch (_) {
+      return null;
+    }
+  }
+
   /// 서버 판을 확인하고 바뀐 파일을 받는다. 무엇이든 바뀌었으면 true(읽어 둔 원고를 다시 읽을 것).
   /// 동시에 두 번 불러도 한 번만 돈다(앱 시작 때 기다리는 호출 + 회화를 읽은 뒤의 호출).
   /// 이번 실행에서 서버 목록을 한 번 확인했으면 다시 묻지 않는다.
