@@ -3,11 +3,11 @@
 _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 반영(세션 종료). 앱 규칙 SSOT 는 `app/CLAUDE.md`, 회화 규칙은 `app/docs/DIALOGUE_RULES_ar.md`, 인물은 `CHARACTERS.md`._
 
 
-## 2026-11-22 65편 통과 처리(사용자 「사용자 리뷰 - 그냥 진행」, uk 전달) — 서버 올리기만 남음
+## 2026-11-22 65편 통과 처리(사용자 「사용자 리뷰 - 그냥 진행」, uk 전달) — 서버 rev 2·장면 컷 10장 올림
 - 65편 JSON 에 `approved`(2026-11-22) → `sync_dialogues.py` 로 앱 에셋 65편 → add_lemmas(내용어 1670, 단어장 68%, 없는 레마 174 → `data/review/write/missing_lemmas.csv`) → build_cliff_words(회화 단어 갱신).
 - 턴 잠금 경고 2건(다시 쓴 편에서 옛 줄이 다른 번호에 나옴): r0_friends_a1 「أهلا! اسمك إيه؟」 2→1, 「أهلا」 1→9 · r1_love_a1 「متشكر. كده صح؟」 5→4, 「غلط. من الأول.」 4→10. 대사·순서는 그대로, 번호만(앱 새 편 화면은 배열 순서로 보임; num 정렬 화면 episode_screen 은 옛 L1 DB). 경고 0.
 - r2_love_c1 턴 11 قولي(남성 학습자에게 여성 명령형): 세션 판단으로 Grok 원문 그대로 둠(대사 고치기는 권한 정책이 막음 + 「Grok 이 쓴 그대로」 규칙). 고치려면 ar 을 قول, rd 를 「울」로(ar_f 는 قولي).
-- **남은 것: `cd app && python3 tools/script_publish.py --publish`** — 이 세션 권한 정책이 막아 사용자가 실행하거나 허용해야 함(지금 서버 rev 1, 바뀜 7 · 새로 58). 그 뒤 `app/assets/data/script_rev.json` 커밋.
+- **서버 올림(11-22 사용자 「둘 다 올려」)**: script_publish → 서버 rev 2(65편, index.json 확인), 장면 컷 `scene_upload_ar.py` → R2·D1 10행.
 - 그다음: 장면 컷 10장(uk Grok 순서) · 음성(01~07시).
 - **장면 컷 10장 받음(11-22 16시, ru 「Grok 끝」 뒤)**: `tools/grok_scene_ar.py`(ru 도구 복사, 4편씩 한 방, 시트 chars_ar_v2 + 톤 ref/clay_389_tomodachi.png 첨부, 빠른, 3분 상한) → 원본 `~/talkverse/ar-art/scene/ar/<편>/cut1.jpg`(공개 repo 밖). 고른 10편(세션 판단, 레벨마다·장소 안 겹치게): r0_friends_a1·r0_life_a1·r0_travel_a2·r1_love_a2·r1_life_a3·r1_survival_a3·r2_love_c1·r3_friends_b1·r4_travel_b1·r5_friends_b1. 10장 눈으로 확인(글자 없음, 시트대로). 방 https://grok.com/c/eb2f6ae9-f315-414d-b308-596758e93e96. 크롬 9248·터널 닫음, uk·hi 에 「Grok 끝」. **올리기 = `/usr/bin/python3 tools/scene_upload_ar.py`(R2 scene/ar + D1 art_scenes lang=ar, 운영 쓰기 → 사용자 승인 뒤).** 앱은 컷이 하나면 모든 턴에 cut1(ArtService.sceneCut).
 - **순서 확정(uk 11-22)**: ① 장면 컷 — 그림 줄 ru → ar → hi → kk → my → pt. **러시아어앱의 「Grok 끝」= 「ar 시작」**(uk 기다리지 않음, 빠른, 크롬 하나·켜기 전 부하/스왑). 끝나면 크롬 끄고 터널 닫고 「Grok 끝」을 uk·힌디어앱에 같이. 한도 경고 → 멈추고 uk 에. ② 음성 약 700조각(2~2.5시간) — **11-26 새벽, 포르투갈어(00:01~, 4시간 30분) 「GPU 끝」 받고 3090 빈 것 확인 뒤 시작**, 06:30 이후 새 묶음 금지·06:55 까지 비움, 못 끝내면 11-27 이어서, 끝나면 「GPU 끝」을 uk 에. 참고 음성(2060)은 미리 만들어도 되지만 TTS 라 01~07시 안에서만.
