@@ -11,13 +11,15 @@ void main() {
     await rootBundle.loadString('assets/data/dialogues/R0/friends/r0_friends_a1.json');
     await DialogueService.instance.ensureLoaded();
     final all = DialogueService.instance.all;
-    expect(all.length, 7);
+    expect(all.length, greaterThanOrEqualTo(7)); // 11-22 65편 동기화 뒤 늘어남
     expect(all.map((d) => d.region).toSet(), {'R0', 'R1', 'R2', 'R3', 'R4', 'R5'});
-    final t = DialogueService.instance.byId('r0_friends_a1')!.turns.first;
+    // 11-22 Grok 원고로 바뀜 — 여성 학습자판이 있는 줄 아무거나로 바뀜을 확인
+    final t = all.expand((d) => d.turns).firstWhere((x) => (x.rdF ?? '').isNotEmpty);
     LearnerPrefs.gender.value = 'male';
-    expect(t.rd, contains('이스막'));
+    final m = t.rd;
     LearnerPrefs.gender.value = 'female';
-    expect(t.rd, contains('이스믹'));
+    expect(t.rd, t.rdF);
+    expect(t.rd, isNot(m));
     LearnerPrefs.gender.value = 'male';
   });
 }

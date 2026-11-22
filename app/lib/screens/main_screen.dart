@@ -6,6 +6,7 @@ import '../core/theme.dart';
 import '../embed.dart';
 import '../widgets/spanish_decor.dart';
 import 'chunk_search_screen.dart';
+import 'curriculum_screen.dart';
 import 'about_screen.dart';
 import 'letter_chart_screen.dart';
 import 'dialogue_screen.dart';
@@ -233,6 +234,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 8),
                 const _TodayMission(),
                 const SizedBox(height: 22),
+                const CurriculumHomeCard(), // 토크버스 커리큘럼(전 언어 공통, 2026-11-22) — 회화 R 레벨 편이 없으면 숨김
                 const _MenuSections(),
                 const SizedBox(height: 28),
                 const BandDivider(),

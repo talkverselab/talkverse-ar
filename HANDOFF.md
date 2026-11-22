@@ -75,3 +75,11 @@ _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 �
 - M6 빌드 수: `ps -axo args= | grep -c '^[^ ]*dartvm .*flutter_tools.* build '`(`pgrep -f flutter_tools.snapshot` 은 대기 명령까지 세어 서로 기다리게 됨). 시뮬레이터는 `ar-shots iPad Air 11` 만, 끝나면 shutdown.
 - 빌드 뒤 `ios/Podfile*`·`swiftpm/`·pbxproj·xcconfig·xcscheme 변경과 CRLF 표시는 잡음 — 커밋하지 말 것. `git add` 는 경로 지정.
 - 아이콘은 talkverse.uk 세션 담당. 서명 키 새로 만들지 말 것.
+
+## 2026-11-22 밤 — 토크버스 커리큘럼 메뉴(uk 전달, 기준 `~/talkverse/CURRICULUM_SPEC.md`)
+- 사용자 원문(uk 창): 「모든 세션에 토크버스 커리큘럼 메뉴를 만들어줘…80% 이상이 넘으면 코스가 넘어가고 매일 분량을 주고.」
+- `app/lib/services/curriculum.dart`(저장·채점·간격 반복 1/3/7일·문제 생성·추천) + `app/lib/screens/curriculum_screen.dart`(레벨 고르기·코스 3/5/10편·연습·확인 문제·코스 시험·복습) + 홈 카드 `CurriculumHomeCard`(메뉴 위, R 레벨 편 없으면 숨김).
+- 저장 키 = `Prefs` 접두로 `ar_curriculum_v1`(uk 정정 「<언어>_curriculum_v1」 충족). 형식 §7 + 덧붙임 `today{day,new,review}`. dailyGoal = 새 편 수 1·2·3.
+- 문제 꼴: 뜻 4지선다 · 빈칸 낱말 4지선다(lemmas). 7일 간격에서 맞히면 대기열에서 졸업. 시험 실패 → 틀린 편만 practiced 에서 빠짐.
+- 시험: `test/curriculum_test.dart`(80% 경계·간격 날짜·형식 왕복), `test/curriculum_screen_test.dart`. `dialogue_load_test` 는 Grok 원고·턴 재배치에 맞춰 고침(옛 원고 기준 단언).
+- 남음: 일본어앱 기준 커밋이 나오면 화면·문구 맞춤. §9 AI 다이얼로그 작성은 일본어앱 공유 → uk 재전달 뒤(만들어도 숨김).
