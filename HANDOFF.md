@@ -3,6 +3,13 @@
 _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 반영(세션 종료). 앱 규칙 SSOT 는 `app/CLAUDE.md`, 회화 규칙은 `app/docs/DIALOGUE_RULES_ar.md`, 인물은 `CHARACTERS.md`._
 
 
+## 2026-11-22 23시 언어감각 익히기 10급(사용자 「언어감각 10급은 클로드로만 진행」, uk 전달) — 052e30b
+- 배우기 맨 위 「정규과정 → 언어감각 익히기」. 급마다 외울 대화 10줄(`memorize`, 문장마다 who·ar·rd·ko) + 참고 1회(`ref`). 전체 100줄 + 참고 40문장, **Claude 글**(Grok 안 거침).
+- 급: L1 소유 붙이기 -i·-ak·-ik · L2 b- 현재형 · L3 과거 끝소리 · L4 남자에게·여자에게 · L5 ma…sh·mish · L6 ha-·عايز · L7 목적어 붙이기 · L8 명령형·ممكن · L9 عشان·عمري ما·لسه · L10 فاكر إن·لو·يمكن.
+- 원고 = `tools/sense_course_ar.py`(고칠 때 여기서 → `--write`). 검사: 10줄·양쪽 번호 같음·**아랍어는 낱말 통째로 색칠**(낱말 중간을 끊으면 글자 잇기가 깨짐)·독음 있음. 12+ 점검: 일상 장면만(술·폭력·성적 내용 없음).
+- 화면 `app/lib/screens/sense_course_screen.dart`(헝가리어앱 판을 옮김, 아랍어 줄 RTL). **영상 칸·video_player 는 넣지 않음**(영상 없음 + 심사 전날 플러그인 추가 위험) — 영상이 생기면 hu 판의 `LessonVideo` 와 플러그인을 들이면 됨. 마친 회차 Prefs `sense_course_done`.
+- 시험 `app/test/sense_course_test.dart`(원고 형식·색·390/300 폭). analyze 0·시험 45 통과. 서버 원고(rev)에는 아직 안 올림(앱 에셋에 들어 있음).
+
 ## 2026-11-22 65편 통과 처리(사용자 「사용자 리뷰 - 그냥 진행」, uk 전달) — 서버 rev 2·장면 컷 10장 올림
 - 65편 JSON 에 `approved`(2026-11-22) → `sync_dialogues.py` 로 앱 에셋 65편 → add_lemmas(내용어 1670, 단어장 68%, 없는 레마 174 → `data/review/write/missing_lemmas.csv`) → build_cliff_words(회화 단어 갱신).
 - 턴 잠금 경고 2건(다시 쓴 편에서 옛 줄이 다른 번호에 나옴): r0_friends_a1 「أهلا! اسمك إيه؟」 2→1, 「أهلا」 1→9 · r1_love_a1 「متشكر. كده صح؟」 5→4, 「غلط. من الأول.」 4→10. 대사·순서는 그대로, 번호만(앱 새 편 화면은 배열 순서로 보임; num 정렬 화면 episode_screen 은 옛 L1 DB). 경고 0.
