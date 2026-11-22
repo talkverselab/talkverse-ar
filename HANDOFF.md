@@ -4,7 +4,7 @@ _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 �
 
 
 ## M6 iOS 빌드 규칙(uk 11-23, 디스크 꽉 참 뒤)
-- 시작 전 `df -h /System/Volumes/Data` 10GB 넘는지 + `pgrep -fl xcodebuild` 로 다른 빌드 없는지 확인(한 번에 한 세션). 올리기 끝나면 그 자리에서 `app/build` 삭제. 여유 10GB 아래면 uk 에 한 줄.
+- 시작 전 `df -h /System/Volumes/Data` 10GB 넘는지 + `pgrep -x xcodebuild`(**`pgrep -f` 금지** — 기다리는 셸 자신에 걸림; flutter 쪽은 `ps -axo comm=,args= | awk '$1 ~ /dart$/ && /build ipa/'`) 로 다른 빌드 없는지 확인(한 번에 한 세션). 올리기 끝나면 그 자리에서 `app/build` 삭제. 여유 10GB 아래면 uk 에 한 줄.
 
 ## 2026-11-23 문법 스텝 서버 받기(사용자 「스텝 15까지·내용 없으면 안 나타나게·DB 업데이트로 늘거나 줄게」, uk·문법 세션 전달) — 4e73bd9
 - 문법 강의 = `grammar/lessonN.json` 파일들(N 제한 없음), 언어감각 = `grammar/sense_course.json` 의 levels. **개수·제목·순서는 데이터 그대로**, 코드에 안 박음.
