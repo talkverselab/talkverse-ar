@@ -118,6 +118,20 @@ class Dialogue {
     this.art,
   });
 
+  /// 편 파일 한 개(칸 `ar`) — 앱 안 편·서버 편·맞춤 회화(2026-11-22) 공용.
+  factory Dialogue.fromJson(Map<String, dynamic> m) => Dialogue(
+        id: m['id'] as String,
+        region: m['region'] as String? ?? 'R${m['level'] ?? 1}',
+        island: m['island'] as String? ?? 'life',
+        title: m['title'] as String? ?? m['id'] as String,
+        emoji: m['emoji'] as String? ?? '💬',
+        scene: m['scene'] as String? ?? '',
+        speakers: (m['speakers'] as Map? ?? const {}).map((k, v) => MapEntry('$k', '$v')),
+        genders: (m['gender'] as Map? ?? const {}).map((k, v) => MapEntry('$k', '$v')),
+        expressions: ((m['expressions'] as List?) ?? const []).map((e) => '$e').toList(),
+        turns: ((m['turns'] as List?) ?? const []).map((t) => DialogueTurn.fromJson(t as Map<String, dynamic>)).toList(),
+      );
+
   /// 화면에 보일 장면 설명 — 원고의 「A」(학습자)와 `{name}` 을 이름(없으면 「나」)으로(일본어앱 빌드 111).
   String get sceneShown => scene
       .replaceAll('{name}', speakerName('A'))
@@ -208,21 +222,9 @@ class DialogueService {
       }..removeAll(sync.removed);
       for (final rel in rels.toList()..sort()) {
         try {
-          final m = json.decode(await sync.load(rel)) as Map<String, dynamic>;
-          final turns = ((m['turns'] as List?) ?? const []).map((t) => DialogueTurn.fromJson(t as Map<String, dynamic>)).toList();
-          if (turns.isEmpty) continue;
-          next.add(Dialogue(
-            id: m['id'] as String,
-            region: m['region'] as String? ?? 'R${m['level'] ?? 1}',
-            island: m['island'] as String? ?? 'life',
-            title: m['title'] as String? ?? m['id'] as String,
-            emoji: m['emoji'] as String? ?? '💬',
-            scene: m['scene'] as String? ?? '',
-            speakers: (m['speakers'] as Map? ?? const {}).map((k, v) => MapEntry('$k', '$v')),
-            genders: (m['gender'] as Map? ?? const {}).map((k, v) => MapEntry('$k', '$v')),
-            expressions: ((m['expressions'] as List?) ?? const []).map((e) => '$e').toList(),
-            turns: turns,
-          ));
+          final d = Dialogue.fromJson(json.decode(await sync.load(rel)) as Map<String, dynamic>);
+          if (d.turns.isEmpty) continue;
+          next.add(d);
         } catch (_) {}
       }
     } catch (_) {}

@@ -83,3 +83,5 @@ _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 �
 - 문제 꼴: 뜻 4지선다 · 빈칸 낱말 4지선다(lemmas). 7일 간격에서 맞히면 대기열에서 졸업. 시험 실패 → 틀린 편만 practiced 에서 빠짐.
 - 시험: `test/curriculum_test.dart`(80% 경계·간격 날짜·형식 왕복), `test/curriculum_screen_test.dart`. `dialogue_load_test` 는 Grok 원고·턴 재배치에 맞춰 고침(옛 원고 기준 단언).
 - 남음: 일본어앱 기준 커밋이 나오면 화면·문구 맞춤. §9 AI 다이얼로그 작성은 일본어앱 공유 → uk 재전달 뒤(만들어도 숨김).
+- **11-22 밤 일본어 기준(ja ceb91c3)으로 맞춤**(uk 전달, SPEC §10): 내 첫 판 `curriculum.dart` 를 지우고 ja `curriculum_service.dart`·`curriculum_screen.dart`·`test/curriculum_test.dart` 를 옮김(칸 ja→tl, 레벨 `kCurLevels` R0~R5, 아랍어 줄 RTL·독음 표시, 홈 카드는 R 편 없으면 숨김). 문구 50줄 en/ja/zh 를 l10n_dict 에 추가. 시험 문제 수 = 편당 max(3, min(10, 30÷편수)).
+- **AI 회화 작성(맞춤 회화) 화면 숨김 상태로**(SPEC §11): ja `custom_script_screen.dart`·`custom_script_service.dart` 를 옮김 — 서버 `https://talkverse.uk/api/script/ar`, 레벨 R0~R5, 추천 상황은 이집트 장면으로 바꿈, `kCustomScriptLive = false`(메뉴 `회화` 칸에 조건부). `Dialogue.fromJson` 을 dialogue_service 에 뽑아 공용. 맞춤 회화 문구 번역(en/ja/zh)은 아직 — 켤 때 ja 사전에서 옮길 것. 켜는 것은 사용자 결정(작성기는 uk 공용).

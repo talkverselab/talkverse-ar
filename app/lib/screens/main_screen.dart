@@ -7,6 +7,7 @@ import '../embed.dart';
 import '../widgets/spanish_decor.dart';
 import 'chunk_search_screen.dart';
 import 'curriculum_screen.dart';
+import 'custom_script_screen.dart';
 import 'about_screen.dart';
 import 'letter_chart_screen.dart';
 import 'dialogue_screen.dart';
@@ -234,7 +235,8 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 8),
                 const _TodayMission(),
                 const SizedBox(height: 22),
-                const CurriculumHomeCard(), // 토크버스 커리큘럼(전 언어 공통, 2026-11-22) — 회화 R 레벨 편이 없으면 숨김
+                const CurriculumHomeCard(), // 토크버스 커리큘럼(전 언어 공통, 2026-11-22, 일본어앱 ceb91c3) — 회화 R 레벨 편이 없으면 숨김
+                const SizedBox(height: 10),
                 const _MenuSections(),
                 const SizedBox(height: 28),
                 const BandDivider(),
@@ -393,6 +395,10 @@ class _MenuSections extends StatelessWidget {
       (tr('회화'), [
         _MenuItem(label: tr('주제별 회화'), sub: 'محادثة', badge: 'Ch', color: AppColors.beni,
           builder: (_) => const DialogueHomeScreen()),
+        // 맞춤 회화(AI 다이얼로그 작성) — 작성기가 켜지고 사용자가 정할 때까지 숨김(CURRICULUM_SPEC §11, 2026-11-22)
+        if (kCustomScriptLive)
+          _MenuItem(label: tr('맞춤 회화 만들기'), sub: tr('주제·상황·레벨 → 나만의 1편'), badge: '✨', color: AppColors.kinDeep,
+            builder: (_) => const CustomScriptScreen()),
         _MenuItem(label: tr('문장 말하기'), sub: tr('한글 보고 아랍어로 · 7초/4초/2초'), badge: '🎙', color: AppColors.rojo,
           builder: (_) => const SpeakingPracticeScreen()),
         _MenuItem(label: tr('문장 카드'), sub: 'جمل', badge: 'S', color: AppColors.tinta,
