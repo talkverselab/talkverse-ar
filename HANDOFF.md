@@ -3,6 +3,9 @@
 _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 반영(세션 종료). 앱 규칙 SSOT 는 `app/CLAUDE.md`, 회화 규칙은 `app/docs/DIALOGUE_RULES_ar.md`, 인물은 `CHARACTERS.md`._
 
 
+## 음성 만들 때 주의(uk 11-23, 한국어앱 버그)
+- 받아쓰기 검사 캐시는 파일 이름이 아니라 **파일 내용 해시**로 기억할 것 — 이름으로 기억하면 다시 만든 불합격 조각에 옛 합격 점수가 남아 그대로 올라감(ko 603조각 중 268). 참고 `~/talkverse/ko` c6433c4 · `tools/tts/retake.py`(나쁜 조각만 최대 3회 다시). 불합격은 서버 목록에서 빼면 앱이 TTS 로 읽음.
+
 ## M6 iOS 빌드 규칙(uk 11-23, 디스크 꽉 참 뒤)
 - 시작 전 `df -h /System/Volumes/Data` 10GB 넘는지 + `pgrep -x xcodebuild`(**`pgrep -f` 금지** — 기다리는 셸 자신에 걸림; flutter 쪽은 `ps -axo comm=,args= | awk '$1 ~ /dart$/ && /build ipa/'`) 로 다른 빌드 없는지 확인(한 번에 한 세션). 올리기 끝나면 그 자리에서 `app/build` 삭제. 여유 10GB 아래면 uk 에 한 줄.
 
