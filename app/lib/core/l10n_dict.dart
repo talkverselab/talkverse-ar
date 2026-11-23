@@ -4,6 +4,13 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 const Map<String, String> kDictEn = {
+  '아랍어': 'Arabic',
+  // 심사 점검 수정(2026-11-23)
+  '이메일로 로그인': 'Sign in with email',
+  '결제는 App Store 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': 'Payment is handled by the App Store. Prices follow the store and may include tax. No hidden fees.',
+  '결제는 Google Play 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': 'Payment is handled by Google Play. Prices follow the store and may include tax. No hidden fees.',
+  '로그인하면 다른 기기에서도 그대로': 'Sign in to use it on your other devices too',
+  'Talkverse 로그인(선택)': 'Talkverse sign-in (optional)',
   // 커리큘럼 단계(§12, 2026-11-23)
   '단계를 골라요': 'Choose a stage',
   '처음이면 1단계부터 권해요. 문법 레벨과는 따로예요.': 'New here? Start with stage 1. Separate from grammar levels.',
@@ -387,6 +394,13 @@ const Map<String, String> kDictEn = {
 };
 
 const Map<String, String> kDictJa = {
+  '아랍어': 'アラビア語',
+  // 심사 점검 수정(2026-11-23)
+  '이메일로 로그인': 'メールでログイン',
+  '결제는 App Store 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': '決済は App Store で行われます。表示価格はストア価格に従い、税金が含まれる場合があります。隠れた料金はありません。',
+  '결제는 Google Play 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': '決済は Google Play で行われます。表示価格はストア価格に従い、税金が含まれる場合があります。隠れた料金はありません。',
+  '로그인하면 다른 기기에서도 그대로': 'ログインすれば他の端末でもそのまま',
+  'Talkverse 로그인(선택)': 'Talkverse ログイン(任意)',
   // 커리큘럼 단계(§12, 2026-11-23)
   '단계를 골라요': 'ステージを選びます',
   '처음이면 1단계부터 권해요. 문법 레벨과는 따로예요.': '初めてならステージ1から。文法レベルとは別です。',
@@ -759,6 +773,13 @@ const Map<String, String> kDictJa = {
 };
 
 const Map<String, String> kDictZh = {
+  '아랍어': '阿拉伯语',
+  // 심사 점검 수정(2026-11-23)
+  '이메일로 로그인': '用邮箱登录',
+  '결제는 App Store 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': '付款由 App Store 处理。显示价格以商店价格为准，可能含税。没有隐藏费用。',
+  '결제는 Google Play 에서 처리됩니다. 표시 가격은 스토어 가격을 따르며 세금이 포함될 수 있습니다. 숨은 요금은 없습니다.': '付款由 Google Play 处理。显示价格以商店价格为准，可能含税。没有隐藏费用。',
+  '로그인하면 다른 기기에서도 그대로': '登录后在其他设备上也能使用',
+  'Talkverse 로그인(선택)': 'Talkverse 登录（可选）',
   // 커리큘럼 단계(§12, 2026-11-23)
   '단계를 골라요': '选择阶段',
   '처음이면 1단계부터 권해요. 문법 레벨과는 따로예요.': '初次使用建议从第1阶段开始。与语法级别无关。',

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'account_screen.dart';
+import 'custom_script_screen.dart' show kCustomScriptLive;
 import 'about_screen.dart';
 import 'progress_screen.dart';
 
@@ -54,7 +55,7 @@ class ProfileScreen extends StatelessWidget {
             _SettingItem(
                 icon: Icons.account_circle_outlined,
                 title: tr('계정'),
-                subtitle: tr('Talkverse 로그인(선택) · 이용권'),
+                subtitle: kCustomScriptLive ? tr('Talkverse 로그인(선택) · 이용권') : tr('Talkverse 로그인(선택)'),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AccountScreen()))),
           ]),
           const SizedBox(height: 18),

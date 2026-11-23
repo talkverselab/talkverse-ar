@@ -6,6 +6,7 @@ import '../core/theme.dart';
 import '../data/entitlement.dart';
 import '../data/purchase.dart';
 import '../data/account.dart';
+import 'custom_script_screen.dart' show kCustomScriptLive;
 import 'login_screen.dart';
 
 /// 계정 — Talkverse ID 로그인(LoginScreen: Google · Naver · Kakao · Apple + 심사용 이메일) · 내 정보 · 평생 이용권(구매·복원) · 로그아웃 · 탈퇴.
@@ -62,7 +63,8 @@ class _AccountScreenState extends State<AccountScreen> {
       ];
 
   /// 평생 이용권 — 로그인 없이도 사고 복원한다(스토어).
-  List<Widget> _passTiles() => [
+  /// 지금 이용권이 여는 것은 맞춤 회화(숨김)뿐이라 그것이 켜질 때까지 입구를 숨김(심사 2.1, uk 11-23) — 코드는 남김.
+  List<Widget> _passTiles() => !kCustomScriptLive ? const [] : [
         ValueListenableBuilder<Map<String, int>>(
           valueListenable: Purchase.owned,
           builder: (_, _, _) => _card([
