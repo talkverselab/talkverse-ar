@@ -4,6 +4,9 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 const Map<String, String> kDictEn = {
+  // 커리큘럼 단계(§12, 2026-11-23)
+  '단계를 골라요': 'Choose a stage',
+  '처음이면 1단계부터 권해요. 문법 레벨과는 따로예요.': 'New here? Start with stage 1. Separate from grammar levels.',
   // 언어감각 익히기(2026-11-22)
   '언어감각 익히기': 'Language feel',
   '정규과정': 'Core course',
@@ -384,6 +387,9 @@ const Map<String, String> kDictEn = {
 };
 
 const Map<String, String> kDictJa = {
+  // 커리큘럼 단계(§12, 2026-11-23)
+  '단계를 골라요': 'ステージを選びます',
+  '처음이면 1단계부터 권해요. 문법 레벨과는 따로예요.': '初めてならステージ1から。文法レベルとは別です。',
   // 언어감각 익히기(2026-11-22)
   '언어감각 익히기': '言語感覚を身につける',
   '정규과정': '正規コース',
@@ -753,6 +759,9 @@ const Map<String, String> kDictJa = {
 };
 
 const Map<String, String> kDictZh = {
+  // 커리큘럼 단계(§12, 2026-11-23)
+  '단계를 골라요': '选择阶段',
+  '처음이면 1단계부터 권해요. 문법 레벨과는 따로예요.': '初次使用建议从第1阶段开始。与语法级别无关。',
   // 언어감각 익히기(2026-11-22)
   '언어감각 익히기': '培养语感',
   '정규과정': '正式课程',

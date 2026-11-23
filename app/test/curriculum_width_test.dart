@@ -11,7 +11,7 @@ void main() {
       await t.binding.setSurfaceSize(Size(w, 800));
       addTearDown(() => t.binding.setSurfaceSize(null));
       await t.runAsync(() => CurriculumService.instance.ensureLoaded());
-      CurriculumService.instance.state = CurriculumState(level: 'R1');
+      CurriculumService.instance.state = CurriculumState(level: '1');
       await t.pumpWidget(const MaterialApp(home: CurriculumScreen()));
       await t.runAsync(() => Future.delayed(const Duration(milliseconds: 200)));
       await t.pump();
