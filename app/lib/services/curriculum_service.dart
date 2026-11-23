@@ -29,7 +29,12 @@ class CurStage {
   final String key; // '1'..'5' (저장 칸 level 에 들어가는 값)
   final String title, desc;
   final List<String> dialogueIds;
-  const CurStage(this.key, this.title, this.desc, this.dialogueIds);
+  /// 코스로 고를 개수 · 통과 점수(%) · 하루 새 편 수(가볍게·보통·집중) — 서버 값, 없으면 3·5·10 / 80 / 1·2·3(§12 덧붙임).
+  final List<int> pick;
+  final int pass;
+  final List<int> daily;
+  const CurStage(this.key, this.title, this.desc, this.dialogueIds,
+      {this.pick = const [3, 5, 10], this.pass = kPassPercent, this.daily = const [1, 2, 3]});
 }
 
 /// 단계 목록 — `assets/curriculum_ar.json` 이 기본, 서버(`/api/curriculum/ar`) rev 가 더 높으면 받아 둔 것(§12, 사용자 지시 11-23 「커리큘럼 내용도 모두 DB에서」).
@@ -45,13 +50,28 @@ class CurriculumPlan {
       final j = json.decode(raw) as Map<String, dynamic>;
       final st = <CurStage>[
         for (final s in ((j['stages'] as List?) ?? const []).whereType<Map>())
-          CurStage('${s['n']}', '${s['title'] ?? '${s['n']}단계'}', '${s['desc'] ?? ''}', [for (final i in (s['dialogueIds'] as List?) ?? const []) '$i']),
+          CurStage('${s['n']}', '${s['title'] ?? '${s['n']}단계'}', '${s['desc'] ?? ''}', [for (final i in (s['dialogueIds'] as List?) ?? const []) '$i'],
+              pick: _ints(s['pick']) ?? const [3, 5, 10],
+              pass: (s['pass'] as num?)?.toInt().clamp(1, 100) ?? kPassPercent,
+              daily: _daily(s['daily']) ?? const [1, 2, 3]),
       ];
       if (st.isEmpty) return null;
       return CurriculumPlan((j['rev'] as num?)?.toInt() ?? 0, st, [for (final p in (j['prep'] as List?) ?? const []) Map<String, dynamic>.from(p as Map)]);
     } catch (_) {
       return null;
     }
+  }
+
+  static List<int>? _ints(Object? v) {
+    final l = [for (final x in (v is List ? v : const [])) if (x is num && x > 0) x.toInt()];
+    return l.isEmpty ? null : l;
+  }
+
+  static List<int>? _daily(Object? v) {
+    if (v is! Map) return null;
+    final l = [for (final k in const ['light', 'normal', 'focus']) (v[k] as num?)?.toInt()];
+    if (l.any((x) => x == null || x < 1)) return null;
+    return l.cast<int>();
   }
 
   static const asset = 'assets/curriculum_ar.json';
@@ -109,7 +129,7 @@ const kPassPercent = 80;
 
 /// 점수 = 정답 수 / 문제 수, 소수점 버림.
 int scorePercent(int correct, int total) => total <= 0 ? 0 : (correct * 100) ~/ total;
-bool isPass(int correct, int total) => scorePercent(correct, total) >= kPassPercent;
+bool isPass(int correct, int total, [int pass = kPassPercent]) => scorePercent(correct, total) >= pass;
 
 String ymd(DateTime d) => '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
 DateTime parseYmd(String s) {
@@ -217,7 +237,10 @@ class CurriculumState {
   List<ReviewItem> dueReview(String today) => review.where((r) => r.due.compareTo(today) <= 0).toList();
 
   /// 오늘 남은 새 편 수.
-  int newLeft(String today) => max(0, dailyGoal - (todayDay == today ? todayNew : 0));
+  /// 하루 목표 1·2·3(가볍게·보통·집중)의 새 편 수 — 단계 JSON 의 daily(light·normal·focus), 없으면 1·2·3. 저장 안 함.
+  List<int> dailyCounts = const [1, 2, 3];
+  int get dailyNew => dailyCounts[(dailyGoal - 1).clamp(0, dailyCounts.length - 1)];
+  int newLeft(String today) => max(0, dailyNew - (todayDay == today ? todayNew : 0));
 
   /// 오늘 분량을 다 했나(복습 0 + 새 편 목표 채움).
   bool dayDone(String today) => dueReview(today).isEmpty && newLeft(today) == 0;
@@ -271,12 +294,12 @@ class CurriculumState {
   }
 
   /// 코스 시험 결과. 통과면 코스 완료·통과 편 기록, 아니면 틀린 편의 연습 표시를 지워 다시 연습하게.
-  bool recordExam(int correct, int total, Set<String> wrongDialogues, String today) {
+  bool recordExam(int correct, int total, Set<String> wrongDialogues, String today, {int pass = kPassPercent}) {
     final c = course;
     if (c == null) return false;
     final s = scorePercent(correct, total);
     c.examScores.add(s);
-    if (s >= kPassPercent) {
+    if (s >= pass) {
       c.passedAt = today;
       for (final id in c.dialogueIds) {
         if (!passedDialogues.contains(id)) passedDialogues.add(id);
@@ -396,15 +419,21 @@ class CurriculumService {
       } catch (_) {}
     }
     _loaded = true;
+    applyStage();
     // 서버 판이 더 새것이면 받아 바로 바꾼다(배포 전엔 404 → 그대로)
     CurriculumPlan.fetchNewer(plan?.rev ?? -1).then((p) {
       if (p == null) return;
       plan = p;
+      applyStage();
       changed.value++;
     });
   }
 
+  /// 지금 단계의 하루 새 편 수를 상태에 넣는다(단계를 바꾸거나 서버 판을 받을 때).
+  void applyStage() => state.dailyCounts = stage(state.level)?.daily ?? const [1, 2, 3];
+
   Future<void> save() async {
+    applyStage();
     await (await Prefs.getInstance()).setString(key, json.encode(state.toJson()));
     changed.value++;
   }
@@ -423,6 +452,10 @@ class CurriculumService {
         if (s.dialogueIds.any(have.contains)) s,
     ];
   }
+
+  /// 지금 단계의 통과 점수·고를 개수(값이 없으면 80 / 3·5·10).
+  int passPercent([String? level]) => stage(level ?? state.level)?.pass ?? kPassPercent;
+  List<int> pickCounts([String? level]) => stage(level ?? state.level)?.pick ?? const [3, 5, 10];
 
   /// 보이는 단계 키('1'..'5').
   List<String> get levels => [for (final s in stages) s.key];

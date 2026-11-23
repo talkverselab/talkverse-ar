@@ -61,4 +61,35 @@ void main() {
     expect(CurriculumState.fromJson({'level': 'R3'}).level, '3');
     expect(CurriculumState.fromJson({'level': 2}).level, '2');
   });
+
+  test('§12 덧붙임 — pick·pass·daily 를 JSON 에서, 없으면 3·5·10 / 80 / 1·2·3', () async {
+    final p = CurriculumPlan.parse(json.encode({
+      'rev': 3,
+      'stages': [
+        {'n': 1, 'title': '첫 단계', 'desc': 'd', 'dialogueIds': ['a'], 'pick': [2, 4], 'pass': 70, 'daily': {'light': 2, 'normal': 3, 'focus': 5}},
+        {'n': 2, 'dialogueIds': ['b']},
+      ],
+    }))!;
+    expect(p.stages[0].pick, [2, 4]);
+    expect(p.stages[0].pass, 70);
+    expect(p.stages[0].daily, [2, 3, 5]);
+    expect(p.stages[0].title, '첫 단계');
+    expect(p.stages[1].pick, [3, 5, 10]);
+    expect(p.stages[1].pass, 80);
+    expect(p.stages[1].daily, [1, 2, 3]);
+    expect(p.stages[1].title, '2단계');
+
+    SharedPreferences.setMockInitialValues({});
+    final svc = CurriculumService.instance;
+    await svc.ensureLoaded();
+    final real = DialogueService.instance.list().first.id;
+    svc.plan = CurriculumPlan(9, [CurStage('1', 't', '', [real], pick: const [2, 4], pass: 70, daily: const [2, 3, 5])], const []);
+    svc.state = CurriculumState(level: '1', dailyGoal: 3, course: Course('c', [real]));
+    svc.applyStage();
+    expect(svc.passPercent(), 70);
+    expect(svc.pickCounts(), [2, 4]);
+    expect(svc.state.newLeft('2026-11-23'), 5);
+    expect(svc.state.recordExam(7, 10, {}, '2026-11-23', pass: svc.passPercent()), isTrue); // 70% 통과
+    expect(isPass(7, 10), isFalse); // 기본 80
+  });
 }
