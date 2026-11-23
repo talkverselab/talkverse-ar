@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import '../data/entitlement.dart';
 import 'package:flutter/material.dart';
 import '../services/script_sync.dart';
 
@@ -111,7 +112,11 @@ class _SenseCourseScreenState extends State<SenseCourseScreen> {
           style: const TextStyle(fontSize: 12, color: AppColors.muted)),
     ];
     var i = 0;
+    var lvNo = 0;
     for (final lv in (d['levels'] as List).cast<Map<String, dynamic>>()) {
+      lvNo++;
+      // 무료 한도(freeSenseLevels, 기본 1급)를 넘는 급은 자물쇠 → 결제 화면(PAYWALL_SPEC §2)
+      final open = Access.open(Access.senseLevelFree(lvNo));
       children.add(Padding(
         padding: const EdgeInsets.fromLTRB(2, 18, 2, 8),
         child: Text('${lv['id']}  ${lv['title']}',
@@ -149,7 +154,10 @@ class _SenseCourseScreenState extends State<SenseCourseScreen> {
             child: InkWell(
               key: ValueKey('sense-${ls['id']}'),
               borderRadius: BorderRadius.circular(12),
-              onTap: () => _open(idx),
+              onTap: () async {
+                if (await Entitlement.gate(context, open) && mounted) _open(idx);
+                if (mounted) setState(() {});
+              },
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                 child: Row(children: [
@@ -162,7 +170,9 @@ class _SenseCourseScreenState extends State<SenseCourseScreen> {
                     child: Text(ls['title'] as String,
                         style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: AppColors.sumi)),
                   ),
-                  if (isDone)
+                  if (!open)
+                    const Icon(Icons.lock_outline, color: AppColors.muted, size: 20)
+                  else if (isDone)
                     const Icon(Icons.check_circle, color: AppColors.matcha, size: 20)
                   else if (isNext)
                     Text(tr('다음'), style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: AppColors.ai)),
@@ -211,6 +221,14 @@ class _SenseLessonScreenState extends State<SenseLessonScreen> {
     while (nextIdx < all.length && all[nextIdx].$2['kind'] == 'ref') {
       nextIdx++;
     }
+    // 다음 회가 잠긴 급이면 결제 화면, 이용권이 없으면 목록으로
+    final levels = [for (final e in all) e.$1];
+    final nextLv = nextIdx < all.length ? levels.toSet().toList().indexOf(all[nextIdx].$1) + 1 : 0;
+    if (nextIdx < all.length && !await Entitlement.gate(context, Access.senseLevelFree(nextLv))) {
+      if (mounted) Navigator.of(context).pop();
+      return;
+    }
+    if (!mounted) return;
     if (nextIdx < all.length) {
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (_) => SenseLessonScreen(index: nextIdx)));

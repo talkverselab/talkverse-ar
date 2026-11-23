@@ -34,11 +34,11 @@ void main() {
     final d = json.decode(bundled) as Map<String, dynamic>;
     final newer = json.encode({...d, 'rev': (d['rev'] as int) + 1, 'stages': [(d['stages'] as List).first]});
     expect(await CurriculumPlan.fetchNewer(1, fetch: (_) async => null, cache: cache), isNull);
-    expect(await CurriculumPlan.fetchNewer(5, fetch: (_) async => newer, cache: cache), isNull);
-    final got = await CurriculumPlan.fetchNewer(1, fetch: (_) async => newer, cache: cache);
+    expect(await CurriculumPlan.fetchNewer(99, fetch: (_) async => newer, cache: cache), isNull);
+    final got = await CurriculumPlan.fetchNewer(d['rev'] as int, fetch: (_) async => newer, cache: cache);
     expect(got!.stages.length, 1);
     final local = await CurriculumPlan.loadLocal(bundled: bundled, cache: cache);
-    expect(local!.rev, 2);
+    expect(local!.rev, (d['rev'] as int) + 1);
     expect(await CurriculumPlan.loadLocal(bundled: 'broken', cache: File('${dir.path}/none.json')), isNull);
   });
 

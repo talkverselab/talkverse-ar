@@ -33,8 +33,11 @@ class CurStage {
   final List<int> pick;
   final int pass;
   final List<int> daily;
+  /// 무료 단계인가(서버 `free`, 없으면 1단계만 무료 — PAYWALL_SPEC §2).
+  final bool free;
   const CurStage(this.key, this.title, this.desc, this.dialogueIds,
-      {this.pick = const [3, 5, 10], this.pass = kPassPercent, this.daily = const [1, 2, 3]});
+      {this.pick = const [3, 5, 10], this.pass = kPassPercent, this.daily = const [1, 2, 3], bool? free})
+      : free = free ?? key == '1';
 }
 
 /// 단계 목록 — `assets/curriculum_ar.json` 이 기본, 서버(`/api/curriculum/ar`) rev 가 더 높으면 받아 둔 것(§12, 사용자 지시 11-23 「커리큘럼 내용도 모두 DB에서」).
@@ -43,7 +46,9 @@ class CurriculumPlan {
   final int rev;
   final List<CurStage> stages;
   final List<Map<String, dynamic>> prep;
-  const CurriculumPlan(this.rev, this.stages, this.prep);
+  /// 무료 문법 스텝 수 · 무료 언어감각 급 수(서버 최상위 `freeSteps`·`freeSenseLevels`, 없으면 2 · 1 — PAYWALL_SPEC §2).
+  final int freeSteps, freeSenseLevels;
+  const CurriculumPlan(this.rev, this.stages, this.prep, {this.freeSteps = 2, this.freeSenseLevels = 1});
 
   static CurriculumPlan? parse(String raw) {
     try {
@@ -53,10 +58,12 @@ class CurriculumPlan {
           CurStage('${s['n']}', '${s['title'] ?? '${s['n']}단계'}', '${s['desc'] ?? ''}', [for (final i in (s['dialogueIds'] as List?) ?? const []) '$i'],
               pick: _ints(s['pick']) ?? const [3, 5, 10],
               pass: (s['pass'] as num?)?.toInt().clamp(1, 100) ?? kPassPercent,
-              daily: _daily(s['daily']) ?? const [1, 2, 3]),
+              daily: _daily(s['daily']) ?? const [1, 2, 3],
+              free: s['free'] is bool ? s['free'] as bool : null),
       ];
       if (st.isEmpty) return null;
-      return CurriculumPlan((j['rev'] as num?)?.toInt() ?? 0, st, [for (final p in (j['prep'] as List?) ?? const []) Map<String, dynamic>.from(p as Map)]);
+      return CurriculumPlan((j['rev'] as num?)?.toInt() ?? 0, st, [for (final p in (j['prep'] as List?) ?? const []) Map<String, dynamic>.from(p as Map)],
+          freeSteps: (j['freeSteps'] as num?)?.toInt() ?? 2, freeSenseLevels: (j['freeSenseLevels'] as num?)?.toInt() ?? 1);
     } catch (_) {
       return null;
     }
@@ -408,10 +415,16 @@ class CurriculumService {
   /// 단계 JSON(없거나 실패면 null → 회화 레벨 기본 대응).
   CurriculumPlan? plan;
 
+  /// 단계 JSON 만 읽는다(잠금 판정이 앱 시작 때부터 쓰므로 embedInit 에서도 부름). 여러 번 불러도 한 번만.
+  Future<void>? _planLoad;
+  Future<void> loadPlan() => _planLoad ??= () async {
+        plan ??= await CurriculumPlan.loadLocal();
+      }();
+
   Future<void> ensureLoaded() async {
     if (_loaded) return;
     await DialogueService.instance.ensureLoaded();
-    plan ??= await CurriculumPlan.loadLocal();
+    await loadPlan();
     final raw = (await Prefs.getInstance()).getString(key);
     if (raw != null) {
       try {

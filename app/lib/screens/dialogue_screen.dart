@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/entitlement.dart';
 import '../core/l10n.dart';
 import '../core/platform.dart';
 import '../core/pane.dart';
@@ -165,16 +166,22 @@ class DialogueListScreen extends StatelessWidget {
         separatorBuilder: (_, _) => const SizedBox(height: 8),
         itemBuilder: (context, i) {
           final d = list[i];
+          final open = Access.open(Access.dialogueFree(d));
           return Container(
             decoration: BoxDecoration(color: AppColors.washi, border: Border.all(color: AppColors.line), borderRadius: BorderRadius.circular(14), boxShadow: kCardShadow),
             child: Material(
               color: Colors.transparent,
               child: ListTile(
-                onTap: () => openPane(context, (_) => DialogueScreen(dialogue: d)),
+                onTap: () async {
+                  // 유료 편(2단계 이상, 기본 R2~R5)은 자물쇠 → 결제 화면(PAYWALL_SPEC §2·§3)
+                  if (await Entitlement.gate(context, open) && context.mounted) openPane(context, (_) => DialogueScreen(dialogue: d));
+                },
                 leading: Text(d.emoji, style: const TextStyle(fontSize: 24)),
                 title: Text(d.title, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, color: AppColors.sumi)),
                 subtitle: Text(d.sceneShown, maxLines: 2, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 11, color: AppColors.muted, height: 1.3)),
-                trailing: Text(trf('{0}턴', [d.turns.length]), style: const TextStyle(fontSize: 11, color: AppColors.muted)),
+                trailing: open
+                    ? Text(trf('{0}턴', [d.turns.length]), style: const TextStyle(fontSize: 11, color: AppColors.muted))
+                    : const Icon(Icons.lock_outline, size: 20, color: AppColors.muted),
               ),
             ),
           );
@@ -211,7 +218,28 @@ class _DialogueScreenState extends State<DialogueScreen> {
   void _openPlay({int at = 0}) => openFull(context, (_) => _PlayFull(dialogue: d, at: at));
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ListenableBuilder(listenable: Entitlement.changed, builder: (context, _) => _build(context));
+
+  /// 다른 입구(이어서 읽기 등)로 유료 편이 열려도 이용권이 없으면 잠금 안내.
+  Widget _locked(BuildContext context) => Scaffold(
+        backgroundColor: AppColors.washi,
+        appBar: AppBar(title: Text('${d.emoji} ${d.title}', style: const TextStyle(color: AppColors.sumi, fontWeight: FontWeight.w800, fontSize: 15))),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+              const Icon(Icons.lock_outline, size: 40, color: AppColors.muted),
+              const SizedBox(height: 10),
+              Text(tr('이용권으로 열리는 편이에요'), textAlign: TextAlign.center, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800, color: AppColors.sumi)),
+              const SizedBox(height: 14),
+              FilledButton(onPressed: () => Entitlement.showPaywall(context), child: Text(tr('이용권 보기'))),
+            ]),
+          ),
+        ),
+      );
+
+  Widget _build(BuildContext context) {
+    if (!Access.open(Access.dialogueFree(d))) return _locked(context);
     final wide = isWide(context);
     return Scaffold(
       backgroundColor: AppColors.washi,

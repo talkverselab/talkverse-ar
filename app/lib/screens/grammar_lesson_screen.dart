@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import '../data/entitlement.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show AssetManifest, rootBundle;
 
@@ -106,7 +107,8 @@ class _GrammarHubScreenState extends State<GrammarHubScreen> {
               : ListView(
                   padding: const EdgeInsets.all(16),
                   children: [
-                    for (final l in lessons)
+                    for (final (i, l) in lessons.indexed)
+                      if (Access.open(Access.grammarStepFree(i + 1)) case final open)
                       Card(
                         color: Colors.white,
                         margin: const EdgeInsets.only(bottom: 10),
@@ -118,18 +120,24 @@ class _GrammarHubScreenState extends State<GrammarHubScreen> {
                           subtitle: Text(
                               '${l.subtitle.isEmpty ? '' : '${l.subtitle}\n'}${trf('패턴 {0} · 예문 {1}', [l.patterns.length, l.exampleCount])}',
                               style: const TextStyle(fontSize: 12, height: 1.4)),
-                          trailing: IconButton(
-                            tooltip: tr('테스트'),
-                            icon: const Icon(Icons.quiz, color: AppColors.rojo),
-                            onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (_) => GrammarTestScreen(lesson: l)),
-                            ),
-                          ),
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (_) => GrammarLessonScreen(lesson: l)),
-                          ),
+                          // 무료 한도(freeSteps, 기본 2)를 넘는 스텝은 자물쇠 → 결제 화면(PAYWALL_SPEC §2·§3, 숨기지 않음)
+                          trailing: !open
+                              ? const Padding(padding: EdgeInsets.all(12), child: Icon(Icons.lock_outline, color: AppColors.tintaLight))
+                              : IconButton(
+                                  tooltip: tr('테스트'),
+                                  icon: const Icon(Icons.quiz, color: AppColors.rojo),
+                                  onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (_) => GrammarTestScreen(lesson: l)),
+                                  ),
+                                ),
+                          onTap: () async {
+                            if (!await Entitlement.gate(context, open) || !context.mounted) {
+                              if (mounted) setState(() {});
+                              return;
+                            }
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => GrammarLessonScreen(lesson: l)));
+                          },
                         ),
                       ),
                   ],

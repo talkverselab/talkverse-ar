@@ -4,6 +4,14 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 const Map<String, String> kDictEn = {
+  // 이용권(2026-11-23)
+  '토크버스 커리큘럼 2단계부터 전부': 'Talkverse curriculum from stage 2',
+  '회화 2단계 이상 편 전부(R2~R5)': 'All dialogues from level 2 up (R2–R5)',
+  '문법 3스텝부터 · 언어감각 2급부터': 'Grammar from step 3 · Language feel from level 2',
+  '스토어에 연결하지 못했어요. 잠시 뒤 다시 시도해 주세요.': 'Could not reach the store. Please try again shortly.',
+  '다시 시도': 'Try again',
+  '이용권으로 열리는 편이에요': 'This dialogue is part of the pass',
+  '맞춤 회화 만들기': 'Create a custom dialogue',
   '아랍어': 'Arabic',
   // 심사 점검 수정(2026-11-23)
   '이메일로 로그인': 'Sign in with email',
@@ -394,6 +402,14 @@ const Map<String, String> kDictEn = {
 };
 
 const Map<String, String> kDictJa = {
+  // 이용권(2026-11-23)
+  '토크버스 커리큘럼 2단계부터 전부': 'トークバース・カリキュラムのステージ2以降すべて',
+  '회화 2단계 이상 편 전부(R2~R5)': '会話レベル2以上すべて(R2〜R5)',
+  '문법 3스텝부터 · 언어감각 2급부터': '文法ステップ3から · 言語感覚2級から',
+  '스토어에 연결하지 못했어요. 잠시 뒤 다시 시도해 주세요.': 'ストアに接続できませんでした。しばらくしてからもう一度お試しください。',
+  '다시 시도': '再試行',
+  '이용권으로 열리는 편이에요': '利用券で開く会話です',
+  '맞춤 회화 만들기': 'カスタム会話を作る',
   '아랍어': 'アラビア語',
   // 심사 점검 수정(2026-11-23)
   '이메일로 로그인': 'メールでログイン',
@@ -773,6 +789,14 @@ const Map<String, String> kDictJa = {
 };
 
 const Map<String, String> kDictZh = {
+  // 이용권(2026-11-23)
+  '토크버스 커리큘럼 2단계부터 전부': 'Talkverse 课程第2阶段起全部',
+  '회화 2단계 이상 편 전부(R2~R5)': '会话第2级以上全部(R2~R5)',
+  '문법 3스텝부터 · 언어감각 2급부터': '语法第3步起 · 语感第2级起',
+  '스토어에 연결하지 못했어요. 잠시 뒤 다시 시도해 주세요.': '无法连接商店，请稍后再试。',
+  '다시 시도': '重试',
+  '이용권으로 열리는 편이에요': '此对话需要会员',
+  '맞춤 회화 만들기': '创建定制会话',
   '아랍어': '阿拉伯语',
   // 심사 점검 수정(2026-11-23)
   '이메일로 로그인': '用邮箱登录',

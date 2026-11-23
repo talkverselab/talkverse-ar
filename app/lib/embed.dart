@@ -1,3 +1,4 @@
+import 'services/curriculum_service.dart';
 import 'services/script_sync.dart';
 import 'package:flutter/material.dart';
 
@@ -46,6 +47,8 @@ Future<void> embedInit({bool standalone = false}) async {
   Purchase.ownStream = standalone;
   // 이용권 가격표(lang_ar_1m·3m·1y·life·all_1y·all_life, 2026-11-09 확정) = data/entitlement.dart(기다리지 않음)
   Entitlement.configure();
+  // 무료/유료 경계(커리큘럼 JSON 의 free·freeSteps·freeSenseLevels)를 앱 시작 때부터 쓰므로 미리 읽음(기다리지 않음)
+  CurriculumService.instance.loadPlan();
   // 회화 원고는 켤 때마다 무조건 서버 판을 확인해 받는다 — 그림·음성 내려받기와 따로(일본어앱 빌드 113·114 와 같음).
   // 느린 망에서는 startupWait 까지만 기다리고 앱을 연다(받기는 뒤에서 이어지고, 끝나면 회화 목록을 다시 읽는다).
   try {

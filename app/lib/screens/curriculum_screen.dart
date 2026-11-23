@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/entitlement.dart';
 import '../core/l10n.dart';
 import '../core/pane.dart';
 import '../core/platform.dart';
@@ -35,13 +36,18 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
       if (!mounted) return;
       setState(() {
         _loading = false;
-        _levelPick = _st.level == null;
+        _levelPick = _st.level == null || !Access.open(Access.stageFree(_st.level)); // 이용권이 끝난 유료 단계면 단계 고르기로
         _picking = _st.level != null && _st.course == null;
       });
     });
   }
 
   Future<void> _setLevel(String lv) async {
+    // 유료 단계(서버 free=false, 기본 2단계~)는 이용권이 있어야 — 없으면 결제 화면(PAYWALL_SPEC §2)
+    if (!await Entitlement.gate(context, Access.stageFree(lv)) || !mounted) {
+      if (mounted) setState(() {});
+      return;
+    }
     _st.level = lv;
     await _svc.save();
     setState(() {
@@ -166,6 +172,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                 ]),
               ),
               if (_st.level == null && lv == lowest) _pill(tr('추천'), AppColors.matcha),
+              if (!Access.open(Access.stageFree(lv))) const Icon(Icons.lock_outline, size: 20, color: AppColors.muted),
             ]),
           ),
     ];
