@@ -4,7 +4,7 @@ _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 �
 
 
 ## 2026-11-23 커리큘럼 §12(사용자 「커리큘럼 내용도 모두 DB에서 · 5단계」, uk 전달) — 1e2e7fc
-- 단계 1~5 = `app/assets/curriculum_ar.json`(uk 의 `~/talkverse/curriculum/ar.json` 복사, rev 1, 65편 id 전부 앱 편과 맞음) → 시작 때 `https://talkverse.uk/api/curriculum/ar` rev 가 더 높으면 기기에 받아 바로 바꿈(Worker 배포 전엔 404 → 묶음 그대로). 편 0개 단계 숨김, 앱에 없는 id 건너뜀, JSON 실패면 회화 레벨 기본 대응(R0+R1→1 … R5→5). 저장 칸 level = 단계 '1'~'5'(옛 R 값은 읽을 때 바꿈). 코스·시험·복습·하루 분량은 그대로(서버 pick·pass·daily 는 아직 안 씀). ar 은 prep(JLPT/HSK) 없음.
+- 단계 1~5 = `app/assets/curriculum_ar.json`(uk 의 `~/talkverse/curriculum/ar.json` 복사, rev 1, 65편 id 전부 앱 편과 맞음) → 시작 때 `https://talkverse.uk/api/curriculum/ar` rev 가 더 높으면 기기에 받아 바로 바꿈(Worker 배포 전엔 404 → 묶음 그대로). 편 0개 단계 숨김, 앱에 없는 id 건너뜀, JSON 실패면 회화 레벨 기본 대응(R0+R1→1 … R5→5). 저장 칸 level = 단계 '1'~'5'(옛 R 값은 읽을 때 바꿈). 코스·시험·복습은 그대로. **pick·pass·daily·title·desc 도 JSON 에서**(§12 덧붙임, 없으면 3·5·10 / 80 / 1·2·3 — 통과 점수는 시험 판정과 화면 문구 둘 다). ar 은 prep(JLPT/HSK) 없음.
 - 코드 `CurriculumPlan`·`CurStage`(`curriculum_service.dart`), 시험 `app/test/curriculum_plan_test.dart`. analyze 0·시험 52 통과.
 
 ## 3090 「비었다」 판정(uk 11-23 07시)
