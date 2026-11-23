@@ -19,6 +19,12 @@ _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 �
 - 단계 1~5 = `app/assets/curriculum_ar.json`(uk 의 `~/talkverse/curriculum/ar.json` 복사, rev 1, 65편 id 전부 앱 편과 맞음) → 시작 때 `https://talkverse.uk/api/curriculum/ar` rev 가 더 높으면 기기에 받아 바로 바꿈(Worker 배포 전엔 404 → 묶음 그대로). 편 0개 단계 숨김, 앱에 없는 id 건너뜀, JSON 실패면 회화 레벨 기본 대응(R0+R1→1 … R5→5). 저장 칸 level = 단계 '1'~'5'(옛 R 값은 읽을 때 바꿈). 코스·시험·복습은 그대로. **pick·pass·daily·title·desc 도 JSON 에서**(§12 덧붙임, 없으면 3·5·10 / 80 / 1·2·3 — 통과 점수는 시험 판정과 화면 문구 둘 다). ar 은 prep(JLPT/HSK) 없음.
 - 코드 `CurriculumPlan`·`CurStage`(`curriculum_service.dart`), 시험 `app/test/curriculum_plan_test.dart`. analyze 0·시험 52 통과.
 
+## 2026-11-23 저녁 회화 음성 준비(uk: 「pt 다음이 ar, pt 의 「GPU 끝」= 「ar 지금 시작」」)
+- 도구 `tools/tts/`(포르투갈어앱 판을 옮김): `make_plan.py`(편 감정 열 → `data/tts/plan/`, 배역은 화자 이름·성별로 자동 — `data/tts/voices.json` cast_rules) · `check_plan.py`(65편 문제 0) · `make_jobs.py`(language Arabic, PC `out/ar/`·`out/ref_ar/`) · `qa.py`(whisper ar, 아랍 글자만 견줌·أإآ→ا ى→ي ة→ه, **0.85**, 내용 해시 대신 대사·mtime 으로 옛 점수 버림 — pt 판 그대로) · `pack.py`(R2 `audio/ar/`, D1 `audio_lines` lang 'ar', `data/tts/audio_ar.json`) · `run_all.py` · `check_refs.py` · `pc_idle.py`(job.log·moss_jobs.json 몇 초 전 + 작업 상태) · `start_ar.sh`.
+- 규모: 65편 · 602턴(남/여 같은 턴 269) · 조각 958 · 참고 음성 120(목소리 11 × 감정). 이름 `{name}` = 남 أليكس / 여 إيما, 숫자 ١٢·١٤ 는 소리만 اتناشر·أربعتاشر(voices.json say).
+- 시작: pt 의 「GPU 끝」(또는 uk 「ar 지금 시작」)을 받으면 `screen -dmS ar-tts zsh tools/tts/start_ar.sh` — PC 작업 파일 5분 넘게 그대로 + 작업 스케줄러 Ready 일 때 스스로 시작(참고 음성 → 3편 묶음). 로그 `~/tts_work/ar/run.log`, 끼어들기 `touch ~/tts_work/ar/PAUSE`, 다시 실행하면 이어감. 끝나면 「GPU 끝」을 uk·it 에.
+- 위험: MOSS·VoxCPM 의 이집트 아랍어 품질은 미확인 — 첫 묶음 qa 나쁨 비율을 보고 너무 높으면 멈추고 uk 에.
+
 ## 3090 「비었다」 판정(uk 11-23 07시)
 - nvidia-smi 사용량만 보고 판단하지 말 것(묶음마다 모델을 올렸다 내리는 실행기는 몇 초씩 576MiB 로 비어 보임). **① 앞 세션 「GPU 끝」 또는 uk 「ar 지금 시작」 + ② PC `D:\tts_test\job\job.log`·`moss_jobs.json` 수정 시각이 5분 넘게 멈춤 — 둘 다일 때만.** 실행기의 「8GB 아래면 시작」 조건은 uk 시작 신호 뒤에만.
 

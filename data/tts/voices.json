@@ -1,0 +1,176 @@
+{
+ "_meta": "이집트 아랍어(카이로) 회화 음성 — 목소리·감정·자리 채움. 포르투갈어앱 data/tts/voices.json 과 같은 짜임. 참고 음성은 VoxCPM2(설명은 영어), 문장은 MOSS-TTS(language Arabic). 배역은 make_plan.py 가 화자 이름·성별로 자동 배정(cast_rules). say = 소리 낼 때만 바꿔 읽는 글(숫자 등).",
+ "base_text": "النهارده بعد الضهر عندي اجتماع، عشان كده عايز أجهز كل حاجة قبلها. وبعدين نتعشى سوا؟",
+ "voices": {
+  "am": {
+   "g": "m",
+   "desc": "An Egyptian man from Cairo in his twenties, clear and gentle voice, Egyptian Arabic accent"
+  },
+  "af": {
+   "g": "f",
+   "desc": "An Egyptian woman from Cairo in her twenties, clear and soft voice, Egyptian Arabic accent"
+  },
+  "karim": {
+   "g": "m",
+   "desc": "An Egyptian man in his mid twenties, direct, friendly and slightly deep voice, Cairene Egyptian Arabic accent"
+  },
+  "youssef": {
+   "g": "m",
+   "desc": "An Egyptian man in his early twenties, fast, bright and energetic voice, Cairene Egyptian Arabic accent"
+  },
+  "nour": {
+   "g": "f",
+   "desc": "An Egyptian woman in her early twenties, bright, lively and playful voice, Cairene Egyptian Arabic accent"
+  },
+  "mariam": {
+   "g": "f",
+   "desc": "An Egyptian woman in her mid twenties, calm, dry and witty voice, Cairene Egyptian Arabic accent"
+  },
+  "man": {
+   "g": "m",
+   "desc": "An Egyptian man in his forties, composed and professional voice, Cairene Egyptian Arabic accent"
+  },
+  "man2": {
+   "g": "m",
+   "desc": "An Egyptian man in his thirties, relaxed and warm voice, Cairene Egyptian Arabic accent"
+  },
+  "woman": {
+   "g": "f",
+   "desc": "An Egyptian woman in her forties, confident, calm and professional voice, Cairene Egyptian Arabic accent"
+  },
+  "woman2": {
+   "g": "f",
+   "desc": "An Egyptian woman in her thirties, warm and kind voice, Cairene Egyptian Arabic accent"
+  },
+  "uncle": {
+   "g": "m",
+   "desc": "An elderly Egyptian man in his sixties, slow, warm and slightly husky voice, Cairene Egyptian Arabic accent"
+  },
+  "auntie": {
+   "g": "f",
+   "desc": "An elderly Egyptian woman in her sixties, warm, motherly and expressive voice, Cairene Egyptian Arabic accent"
+  }
+ },
+ "cast_rules": {
+  "names": {
+   "كريم": "karim",
+   "يوسف": "youssef",
+   "نور": "nour",
+   "مريم": "mariam"
+  },
+  "old_m_prefix": [
+   "عم ",
+   "أبو "
+  ],
+  "old_m": [
+   "العجوز",
+   "الجد"
+  ],
+  "old_f_prefix": [
+   "أم "
+  ],
+  "old_f": [
+   "الجدة"
+  ],
+  "pool": {
+   "m": [
+    "man",
+    "man2",
+    "uncle",
+    "karim",
+    "youssef"
+   ],
+   "f": [
+    "woman",
+    "woman2",
+    "auntie",
+    "nour",
+    "mariam"
+   ]
+  }
+ },
+ "emotions": {
+  "neutral": {
+   "instruct": "calm and natural, everyday tone",
+   "ref": "النهارده عندي اجتماع بعد الضهر، عشان كده هجهز كل حاجة بالراحة."
+  },
+  "polite": {
+   "instruct": "polite and professional, like a clerk or station staff",
+   "ref": "صباح الخير، اتفضل. أقدر أساعد حضرتك في إيه؟ شكرا على زيارتك."
+  },
+  "stiff": {
+   "instruct": "very nervous and stiff, formal and overly polite",
+   "ref": "متشكر جدا إنك قابلتني. هعمل كل اللي أقدر عليه. ده شرف ليا."
+  },
+  "cheerful": {
+   "instruct": "cheerful, bright and friendly",
+   "ref": "أهلا! مبسوط إني شفتك! الجو حلو النهارده ومزاجي عالي."
+  },
+  "amused": {
+   "instruct": "amused, laughing warmly, relaxed",
+   "ref": "ههه، ده ظريف أوي! خلاص، عجبني، كمل كده."
+  },
+  "teasing": {
+   "instruct": "teasing, playful and mischievous",
+   "ref": "إيه الوش ده؟ يلا احكيلي كل حاجة. مش هقول لحد."
+  },
+  "excited": {
+   "instruct": "excited, bursting with energy, bright and loud",
+   "ref": "عملتها! مش مصدق! ده تحفة بجد، متشكر أوي!"
+  },
+  "surprised": {
+   "instruct": "surprised, caught off guard, voice jumps",
+   "ref": "إيه؟ بجد؟ استنى، انت بتقول إيه؟"
+  },
+  "shout": {
+   "instruct": "surprised and loud, an exaggerated comic retort",
+   "ref": "إيه؟ دلوقتي؟ كده فجأة؟ طب أعمل إيه أنا؟"
+  },
+  "tsukkomi": {
+   "instruct": "a quick sharp comic retort, exasperated but fond",
+   "ref": "لأ لأ، مش كده خالص! ليه عملت كده يا عم؟"
+  },
+  "annoyed": {
+   "instruct": "annoyed, irritated, sighing",
+   "ref": "يوه، تاني؟ كفاية بقى الكلام ده، لو سمحت."
+  },
+  "sad": {
+   "instruct": "sad, quiet, voice slightly trembling",
+   "ref": "كان بس... يوم صعب. سيبك. ما تقلقش عليا."
+  },
+  "worried": {
+   "instruct": "worried and anxious, hesitant",
+   "ref": "انت كويس؟ في حاجة بتوجعك؟ مش أحسن نروح للدكتور؟"
+  },
+  "flustered": {
+   "instruct": "flustered and embarrassed, stammering, unsure",
+   "ref": "آه، ده... قصدي... مش ده اللي كنت عايز أقوله..."
+  },
+  "shy": {
+   "instruct": "shy, soft, slightly trailing off",
+   "ref": "بصراحة... أنا كمان بحب أقعد معاك. ما تقولش لحد."
+  },
+  "gentle": {
+   "instruct": "gentle, warm and tender, quiet",
+   "ref": "كله تمام. أنا هنا جنبك. ارتاح شوية."
+  }
+ },
+ "fill": {
+  "{name}": {
+   "m": {
+    "text": "أليكس",
+    "rd": "알렉스",
+    "ko": "알렉스"
+   },
+   "f": {
+    "text": "إيما",
+    "rd": "에마",
+    "ko": "에마"
+   }
+  }
+ },
+ "say": {
+  "١٢": "اتناشر",
+  "١٤": "أربعتاشر"
+ }
+}
