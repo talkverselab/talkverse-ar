@@ -21,8 +21,17 @@ def peak(f):
     return float(m.group(1)) if m else -99.0
 
 
+def voiced(f, d):
+    """끝에 붙은 무음을 뺀 길이 — MOSS 는 짧은 낱말 뒤에 2초 남짓 무음을 붙여 내서(아랍어 إزيك 0.4초+무음 2초) 길이 검사가 멀쩡한 조각을 떨어뜨렸다(11-23)."""
+    o = subprocess.run(['ffmpeg', '-hide_banner', '-i', f, '-af', 'silencedetect=n=-40dB:d=0.2', '-f', 'null', '-'], capture_output=True, text=True).stderr
+    st, en = re.findall(r'silence_start: ([\d.]+)', o), re.findall(r'silence_end: ([\d.]+)', o)
+    return float(st[-1]) if st and en and len(st) == len(en) and float(en[-1]) >= d - 0.05 else d
+
+
 def score(f, text):
     w = norm(text); d = dur(f)
+    if d > 0:
+        d = voiced(f, d)
     if d <= 0 or peak(f) < -30:            # 거의 무음으로 나온 조각(생성 실패)
         return 0.0, d
     if d > 2.2 + 0.2 * len(w) or d < 0.03 * len(w):
