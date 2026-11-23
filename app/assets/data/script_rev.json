@@ -57,14 +57,16 @@
 "dialogues/R4/culture/r4_culture_b1.json": "f573e7e0a22e",
 "dialogues/R4/friends/r4_friends_b1.json": "a671412fad5f",
 "dialogues/R4/life/r4_life_b1.json": "bbe0901f398e",
-"dialogues/R4/love/r4_love_b1.json": "149b442006cf",
+"dialogues/R4/love/r4_love_b1.json": "fd8092ec260e",
 "dialogues/R4/travel/r4_travel_b1.json": "4ae6698be64a",
 "dialogues/R4/work/r4_work_b1.json": "54c53158abda",
 "dialogues/R5/friends/r5_friends_b1.json": "a759e6a53a46",
 "dialogues/R5/life/r5_life_b1.json": "8d2ec6021381",
 "dialogues/R5/love/r5_love_b1.json": "9106e8ffeb33",
 "dialogues/R5/study/r5_study_b1.json": "24de10b3a424",
-"dialogues/R5/work/r5_work_b1.json": "cf4d4d923aaf"
+"dialogues/R5/work/r5_work_b1.json": "cf4d4d923aaf",
+"grammar/lesson1.json": "78ed7fc747dc",
+"grammar/sense_course.json": "51b9bdb19eff"
 },
-"rev": 2
+"rev": 3
 }
