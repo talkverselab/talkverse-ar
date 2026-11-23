@@ -3,6 +3,10 @@
 _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 반영(세션 종료). 앱 규칙 SSOT 는 `app/CLAUDE.md`, 회화 규칙은 `app/docs/DIALOGUE_RULES_ar.md`, 인물은 `CHARACTERS.md`._
 
 
+## 2026-11-23 커리큘럼 §12(사용자 「커리큘럼 내용도 모두 DB에서 · 5단계」, uk 전달) — 1e2e7fc
+- 단계 1~5 = `app/assets/curriculum_ar.json`(uk 의 `~/talkverse/curriculum/ar.json` 복사, rev 1, 65편 id 전부 앱 편과 맞음) → 시작 때 `https://talkverse.uk/api/curriculum/ar` rev 가 더 높으면 기기에 받아 바로 바꿈(Worker 배포 전엔 404 → 묶음 그대로). 편 0개 단계 숨김, 앱에 없는 id 건너뜀, JSON 실패면 회화 레벨 기본 대응(R0+R1→1 … R5→5). 저장 칸 level = 단계 '1'~'5'(옛 R 값은 읽을 때 바꿈). 코스·시험·복습·하루 분량은 그대로(서버 pick·pass·daily 는 아직 안 씀). ar 은 prep(JLPT/HSK) 없음.
+- 코드 `CurriculumPlan`·`CurStage`(`curriculum_service.dart`), 시험 `app/test/curriculum_plan_test.dart`. analyze 0·시험 52 통과.
+
 ## 3090 「비었다」 판정(uk 11-23 07시)
 - nvidia-smi 사용량만 보고 판단하지 말 것(묶음마다 모델을 올렸다 내리는 실행기는 몇 초씩 576MiB 로 비어 보임). **① 앞 세션 「GPU 끝」 또는 uk 「ar 지금 시작」 + ② PC `D:\tts_test\job\job.log`·`moss_jobs.json` 수정 시각이 5분 넘게 멈춤 — 둘 다일 때만.** 실행기의 「8GB 아래면 시작」 조건은 uk 시작 신호 뒤에만.
 
