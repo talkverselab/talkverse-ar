@@ -3,6 +3,11 @@
 _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 반영(세션 종료). 앱 규칙 SSOT 는 `app/CLAUDE.md`, 회화 규칙은 `app/docs/DIALOGUE_RULES_ar.md`, 인물은 `CHARACTERS.md`._
 
 
+## 2026-11-23 심사 점검 수정(uk 「심사막을 부분 다 수정」) — 26a685f
+- 이용권 입구(계정 화면 이용권 칸·프로필 부제)는 `kCustomScriptLive` false 면 숨김 · 로그인 「이메일로 로그인」(괄호 뺌)·서버에 없는 제공자 버튼 숨김 · 결제 안내 iOS=App Store / Android=Google Play 따로, 해지 안내 이름 Talkverse · r4_love_b1 9번 ko 「错过한 거야」 → 「놓친 거야」(앱 에셋 + data/review 원본).
+- F(작업 기록 칸 AI 이름): ar 회화·문법 JSON 에 없음(검사함).
+- **서버 원고 올리기는 이 세션 권한 정책이 막음** → 사용자가 직접: `cd ~/talkverse/ar/app && python3 tools/script_publish.py --publish` (r4_love_b1 + 문법 2파일 → rev 3) 뒤 `assets/data/script_rev.json` 커밋.
+
 ## 2026-11-23 커리큘럼 §12(사용자 「커리큘럼 내용도 모두 DB에서 · 5단계」, uk 전달) — 1e2e7fc
 - 단계 1~5 = `app/assets/curriculum_ar.json`(uk 의 `~/talkverse/curriculum/ar.json` 복사, rev 1, 65편 id 전부 앱 편과 맞음) → 시작 때 `https://talkverse.uk/api/curriculum/ar` rev 가 더 높으면 기기에 받아 바로 바꿈(Worker 배포 전엔 404 → 묶음 그대로). 편 0개 단계 숨김, 앱에 없는 id 건너뜀, JSON 실패면 회화 레벨 기본 대응(R0+R1→1 … R5→5). 저장 칸 level = 단계 '1'~'5'(옛 R 값은 읽을 때 바꿈). 코스·시험·복습은 그대로. **pick·pass·daily·title·desc 도 JSON 에서**(§12 덧붙임, 없으면 3·5·10 / 80 / 1·2·3 — 통과 점수는 시험 판정과 화면 문구 둘 다). ar 은 prep(JLPT/HSK) 없음.
 - 코드 `CurriculumPlan`·`CurStage`(`curriculum_service.dart`), 시험 `app/test/curriculum_plan_test.dart`. analyze 0·시험 52 통과.
