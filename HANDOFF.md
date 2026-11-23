@@ -23,6 +23,7 @@ _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 �
 - 도구 `tools/tts/`(포르투갈어앱 판을 옮김): `make_plan.py`(편 감정 열 → `data/tts/plan/`, 배역은 화자 이름·성별로 자동 — `data/tts/voices.json` cast_rules) · `check_plan.py`(65편 문제 0) · `make_jobs.py`(language Arabic, PC `out/ar/`·`out/ref_ar/`) · `qa.py`(whisper ar, 아랍 글자만 견줌·أإآ→ا ى→ي ة→ه, **0.85**, 내용 해시 대신 대사·mtime 으로 옛 점수 버림 — pt 판 그대로) · `pack.py`(R2 `audio/ar/`, D1 `audio_lines` lang 'ar', `data/tts/audio_ar.json`) · `run_all.py` · `check_refs.py` · `pc_idle.py`(job.log·moss_jobs.json 몇 초 전 + 작업 상태) · `start_ar.sh`.
 - 규모: 65편 · 602턴(남/여 같은 턴 269) · 조각 958 · 참고 음성 120(목소리 11 × 감정). 이름 `{name}` = 남 أليكس / 여 إيما, 숫자 ١٢·١٤ 는 소리만 اتناشر·أربعتاشر(voices.json say).
 - 시작: pt 의 「GPU 끝」(또는 uk 「ar 지금 시작」)을 받으면 `screen -dmS ar-tts zsh tools/tts/start_ar.sh` — PC 작업 파일 5분 넘게 그대로 + 작업 스케줄러 Ready 일 때 스스로 시작(참고 음성 → 3편 묶음). 로그 `~/tts_work/ar/run.log`, 끼어들기 `touch ~/tts_work/ar/PAUSE`, 다시 실행하면 이어감. 끝나면 「GPU 끝」을 uk·it 에.
+- **낮에도 돌림(uk 11-23 19:1x 사용자 원문 「지금돌려 가능하면」)**: 시간과 상관없이 신호 + PC 5분 그대로면 시작(`--night` 안 씀, ar 은 01:00 고정 실행기 없음). 문법 세션 「비워 주세요」 때만 `touch ~/tts_work/ar/PAUSE`(묶음 경계 멈춤). 순서 pt → ar → it → en → tr → fr → ru → fa → id → de.
 - 위험: MOSS·VoxCPM 의 이집트 아랍어 품질은 미확인 — 첫 묶음 qa 나쁨 비율을 보고 너무 높으면 멈추고 uk 에.
 
 ## 3090 「비었다」 판정(uk 11-23 07시)
