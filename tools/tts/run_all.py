@@ -5,7 +5,7 @@ PC 쪽은 작업 스케줄러 'TTS job 2060'(run_job.sh)이 돈다 — 참고 �
 import glob, json, os, subprocess, sys, time
 import ttslib as L
 PC = 'Administrator@100.127.143.37'; HERE = os.path.dirname(os.path.abspath(__file__))
-_a = [x for x in sys.argv[1:] if x not in ('--night', '--refs', '--refs-only')]; work = _a[0]; N = int(_a[1]) if len(_a) > 1 else 6
+_a = [x for x in sys.argv[1:] if x not in ('--night', '--refs', '--refs-only', '--redo')]; work = _a[0]; N = int(_a[1]) if len(_a) > 1 else 6
 os.makedirs(f'{work}/job', exist_ok=True); os.makedirs(f'{work}/wav', exist_ok=True)
 log = lambda *a: print(time.strftime('%H:%M:%S'), *a, flush=True)
 
@@ -57,9 +57,8 @@ def refs():
     have = set(sh('ssh', PC, 'cmd /c dir /b D:\\tts_test\\job\\out\\ref_ar', check=False).stdout.split())
     jobs = [j for j in json.load(open(f'{work}/job/vox_jobs.json')) if os.path.basename(j['out']) not in have]
     log('참고 음성 새로', len(jobs))
-    if not jobs:
-        return
-    json.dump(jobs, open(f'{work}/job/vox_jobs.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=0); pc_run('vox')
+    if jobs:
+        json.dump(jobs, open(f'{work}/job/vox_jobs.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=0); pc_run('vox')
     for rnd in range(3):
         sh('scp', '-q', '-r', f'{PC}:D:/tts_test/job/out/ref_ar/*', f'{work}/ref_ar/', check=False)
         r = sh(sys.executable, f'{HERE}/check_refs.py', f'{work}/ref_ar', '--jobs', f'{work}/job/vox_jobs.json', check=False)
@@ -72,11 +71,17 @@ def refs():
             log('02:20 지나 참고 음성 재생성 멈춤 — 남은', len(jobs)); break
         for j in jobs:
             j['seed'] = 7 + 31 * (rnd + 1)
+            n = os.path.basename(j['out'])       # PC vox_batch.py 도 있는 파일은 건너뛴다 — 미달 감정 음성만 지우고 다시(base 는 check_refs 가 뺀다)
+            sh('ssh', PC, f'Remove-Item D:\\tts_test\\job\\out\\ref_ar\\{n} -ErrorAction SilentlyContinue', check=False)
         json.dump(jobs, open(f'{work}/job/vox_jobs.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=0); pc_run('vox')
 
 
 done = set(open(f'{work}/done.txt').read().split()) if os.path.exists(f'{work}/done.txt') else set()
 ids = [e for e in L.planned() if e not in done]
+REDO = '--redo' in sys.argv      # 미달 조각만 더 만들기(TTS_TRIES=6 과 함께): 첫 생성·본 파일 받기를 건너뛴다(고른 판을 덮지 않게, it 65df90b)
+if REDO:
+    _q = json.load(open(f'{work}/wav/qa.json', encoding='utf-8')); _bad = {k.split('/')[0] for k, v in _q.items() if not v.get('ok')}
+    ids = [e for e in L.planned() if e in _bad]
 log('남은 편', len(ids))
 if '--refs' in sys.argv:
     refs()
@@ -89,9 +94,10 @@ for i in range(0, len(ids), N):
     if '--night' in sys.argv and not (1 <= t.tm_hour < 6 or (t.tm_hour == 6 and t.tm_min < 30)):   # 새벽만, 06:30 이후 새 묶음 금지(uk 3090 배정 11-22)
         log('06:30 지나 멈춤 — 남은 편', len(ids) - i); sys.exit(0)
     eps = ids[i:i + N]
-    sh(sys.executable, f'{HERE}/make_jobs.py', f'{work}/job', *eps); pc_run()
-    for ep in eps:
-        fetch(ep)
+    if not REDO:
+        sh(sys.executable, f'{HERE}/make_jobs.py', f'{work}/job', *eps); pc_run()
+        for ep in eps:
+            fetch(ep)
     for rnd in range(3):
         # whisper 가 한 파일에서 멈추는 일이 있어(일본어 7시간) 편별 하위 프로세스 + 600초 제한. 넘기면 그 편 재생성본은 버리고 넘어간다.
         tot = 0
@@ -125,5 +131,5 @@ for i in range(0, len(ids), N):
         r = sh(sys.executable, f'{HERE}/pack.py', f'{work}/wav', ep, '--upload', check=False)
         if r.returncode:
             log('실패', ep, (r.stderr or r.stdout)[-300:]); continue
-        log(r.stdout.strip()); open(f'{work}/done.txt', 'a').write(ep + '\n')
+        log(r.stdout.strip()); ep in done or open(f'{work}/done.txt', 'a').write(ep + '\n')
 log('끝')

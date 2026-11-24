@@ -9,6 +9,7 @@ import ttslib as L
 M = 'mlx-community/whisper-large-v3-turbo'
 AL = str.maketrans({'أ': 'ا', 'إ': 'ا', 'آ': 'ا', 'ٱ': 'ا', 'ى': 'ي', 'ة': 'ه', 'ؤ': 'و', 'ئ': 'ي'})
 norm = lambda s: re.sub(r'[^\u0621-\u063A\u0641-\u064A]', '', s.translate(AL))   # 아랍어: 모음 부호·문장부호를 떼고 알리프·타마르부타 등을 하나로 견준다
+TRIES = int(os.environ.get('TTS_TRIES', '3'))   # 재생성 한도. 나중에 더 만들 때 6 으로 올린다(tries 를 0 으로 돌리지 말 것 — PC 는 있는 t1~t3 을 건너뛰어 옛 파일이 다시 온다)
 
 
 def dur(f):
@@ -69,7 +70,7 @@ def main():
             q['ok'] = q['sim'] >= 0.85   # 11-07 시험(0.72)이 사용자 판정 실패 → 올림(11-22)
             if not q['ok']:
                 bad += 1
-                if q['tries'] < 3:
+                if jobs_out and q['tries'] < TRIES:      # 채점만 할 때(--jobs 없음)는 횟수를 쓰지 않는다(it 65df90b)
                     q['tries'] += 1
                     jobs.append({'out': f"ar/retake/{k[:-4]}.t{q['tries']}.wav", 'text': text, 'language': 'Arabic', 'reference': f'out/ref_ar/{voice}_{emo}.wav', 'seed': 42 + 97 * q['tries']})
     json.dump(Q, open(qf, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
