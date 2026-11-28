@@ -3,6 +3,17 @@
 _2026-11-08 전체 다시 씀, 2026-11-09 가격·통합 앱·스토어 문서 반영(세션 종료). 앱 규칙 SSOT 는 `app/CLAUDE.md`, 회화 규칙은 `app/docs/DIALOGUE_RULES_ar.md`, 인물은 `CHARACTERS.md`._
 
 
+## 2026-11-28 세션 닫음(uk: 사용자 지시 — 베트남어·일본어만 남김) — 다시 열면 `~/talkverse/CHANGES.md` 먼저
+- **하던 일**: 회화 음성. 65편 1204줄 서버에 있음(앱이 녹음 재생). 11-24 밤 3회째 재생성본 채점으로 불합격 61→36(cb5f2e9).
+- **다음 할 일(3090 차례를 uk 가 줄 때만, 새벽 원칙·idle 확인 `tools/tts/pc_idle.py`)**: 잡음 미달 참고 음성 29 + 불합격 조각 36 다시 만들기 —
+  `TTS_TRIES=6 ~/.venvs/tts_zh/bin/python tools/tts/run_all.py ~/tts_work/ar 3 --refs --redo`(97e029a, **아직 실제로 돌려 보지 않음**). tries 를 0 으로 돌리지 말 것.
+  끝나도 불합격이면 그 줄을 서버 목록에서 빼면 앱이 TTS 로 읽음(사용자/uk 결정).
+- **돌고 있는 백그라운드 작업**: 없음(음성·그림·빌드·Grok·크롬·루프 모두 꺼짐 확인).
+- **멈춤 지시(uk 전달, 사용자가 풀 때까지)**: Grok 전부 중지(11-26) · Gemini 는 베트남어만(11-25) · 단어 작업은 베트남어만(11-25) · 65편 밖 회화 그림 중지(11-25). 「데이팅앱」 글자는 ar 에 없음(11-25 확인).
+- **커밋 안 한 변경**: `app/CLAUDE_UPDATES.md`·`app/analysis_options.yaml`·android/ios/linux/macos 등 — 줄바꿈(CRLF)·플러터 생성 잡음, 커밋 금지 규칙 대상. Podfile·swiftpm 도 그대로.
+- **지울 후보**: `~/tts_work/ar`(156MB, 재생성 끝난 뒤 — 지금은 재생성에 필요), `.wrangler/`·`app/.wrangler/`(wrangler 임시).
+- **사용자에게 물을 것**: (예전부터) 시작 때 구매 복원 조회 여부 · 잠긴 편 대사를 문장 카드에 보일지 · 끝까지 불합격인 음성 줄 처리(TTS 로 돌릴지).
+
 ## 2026-11-23 이용권 실제 기능(PAYWALL_SPEC, 사용자 「1 2 모두 진행」) — 11ed3d9
 - 무료 = 커리큘럼 1단계 · 회화 R0/R1(무료 단계 편) · 문법 1~2스텝 · 언어감각 1급. 나머지는 **자물쇠 표시 → 결제 화면**(숨기지 않음). 판정 `Access`(`lib/data/entitlement.dart`), 값은 커리큘럼 JSON rev 2 의 단계 `free`·최상위 `freeSteps`·`freeSenseLevels`(묶음 `assets/curriculum_ar.json` rev 2, 서버 rev 2 받기 확인).
 - 결제 화면: 스토어 가격만(원화·할인 코드 삭제), 혜택 줄 = 유료 범위, 상품 못 받으면 「다시 시도」·닫기(12초 상한), 약관·개인정보 링크·복원. 저장 `ar_entitlement_v1`(옛 `iap_owned2` 읽음) + 종합은 `all_entitlement_v1`.
